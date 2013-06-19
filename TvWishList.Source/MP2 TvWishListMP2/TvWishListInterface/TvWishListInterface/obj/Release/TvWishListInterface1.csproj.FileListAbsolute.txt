@@ -1,0 +1,4 @@
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.7\TvWishListV1.3.0.6.Source\MP2 TvWishListMP2\TvWishListInterface1\TvWishListInterface1\bin\Release\TvWishListInterface.dll
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.7\TvWishListV1.3.0.6.Source\MP2 TvWishListMP2\TvWishListInterface1\TvWishListInterface1\bin\Release\TvWishListInterface.pdb
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.7\TvWishListV1.3.0.6.Source\MP2 TvWishListMP2\TvWishListInterface1\TvWishListInterface1\obj\Release\TvWishListInterface.dll
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.7\TvWishListV1.3.0.6.Source\MP2 TvWishListMP2\TvWishListInterface1\TvWishListInterface1\obj\Release\TvWishListInterface.pdb

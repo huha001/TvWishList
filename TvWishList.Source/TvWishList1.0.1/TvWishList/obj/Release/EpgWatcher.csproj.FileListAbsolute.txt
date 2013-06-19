@@ -1,0 +1,14 @@
+I:\User Daten\Visual C# Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\ResolveAssemblyReference.cache
+I:\User Daten\Visual C# Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\SetupTv.Sections.EpgWatcherSetup.resources
+I:\User Daten\Visual C# Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\EpgWatcher.csproj.GenerateResource.Cache
+I:\User Daten\Visual C# Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\bin\Release\EpgWatcher.pdb
+I:\User Daten\Visual C# Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\EpgWatcher.dll
+I:\User Daten\Visual C# Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\EpgWatcher.pdb
+I:\User Daten\Visual C# Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\bin\Release\EpgWatcher.dll
+D:\Installation\C#Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\ResolveAssemblyReference.cache
+D:\Installation\C#Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\SetupTv.Sections.EpgWatcherSetup.resources
+D:\Installation\C#Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\EpgWatcher.csproj.GenerateResource.Cache
+D:\Installation\C#Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\EpgWatcher.dll
+D:\Installation\C#Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\bin\Release\EpgWatcher.dll
+D:\Installation\C#Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\bin\Release\EpgWatcher.pdb
+D:\Installation\C#Projects\EpgWatcher\EpgWatcherV0.0.0.1\EpgWatcherV0.0.0.1.Source\EpgWatcher1.0.1\EpgWatcher\obj\Release\EpgWatcher.pdb

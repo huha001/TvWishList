@@ -1,0 +1,704 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--DO NOT CHANGE ENGLISH COMMENTS INTO ANOTHER LANGUAGE-->
+  <!--Owner: huha-->
+  <!--Version 1.2.1.0
+- initial release
+
+
+Version 1.2.1.5
+- added preferred group and episode criteria
+
+Version 1.2.3.0
+- added TvWishListMP2 strings - new strings are 100-102, 1108-1109, 1206, 3001, 3104, 3506-3508, 3652-3653, 5000 and up
+
+Version 1.2.3.6
+-added string 1110, 4312, 5051-5052, 5204-5216,6203, 7002, 8110-8111, 10000 and up
+
+Version 1.2.3.10
+- added 200-201
+
+Version 1.2.3.11
+-added 10192-10193,10262-->
+  <!--TVSERVER VECTORSIZE=5000-->
+  <!--MP2 Display in main menu-->
+  <string name="TvWishListMP2.100">TvWish-Liste</string>
+  <string name="TvWishListMP2.101">TvWish</string>
+  <string name="TvWishListMP2.102">Nouvelle TvWish - Recherche pour:</string>
+  <!--SlimTv Buttons in MP2-->
+  <!-- MP1STR:200 -->
+  <string name="TvWishListMP2.CreateTvWish">Créer une TvWish</string>
+  <!--************************************************************-->
+  <!--TV WishList - Main-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.1000">TvWish-Liste   Menu Principal</string>
+  <!--Quick Menu from Skins-->
+  <string name="TvWishListMP2.1050">TvWish-Liste   Menu Rapide </string>
+  <string name="TvWishListMP2.1051">Créer une TvWish avec un titre</string>
+  <string name="TvWishListMP2.1052">Créer une TvWish compléte</string>
+  <string name="TvWishListMP2.1053">Créer une TvWish avec un titre contenu dans le mode Email</string>
+  <string name="TvWishListMP2.1054">Créer une TvWish avec un titre contenu dans le mode Vu</string>
+  <string name="TvWishListMP2.1055">Créer une TvWish complète dans le mode Email</string>
+  <string name="TvWishListMP2.1056">Créer une TvWish complète dans le mode Vu</string>
+  <string name="TvWishListMP2.1057">Accéder au menu principal de TvWish</string>
+  <string name="TvWishListMP2.1058">Accéder aux  résultats de TvWish-Liste</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.1100">Mode Vu</string>
+  <string name="TvWishListMP2.1101">Email et Mode Enregistrement</string>
+  <string name="TvWishListMP2.1102">Lancer une recherche EPG</string>
+  <string name="TvWishListMP2.1103">Afficher les résultats</string>
+  <string name="TvWishListMP2.1104">Nouveau</string>
+  <string name="TvWishListMP2.1105">Sauvegarder</string>
+  <string name="TvWishListMP2.1106">Abandonner</string>
+  <string name="TvWishListMP2.1107">Plus</string>
+  <string name="TvWishListMP2.1108">Résultats</string>
+  <string name="TvWishListMP2.1109">Mode</string>
+  <string name="TvWishListMP2.1110">Editer</string>
+  <!--Run EPG Search-->
+  <string name="TvWishListMP2.1200">Attendre que le processus en cours soit terminé</string>
+  <string name="TvWishListMP2.1201">La recherche est toujours en cours - \n SVP, patienter</string>
+  <string name="TvWishListMP2.1202">La recherche EPG est en cours - \n SVP, patienter</string>
+  <string name="TvWishListMP2.1203">Le processus en cours ne s\'est pas\n terminé dans le temps imparti - abandon</string>
+  <string name="TvWishListMP2.1204">La recherche EPG est terminé</string>
+  <string name="TvWishListMP2.1205">Un processus en cours ne s\'est pas\n terminé dans le temps imparti - abandon</string>
+  <string name="TvWishListMP2.1206">La conexion au serveur a échoué - redémarrer le serveur TV</string>
+  <!--Save-->
+  <string name="TvWishListMP2.1300">Les données de TvWish ont été sauvegardées</string>
+  <string name="TvWishListMP2.1301">Les données de TvWish n\'ont pu être sauvegardées</string>
+  <!--Cancel-->
+  <string name="TvWishListMP2.1400">Les données de TvWish ont été rechargées</string>
+  <string name="TvWishListMP2.1401">Les données de TvWish n\'ont pu être rechargées</string>
+  <!--More  Menu-->
+  <string name="TvWishListMP2.1500">La totalité activée</string>
+  <string name="TvWishListMP2.1501">La totalité Inactivée</string>
+  <string name="TvWishListMP2.1502">Passer la totalité</string>
+  <string name="TvWishListMP2.1503">Ne passer aucun</string>
+  <string name="TvWishListMP2.1504">Copier les TvWish depuis le mode Vu vers le mode Email</string>
+  <string name="TvWishListMP2.1505">Copier les TvWish depuis le mode Email vers le mode Vu</string>
+  <string name="TvWishListMP2.1506">Transférer les programmations vers la TvWish-Liste</string>
+  <string name="TvWishListMP2.1507">Exporter</string>
+  <string name="TvWishListMP2.1508">Importer</string>
+  <!--More  Status-->
+  <string name="TvWishListMP2.1550">{0} TvWish copiée(s) depuis le mode Email</string>
+  <string name="TvWishListMP2.1551">Echec de la copie des TvWish depuis le mode Email</string>
+  <string name="TvWishListMP2.1552">{0} TvWish copiée(s) depuis le mode Vu</string>
+  <string name="TvWishListMP2.1553">Echec de la copie des TvWish depuis le mode Vu</string>
+  <string name="TvWishListMP2.1554">{0} programmation(s) transféré(s) vers la TvWish-Liste</string>
+  <string name="TvWishListMP2.1555">Le transfert des programmations vers la TvWish-Liste a échoué</string>
+  <string name="TvWishListMP2.1556">L\'exportation des {0} TvWish est terminée</string>
+  <string name="TvWishListMP2.1557">Echec  de l\'exportation</string>
+  <string name="TvWishListMP2.1558">L\'importation des {0} TvWish est terminée</string>
+  <string name="TvWishListMP2.1559">Echec de l\'importation</string>
+  <!--++++++++++++++-->
+  <!--Formats   Main-->
+  <!--++++++++++++++-->
+  <!--TvWish Format Data 1900 - 1905:
+        //  {0}   active
+        //  {1}   searchfor
+        //  {2}   matchtype
+        //  {3}   group
+        //  {4}   recordtype
+        //  {5}   action
+        //  {6}   exclude
+        //  {7}   viewed counter
+        //  {8}   prerecord
+        //  {9}   postrecord
+        //  {10}  episodename
+        //  {11}  episodepart
+        //  {12}  episodenumber
+        //  {13}  seriesnumber
+        //  {14}  keepepisodes
+        //  {15}  keepuntil
+        //  {16}  recommendedcard
+        //  {17}  priority
+        //  {18}  aftertime
+        //  {19}  beforetime
+        //  {20}  afterdays
+        //  {21}  beforedays
+        //  {22}  channel
+        //  {23}  skip
+        //  {24}  name
+        //  {25}  useNameFolders
+        //  {26}  within next hours
+        //  {27}  scheduled counter
+        //  {28}  tvwish id
+        //  {29}  recorded counter
+        //  {30}  deleted counter
+        //  {31}  emailed counter
+        //  {32}  conflicts counter
+        //  {33}  episodecriteria
+        //  {34}  preferredgroup
+        //  {35}  includerecordings
+        //  <br>     new line
+        //  |      item selector for not displaying user disabled items-->
+  <!--Main Menu Format for 16:9 skins Email Mode-->
+  <string name="TvWishListMP2.1900">Actif: {0}\n |Nom: {24}\n |Recherche pour: {1}\n |Match: {2}\n |Exclure: {6}\n |Type: {4}\n |Action: {5}\n |Skip Repeated: {23}\n |Groupe Préféré: {34}\n |and Include Recordings: {35}\n |Co:\n Programmé={27}\n Enregistré={29}\n Effacé={30}\n Emailed={31}\n Conflits={32}\n |\n Seulement le groupe: {3} And Only Channel: {22}\n |After Or At Day: {20} But Before Or On Day: {21}\n |Between Time: {18} Et {19}\n \n |Episode Criteria: {33}\n |Nom de l\'épisode: {10}\n |Partie de l\'épisode: {11}\n |Numéro de l\'épisode: {12}\n |Keep Episodes: {14}\n |Keep Until: {15}\n |Priorité: {17}\n |Prerecord: {8}\n |Postrecord: {9}\n |Carte Recommandée: {16}\n |Move Recordings to Name Folder: {25}\n |ID={28}\n\n</string>
+  <!--Main Menu Format for 4:3 skins Email Mode-->
+  <!--Main Menu Format for 16:9 skins View Only Mode-->
+  <!--Main Menu Format for 4:3 skins View Only Mode-->
+  <!--List Item Format Email Mode -  use "||" to change alignment between left and right border-->
+  <string name="TvWishListMP2.1904">{24} || {27}/{29}</string>
+  <!--List Item Format ViewOnly Mode-->
+  <string name="TvWishListMP2.1905">{24} || {7}</string>
+  <!--************************************************************-->
+  <!--TV WishList - Edit-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=2000 TO=4900 OFFSET_FROM=2000 OFFSET_TO=4900-->
+  <string name="TvWishListMP2.2000">TvWish-Liste - Entrée</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.2100">Menu Principal</string>
+  <string name="TvWishListMP2.2101">Précédent</string>
+  <string name="TvWishListMP2.2102">Prochain</string>
+  <string name="TvWishListMP2.2103">Nouveau</string>
+  <string name="TvWishListMP2.2104">Effacer</string>
+  <string name="TvWishListMP2.2105">Sauvegarder</string>
+  <string name="TvWishListMP2.2106">Annuler tout</string>
+  <string name="TvWishListMP2.2107">Plus</string>
+  <!--Delete-->
+  <string name="TvWishListMP2.2200">TvWish a été effacé</string>
+  <string name="TvWishListMP2.2201">Erreur: les données de TvWish n\'ont pu être effacées</string>
+  <!--Save-->
+  <string name="TvWishListMP2.2300">Les données de TvWish ont été sauvegardées</string>
+  <string name="TvWishListMP2.2301">Erreur: les données de TvWish n\'ont pu être sauvées</string>
+  <!--Cancel-->
+  <string name="TvWishListMP2.2400">Les données de TvWish ont été chargées</string>
+  <string name="TvWishListMP2.2401">Les données de TvWish n\'ont pu être chargées</string>
+  <!--More  Menu-->
+  <string name="TvWishListMP2.2450">Tous les items</string>
+  <string name="TvWishListMP2.2451">Eléments définis par l\'utilisateur</string>
+  <string name="TvWishListMP2.2453">Copie de TvWish actuelle vers un autre mode</string>
+  <string name="TvWishListMP2.2454">{0} TvWish copiée(s) vers un autre mode</string>
+  <string name="TvWishListMP2.2455">Echec lors de la copie de TvWish vers un autre mode</string>
+  <string name="TvWishListMP2.2456">Cloner TvWish</string>
+  <string name="TvWishListMP2.2457">TvWish cloné</string>
+  <string name="TvWishListMP2.2458">Le clonage de TvWish a échoué</string>
+  <!--Edit List Items-->
+  <string name="TvWishListMP2.2500">Activé: {0}</string>
+  <string name="TvWishListMP2.2501">Recherche pour: {0}</string>
+  <string name="TvWishListMP2.2502">Concordance de: {0}</string>
+  <string name="TvWishListMP2.2503">Utiliser uniquement le groupe:{0}</string>
+  <string name="TvWishListMP2.2504">Enregistrer comme: {0}</string>
+  <string name="TvWishListMP2.2505">Et réaliser l\'action: {0}</string>
+  <string name="TvWishListMP2.2506">Mais exclure:{0}</string>
+  <string name="TvWishListMP2.2507">Hits:{0} (réinitialiser les Hits)</string>
+  <string name="TvWishListMP2.2508">Enregistrer à l\'avance: {0} Minutes</string>
+  <string name="TvWishListMP2.2509">Et prolonger l\'enregistrement de: {0}</string>
+  <string name="TvWishListMP2.2510">Filtrer par épisode: {0}</string>
+  <string name="TvWishListMP2.2511">Filtrer par parties: {0}</string>
+  <string name="TvWishListMP2.2512">Filtrer par numéro: {0}</string>
+  <string name="TvWishListMP2.2513">Filtrer par le numéro de la série:{0}</string>
+  <string name="TvWishListMP2.2514">Conserver: {0} enregistrements</string>
+  <string name="TvWishListMP2.2515">Jusqu\'à: {0}</string>
+  <string name="TvWishListMP2.2516">Carte recommandée: {0}</string>
+  <string name="TvWishListMP2.2517">Définir la priorité: {0} (Min 0, Max9)</string>
+  <string name="TvWishListMP2.2518">Avant l\'heure: {0}</string>
+  <string name="TvWishListMP2.2519">Et après l\'heure: {0}</string>
+  <string name="TvWishListMP2.2520">Après et jusqu\'au jour de le semaine: {0}</string>
+  <string name="TvWishListMP2.2521">Avant et jusqu\'au jour de le semaine: {0}</string>
+  <string name="TvWishListMP2.2522">Et seulement la chaine {0}</string>
+  <string name="TvWishListMP2.2524">Intitulé: {0}</string>
+  <string name="TvWishListMP2.2525">Tranférer les enregistrements vers le dossier {0}</string>
+  <string name="TvWishListMP2.2526">Montrer uniquement pour les {0} prochaines heures </string>
+  <string name="TvWishListMP2.2533">Utiliser les critères d\'appariements des épisodes: {0}</string>
+  <string name="TvWishListMP2.2534">Préférer le groupe de chaines: {0}</string>
+  <string name="TvWishListMP2.2535">Y compris les enregistrements: {0}</string>
+  <!--MatchType-->
+  <string name="TvWishListMP2.2600">Titre Partiel</string>
+  <string name="TvWishListMP2.2601">Titre Complet</string>
+  <string name="TvWishListMP2.2602">Texte Partiel</string>
+  <string name="TvWishListMP2.2603">Mot dans le titre</string>
+  <string name="TvWishListMP2.2604">Mot dans le texte</string>
+  <string name="TvWishListMP2.2605">Mot dans le texte/titre</string>
+  <string name="TvWishListMP2.2606">Expression</string>
+  <!--RecordType-->
+  <string name="TvWishListMP2.2650">Une seule fois</string>
+  <string name="TvWishListMP2.2651">La totalité</string>
+  <string name="TvWishListMP2.2652">Tout sur la même chaine</string>
+  <string name="TvWishListMP2.2653">Tout sur la même chaine et le même jour</string>
+  <string name="TvWishListMP2.2654">Tout sur le même chaine et à la même heure</string>
+  <string name="TvWishListMP2.2655">Tout sur la même chaine, le même jour et à la même heure</string>
+  <!--Action-->
+  <string name="TvWishListMP2.2700">Enregistrement</string>
+  <string name="TvWishListMP2.2701">Email</string>
+  <string name="TvWishListMP2.2702">Email et enregistrement</string>
+  <string name="TvWishListMP2.2703">Vue</string>
+  <!--Days-->
+  <string name="TvWishListMP2.2750">Lundi</string>
+  <string name="TvWishListMP2.2751">Mardi</string>
+  <string name="TvWishListMP2.2752">Mercredi</string>
+  <string name="TvWishListMP2.2753">Jeudi</string>
+  <string name="TvWishListMP2.2754">Vendredi</string>
+  <string name="TvWishListMP2.2755">Samedi</string>
+  <string name="TvWishListMP2.2756">Dimanche</string>
+  <!--Dialog Headers for Edit Items-->
+  <string name="TvWishListMP2.2800">Activé</string>
+  <string name="TvWishListMP2.2801">Recherche pour</string>
+  <string name="TvWishListMP2.2802">Type d\'appariement</string>
+  <string name="TvWishListMP2.2803">Groupe</string>
+  <string name="TvWishListMP2.2804">Type d\'enregistrement</string>
+  <string name="TvWishListMP2.2805">Action</string>
+  <string name="TvWishListMP2.2806">Exclure</string>
+  <string name="TvWishListMP2.2807">Hits</string>
+  <string name="TvWishListMP2.2808">Délai avant l\'enregistrement</string>
+  <string name="TvWishListMP2.2809">Délai après l\'enregistrement</string>
+  <string name="TvWishListMP2.2810">Intitulé de l\'épisode</string>
+  <string name="TvWishListMP2.2811">Partie de l\'épisode</string>
+  <string name="TvWishListMP2.2812">Numéro de l\'épisode</string>
+  <string name="TvWishListMP2.2813">Numéro de la série</string>
+  <string name="TvWishListMP2.2814">Conserver les épisodes</string>
+  <string name="TvWishListMP2.2815">Conserver jusqu\'à</string>
+  <string name="TvWishListMP2.2816">Carte recommandée</string>
+  <string name="TvWishListMP2.2817">Priorité</string>
+  <string name="TvWishListMP2.2818">Après l\'heure</string>
+  <string name="TvWishListMP2.2819">Avant l\'heure</string>
+  <string name="TvWishListMP2.2820">Le jour d\'après</string>
+  <string name="TvWishListMP2.2821">le jour d\'avant</string>
+  <string name="TvWishListMP2.2822">Chaine</string>
+  <string name="TvWishListMP2.2823">Passer</string>
+  <string name="TvWishListMP2.2824">Nom</string>
+  <string name="TvWishListMP2.2825">Transférer les enregistrements vers le dossier</string>
+  <string name="TvWishListMP2.2826">Montrer uniquement pour les prochaines heures </string>
+  <string name="TvWishListMP2.2833">Modifier les critères d\'appariements des épisodes</string>
+  <string name="TvWishListMP2.2834">Préférer le groupe de chaines</string>
+  <string name="TvWishListMP2.2835">Y compris les enregistrements</string>
+  <!--Use Name Folder-->
+  <string name="TvWishListMP2.2850">Episode</string>
+  <string name="TvWishListMP2.2851">Nom de la TvWish</string>
+  <string name="TvWishListMP2.2852">Aucun</string>
+  <!--Keep Until-->
+  <string name="TvWishListMP2.2900">Toujours</string>
+  <string name="TvWishListMP2.2901">Jour après l\'enregistrement</string>
+  <string name="TvWishListMP2.2902">Semaines après l\'enregistrement</string>
+  <string name="TvWishListMP2.2903">Mois après l\'enregistrement</string>
+  <string name="TvWishListMP2.2904">Date</string>
+  <string name="TvWishListMP2.2905">Vue</string>
+  <string name="TvWishListMP2.2906">Espace nécessaire</string>
+  <string name="TvWishListMP2.2920">{0} jour(s) après l\'enregistrement</string>
+  <string name="TvWishListMP2.2921">{0} semaines après l\'enregistrement</string>
+  <string name="TvWishListMP2.2922">{0} mois après l\'enregistrement</string>
+  <!--DO NOT CHANGE FORMAT in 2923-->
+  <string name="TvWishListMP2.2923">Année-mois-jour</string>
+  <!--Change episode matching criteria-->
+  <string name="TvWishListMP2.2950">Passer la correspondance avec les descriptions de L\'EPG ? (Oui)</string>
+  <string name="TvWishListMP2.2951">Passer la correspondance avec les descriptions de L\'EPG ? (Non)</string>
+  <string name="TvWishListMP2.2952">Passer l\'appariement entre l\'intitulé des épisodes et les parties des épisodes ? (Oui)</string>
+  <string name="TvWishListMP2.2953">Passer l\'appariement entre l\'intitulé des épisodes et les parties des épisodes ? (Non)</string>
+  <string name="TvWishListMP2.2954">Passer l\'appariement entre les séries et les numéros d\'épisodes? (Oui)</string>
+  <string name="TvWishListMP2.2955">Passer l\'appariement entre les séries et le nombre d\'épisodes? (Non)</string>
+  <string name="TvWishListMP2.2960">Descrip.</string>
+  <string name="TvWishListMP2.2961">Nom</string>
+  <string name="TvWishListMP2.2962">Numéro</string>
+  <string name="TvWishListMP2.2970">Mettre tous les critères</string>
+  <string name="TvWishListMP2.2971">Aucun critère</string>
+  <!--************************************************************-->
+  <!--TV WishList - View Results-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.3000">TvWish-liste  - Résultats</string>
+  <string name="TvWishListMP2.3001">Programme</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.3100">Menu Principal</string>
+  <string name="TvWishListMP2.3101">Mise à jour</string>
+  <string name="TvWishListMP2.3102">Trier</string>
+  <string name="TvWishListMP2.3103">Filtrer</string>
+  <string name="TvWishListMP2.3104">Ordre du tri</string>
+  <!--Sort Menu-->
+  <string name="TvWishListMP2.3200">Menu du tri</string>
+  <string name="TvWishListMP2.3201">Titre</string>
+  <string name="TvWishListMP2.3202">Commencer</string>
+  <string name="TvWishListMP2.3203">Créé</string>
+  <string name="TvWishListMP2.3204">Genre</string>
+  <string name="TvWishListMP2.3205">Classification</string>
+  <string name="TvWishListMP2.3206">Note parentale</string>
+  <string name="TvWishListMP2.3207">Note</string>
+  <string name="TvWishListMP2.3208">Type</string>
+  <string name="TvWishListMP2.3209">Message</string>
+  <string name="TvWishListMP2.3210">Recherche de chaine alphanumérique</string>
+  <string name="TvWishListMP2.3211">Intitulé de l\'épisode</string>
+  <string name="TvWishListMP2.3212">Numéro de l\'épisode</string>
+  <string name="TvWishListMP2.3213">Partie de  l\'épisode</string>
+  <!--Filter Menu-->
+  <string name="TvWishListMP2.3250">Menu des filtres</string>
+  <string name="TvWishListMP2.3251">Vu</string>
+  <string name="TvWishListMP2.3252">Non vu</string>
+  <string name="TvWishListMP2.3253">Envoyé</string>
+  <string name="TvWishListMP2.3254">Non Envoyé</string>
+  <string name="TvWishListMP2.3255">Programmé</string>
+  <string name="TvWishListMP2.3256">Non programmé</string>
+  <string name="TvWishListMP2.3257">Enregistré</string>
+  <string name="TvWishListMP2.3258">Non enregistré</string>
+  <string name="TvWishListMP2.3259">Effacé</string>
+  <string name="TvWishListMP2.3260">Non effacé</string>
+  <string name="TvWishListMP2.3261">Conflits</string>
+  <string name="TvWishListMP2.3262">Aucun conflit</string>
+  <string name="TvWishListMP2.3263">Tout</string>
+  <string name="TvWishListMP2.3264">Aucun</string>
+  <!--Item Menu-->
+  <string name="TvWishListMP2.3500">Accéder à TV</string>
+  <string name="TvWishListMP2.3501">Effacer la programmation</string>
+  <string name="TvWishListMP2.3502">Programmation</string>
+  <string name="TvWishListMP2.3503">Effacer le message</string>
+  <string name="TvWishListMP2.3504">effacer les enregistrements et films</string>
+  <string name="TvWishListMP2.3505">Accéder aux enregistrements</string>
+  <string name="TvWishListMP2.3506">Accéder aux vidéos</string>
+  <string name="TvWishListMP2.3507">Accéder aux séries</string>
+  <string name="TvWishListMP2.3508">Accéder à l\'EPG</string>
+  <!--Item Status-->
+  <string name="TvWishListMP2.3600">Une programmation a été ajoutée</string>
+  <string name="TvWishListMP2.3601">L\'ajout de la programmation a échoué</string>
+  <string name="TvWishListMP2.3602">La programmation a été supprimée</string>
+  <string name="TvWishListMP2.3603">La suppression de la programmation a échoué</string>
+  <string name="TvWishListMP2.3604">Le message a été effacé</string>
+  <string name="TvWishListMP2.3605">La suppresion du message a échoué</string>
+  <string name="TvWishListMP2.3606">L\'enregistrement a été effacé</string>
+  <string name="TvWishListMP2.3607">La suppression de l\'enregistrement a échoué</string>
+  <string name="TvWishListMP2.3608">Voulez vous effacer le fichier</string>
+  <!--Message Changes-->
+  <string name="TvWishListMP2.3650">Le fichier {0} a {1} GB</string>
+  <string name="TvWishListMP2.3651">Le fichier a été effacé</string>
+  <string name="TvWishListMP2.3652">L\'ordre du tri est ascendant</string>
+  <string name="TvWishListMP2.3653">L\'ordre du tri est descendant</string>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Message Format Data 3900-3905:
+        //  {0}  Title
+        //  {1}  Description
+        //  {2}  Channel
+        //  {3}  Start
+        //  {4}  End
+        //  {5}  EpisodeName
+        //  {6}  EpisodeNum
+        //  {7}  EpisodeNumber
+        //  {8}  EpisodePart
+        //  {9}  Genre
+        //  {10} Classification
+        //  {11} OriginalAirDate
+        //  {12} ParentalRating
+        //  {13} SeriesNum
+        //  {14} StarRating
+        //  {15} type
+        //  {16} channel_id
+        //  {17} created
+        //  {18} searchstring
+        //  {19} tvwish_id
+        //  {20} recording_id
+        //  {21} Message   
+        //  <br>   new line-->
+  <!--Found Format for 16:9 skins Email Mode-->
+  <string name="TvWishListMP2.3900">{21}\n Titre: {0}\n Chaine: {2}\n Début: {3}\n Fin: {4}\n Type: {15}\n Description: {1}\n \n Genre: {9}\n Classification: {10}\n Note parentale: {12}\n Note: {14}\n Partie de l\'épisode: {8}\n Intitulé de l\'épisode: {5}\n Numéro de l\'épisode: {6}\n Recherché par: {18} sur {17}\n ID de TvWish={19}\n ID de l\'enregistrement={20}\n ID de la Chaine={16}\n \n\n</string>
+  <!--Found Format for 4:3 skins Email Mode-->
+  <string name="TvWishListMP2.3902">{21} Titre: {0} Chaine: {2} Début: {3} Fin: {4} Type: {15}\n Description: {1}\n Genre: {9} Classification: {10} Note Parentale: {12} Note: {14} Partie de l\'épisode: {8} Intitulé de l\'épisode: {5} Numéro de l\'épisode: {6} Recherché par: {18} sur {17}\n ID de TvWish={19} ID de l\'enregistrement={20} ID de la chaine={16}\n\n</string>
+  <!--Found Format for 16:9 skins View Only Mode-->
+  <string name="TvWishListMP2.3901">{21}\n Titre: {0}\n Chaine: {2}\n Début: {3}\n Fin: {4}\n Type: {15}\n Description: {1}\n \n Genre: {9}\n Classification: {10}\n Note parentale: {12}\n Note: {14}\n Partie de l\'épisode: {8}\n Intitulé de l\'épisode: {5}\n Numéro de l\'épisode: {6}\n Recherché par: {18} on {17}\n ID de TvWish={19}\n ID de l\'enregistremen={20}\n ID de la chaine={16}\n \n\n</string>
+  <!--Found Format for 4:3 skins View Only Mode-->
+  <string name="TvWishListMP2.3903">{21} Titre: {0} Chaine: {2} Début: {3} Fin: {4} Type: {15}\n Description: {1}\n Genre: {9} Classification: {10} Note Parentale: {12} Star Note: {14} Partie de l\"épisode: {8} Intitulé de l\'épisode: {5} Numéro de l\'épisode: {6} Recherché par: {18} sur {17}\n ID de TvWish={19} ID  de l\'enregistrement={20} ID de la chaine={16}\n\n</string>
+  <!--List Item Format Email Mode - use "||" to change alignment between left and right border-->
+  <string name="TvWishListMP2.3904">{0} || {3}</string>
+  <!--List Item Format ViewOnly Mode-->
+  <string name="TvWishListMP2.3905">{0} || {3}</string>
+  <!--************************************************************-->
+  <!--General-->
+  <!--************************************************************-->
+  <!--Bool-->
+  <string name="TvWishListMP2.4000">Vrai</string>
+  <string name="TvWishListMP2.4001">Faux</string>
+  <!--Default Data TvWish-->
+  <string name="TvWishListMP2.4100">Tout</string>
+  <string name="TvWishListMP2.4101">Toujours</string>
+  <string name="TvWishListMP2.4102">Personnaliser</string>
+  <string name="TvWishListMP2.4103">Aucun</string>
+  <string name="TvWishListMP2.4104">Toutes les chaines</string>
+  <string name="TvWishListMP2.4105">Tout</string>
+  <!--Mode Header-->
+  <string name="TvWishListMP2.4200">Mode enregistrement et Email</string>
+  <string name="TvWishListMP2.4201">Mode Vu uniquement</string>
+  <!--Errors-->
+  <string name="TvWishListMP2.4300">Consulter le fichier Log de Mediaportal</string>
+  <string name="TvWishListMP2.4301">Aucun élément trouvé</string>
+  <string name="TvWishListMP2.4302">Erreur lors de la création de la liste d\'éléments</string>
+  <string name="TvWishListMP2.4303">Aucun numéro</string>
+  <string name="TvWishListMP2.4304">Format invalide</string>
+  <string name="TvWishListMP2.4305">Erreur</string>
+  <string name="TvWishListMP2.4306">Le plugin TVWish-Liste de Mediaportal n\'arrive pas à \n fonctionner avec le plugin TvWish-liste du serveur TV</string>
+  <string name="TvWishListMP2.4307">Le dossier des enregistrements a du être changé \n comme dossier des épisodes</string>
+  <string name="TvWishListMP2.4311">TvWish-liste  est en occupée \n par un autre processus \n Réessayez plus tard \n Si l\'autre processus ne peut se pas terminer \n SVP, redémarrer le système \n ou arrêter manuellement le serveur Tv</string>
+  <string name="TvWishListMP2.4312">Délai dépassé:. Essayez de redémarrer votre serveur \n si cela se reproduit, essayer d\'augmenter la valeur du délai dans les paramètres Experts</string>
+  <!--Others-->
+  <string name="TvWishListMP2.4400">Info</string>
+  <string name="TvWishListMP2.4401">Attention</string>
+  <string name="TvWishListMP2.4402">Oui</string>
+  <string name="TvWishListMP2.4403">Non</string>
+  <string name="TvWishListMP2.4404">La totalité des TvWish</string>
+  <string name="TvWishListMP2.4405">TvWish: {0}</string>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Date Time Format for all modules
+        //   {0:0000} year
+        //   {1:00}   month
+        //   {2:00}   day
+        //   {3:00}   hour
+        //   {4:00}   minute
+        //   {5:00}   second
+        //   {6}      timeofday
+        //   {7}      date-->
+  <string name="TvWishListMP2.4900">{1:00}/{2:00}/{0:00} à {3:00}:{4:00}</string>
+  <!--************************************************************-->
+  <!--Config Main MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:5000 -->
+  <string name="TvWishListMP2.ConfigMain_GUI">Configuration principale</string>
+  <!-- MP1STR:5001 -->
+  <string name="TvWishListMP2.ConfigMain_GUI_Help">Configurer les paramètres principaux</string>
+  <!-- MP1STR:5050 -->
+  <string name="TvWishListMP2.ConfigTvserver">Avant d\'utiliser le plugin, vous devez configurer et tester le plugin TvWish Tvserveur</string>
+  <string name="TvWishListMP2.5051">Avant d\'utiliser le plugin, vous devez </string>
+  <string name="TvWishListMP2.5052">configurer et tester le plugin TvWish Tvserveur</string>
+  <!-- MP1STR:5100 -->
+  <string name="TvWishListMP2.CancelButtonText">Abandonner</string>
+  <!-- MP1STR:5101 -->
+  <string name="TvWishListMP2.SaveButtonText">Sauvegarder</string>
+  <!-- MP1STR:5102 -->
+  <string name="TvWishListMP2.HelpButtonText">Aide</string>
+  <!-- MP1STR:5200 -->
+  <string name="TvWishListMP2.Verbose">Débuger</string>
+  <!-- MP1STR:5201 -->
+  <string name="TvWishListMP2.DisableQuickMenu">Désactiver le menu rapide de TvWish</string>
+  <!-- MP1STR:5202 -->
+  <string name="TvWishListMP2.TimeOut">Délai dépassé</string>
+  <!-- MP1STR:5203 -->
+  <string name="TvWishListMP2.TimeOutDescription">Modifier le délai (60), seulement si des erreurs de délais apparaissent</string>
+  <!-- MP1STR:5204 -->
+  <string name="TvWishListMP2.SaveToTvServer">Ceci va sauvegarder vos paramètres Client sur le serveur TV</string>
+  <!-- MP1STR:5205 -->
+  <string name="TvWishListMP2.LoadFromTvServer">Ceci va charger vos paramètres Client depuis le serveur TV</string>
+  <!-- MP1STR:5206 -->
+  <string name="TvWishListMP2.DisableInfoWindows">Désactiver les messages d\'info de Windows</string>
+  <!-- MP1STR:5207 -->
+  <string name="TvWishListMP2.Load">Charger</string>
+  <!-- MP1STR:5208 -->
+  <string name="TvWishListMP2.SaveLoad">Sauvegarder/Charger les paramètres Client sur/depuis le serveur TV</string>
+  <!-- MP1STR:5209 -->
+  <string name="TvWishListMP2.SaveQuestion">Voulez vous sauvegarder les paramètres  Client sur le serveur TV, et écrasez les paramètres précédents?</string>
+  <!-- MP1STR:5210 -->
+  <string name="TvWishListMP2.LoadQuestion">Voulez vous charger les paramètres  Client depuis le serveur TV, et écrasez les paramètres en cours? </string>
+  <!-- MP1STR:5211 -->
+  <string name="TvWishListMP2.SaveToTV">Sauvegarder vers le serveur TV</string>
+  <!-- MP1STR:5212 -->
+  <string name="TvWishListMP2.LoadFromTV">Charger depuis le serveur TV</string>
+  <!-- MP1STR:5213 -->
+  <string name="TvWishListMP2.LoadComplete">Les paramètres Client ont été chargés depuis le serveur TV</string>
+  <!-- MP1STR:5214 -->
+  <string name="TvWishListMP2.LoadError">Les paramètres Client n\'ont pu être chargés depuis le serveur TV</string>
+  <!-- MP1STR:5215 -->
+  <string name="TvWishListMP2.SaveComplete">Les paramètres  Client ont été sauvegardés sur le serveur TV</string>
+  <!-- MP1STR:5216 -->
+  <string name="TvWishListMP2.SaveError">Les paramètres Client n\'ont pu être sauvegardés sur le serveur TV</string>
+  <!--************************************************************-->
+  <!--Config Filter MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:6000 -->
+  <string name="TvWishListMP2.ConfigFilter_GUI">Configuration du filtre</string>
+  <!-- MP1STR:6001 -->
+  <string name="TvWishListMP2.ConfigFilter_GUI_Help">Configurer les paramètres du filtre. Tous les éléments sélectionnés seront activée pour l\'édition d\'un tvwish. Les éléments désactivés auront des valeurs définies par défaut.</string>
+  <!-- MP1STR:6100 -->
+  <string name="TvWishListMP2.SelectItemLabel">Sélectionnez les éléments du filtre que vous souhaitez modifier</string>
+  <!-- MP1STR:6101 -->
+  <string name="TvWishListMP2.UnSelectItemLabel">Les éléments non sélectionnés ne peuvent pas être modifiés par TvWish, et leurs valeurs seront définies par défaut</string>
+  <!-- MP1STR:6200 -->
+  <string name="TvWishListMP2.AllButtonText">La totalité</string>
+  <!-- MP1STR:6201 -->
+  <string name="TvWishListMP2.NoneButtonText">Aucun</string>
+  <!-- MP1STR:6202 -->
+  <string name="TvWishListMP2.DefaultsButtonText">Par défaut</string>
+  <!-- MP1STR:6203 -->
+  <string name="TvWishListMP2.DefaultsQuestion">La remise à zéro écrasera toutes les configurations y compris les vôtres - voulez vous continuer?</string>
+  <!--************************************************************-->
+  <!--Config Defaults MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:7000 -->
+  <string name="TvWishListMP2.ConfigDefaults_GUI">Configuration par défaut</string>
+  <!-- MP1STR:7001 -->
+  <string name="TvWishListMP2.ConfigDefaults_GUI_Help">Configure les paramètres par défaut. Ils seront utilisés pour chaque nouvelle TvWish. Les éléments désactivés auront comme valeurs, celles  définies par défaut.</string>
+  <string name="TvWishListMP2.7002">Vérifier les anomalies</string>
+  <!--************************************************************-->
+  <!--Config Formats MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:8000 -->
+  <string name="TvWishListMP2.ConfigFormats_GUI">Configuration des Formats</string>
+  <!-- MP1STR:8001 -->
+  <string name="TvWishListMP2.ConfigFormats_GUI_Help">Configurer les paramètres de Format. Les formats non paramétrés utiliseront les formats définis dans les fichiers de langue</string>
+  <!-- MP1STR:8100 -->
+  <string name="TvWishListMP2.DateAndTimeFormat">Format de la date de de l\'heure</string>
+  <!-- MP1STR:8101 -->
+  <string name="TvWishListMP2.MainItemFormat">Format des éléments du menu principal</string>
+  <!-- MP1STR:8103 -->
+  <string name="TvWishListMP2.MainTextBoxFormat">Format du texte du menu principal</string>
+  <!-- MP1STR:8104 -->
+  <string name="TvWishListMP2.ResultTextBoxFormat">Format du texte du menu résultats</string>
+  <!-- MP1STR:8106 -->
+  <string name="TvWishListMP2.GroupboxListItemFormats">Formats des éléments de liste</string>
+  <!-- MP1STR:8107 -->
+  <string name="TvWishListMP2.GroupboxEmailAndRecordModus">Email et Enregistrement Modus</string>
+  <!-- MP1STR:8108 -->
+  <string name="TvWishListMP2.GroupboxViewOnlyModus">Uniquement la vu Modus</string>
+  <!-- MP1STR:8109 -->
+  <string name="TvWishListMP2.FormatExpertLabel">Les formats peuvent être changé, recommandé pour des utilisateurs experts. les champs non définis le seront à partir du fichier langue original</string>
+  <string name="TvWishListMP2.8110">Les formats peuvent être changé, recommandé pour des utilisateurs experts</string>
+  <string name="TvWishListMP2.8111">Les champs non définies utiliseront les valeurs par défaut du fichier de langue</string>
+  <!--************************************************************-->
+  <!--TV Server Run EPG Messages-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=10000 TO=10300 OFFSET_FROM=0 OFFSET_TO=300-->
+  <string name="TvWishListMP2.10001">En attente de processus {0} à terminer</string>
+  <string name="TvWishListMP2.10002">Erreur: TvWish ne peut terminer certains processus - Redémarrer votre ordinateur</string>
+  <string name="TvWishListMP2.10003">Lecture des paramètres de données</string>
+  <string name="TvWishListMP2.10004">Récupération de messages</string>
+  <string name="TvWishListMP2.10005">Récupérations de TvWihs</string>
+  <string name="TvWishListMP2.10006">Recherche pour {0}</string>
+  <string name="TvWishListMP2.10007">Envoie d\'email vers {0}</string>
+  <string name="TvWishListMP2.10008">Erreur: Aucun Serveur Smtp  défini</string>
+  <string name="TvWishListMP2.10009">Erreur: Aucun nom d\'utilisateur défini</string>
+  <string name="TvWishListMP2.10010">Erreur: Aucun mot de passe défini</string>
+  <string name="TvWishListMP2.10011">Erreur: Aucune adresse email définie</string>
+  <string name="TvWishListMP2.10012">Erreur: Les paramètres du fournisseurs non valides</string>
+  <string name="TvWishListMP2.10013">Erreur: Absence d\'adresse pour le serveur </string>
+  <string name="TvWishListMP2.10014">Erreur: Impossible de se connecter au serveur POP3</string>
+  <string name="TvWishListMP2.10015">Erreur: Aucun port Smtp défini</string>
+  <string name="TvWishListMP2.10016">Envoie d\'emails de rappel effectué</string>
+  <string name="TvWishListMP2.10017">Erreur: L\'envoi d\'email de rappel a échoué - vérifier le nom d\'utilisateur</string>
+  <string name="TvWishListMP2.10018">Erreur: L\'envoi d\'email de rappel a échoué - vérifier le mot de passe</string>
+  <string name="TvWishListMP2.10019">Erreur: L\'envoi d\'email de rappel a échoué</string>
+  <string name="TvWishListMP2.10020">Prêt</string>
+  <string name="TvWishListMP2.10021">{0} données de l\'EPG traitées sur {1} vers {2}</string>
+  <string name="TvWishListMP2.10022">Enregistrements effectués {0} sur {1}</string>
+  <string name="TvWishListMP2.10023">Erreur sur le mot de passe, SVP, entrer de nouveau le mot de passe</string>
+  <string name="TvWishListMP2.10024">Erreur fatale: vérifier le fichier log</string>
+  <string name="TvWishListMP2.10025">Erreur lors de la requête SQL - vérifier l\'expression {0}</string>
+  <!--************************************************************-->
+  <!--TV Server Message  Creation-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.10050">La programmation {0} ne correspond pas aux données de l\'EPG mais elle peut être correcte</string>
+  <string name="TvWishListMP2.10051">La programmation {0} ne correspond pas aux données de l\'EPG - vérifier vos programmations pour d\'éventuels conflits</string>
+  <string name="TvWishListMP2.10052">La programmation {0} ne correspond pas aux données de l\'EPG - vérifier vos programmations pour d\'éventuels conflits</string>
+  <string name="TvWishListMP2.10053">Les données de l\'EPG ont changé pour l\'épisode /sa description ou l\'heure, suppression de la programmation actuel en essayant de le reporter</string>
+  <string name="TvWishListMP2.10054">Le conflit de programmation doit être résolu manuellement</string>
+  <string name="TvWishListMP2.10055">Programmation {0} supprimée en raison d\'une condition du filtre {1}</string>
+  <string name="TvWishListMP2.10056">Programmation {0} supprimée en raison d\'une condition du filtre mot</string>
+  <string name="TvWishListMP2.10057">Programmation {0} supprimée en raison d\'une condition du filtre mot</string>
+  <string name="TvWishListMP2.10058">Le nombre maximum de programmations ({0}) est atteint. Les prochaines programmations ne seront pas prises en compte</string>
+  <string name="TvWishListMP2.10059">{0} avec {1} GB</string>
+  <string name="TvWishListMP2.10060">L\"ajout de la programmation {0} a échoué</string>
+  <string name="TvWishListMP2.10061">Impossible de créer la programmation {0}</string>
+  <string name="TvWishListMP2.10062">La programmation {0} est déjà prévu</string>
+  <string name="TvWishListMP2.10063">La programmation {0} n\'a pas été effectuée car elle n\'est pas entre {1} et {2}</string>
+  <string name="TvWishListMP2.10064">La programmation {0} n\'a pas été effectuée car elle n\'est pas entre {1} et {2}</string>
+  <string name="TvWishListMP2.10065">La programmation {0} n\'a pas été effectuée car il n\'y a pas de correspondance dans les prochaines heures {1}</string>
+  <string name="TvWishListMP2.10066">La programmation {0} n\'a pu être effectuée car il n\'y a pas de correspondance avec le filtre chaine {1} </string>
+  <string name="TvWishListMP2.10067">La programmation {0} n\'a pas été effectuée car il n\'y a pas de correspondance avec la partie de l\'épisode désiré {1} </string>
+  <string name="TvWishListMP2.10068">La programmation {0} n\'a pas été effectuée car il n\'y a pas de correspondance avec l\'intitulé de l\'épisode {1} </string>
+  <string name="TvWishListMP2.10069">La programmation {0} n\'a pas été effectuée car il n\'y a pas de correspondance avec le numéro de la série {1} </string>
+  <string name="TvWishListMP2.10070">La programmation {0} n\'a pas été effectuée car il n\'y a pas de correspondance avec le numéro de l\'épisode désiré {1} </string>
+  <string name="TvWishListMP2.10071">La programmation {0} est déjà enregistrée</string>
+  <string name="TvWishListMP2.10072">La programmation {0} a été effacée et ne sera pas effectué</string>
+  <string name="TvWishListMP2.10073">L\'heure du début de la programmation {0} est dépassé - Programmation impossible</string>
+  <string name="TvWishListMP2.10074">Programmations identiques {0} trouvées - passer</string>
+  <string name="TvWishListMP2.10075">Il existe des conflits pour la programmation {0}, celle ci ne peut être enregistrée</string>
+  <string name="TvWishListMP2.10076">Suppression de la programmation {0}, car elle est en priorité basse</string>
+  <string name="TvWishListMP2.10077">La priorité de la programmation {0} est trop  basse pour résoudre le conflit - passer</string>
+  <string name="TvWishListMP2.10078">Une meilleure programmation existe dans le Groupe Préféré</string>
+  <!--Email Format Default - will be sent with each email for a found program (use format entries from message format at 3900)-->
+  <string name="TvWishListMP2.10090">NOUVELLE ENTREE\n Titre={0}\n Description={1}\n Chaine={2}\n Début={3}\n Fin={4}\n Type={15}\n Créé={17}\n \n \n</string>
+  <string name="TvWishListMP2.10091">{1:00}/{2:00} à {3:00}:{4:00}</string>
+  <!--************************************************************-->
+  <!--TV Server Configuration-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.10100">Principal</string>
+  <string name="TvWishListMP2.10101">Facile</string>
+  <string name="TvWishListMP2.10102">Expert</string>
+  <string name="TvWishListMP2.10103">Monter </string>
+  <string name="TvWishListMP2.10104">Descendre</string>
+  <string name="TvWishListMP2.10105">Effacer</string>
+  <string name="TvWishListMP2.10106">Abandonner</string>
+  <string name="TvWishListMP2.10107">Défaut</string>
+  <string name="TvWishListMP2.10108">Aide</string>
+  <string name="TvWishListMP2.10109">Mode debug</string>
+  <string name="TvWishListMP2.10110">Page d\'accueil de TvWish-liste</string>
+  <string name="TvWishListMP2.10111">La totalité activée</string>
+  <string name="TvWishListMP2.10112">La totalité inactivée</string>
+  <string name="TvWishListMP2.10113">Passer la totalité</string>
+  <string name="TvWishListMP2.10114">Ne passer aucun</string>
+  <string name="TvWishListMP2.10115">Filtre de chaine</string>
+  <string name="TvWishListMP2.10130">Courriel</string>
+  <string name="TvWishListMP2.10131">Compte</string>
+  <string name="TvWishListMP2.10132">Nom d\'utilisateur</string>
+  <string name="TvWishListMP2.10133">Mot de passe</string>
+  <string name="TvWishListMP2.10134">Répéter le mot de passe</string>
+  <string name="TvWishListMP2.10135">Adresse du courriel</string>
+  <string name="TvWishListMP2.10136">Seulement si différent du nom de l\'utilisateur</string>
+  <string name="TvWishListMP2.10137">Rechercher maintenant</string>
+  <string name="TvWishListMP2.10138">Adresse</string>
+  <string name="TvWishListMP2.10139">Boite aux lettres</string>
+  <string name="TvWishListMP2.10140">Test d\'envoi d\'un courriel</string>
+  <string name="TvWishListMP2.10141">SMTP</string>
+  <string name="TvWishListMP2.10142">Fournisseur</string>
+  <string name="TvWishListMP2.10143">Port</string>
+  <string name="TvWishListMP2.10144">Serveur SMTP</string>
+  <string name="TvWishListMP2.10145">SSL</string>
+  <string name="TvWishListMP2.10146">Activer la réponse au courriel</string>
+  <string name="TvWishListMP2.10147">Seulement les nouveaux Emails</string>
+  <string name="TvWishListMP2.10160">Paramètres</string>
+  <string name="TvWishListMP2.10161">Vérifier L\'EPG</string>
+  <string name="TvWishListMP2.10162">Lundi</string>
+  <string name="TvWishListMP2.10163">Mardi</string>
+  <string name="TvWishListMP2.10164">Mercredi</string>
+  <string name="TvWishListMP2.10165">Jeudi</string>
+  <string name="TvWishListMP2.10166">Vendredi</string>
+  <string name="TvWishListMP2.10167">Samedi</string>
+  <string name="TvWishListMP2.10168">Dimanche</string>
+  <string name="TvWishListMP2.10169">Chaque</string>
+  <string name="TvWishListMP2.10170">Jours</string>
+  <string name="TvWishListMP2.10171">Heures</string>
+  <string name="TvWishListMP2.10172">Minutes</string>
+  <string name="TvWishListMP2.10173">Vers</string>
+  <string name="TvWishListMP2.10174">Vérifier l\'EPG</string>
+  <string name="TvWishListMP2.10175">Avant chaque programmation</string>
+  <string name="TvWishListMP2.10177">Critère de correspondance pour les films/épisodes en double</string>
+  <string name="TvWishListMP2.10179">Autres Options</string>
+  <string name="TvWishListMP2.10180">Enregistrements automatiques</string>
+  <string name="TvWishListMP2.10181">Conflits dans la programmation</string>
+  <string name="TvWishListMP2.10183">Restaurer les valeurs par défaut</string>
+  <string name="TvWishListMP2.10184">CPU lent</string>
+  <string name="TvWishListMP2.10187">Mois</string>
+  <string name="TvWishListMP2.10188">Maximum de programmations par TvWish</string>
+  <!--Date Time Format with 10189-10191 combined-->
+  <string name="TvWishListMP2.10189">Mois/jours/année</string>
+  <string name="TvWishListMP2.10190">Heure:minute</string>
+  <string name="TvWishListMP2.10191">{0} à {1}</string>
+  <string name="TvWishListMP2.10193">EPG</string>
+  <string name="TvWishListMP2.10200">Formats</string>
+  <string name="TvWishListMP2.10201">Format de la date et de l\'heure pour les courriels</string>
+  <string name="TvWishListMP2.10202">Format du courriel</string>
+  <string name="TvWishListMP2.10203">Langue du fichier</string>
+  <string name="TvWishListMP2.10204">Critères de tri</string>
+  <string name="TvWishListMP2.10205">Les utilisateurs expérimentés peuvent personnaliser leurs courriels à  envoyer</string>
+  <string name="TvWishListMP2.10206">Trie descendant</string>
+  <string name="TvWishListMP2.10207">Critères pour filtrer</string>
+  <string name="TvWishListMP2.10208">Courriel</string>
+  <string name="TvWishListMP2.10209">Enregistrement</string>
+  <string name="TvWishListMP2.10210">Conflts</string>
+  <string name="TvWishListMP2.10211">Effacer tous les messages</string>
+  <string name="TvWishListMP2.10250">En attente de processus à terminer depuis {0}. Réessayer plus tard. Si les processus restent bloquer, redémarrez votre ordinateur ou arrêter manuellement votre Serveur Tv</string>
+  <string name="TvWishListMP2.10251">Fermeture de la configuration TvWish</string>
+  <string name="TvWishListMP2.10252">Traitement en cours - SVP attendez la fin</string>
+  <string name="TvWishListMP2.10253">Succès</string>
+  <string name="TvWishListMP2.10254">Echec lors  de l\'envoie des courriels</string>
+  <string name="TvWishListMP2.10255">Minimum {0} est {1}</string>
+  <string name="TvWishListMP2.10256">Maximum {0} est {1}</string>
+  <string name="TvWishListMP2.10257">Impossible d\'ouvrir {0}</string>
+  <string name="TvWishListMP2.10258">Voulez-vous supprimer tous vos messages? ATTENTION: Cette opération efface l\'historique des messages, y compris les messages supprimés. Assurez-vous que le plugin TvWishListMP MediaPortal est fermé! \"</string>
+  <string name="TvWishListMP2.10259">Messages effacés</string>
+  <string name="TvWishListMP2.10260">Opération abandonnée</string>
+  <string name="TvWishListMP2.10261">Voulez vous réaliser une restauration complète avec la configuration par défaut?  Ceci écrasera la configuration existant</string>
+  <string name="TvWishListMP2.10262">Vérifier votre nom d\'utilisateur et mot de passe \n Erreur Serveur:\n {0}</string>
+</resources>

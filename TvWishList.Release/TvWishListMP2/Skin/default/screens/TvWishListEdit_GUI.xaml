@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include
+    xmlns="www.team-mediaportal.com/2008/mpf/directx"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Source="screens\master_menu.xaml"
+    >
+    <Include.Resources>
+
+        <!-- Edit_GUI model -->
+
+        <Model x:Key="Edit_GUI_Model" Id="093c13ed-413e-4fc2-8db0-3eca69c09ad0"/>
+        <!-- HeaderText -->
+        <ResourceWrapper x:Key="Header_Text" EnableBindings="True"  Resource="{Binding Source={StaticResource Edit_GUI_Model}, Path=Header}"/>
+
+
+        <!-- Contents -->
+        <ControlTemplate x:Key="Contents_Template">
+            <!--<DockPanel  Context="{Binding Source={StaticResource Edit_GUI}, Path=Context}" LastChildFill="False">-->
+            <!--<DockPanel Context="{Model Id=093c13ed-413e-4fc2-8db0-3eca69c09ad0}" LastChildFill="False">-->
+
+            <!-- Context="{Model Id=093c13ed-413e-4fc2-8db0-3eca69c09ad0}"-->-->
+
+            <Grid DataContext="{Binding Source={StaticResource Edit_GUI_Model}}"  HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                
+                    <Label  Grid.Column="1" Grid.Row="0" Wrap="False" Scroll="Auto" Content="{Binding Modus}" Color="{ThemeResource TextColor}" FontSize="22"  HorizontalAlignment="Right"  VerticalAlignment="Top"/>
+
+                    <ListView Name="TestListView" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SkinItemList}" SelectionChanged="{CommandStencil Source={StaticResource Edit_GUI_Model}, Path=FocusedItemChanged}"  Style="{ThemeResource MenuListViewStyle}">
+                        <ListView.Resources>
+                            <CommandBridge x:Key="Menu_Command" Command="{Binding Path=Command,Mode=OneTime}"/>
+                        </ListView.Resources>
+                    </ListView>
+                 
+                    <Label Content="{Binding Status}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Wrap="False" Scroll="Auto" Color="{ThemeResource TextColor}" FontSize="22"  HorizontalAlignment="Left"/>
+                
+           
+                
+            </Grid>
+           <!-- </DockPanel>-->
+        </ControlTemplate>
+
+
+    </Include.Resources>
+</Include>

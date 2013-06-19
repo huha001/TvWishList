@@ -1,0 +1,36 @@
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\EmailRecorder.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\EmailRecorder.pdb
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\Gentle.Common.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\Gentle.Framework.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\PluginBase.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\SetupControls.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\TvBusinessLayer.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\TvControl.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\TVDatabase.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\TvLibrary.Interfaces.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\log4net.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\DirectShowLib.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\bin\Release\MySql.Data.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\obj\Release\SetupTv.Sections.myfirstTVpluginSetup.resources
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\obj\Release\EmailRecorder.csproj.GenerateResource.Cache
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\obj\Release\EmailRecorder.dll
+C:\Users\Hubert\AppData\Local\Temporary Projects\EmailRecorder\obj\Release\EmailRecorder.pdb
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\EmailRecorder.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\EmailRecorder.pdb
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\Gentle.Common.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\Gentle.Framework.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\PluginBase.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\SetupControls.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\TvBusinessLayer.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\TvControl.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\TVDatabase.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\TvLibrary.Interfaces.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\log4net.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\DirectShowLib.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\bin\Release\MySql.Data.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\obj\Release\SetupTv.Sections.myfirstTVpluginSetup.resources
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\obj\Release\EmailRecorder.csproj.GenerateResource.Cache
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\obj\Release\EmailRecorder.dll
+C:\Users\Hubert\Documents\Visual Studio 2008\Projects\EmailRecorder\EmailRecorder\obj\Release\EmailRecorder.pdb

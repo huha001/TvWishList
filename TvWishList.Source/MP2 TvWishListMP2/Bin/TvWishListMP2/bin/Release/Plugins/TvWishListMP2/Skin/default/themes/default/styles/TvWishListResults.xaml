@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="www.team-mediaportal.com/2008/mpf/directx"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System"
+    xmlns:collections="clr-namespace:MediaPortal.UI.Presentation.DataObjects;assembly=MediaPortal.UI"
+    xmlns:mp_special_controls="clr-namespace:MediaPortal.UI.SkinEngine.SpecialElements.Controls"
+    DependsOnStyleResources="Colors,Buttons,Consts,Brushes"
+    >
+
+
+    
+
+
+    <!-- An item list container represented by a standard "Button", scrolling its "ItemLabel" label when focused -->
+
+
+    <!--DefaultMenuItemContainerStyle-->
+    <Style x:Key="TvWishListResultsDefaultMenuItemContainerStyle" BasedOn="{ThemeResource DefaultItemContainerStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListViewItem}">
+
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <!--labels-->
+                            
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Style="{ThemeResource ButtonWideStyle}"
+                                Command="{DynamicResource ResourceKey=Menu_Command}"
+                                IsEnabled="{Binding Enabled}" SetFocus="{Binding Path=Selected,Mode=OneTime}">
+                            <Button.Triggers>
+                                <Trigger Property="HasFocus" Value="True">
+                                    <Setter TargetName="TvWishListResultItemLabel" Property="Scroll" Value="Auto"/>
+                                </Trigger>
+                            </Button.Triggers>
+                        </Button>
+                        
+
+                    </Grid>
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
+    <DataTemplate x:Key="TvWishListResultsDefaultItemDataTemplate" DataType="{x:Type collections:ListItem}">
+        <Grid x:Name="TvWishItemControl"  VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <!--<ColumnDefinition Width="Auto"/>-->
+            </Grid.ColumnDefinitions>
+            <Label x:Name="TvWishListResultItemLabel"  Grid.Column="0" HorizontalAlignment="Left" Content="{Binding [Name]}" Color="{ThemeResource TextColor}"/>
+            <Label x:Name="TvWishListResultItemLabel2" Grid.Column="1" HorizontalAlignment="Right" Content="{Binding [Value]}" Color="{ThemeResource TextColor}"/>            
+            
+        </Grid>
+        <!--
+        <DataTemplate.Resources>
+            <Button x:Key="TvWishCounters" Content="{Binding [Value]}"/>
+        </DataTemplate.Resources>-->
+        
+    </DataTemplate>
+
+    <DataStringProvider x:Key="TvWishListResultsDefaultItemDataStringProvider" Path="[Name]"/>
+
+
+
+
+    <Style x:Key="TvWishListResultsMenuListViewStyle" BasedOn="{ThemeResource DefaultListViewStyle}">
+        <Setter Property="ItemTemplate" Value="{ThemeResource TvWishListResultsDefaultItemDataTemplate}"/>
+        <Setter Property="DataStringProvider" Value="{ThemeResource TvWishListResultsDefaultItemDataStringProvider}"/>
+        <Setter Property="ItemContainerStyle" Value="{ThemeResource TvWishListResultsDefaultMenuItemContainerStyle}"/>
+    </Style>
+
+
+
+
+
+</ResourceDictionary>

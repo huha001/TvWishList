@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include
+    xmlns="www.team-mediaportal.com/2008/mpf/directx"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Source="screens\master_dialog_bare.xaml"
+    >
+
+
+
+
+    <Include.Resources>
+
+
+        <!-- CustomSetup model -->
+        <Model x:Key="Model" Id="85295da2-829b-4e38-bdf0-e76f819fd6f5"/>
+
+        <!-- Header -->
+        <ResourceWrapper x:Key="Dialog_Header_Text" Resource="[TvWishListMP2.ConfigMain_GUI]"/>
+
+        <ControlTemplate x:Key="Contents_Template">
+            <!--<DockPanel  DataContext="{Binding Source={StaticResource Model}}">-->
+            <!--<DockPanel  Context="{Binding Source={StaticResource Model}, Path=Context}" LastChildFill="False">-->
+                <Grid DataContext="{Binding Source={StaticResource Model}}" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="750"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <!-- Label Text -->
+                        <RowDefinition Height="10"/>
+                        <!-- Empty -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- Checkbox -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- Checkbox -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- Checkbox -->
+                        <RowDefinition Height="10"/>
+                        <!-- Empty -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- Timeout -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- TextBox -->
+                        <RowDefinition Height="60"/>
+                        <!-- Warning -->
+                        <RowDefinition Height="10"/>
+                        <!-- Empty -->
+                        <RowDefinition Height="70"/>
+                        <!-- Tv server buttons -->
+                        <RowDefinition Height="10"/>
+                        <!-- Empty -->
+                        <RowDefinition Height="70"/>
+                        <!-- Buttons -->
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="Label_Config" Grid.Column="1" Grid.Row="0" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Wrap="True"  Scroll="Auto" Content="[TvWishListMP2.ConfigTvserver]" Color="{ThemeResource TextColor}"/>
+
+
+                    <CheckBox x:Name="CheckBox_Verbose" Margin="0,0,0,0" Grid.Column="1" Grid.Row="2" Content="[TvWishListMP2.Verbose]" IsChecked="{Binding Source={StaticResource Model},Path=Verbose,Mode=TwoWay}" />
+                    <CheckBox x:Name="CheckBox_DisableQuickMenu" Grid.Column="1" Grid.Row="3" Content="[TvWishListMP2.DisableQuickMenu]" IsChecked="{Binding Source={StaticResource Model},Path=DisableQuickMenu,Mode=TwoWay}" />
+                    <CheckBox x:Name="CheckBox_DisableInfoMenu" Grid.Column="1" Grid.Row="4" Content="[TvWishListMP2.DisableInfoWindows]" IsChecked="{Binding Source={StaticResource Model},Path=DisableInfoMenu,Mode=TwoWay}" />
+
+                    <Label x:Name="Label_TimeOut" Grid.Column="1" Grid.Row="6" Margin="0,0,0,0" Content="[TvWishListMP2.TimeOut]" Color="{ThemeResource TextColor}"/>
+                    <TextBox x:Name="TextBox_TimeOut" Grid.Column="1" Grid.Row="7" Margin="0,0,20,0" PreferredTextLength="6"  Text="{Binding Source={StaticResource Model},Path=TimeOut,Mode=TwoWay}"/>
+
+                    <Label x:Name="Label_TimeOutDescription" Grid.Column="1" Grid.Row="8" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Wrap="True" Scroll="Auto" Content="[TvWishListMP2.TimeOutDescription]" Color="{ThemeResource TextColor}"/>
+
+
+                <Grid Grid.Column="1" Grid.Row="10" Margin="-20,15,0,10" DataContext="{Binding Source={StaticResource Model}}" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="Auto"/> <!--Button-->
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/> <!--Button-->
+                            <ColumnDefinition Width="30"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"
+                                           />
+                        </Grid.RowDefinitions>
+
+
+                    <Button Grid.Column="1" Grid.Row="0"  Width="300"  Style="{ThemeResource ButtonWideStyle}" Content="[TvWishListMP2.SaveToTV]" HorizontalAlignment="Center">
+                            <Button.Command>
+                                <CommandList>
+                                    <Command Source="{StaticResource Model}" Path="ButtonTvServerSaveSettings"/>
+                                </CommandList>
+                            </Button.Command>
+                        </Button>
+
+
+                    <Button Grid.Column="3" Grid.Row="0"   Width="300"  Style="{ThemeResource ButtonWideStyle}" Content="[TvWishListMP2.LoadFromTv]" HorizontalAlignment="Center">
+                            <Button.Command>
+                                <CommandList>
+                                    <Command Source="{StaticResource Model}" Path="ButtonTvServerLoadSettings"/>                                    
+                                </CommandList>
+                            </Button.Command>
+                        </Button>
+                    </Grid>
+
+
+                    <Grid Grid.Column="1" Grid.Row="12" Margin="-20,15,0,10" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Button Grid.Column="0" Grid.Row="0" Style="{ThemeResource DialogButtonStyle}" Content="[TvWishListMP2.HelpButtonText]" HorizontalAlignment="Center">
+                        <Button.Command>
+                            <CommandList>
+                                <Command Path="HelpButton"/>
+                            </CommandList>
+                        </Button.Command>
+                        </Button>
+                        <Button Grid.Column="2" Grid.Row="0" Style="{ThemeResource DialogButtonStyle}" Content="[TvWishListMP2.SaveButtonText]" HorizontalAlignment="Center">
+                            <Button.Command>
+                                <CommandList>
+                                    <Command Path="SaveSettings"/>
+                                    <Command Source="{Service ScreenManager}" Path="CloseTopmostDialog"/>
+                                </CommandList>
+                            </Button.Command>
+                        </Button>
+                        <Button Grid.Column="1" Grid.Row="0" Style="{ThemeResource DialogButtonStyle}" Content="[TvWishListMP2.CancelButtonText]" HorizontalAlignment="Center" Command="{Command Source={Service ScreenManager},Path=CloseTopmostDialog}"/>
+                    </Grid>
+
+                </Grid>
+            <!--</DockPanel>-->
+        </ControlTemplate>
+    </Include.Resources>
+
+
+
+
+</Include>

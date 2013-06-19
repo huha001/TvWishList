@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99AE2BE7-B0EF-4545-A573-84AC1DF639B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TvWishListMP2</RootNamespace>
+    <AssemblyName>TvWishListMP2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MP2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;MP2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MediaPortal.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\MediaPortal.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaPortal.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\MediaPortal.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaPortal.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\MediaPortal.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="MPExtended.Services.Common.Interfaces, Version=0.5.0.0, Culture=neutral, PublicKeyToken=8ccaf7b9f3e31d46, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\MPExtended.Services.Common.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MPExtended.Services.TVAccessService.Interfaces, Version=0.5.0.0, Culture=neutral, PublicKeyToken=8ccaf7b9f3e31d46, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\MPExtended.Services.TVAccessService.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SkinEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\SkinEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimTvInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\SlimTvInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TvWishListInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\TvWishListInterface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonCodeMP1MP2\Common_Edit_GUI.cs" />
+    <Compile Include="CommonCodeMP1MP2\Common_Main_GUI.cs" />
+    <Compile Include="CommonCodeMP1MP2\Common_Result_GUI.cs" />
+    <Compile Include="CommonCodeMP1MP2\InstallPaths.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommonCodeMP1MP2\Log.cs" />
+    <Compile Include="CommonCodeMP1MP2\Messages.cs" />
+    <Compile Include="CommonCodeMP1MP2\TvWish.cs" />
+    <Compile Include="ExtensionButtons\SlimTvCreateTvWish.cs" />
+    <Compile Include="ExtensionButtons\SlimTvRunSingleEPG.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExtensionButtons\SlimTvTvWishListQuickMenu.cs" />
+    <Compile Include="Models\Common_Edit_AND_ConfigDefaults.cs" />
+    <Compile Include="MpExtended\Items\ChannelGroup.cs" />
+    <Compile Include="MpExtended\Items\Channel.cs" />
+    <Compile Include="MpExtended\Items\Card.cs" />
+    <Compile Include="MpExtended\Items\Recording.cs" />
+    <Compile Include="MpExtended\Items\RadioChannelGroup.cs" />
+    <Compile Include="MpExtended\Items\RadioChannel.cs" />
+    <Compile Include="MpExtended\Items\Schedule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MpExtended\Items\TvBusinessLayer.cs" />
+    <Compile Include="MpExtended\Items\ServerName.cs" />
+    <Compile Include="MpExtended\Items\Setting.cs" />
+    <Compile Include="Models\ConfigFilter_GUI.cs" />
+    <Compile Include="Models\ConfigFormats_GUI.cs" />
+    <Compile Include="Models\ConfigMain_GUI.cs" />
+    <Compile Include="Settings\Configuration\SetupFormats_GUI.cs" />
+    <Compile Include="Settings\Configuration\SetupFilter_GUI.cs" />
+    <Compile Include="Settings\Configuration\SetupMain_GUI.cs" />
+    <Compile Include="Settings\TvWishListMP2Settings.cs" />
+    <Compile Include="Settings\Configuration\SetupDefaults_GUI.cs" />
+    <Compile Include="CommonData.cs" />
+    <Compile Include="Models\ConfigDefaults_GUI.cs" />
+    <Compile Include="Models\Edit_GUI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Main_GUI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Result_GUI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Language\strings_en.xml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="MP1 language\strings_en.xml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Skin\default\images\55b7087f-58c4-419a-bdc7-119753aa8bfc.jpg" />
+    <Content Include="Skin\default\screens\TvWishListConfigDefaults_GUI.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\themes\default\styles\TvWishListResults.xaml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Skin\default\workflow\TvWishListMP2.xml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="plugin.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Skin\default\screens\TvWishListConfigDefaultsDialogMenu.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListConfigDefaultsDialogMenu2.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListConfigDefaultsInputTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListConfigFilter_GUI.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListConfigFormats_GUI.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListConfigMain_GUI.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListEditDialogMenu.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListEditDialogMenu2.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListEditInputTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListEdit_GUI.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListMainDialogMenu.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListMainInputTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListMain_GUI.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListResultDialogMenu.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListResultDialogMenu2.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListResultDialogMenu3.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListResultInputTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\default\screens\TvWishListResult_GUI.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Skin\default\themes\default\styles\TvWishUpDownCancelControl.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y "$(ProjectDir)plugin.xml" "$(SolutionDir)..\Bin\$(SolutionName)\$(OutDir)Plugins\$(ProjectName)\"
+mkdir "$(SolutionDir)..\Bin\$(SolutionName)\$(OutDir)Plugins\$(ProjectName)\Language"
+robocopy "$(ProjectDir)Language" "$(SolutionDir)..\Bin\$(SolutionName)\$(OutDir)Plugins\$(ProjectName)\Language" /MIR /NP
+mkdir "$(SolutionDir)..\Bin\$(SolutionName)\$(OutDir)Plugins\$(ProjectName)\Skin"
+robocopy "$(ProjectDir)Skin" "$(SolutionDir)..\Bin\$(SolutionName)\$(OutDir)Plugins\$(ProjectName)\Skin" /MIR /NP
+xcopy /Y "$(TargetDir)$(ProjectName).dll"  "$(SolutionDir)..\Bin\$(SolutionName)\$(OutDir)Plugins\$(ProjectName)\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

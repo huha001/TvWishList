@@ -1,0 +1,735 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--DO NOT CHANGE ENGLISH COMMENTS INTO ANOTHER LANGUAGE-->
+  <!--Owner: huha-->
+  <!--Version 1.2.1.0
+- initial release
+
+
+Version 1.2.1.5
+- added preferred group and episode criteria
+
+Version 1.2.3.0
+- added TvWishListMP2 strings - new strings are 100-102, 1108-1109, 1206, 3001, 3104, 3506-3508, 3652-3653, 5000 and up
+
+Version 1.2.3.6
+-added string 1110, 4312, 5051-5052, 5204-5216,6203, 7002, 8110-8111, 10000 and up
+
+Version 1.2.3.10
+- added 200-201
+
+Version 1.2.3.11
+-added 10192-10193,10262
+
+Version 1.2.3.13
+-added 2853,1059-1062,3509-->
+  <!--TVSERVER VECTORSIZE=5000-->
+  <!--MP2 Display in main menu-->
+  <string name="TvWishListMP2.100">TVPageidavimųSąrašas</string>
+  <string name="TvWishListMP2.101">TV Pageidavimas</string>
+  <string name="TvWishListMP2.102">Naujas TV Pageidavimas</string>
+  <!--SlimTv Buttons in MP2-->
+  <!-- MP1STR:200 -->
+  <string name="TvWishListMP2.CreateTvWish">Sukurti TVPageidavimą</string>
+  <!-- MP1STR:201 -->
+  <string name="TvWishListMP2.AlternatePrograms">Alternatyvios programos</string>
+  <!--************************************************************-->
+  <!--TV WishList - Main-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.1000">TV PageidavimųSąrašas - pagrindinis</string>
+  <!--Quick Menu from Skins-->
+  <string name="TvWishListMP2.1050">TVPageidavimųSąrašo greitasis meniu</string>
+  <string name="TvWishListMP2.1051">Kurti TVPageidavimo antraštę</string>
+  <string name="TvWishListMP2.1052">Kurti TVPageidavimą su Visais</string>
+  <string name="TvWishListMP2.1053">Kurti TVPageidavimą su antrašte Epašto režime</string>
+  <string name="TvWishListMP2.1054">Kurt TVPageidavimą su antrašte RodytiTiktai režime</string>
+  <string name="TvWishListMP2.1055">Kurt TVPageidavimą su Visais Epašto režime</string>
+  <string name="TvWishListMP2.1056">Kurt TVPageidavimą su Visais RodytiTikrai režime</string>
+  <string name="TvWishListMP2.1057">Eiti į TVPageidavimai pagrindinį</string>
+  <string name="TvWishListMP2.1058">Eiti į TVPageidavimų sąrašo rezultatus</string>
+  <string name="TvWishListMP2.1059">Kurti TVPgeidavimą ir Ieškoti EPG</string>
+  <string name="TvWishListMP2.1060">Sukurti TVPageidavimą</string>
+  <string name="TvWishListMP2.1061">Naudoti Tiktai peržiūros režimą</string>
+  <string name="TvWishListMP2.1062">Naudoti Epašto ir Įrašo režimą</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.1100">TikPeržiūrėti režimas</string>
+  <string name="TvWishListMP2.1101">Pašto ir Įrašymo režimas</string>
+  <string name="TvWishListMP2.1102">Leisti EPG paiešką</string>
+  <string name="TvWishListMP2.1103">Žiūrėti rezultatus</string>
+  <string name="TvWishListMP2.1104">Naujas</string>
+  <string name="TvWishListMP2.1105">Išsaugoti</string>
+  <string name="TvWishListMP2.1106">Atšaukti</string>
+  <string name="TvWishListMP2.1107">Daugiau</string>
+  <string name="TvWishListMP2.1108">Rezultatai</string>
+  <string name="TvWishListMP2.1109">Režimas</string>
+  <string name="TvWishListMP2.1110">Redaguoti</string>
+  <!--Run EPG Search-->
+  <string name="TvWishListMP2.1200">Palaukti kol bus baigtas senasis procesas</string>
+  <string name="TvWishListMP2.1201">Ankstesnė paieška dar vykdoma - \n prašome palaukti</string>
+  <string name="TvWishListMP2.1202">EPG paieška vykdoma - prašome palaukti</string>
+  <string name="TvWishListMP2.1203">Dabar rodoma seka \n neužbaigta laiku - atšaukiama</string>
+  <string name="TvWishListMP2.1204">EPG paieška baigta</string>
+  <string name="TvWishListMP2.1205">Anksčiau pradėta seka \n neužbaigta laiku - atšaukiama</string>
+  <string name="TvWishListMP2.1206">Sujungimas su serveriu nepavyko - perkrauti TV Serverį</string>
+  <!--Save-->
+  <string name="TvWishListMP2.1300">TVPageidavimo duomenys išsaugoti</string>
+  <string name="TvWishListMP2.1301">TVPageidavimo duomenys neišsaugoti</string>
+  <!--Cancel-->
+  <string name="TvWishListMP2.1400">TVPageidavimo duomenys perkrauti</string>
+  <string name="TvWishListMP2.1401">TVPageidavimo duomenys neužkrauti</string>
+  <!--More  Menu-->
+  <string name="TvWishListMP2.1500">Visi aktyvūs</string>
+  <string name="TvWishListMP2.1501">Nėra aktyvių</string>
+  <string name="TvWishListMP2.1502">Praleisti visus</string>
+  <string name="TvWishListMP2.1503">Nieko nepraleisti</string>
+  <string name="TvWishListMP2.1504">Kopijuoti TVPageidavimus iš Tik Žiūrėti į Elaiškus</string>
+  <string name="TvWishListMP2.1505">Kopijuoti TVPageidavimus iš Elaiškams į Tik Žiūrėti</string>
+  <string name="TvWishListMP2.1506">Perkelti Tvarkaraščius į TVPageidavimus</string>
+  <string name="TvWishListMP2.1507">Eksportuoti</string>
+  <string name="TvWishListMP2.1508">Importuoti</string>
+  <!--More  Status-->
+  <string name="TvWishListMP2.1550">{0} Pageidavimas (-ai) perkopijuoti iš \n Tik Žiūrėti į Elaiškų režimą</string>
+  <string name="TvWishListMP2.1551">Nepavyko kopijuoti TVPageidavimus iš \n Tik Žiūrėti į Elaiškus</string>
+  <string name="TvWishListMP2.1552">{0} Pageidavimas (-ai) perkopijuoti iš \n Elaiškų į Tik Žiūrėti režimą</string>
+  <string name="TvWishListMP2.1553">Nepavyko kopijuoti TVPageidavimus iš \n Elaiškų į Tik Žiūrėti</string>
+  <string name="TvWishListMP2.1554">{0} Tvarkaraščtis(ių) Perkelta į TVPagedavimus</string>
+  <string name="TvWishListMP2.1555">Perkėlimas Tvarkaračių į TVPageidavimus nepavyko</string>
+  <string name="TvWishListMP2.1556">Baigtas {0} pageidavimų eksportas</string>
+  <string name="TvWishListMP2.1557">Eksportas nepavyko</string>
+  <string name="TvWishListMP2.1558">Baigtas {0} pageidavimų importas</string>
+  <string name="TvWishListMP2.1559">Importas nepavyko</string>
+  <!--++++++++++++++-->
+  <!--Formats   Main-->
+  <!--++++++++++++++-->
+  <!--TvWish Format Data 1900 - 1905:
+        //  {0}   active
+        //  {1}   searchfor
+        //  {2}   matchtype
+        //  {3}   group
+        //  {4}   recordtype
+        //  {5}   action
+        //  {6}   exclude
+        //  {7}   viewed counter
+        //  {8}   prerecord
+        //  {9}   postrecord
+        //  {10}  episodename
+        //  {11}  episodepart
+        //  {12}  episodenumber
+        //  {13}  seriesnumber
+        //  {14}  keepepisodes
+        //  {15}  keepuntil
+        //  {16}  recommendedcard
+        //  {17}  priority
+        //  {18}  aftertime
+        //  {19}  beforetime
+        //  {20}  afterdays
+        //  {21}  beforedays
+        //  {22}  channel
+        //  {23}  skip
+        //  {24}  name
+        //  {25}  useNameFolders
+        //  {26}  within next hours
+        //  {27}  scheduled counter
+        //  {28}  tvwish id
+        //  {29}  recorded counter
+        //  {30}  deleted counter
+        //  {31}  emailed counter
+        //  {32}  conflicts counter
+        //  {33}  episodecriteria
+        //  {34}  preferredgroup
+        //  {35}  includerecordings
+        //  <br>     new line
+        //  |      item selector for not displaying user disabled items-->
+  <!--Main Menu Format for 16:9 skins Email Mode-->
+  <string name="TvWishListMP2.1900">Aktyvus: {0}\n |Vardas: {24}\n |Ieškoti: {1}\n |Sutampa: {2}\n |Neįtraukti: {6}\n |Tipas: {4}\n |Veiksmas: {5}\n |Praleisti pasikartojančiųs: {23}\n |Pageidaujama grupė: {34}\n |ir įtraukti įrašus: {35}\n |Skaitikliai:\n Suplanuota={27}\n Įrašyta={29}\n Ištrinta={30}\n Išsiųsta={31}\n Konfliktai={32}\n |\n Tik grupė: {3} ir tiktai kanalas: {22}\n |Šią arba sekančia dieną: {20} bet prieš arba tą pačia dieną: {21}\n |Tarpe laiko: {18} ir {19}\n \n |Epizodo kriterijus: {33}\n |Epizodo vardas: {10}\n |Epizodo dalis: {11}\n |Epizodo numeris: {12}\n |Laikyti epizodus: {14}\n |Laikyti iki: {15}\n |Prioritetas: {17}\n |Prieš įrašą: {8}\n |Po įrašo: {9}\n |Rekomenduojama korta {16}\n |Perkelti bylas į Pavadinimo bylas: {25}\n |ID={28}\n</string>
+  <!--Main Menu Format for 4:3 skins Email Mode-->
+  <string name="TvWishListMP2.1902">Aktyvus: {0}\n |Vardas: {24}\n |Ieškoti: {1}\n |Sutampa: {2}\n |Neįtraukti: {6}\n |Tipas: {4}\n |Veiksmas: {5}\n |Praleisti pasikartojančiųs: {23}\n |Pageidaujama grupė: {34}\n |ir įtraukti įrašus: {35}\n |Skaitikliai:\n Suplanuota={27}\n Įrašyta={29}\n Ištrinta={30}\n Išsiųsta={31}\n Konfliktai={32}\n |\n Tik grupė: {3} ir tiktai kanalas: {22}\n |Šią arba sekančia dieną: {20} bet prieš arba tą pačia dieną: {21}\n |Tarpe laiko: {18} ir {19}\n \n |Epizodo kriterijus: {33}\n |Epizodo vardas: {10}\n |Epizodo dalis: {11}\n |Epizodo numeris: {12}\n |Laikyti epizodus: {14}\n |Laikyti iki: {15}\n |Prioritetas: {17}\n |Prieš įrašą: {8}\n |Po įrašo: {9}\n |Rekomenduojama korta {16}\n |Perkelti bylas į Pavadinimo bylas: {25}\n |ID={28}\n</string>
+  <!--Main Menu Format for 16:9 skins View Only Mode-->
+  <string name="TvWishListMP2.1901">Aktyvus: {0}\n |Vardas: {24}\n |Ieškoti: {1}\n |Sutampa: {2}\n |Neįtraukti: {6}\n |Tipas: {4}\n |Paspaudimų: {7}\n |\n Tik grupė: {3} ir tiktai kanalas: {22}\n |Šią arba sekančia dieną: {20} bet prieš arba tą pačia dieną: {21}\n |Tarpe laiko: {18} ir {19}\n |Rodyti tik per sekančias {26} valandas\n |Epizodo vardas: {10}\n |Epizodo dalis: {11}\n |Epizodo numeris: {12}|\n ID={28}\n</string>
+  <!--Main Menu Format for 4:3 skins View Only Mode-->
+  <string name="TvWishListMP2.1903">Aktyvus: {0} |Vardas: {24} |Ieškoti: {1} |Sutampa: {2} |Neįtraukti: {6} |Tipas: {4} |Paspaudimų: {7}\n |Tik grupė: {3} ir tik kanalas: {22} |Šią arba sekančia dieną: {20} bet prieš arba tą pačia dieną: {21} |Tarpe laiko: {18} ir {19} |Rodyti tik per sekančias {26} valandas\n |Epizodo vardas: {10} |Epizodo dalis: {11} |Epizodo numeris: {12} |ID={28}\n</string>
+  <!--List Item Format Email Mode -  use "||" to change alignment between left and right border-->
+  <string name="TvWishListMP2.1904">{24} || {27}/{29}</string>
+  <!--List Item Format ViewOnly Mode-->
+  <string name="TvWishListMP2.1905">{24} || {7}</string>
+  <!--************************************************************-->
+  <!--TV WishList - Edit-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=2000 TO=4900 OFFSET_FROM=2000 OFFSET_TO=4900-->
+  <string name="TvWishListMP2.2000">TVPageidavimai - Įvestis</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.2100">Pagrindinis meniu</string>
+  <string name="TvWishListMP2.2101">Praeitas</string>
+  <string name="TvWishListMP2.2102">Kitas</string>
+  <string name="TvWishListMP2.2103">Naujas</string>
+  <string name="TvWishListMP2.2104">Trinti</string>
+  <string name="TvWishListMP2.2105">Saugoti</string>
+  <string name="TvWishListMP2.2106">Atšaukti viską</string>
+  <string name="TvWishListMP2.2107">Daugiau</string>
+  <!--Delete-->
+  <string name="TvWishListMP2.2200">TVPageidavimas ištrintas</string>
+  <string name="TvWishListMP2.2201">Klaida: TVPageidavimo duomenys negali būti ištrinti</string>
+  <!--Save-->
+  <string name="TvWishListMP2.2300">TVPageidavimo duomenys išsaugoti</string>
+  <string name="TvWishListMP2.2301">Klaida: TVPageidavimo duomenys neišsaugoti</string>
+  <!--Cancel-->
+  <string name="TvWishListMP2.2400">TVPageidavimo duomenys perkrauti</string>
+  <string name="TvWishListMP2.2401">TVPageidavimo duomenys negalėjo būti perkrauti</string>
+  <!--More  Menu-->
+  <string name="TvWishListMP2.2450">Visi įrašai</string>
+  <string name="TvWishListMP2.2451">Vartotojų numatyti įrašai</string>
+  <string name="TvWishListMP2.2452">Rodyti vieną rezultatą</string>
+  <string name="TvWishListMP2.2453">Kopijuoti esama TVPageidavimą į kitą režimą</string>
+  <string name="TvWishListMP2.2454">{0} Pageidavimas(ai) kopijuoti į kitą režimą</string>
+  <string name="TvWishListMP2.2455">Nepavyko kopijuoti TVPageidavimo į kitą režimą</string>
+  <string name="TvWishListMP2.2456">Klonuoti TVPageidavimą</string>
+  <string name="TvWishListMP2.2457">TVPageidavimas klonuotas</string>
+  <string name="TvWishListMP2.2458">Nepavyko klonuoti TVPageidavimo</string>
+  <!--Edit List Items-->
+  <string name="TvWishListMP2.2500">Aktyvūs: {0}</string>
+  <string name="TvWishListMP2.2501">Ieškoti: {0}</string>
+  <string name="TvWishListMP2.2502">Sutampa kaip: {0}</string>
+  <string name="TvWishListMP2.2503">Naudoti tik grupę: {0}</string>
+  <string name="TvWishListMP2.2504">Įrašyti kaip: {0}</string>
+  <string name="TvWishListMP2.2505">ir vykdyti: {0}</string>
+  <string name="TvWishListMP2.2506">Bet neįtraukti: {0}</string>
+  <string name="TvWishListMP2.2507">Paspaudimų: {0} (Nustatyti iš naujo paspaudimus)</string>
+  <string name="TvWishListMP2.2508">Prieš įrašymą: {0} minučių</string>
+  <string name="TvWishListMP2.2509">ir po įrašymo: {0} minučių</string>
+  <string name="TvWishListMP2.2510">Epizodo filtras: {0}</string>
+  <string name="TvWishListMP2.2511">Dalies filtras: {0}</string>
+  <string name="TvWishListMP2.2512">Numerio filtras: {0}</string>
+  <string name="TvWishListMP2.2513">Serijos numerio filtras: {0}</string>
+  <string name="TvWishListMP2.2514">Laikyti: {0} įrašų</string>
+  <string name="TvWishListMP2.2515">Iki: {0}</string>
+  <string name="TvWishListMP2.2516">Rekomenduojama korta: {0}</string>
+  <string name="TvWishListMP2.2517">Nustatyti prioritetą: {0} (min 0, maks 9)</string>
+  <string name="TvWishListMP2.2518">Po laiko: {0}</string>
+  <string name="TvWishListMP2.2519">ir prieš: {0}</string>
+  <string name="TvWishListMP2.2520">Po savaitės dienos (įskaitant): {0}</string>
+  <string name="TvWishListMP2.2521">Prieš ir įskaitans savaitės dieną: {0}</string>
+  <string name="TvWishListMP2.2522">ir tik kanalas: {0}</string>
+  <string name="TvWishListMP2.2523">Praleisti pasikartojančius epizodus: {0}</string>
+  <string name="TvWishListMP2.2524">Vardas: {0}</string>
+  <string name="TvWishListMP2.2525">Perkelti įrašus į: {0} aplanką</string>
+  <string name="TvWishListMP2.2526">Rodyti tik per sekančias: {0} valandą(as)</string>
+  <string name="TvWishListMP2.2533">Naudoti epizodo atitinatį kriterijų: {0}</string>
+  <string name="TvWishListMP2.2534">Pageidaujama kanalo grupė: {0}</string>
+  <string name="TvWishListMP2.2535">Įtraukti įrašus: {0}</string>
+  <!--MatchType-->
+  <string name="TvWishListMP2.2600">Dalinė antraštė</string>
+  <string name="TvWishListMP2.2601">Tiksli antraštė</string>
+  <string name="TvWishListMP2.2602">Dalinis tekstas</string>
+  <string name="TvWishListMP2.2603">Žodis antraštėje</string>
+  <string name="TvWishListMP2.2604">Žodis tekste</string>
+  <string name="TvWishListMP2.2605">Žodis tekste/antraštėje</string>
+  <string name="TvWishListMP2.2606">Išsireiškimas</string>
+  <!--RecordType-->
+  <string name="TvWishListMP2.2650">Tik vieną kartą</string>
+  <string name="TvWishListMP2.2651">Visi</string>
+  <string name="TvWishListMP2.2652">Visi tame pačiame kanale</string>
+  <string name="TvWishListMP2.2653">Visi tame pačiame kanale tą pačia dieną</string>
+  <string name="TvWishListMP2.2654">Visi tame pačiame kanale tuo pačiu laiku</string>
+  <string name="TvWishListMP2.2655">Visi tame pačiame kanale, dieną ir laiku</string>
+  <!--Action-->
+  <string name="TvWishListMP2.2700">Įrašyti</string>
+  <string name="TvWishListMP2.2701">Siųsti Elaišku</string>
+  <string name="TvWishListMP2.2702">Siųsti Elaišku ir įrašyti</string>
+  <string name="TvWishListMP2.2703">Vaizdas</string>
+  <!--Days-->
+  <string name="TvWishListMP2.2750">Pirmdienis</string>
+  <string name="TvWishListMP2.2751">Antradienis</string>
+  <string name="TvWishListMP2.2752">Trečiadienis</string>
+  <string name="TvWishListMP2.2753">Ketvirtdaienis</string>
+  <string name="TvWishListMP2.2754">Penktadienis</string>
+  <string name="TvWishListMP2.2755">Šeštadienis</string>
+  <string name="TvWishListMP2.2756">Sekmadienis</string>
+  <!--Dialog Headers for Edit Items-->
+  <string name="TvWishListMP2.2800">Aktyvus</string>
+  <string name="TvWishListMP2.2801">Ieškoti</string>
+  <string name="TvWishListMP2.2802">Sutampa</string>
+  <string name="TvWishListMP2.2803">Grupė</string>
+  <string name="TvWishListMP2.2804">Įrašo tipas</string>
+  <string name="TvWishListMP2.2805">Veiksmas</string>
+  <string name="TvWishListMP2.2806">Neįtraukti</string>
+  <string name="TvWishListMP2.2807">Paspaudimai</string>
+  <string name="TvWishListMP2.2808">Prieš įrašymo laikas</string>
+  <string name="TvWishListMP2.2809">Po įrašymo laikas</string>
+  <string name="TvWishListMP2.2810">Epizodo vardas</string>
+  <string name="TvWishListMP2.2811">Epizodo dalis</string>
+  <string name="TvWishListMP2.2812">Epizodo numeris</string>
+  <string name="TvWishListMP2.2813">Serijos numeris</string>
+  <string name="TvWishListMP2.2814">Laikyti epizodus</string>
+  <string name="TvWishListMP2.2815">Laikyti iki</string>
+  <string name="TvWishListMP2.2816">Rekomenduojama korta</string>
+  <string name="TvWishListMP2.2817">Prioritetas</string>
+  <string name="TvWishListMP2.2818">Po laiko</string>
+  <string name="TvWishListMP2.2819">Prieš laikč</string>
+  <string name="TvWishListMP2.2820">Po dienos</string>
+  <string name="TvWishListMP2.2821">prieš dieną</string>
+  <string name="TvWishListMP2.2822">Kanalas</string>
+  <string name="TvWishListMP2.2823">Praleisti</string>
+  <string name="TvWishListMP2.2824">Vardas</string>
+  <string name="TvWishListMP2.2825">Perkelti įrašus į aplanką</string>
+  <string name="TvWishListMP2.2826">Rodyti tik per sekančia valandą(as)</string>
+  <string name="TvWishListMP2.2833">Keisti epizodo atitikimo kriterijų</string>
+  <string name="TvWishListMP2.2834">Pageidajama kanalo grupė</string>
+  <string name="TvWishListMP2.2835">Įtraukiant įrašus</string>
+  <!--Use Name Folder-->
+  <string name="TvWishListMP2.2850">Epizodas</string>
+  <string name="TvWishListMP2.2851">TVPageidavimo vardas</string>
+  <string name="TvWishListMP2.2852">Niekas</string>
+  <string name="TvWishListMP2.2853">Automatinis</string>
+  <!--Keep Until-->
+  <string name="TvWishListMP2.2900">Visada</string>
+  <string name="TvWishListMP2.2901">Dienų po įrašymo</string>
+  <string name="TvWishListMP2.2902">Savaičių po įrašymo</string>
+  <string name="TvWishListMP2.2903">Mėnesių po įrašymo</string>
+  <string name="TvWishListMP2.2904">Data</string>
+  <string name="TvWishListMP2.2905">Žiūrėta</string>
+  <string name="TvWishListMP2.2906">Reikia vietos</string>
+  <string name="TvWishListMP2.2920">{0} dienų po įrašymo</string>
+  <string name="TvWishListMP2.2921">{0} savaičių po įrašymo</string>
+  <string name="TvWishListMP2.2922">{0} mėnesių po įrašymo</string>
+  <!--DO NOT CHANGE FORMAT in 2923-->
+  <string name="TvWishListMP2.2923">YYYY-MM-DD</string>
+  <!--Change episode matching criteria-->
+  <string name="TvWishListMP2.2950">Praleisti EPG atitikimo aprašymus? (Taip)</string>
+  <string name="TvWishListMP2.2951">Praleisti EPG atitikimo aprašymus? (Ne)</string>
+  <string name="TvWishListMP2.2952">Praleisti atitinkančius epizodo vardus ir dalis? (Taip)</string>
+  <string name="TvWishListMP2.2953">Praleisti atitinkančius epizodo vardus ir dalis? (Ne)</string>
+  <string name="TvWishListMP2.2954">Praleisti atitinkačias serijas ir epizodų numerius? (Taip)</string>
+  <string name="TvWishListMP2.2955">Praleisti atitinkačias serijas ir epizodų numerius? (Ne)</string>
+  <string name="TvWishListMP2.2960">Apr.</string>
+  <string name="TvWishListMP2.2961">Vardas</string>
+  <string name="TvWishListMP2.2962">Numeris</string>
+  <string name="TvWishListMP2.2970">Įjungti visus kriterijus</string>
+  <string name="TvWishListMP2.2971">Išjungti visus kriterijus</string>
+  <!--************************************************************-->
+  <!--TV WishList - View Results-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.3000">TVPageidavimai - rezultati</string>
+  <string name="TvWishListMP2.3001">Programa</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.3100">Pagrindinis meniu</string>
+  <string name="TvWishListMP2.3101">Atnaujinti</string>
+  <string name="TvWishListMP2.3102">Rūšiuoti</string>
+  <string name="TvWishListMP2.3103">Filtruoti</string>
+  <string name="TvWishListMP2.3104">Rūšiavimo tvarka</string>
+  <!--Sort Menu-->
+  <string name="TvWishListMP2.3200">Rūšiavimo meniu</string>
+  <string name="TvWishListMP2.3201">Antraštė</string>
+  <string name="TvWishListMP2.3202">Pradžia</string>
+  <string name="TvWishListMP2.3203">Sukurta</string>
+  <string name="TvWishListMP2.3204">Žandras</string>
+  <string name="TvWishListMP2.3205">Klasifikacija</string>
+  <string name="TvWishListMP2.3206">Tėvų priežiūros vertinimas</string>
+  <string name="TvWishListMP2.3207">Pradėti vertinti</string>
+  <string name="TvWishListMP2.3208">Tipas</string>
+  <string name="TvWishListMP2.3209">Žinutė</string>
+  <string name="TvWishListMP2.3210">Paieškos eilutė</string>
+  <string name="TvWishListMP2.3211">Epizodo vardas</string>
+  <string name="TvWishListMP2.3212">Epizodo numeris</string>
+  <string name="TvWishListMP2.3213">Epizodo dalis</string>
+  <!--Filter Menu-->
+  <string name="TvWishListMP2.3250">Filtro meniu</string>
+  <string name="TvWishListMP2.3251">Vaizds</string>
+  <string name="TvWishListMP2.3252">Be vaizdo</string>
+  <string name="TvWishListMP2.3253">Išsiųsta Elaišku</string>
+  <string name="TvWishListMP2.3254">Neišsiųsta Elaišku</string>
+  <string name="TvWishListMP2.3255">Suplanuota</string>
+  <string name="TvWishListMP2.3256">Nesuplanuota</string>
+  <string name="TvWishListMP2.3257">Įrašyta</string>
+  <string name="TvWishListMP2.3258">Neįrašyta</string>
+  <string name="TvWishListMP2.3259">Ištrinta</string>
+  <string name="TvWishListMP2.3260">Neištrinta</string>
+  <string name="TvWishListMP2.3261">Konfliktai</string>
+  <string name="TvWishListMP2.3262">Be konfliktų</string>
+  <string name="TvWishListMP2.3263">Visi</string>
+  <string name="TvWishListMP2.3264">Niekas</string>
+  <!--Item Menu-->
+  <string name="TvWishListMP2.3500">Eiti į TV</string>
+  <string name="TvWishListMP2.3501">Trinti tvarkaraštį</string>
+  <string name="TvWishListMP2.3502">Tvarkaraštis</string>
+  <string name="TvWishListMP2.3503">Trinti žinutę</string>
+  <string name="TvWishListMP2.3504">Trinti įrašą ir filmą</string>
+  <string name="TvWishListMP2.3505">Eiti į įrašus</string>
+  <string name="TvWishListMP2.3506">Eiti į Video</string>
+  <string name="TvWishListMP2.3507">Eiti į serijas</string>
+  <string name="TvWishListMP2.3508">Eiti į EPG</string>
+  <string name="TvWishListMP2.3509">Groti</string>
+  <!--Item Status-->
+  <string name="TvWishListMP2.3600">Pridėtas tvarkaraštis</string>
+  <string name="TvWishListMP2.3601">Nepavyko pridėti tvarkaraščio</string>
+  <string name="TvWishListMP2.3602">Tvarkaraštis ištrintas</string>
+  <string name="TvWishListMP2.3603">Nepavyko ištrinti tvarkaraščio</string>
+  <string name="TvWishListMP2.3604">Žinutė ištrinta</string>
+  <string name="TvWishListMP2.3605">Nepavyko ištrinti žinutės</string>
+  <string name="TvWishListMP2.3606">Įrašas ištrintas</string>
+  <string name="TvWishListMP2.3607">Nepavyko ištrinti įrašo</string>
+  <string name="TvWishListMP2.3608">Ar tikrai norite ištrinti failą</string>
+  <!--Message Changes-->
+  <string name="TvWishListMP2.3650">Failas {0} yra {1} GB</string>
+  <string name="TvWishListMP2.3651">Failas ištrintas</string>
+  <string name="TvWishListMP2.3652">Rūšiavimas didėjančia tvarka</string>
+  <string name="TvWishListMP2.3653">Rūšiavimas mažėjančia tvarka</string>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Message Format Data 3900-3905:
+        //  {0}  Title
+        //  {1}  Description
+        //  {2}  Channel
+        //  {3}  Start
+        //  {4}  End
+        //  {5}  EpisodeName
+        //  {6}  EpisodeNum
+        //  {7}  EpisodeNumber
+        //  {8}  EpisodePart
+        //  {9}  Genre
+        //  {10} Classification
+        //  {11} OriginalAirDate
+        //  {12} ParentalRating
+        //  {13} SeriesNum
+        //  {14} StarRating
+        //  {15} type
+        //  {16} channel_id
+        //  {17} created
+        //  {18} searchstring
+        //  {19} tvwish_id
+        //  {20} recording_id
+        //  {21} Message   
+        //  <br>   new line-->
+  <!--Found Format for 16:9 skins Email Mode-->
+  <string name="TvWishListMP2.3900">{21}\n Antraštė: {0}\n Kanalas: {2}\n Pradėti: {3}\n Baigti: {4}\n Tipas: {15}\n Aprašymas: {1}\n \n Žanras: {9}\n Klasifikacija: {10}\n Tėvų priežiūros vertinimas: {12}\n Vertinimas žvaigždutėmis: {14}\n Epizodo dalis: {8}\n Epizodo vardas: {5}\n Epizodo numeris: {6}\n Ieškota pagal: {18} ir {17}\n TVPageidavimoID={19}\n ĮrašoID={20}\n KanaloID={16}\n \n</string>
+  <!--Found Format for 4:3 skins Email Mode-->
+  <string name="TvWishListMP2.3902">{21}\n Antraštė: {0}\n Kanalas: {2}\n Pradėti: {3}\n Baigti: {4}\n Tipas: {15}\n Aprašymas: {1}\n \n Žanras: {9}\n Klasifikacija: {10}\n Tėvų priežiūros vertinimas: {12}\n Vertinimas žvaigždutėmis: {14}\n Epizodo dalis: {8}\n Epizodo vardas: {5}\n Epizodo numeris: {6}\n Ieškota pagal: {18} ir {17}\n TVPageidavimoID={19}\n ĮrašoID={20}\n KanaloID={16}\n</string>
+  <!--Found Format for 16:9 skins View Only Mode-->
+  <string name="TvWishListMP2.3901">{21}\n Antraštė: {0}\n Kanalas: {2}\n Pradėti: {3}\n Baigti: {4}\n Tipas: {15}\n Aprašymas: {1}\n \n Žanras: {9}\n Klasifikacija: {10}\n Tėvų priežiūros vertinimas: {12}\n Vertinimas žvaigždutėmis: {14}\n Epizodo dalis: {8}\n Epizodo vardas: {5}\n Epizodo numeris: {6}\n Ieškota pagal: {18} ir {17}\n TVPageidavimoID={19}\n ĮrašoID={20}\n KanaloID={16}\n \n</string>
+  <!--Found Format for 4:3 skins View Only Mode-->
+  <string name="TvWishListMP2.3903">{21}\n Antraštė: {0}\n Kanalas: {2}\n Pradėti: {3}\n Baigti: {4}\n Tipas: {15}\n Aprašymas: {1}\n \n Žanras: {9}\n Klasifikacija: {10}\n Tėvų priežiūros vertinimas: {12}\n Vertinimas žvaigždutėmis: {14}\n Epizodo dalis: {8}\n Epizodo vardas: {5}\n Epizodo numeris: {6}\n Ieškota pagal: {18} ir {17}\n TVPageidavimoID={19}\n ĮrašoID={20}\n KanaloID={16}\n</string>
+  <!--List Item Format Email Mode - use "||" to change alignment between left and right border-->
+  <string name="TvWishListMP2.3904">{0} || {3}</string>
+  <!--List Item Format ViewOnly Mode-->
+  <string name="TvWishListMP2.3905">{0} || {3}</string>
+  <!--************************************************************-->
+  <!--General-->
+  <!--************************************************************-->
+  <!--Bool-->
+  <string name="TvWishListMP2.4000">Teisingas</string>
+  <string name="TvWishListMP2.4001">Neteisingas</string>
+  <!--Default Data TvWish-->
+  <string name="TvWishListMP2.4100">Bet koks</string>
+  <string name="TvWishListMP2.4101">Visada</string>
+  <string name="TvWishListMP2.4102">Pasirinktas</string>
+  <string name="TvWishListMP2.4103">Nieko</string>
+  <string name="TvWishListMP2.4104">Visi kanalai</string>
+  <string name="TvWishListMP2.4105">Visi</string>
+  <!--Mode Header-->
+  <string name="TvWishListMP2.4200">Elaiško ir įrašymo režimas</string>
+  <string name="TvWishListMP2.4201">Tik žiūrėjimo režimas</string>
+  <!--Errors-->
+  <string name="TvWishListMP2.4300">Patikrinkit MediaPortal Log failą</string>
+  <string name="TvWishListMP2.4301">Nerasta įrašų</string>
+  <string name="TvWishListMP2.4302">Klaida kuriant įrašų sąrašą</string>
+  <string name="TvWishListMP2.4303">Nėra numerio</string>
+  <string name="TvWishListMP2.4304">Netinkamas formatas</string>
+  <string name="TvWishListMP2.4305">Klaida</string>
+  <string name="TvWishListMP2.4306">TVPageidavimų MediaPortal įskiepis \n nesutampa su TV serverio TVPageidavimų įskiepiu</string>
+  <string name="TvWishListMP2.4307">Įrašo aplankas turėjo būti pakeistas \n Epizodo aplanku</string>
+  <string name="TvWishListMP2.4308">Įrašo tipas turėjo būti pakeistas į Visi</string>
+  <string name="TvWishListMP2.4309">Laikyti Epizodus numeris turėjo būti pakeistas į Visi</string>
+  <string name="TvWishListMP2.4310">Perkelti tvarkaraščius veikia tik Elaiškų režime</string>
+  <string name="TvWishListMP2.4311">TVPageidavimai vykdomas \n kito proceso \n Bandykite vėliau \n Jei kitasprocesas negali būti baigtas \n prašom perkrauti sistema \n arba sustabdyti TV serverį rankiniu būdu</string>
+  <string name="TvWishListMP2.4312">Klaida - baigėsi skirtas laikas: bandykite perkrauti serverį. \n Jei tai kartojasi bandykit didinti skirtąjį laiką eksperto nustatymuose</string>
+  <!--Others-->
+  <string name="TvWishListMP2.4400">Info</string>
+  <string name="TvWishListMP2.4401">Įspėjimas</string>
+  <string name="TvWishListMP2.4402">Taip</string>
+  <string name="TvWishListMP2.4403">Ne</string>
+  <string name="TvWishListMP2.4404">Visi TVPageidavimai</string>
+  <string name="TvWishListMP2.4405">TVPageidavimas: {0}</string>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Date Time Format for all modules
+        //   {0:0000} year
+        //   {1:00}   month
+        //   {2:00}   day
+        //   {3:00}   hour
+        //   {4:00}   minute
+        //   {5:00}   second
+        //   {6}      timeofday
+        //   {7}      date-->
+  <string name="TvWishListMP2.4900">{1:00}/{2:00}/{0:00} at {3:00}:{4:00}</string>
+  <!--************************************************************-->
+  <!--Config Main MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:5000 -->
+  <string name="TvWishListMP2.ConfigMain_GUI">Pagrindiniai nustatymai</string>
+  <!-- MP1STR:5001 -->
+  <string name="TvWishListMP2.ConfigMain_GUI_Help">Nustatyti pagrindinius nustatymus</string>
+  <!-- MP1STR:5050 -->
+  <string name="TvWishListMP2.ConfigTvserver">Prieš naudojant MediaPortal įskiepį jūs turite sukonfiguruoti ir išbandyti TVPageidavimų TVServerio įskeipį</string>
+  <string name="TvWishListMP2.5051">Prieš naudojant MediaPortal įskiepį jūs turite</string>
+  <string name="TvWishListMP2.5052">sukonfiguruoti ir išbandyti TVPageidavimų TVServerio įskeipį</string>
+  <!-- MP1STR:5100 -->
+  <string name="TvWishListMP2.CancelButtonText">Nutraukti</string>
+  <!-- MP1STR:5101 -->
+  <string name="TvWishListMP2.SaveButtonText">Išsaugoti</string>
+  <!-- MP1STR:5102 -->
+  <string name="TvWishListMP2.HelpButtonText">Pagalba</string>
+  <!-- MP1STR:5200 -->
+  <string name="TvWishListMP2.Verbose">Derinti (debug)</string>
+  <!-- MP1STR:5201 -->
+  <string name="TvWishListMP2.DisableQuickMenu">Išjungti TVPageidavimų greitąjį meniu</string>
+  <!-- MP1STR:5202 -->
+  <string name="TvWishListMP2.TimeOut">Baigėsi skirtasis laikas</string>
+  <!-- MP1STR:5203 -->
+  <string name="TvWishListMP2.TimeOutDescription">Keisti skirtojo laiko 60 tiktai jei pastebite klaidas</string>
+  <!-- MP1STR:5204 -->
+  <string name="TvWishListMP2.SaveToTvServer">Tai išsaugos kliento nustatymus TV serveryje</string>
+  <!-- MP1STR:5205 -->
+  <string name="TvWishListMP2.LoadFromTvServer">Tai užkraus kliento nustatymus iš tv serverio</string>
+  <!-- MP1STR:5206 -->
+  <string name="TvWishListMP2.DisableInfoWindows">Išjungti Info žinučių langus</string>
+  <!-- MP1STR:5207 -->
+  <string name="TvWishListMP2.Load">Užkrauti</string>
+  <!-- MP1STR:5208 -->
+  <string name="TvWishListMP2.SaveLoad">Išsaugoti/užkrauti kliento nustatymus į/iš TV serverio</string>
+  <!-- MP1STR:5209 -->
+  <string name="TvWishListMP2.SaveQuestion">Ar norite išsaugoti kliento nustatymus TV serveryje užrašant ant esamų?</string>
+  <!-- MP1STR:5210 -->
+  <string name="TvWishListMP2.LoadQuestion">Ar norite užkrauti kliento nustatymus iš TV serverio užrašant ant esamų?</string>
+  <!-- MP1STR:5211 -->
+  <string name="TvWishListMP2.SaveToTV">Išsaugoti į TV serverį</string>
+  <!-- MP1STR:5212 -->
+  <string name="TvWishListMP2.LoadFromTV">Užkrauti iš TV serverio</string>
+  <!-- MP1STR:5213 -->
+  <string name="TvWishListMP2.LoadComplete">Kliento nusttymai užkrauti iš TV serverio</string>
+  <!-- MP1STR:5214 -->
+  <string name="TvWishListMP2.LoadError">Kliento nustatymai neužkrauti iš TV serverio</string>
+  <!-- MP1STR:5215 -->
+  <string name="TvWishListMP2.SaveComplete">Kliento nustatymai išsaugoti TV serveryje</string>
+  <!-- MP1STR:5216 -->
+  <string name="TvWishListMP2.SaveError">Kliento nustatymai neišsaugoti TV serveryje</string>
+  <!--************************************************************-->
+  <!--Config Filter MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:6000 -->
+  <string name="TvWishListMP2.ConfigFilter_GUI">Filtruoti konfiguraciją</string>
+  <!-- MP1STR:6001 -->
+  <string name="TvWishListMP2.ConfigFilter_GUI_Help">Konfiguruoti filtro nustatymus. Visi pasirinkti įrašai bus leidžiami redaguoti TVPageidavimams. Išjungti įrašai naudos numatytąsias reikšmes.</string>
+  <!-- MP1STR:6100 -->
+  <string name="TvWishListMP2.SelectItemLabel">Pasirinkite filtro įrašus kuriuos norite redaguoti</string>
+  <!-- MP1STR:6101 -->
+  <string name="TvWishListMP2.UnSelectItemLabel">Nepasirinkti įrašai negali būti redaguojami TVPageidavimams ir naudos numatytuosius nustatymus</string>
+  <!-- MP1STR:6200 -->
+  <string name="TvWishListMP2.AllButtonText">Visi</string>
+  <!-- MP1STR:6201 -->
+  <string name="TvWishListMP2.NoneButtonText">Niekas</string>
+  <!-- MP1STR:6202 -->
+  <string name="TvWishListMP2.DefaultsButtonText">Numatytieji</string>
+  <!-- MP1STR:6203 -->
+  <string name="TvWishListMP2.DefaultsQuestion">Gražinant į numatytąsias reikšmes esami laukai visuose puslapiuose bus užrašyti  numatytomis reikšmėmis - ar norite tęsti?</string>
+  <!--************************************************************-->
+  <!--Config Defaults MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:7000 -->
+  <string name="TvWishListMP2.ConfigDefaults_GUI">Numatytųjų konfiguracija</string>
+  <!-- MP1STR:7001 -->
+  <string name="TvWishListMP2.ConfigDefaults_GUI_Help">Konfiguruoti numatytuosius nustatymus. Taip bus naudojami pasirinkti numatytieji nustatymai kiekvienam naujam TVPageidavimui.  Išjungti įrašai gaus numatytąsias reikšmes.</string>
+  <string name="TvWishListMP2.7002">Numatytųjų patikrinimas</string>
+  <!--************************************************************-->
+  <!--Config Formats MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:8000 -->
+  <string name="TvWishListMP2.ConfigFormats_GUI">Formatų konfiguravimas</string>
+  <!-- MP1STR:8001 -->
+  <string name="TvWishListMP2.ConfigFormats_GUI_Help">Konfiguruoti formato nustatymus. Tušti formatų įrašai naudos formatus numatytus kalbos failuose</string>
+  <!-- MP1STR:8100 -->
+  <string name="TvWishListMP2.DateAndTimeFormat">Datos ir laiko formatai</string>
+  <!-- MP1STR:8101 -->
+  <string name="TvWishListMP2.MainItemFormat">Pagrindinio meniu įrašų formatas</string>
+  <!-- MP1STR:8102 -->
+  <string name="TvWishListMP2.ResultItemFormat">Rezultatų meniu įrašų formatas</string>
+  <!-- MP1STR:8103 -->
+  <string name="TvWishListMP2.MainTextBoxFormat">Pagrindinio meniu teksto langelio formatas</string>
+  <!-- MP1STR:8104 -->
+  <string name="TvWishListMP2.ResultTextBoxFormat">Rezultatų meniu teksto langelio formatas</string>
+  <!-- MP1STR:8105 -->
+  <string name="TvWishListMP2.GroupboxGeneral">Bendrieji formatai</string>
+  <!-- MP1STR:8106 -->
+  <string name="TvWishListMP2.GroupboxListItemFormats">Sąrašo įrašų formatai</string>
+  <!-- MP1STR:8107 -->
+  <string name="TvWishListMP2.GroupboxEmailAndRecordModus">Elaiškų ir įrašų režimai</string>
+  <!-- MP1STR:8108 -->
+  <string name="TvWishListMP2.GroupboxViewOnlyModus">Tik žiūrėjimo režimai</string>
+  <!-- MP1STR:8109 -->
+  <string name="TvWishListMP2.FormatExpertLabel">Formatai turi būti keičiami tik ekspertų. Tušti laukai naudos numatytąsias reikšmes iš kalbos failo</string>
+  <string name="TvWishListMP2.8110">Formatai turėtų būti keičiami tik ekspertų.</string>
+  <string name="TvWishListMP2.8111">Tušti laukai naudos numatytąsias reikšmes iš kalbos failo</string>
+  <!--************************************************************-->
+  <!--TV Server Run EPG Messages-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=10000 TO=10300 OFFSET_FROM=0 OFFSET_TO=300-->
+  <string name="TvWishListMP2.10001">Laukiam kol bus baigti senosios užduotys {0}</string>
+  <string name="TvWishListMP2.10002">Klaida: TVPageidavimai nebaigė užduoties - perkraukite kompiuterį</string>
+  <string name="TvWishListMP2.10003">Perkraunami duomenų nustatymai</string>
+  <string name="TvWishListMP2.10004">Užkraunamos žinutės</string>
+  <string name="TvWishListMP2.10005">Užkraunami TVPageidavimai</string>
+  <string name="TvWishListMP2.10006">Ieškoma {0}</string>
+  <string name="TvWishListMP2.10007">Siunčiame adresu {0}</string>
+  <string name="TvWishListMP2.10008">Klaida: nenurodytas SMTP</string>
+  <string name="TvWishListMP2.10009">Klaida: nenurodytas vartotojas</string>
+  <string name="TvWishListMP2.10010">Klaida: Nenurodytas slaptažodis</string>
+  <string name="TvWishListMP2.10011">Klaida: nenurodytas gavėjo e-adresas</string>
+  <string name="TvWishListMP2.10012">Klaida: negalimi tiekėjo nustatymai</string>
+  <string name="TvWishListMP2.10013">Klaida: nenurodytas serverio adresas</string>
+  <string name="TvWishListMP2.10014">Klaida: nepavyko pasiekti POP3 serverio</string>
+  <string name="TvWishListMP2.10015">Klaida: nenurodytas SMTP portas</string>
+  <string name="TvWishListMP2.10016">Pavyko išsiųsti grižtamuosius laiškus</string>
+  <string name="TvWishListMP2.10017">Klaida: nepavyko išsiųsti grižtamųjų laiškų - patikrinkite vartotojo vardą</string>
+  <string name="TvWishListMP2.10018">Klaida: nepavyko išsiųsti grižtamųjų laiškų - patikrinkite slaptažodį</string>
+  <string name="TvWishListMP2.10019">Klaida: nepavyko išsiųsti grižtamųjų laiškų</string>
+  <string name="TvWishListMP2.10020">Pasiruošęs</string>
+  <string name="TvWishListMP2.10021">Apdorojami EPG duomenys {0} iš {1} pas {2}</string>
+  <string name="TvWishListMP2.10022">Apdorojami EPG duomenys {0} pas {1}</string>
+  <string name="TvWishListMP2.10023">Klaida: slaptažodis netinkamas ir nustatytas iš naujo - įveskite iš naujo</string>
+  <string name="TvWishListMP2.10024">Esminė klaida: tikrinkite logų failą</string>
+  <string name="TvWishListMP2.10025">Klaida SQL užklausoje - tikrinti išsireiškimą {0}</string>
+  <!--************************************************************-->
+  <!--TV Server Message  Creation-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.10050">Tvarkaraštis {0} neturi tinkamų EPG duomenų bet gali būti ptaisytas</string>
+  <string name="TvWishListMP2.10051">Tvarkaraštis {0} neturi tinkamų EPG duomenų - tikrinkite tvarkaraščio konfliktus</string>
+  <string name="TvWishListMP2.10052">Tvarkaraštis {0} neturi tinkamų EPG duomenų - tikrinkite tvarkaraščio konfliktus</string>
+  <string name="TvWishListMP2.10053">EPG duomenys pasikeitė Epizode/prašyme arba EPG laikas kitas - ištriname esamą tvarkaraštį ir bandome iš naujo</string>
+  <string name="TvWishListMP2.10054">Tvarkaraščio konfliktas turi būti išspręstas vartotojo</string>
+  <string name="TvWishListMP2.10055">Pašalinama programa {0} kadangi pašalinta filtro aplinkybė {1}</string>
+  <string name="TvWishListMP2.10056">Pašalinama programa {0} dėl wordcheck filtro aplinkybės </string>
+  <string name="TvWishListMP2.10057">Pašalinama programa {0} dėl wordcheck filtro aplinkybės </string>
+  <string name="TvWishListMP2.10058">Rastas maksimalus programų skaičius ({0}) - kiti atitikmenys nebus rodomi</string>
+  <string name="TvWishListMP2.10059">{0} po {1} GB</string>
+  <string name="TvWishListMP2.10060">Nepavyko pridėti programą {0}</string>
+  <string name="TvWishListMP2.10061">Nepavyko sukurti tvarkaraščio programai {0}</string>
+  <string name="TvWishListMP2.10062">Programai {0} jau sukurtas tvarkaraštis</string>
+  <string name="TvWishListMP2.10063">Praleidžiama progrma {0} nes nėra tarp {1} ir {2}</string>
+  <string name="TvWishListMP2.10064">Praleidžiama progrma {0} nes nėra tarp {1} ir {2}</string>
+  <string name="TvWishListMP2.10065">Praleidžiama programa {0} kadangi nėra per {1} valandų</string>
+  <string name="TvWishListMP2.10066">Praleidžiama programa {0} kadangi neatitinka reikalaujamo kanalų filtro {1}</string>
+  <string name="TvWishListMP2.10067">Praleidžiama programa {0} kadangi neatitinka reikalaujamo epizodo dalies {1}</string>
+  <string name="TvWishListMP2.10068">Praleidžiama programa {0} kadangi neatitinka reikalaujamo epizodo vardo {1}</string>
+  <string name="TvWishListMP2.10069">Praleidžiama programa {0} kadangi neatitinka reikalaujamo serijos numerio {1}</string>
+  <string name="TvWishListMP2.10070">Praleidžiama programa {0} kadangi neatitinka reikalaujamo epizodo numerio {1}</string>
+  <string name="TvWishListMP2.10071">Programa {0} jau įrašyta</string>
+  <string name="TvWishListMP2.10072">Programa {0} jau ištrinta ir praleista</string>
+  <string name="TvWishListMP2.10073">Programos pradžios laikas {0} jau praėjęs - tvarkaraštį praleisime</string>
+  <string name="TvWishListMP2.10074">Rastas pasikartojantis tvarkaraštis {0} - praleidžiame</string>
+  <string name="TvWishListMP2.10075">Programa {0} konfliktuoja ir nebus sudarytas tvarkaraštis</string>
+  <string name="TvWishListMP2.10076">Trinamas tvarkaraštis {0} dėl žemo prioriteto</string>
+  <string name="TvWishListMP2.10077">Tvarkaraštis {0} nėra pakankamo prioriteto kad panaikintų konfliktus - praleidžiame</string>
+  <string name="TvWishListMP2.10078">Prioritetinėje grupėje rastas geresnis tvarkaraštis</string>
+  <string name="TvWishListMP2.10079">TVPageidavimųSąrašas rado programą iš TVPageidavimų [{0}]: {1}\n TVPageidavimųSąršas sudarė programos tvarkaraštį</string>
+  <string name="TvWishListMP2.10080">TVPageidavimųSąrašas rado programą iš TVPageidavimų [{0}]: {1}\n TVPageidavimųSąršas nesudarė programos tvarkaraščio bet primena programą</string>
+  <!--Email Format Default - will be sent with each email for a found program (use format entries from message format at 3900)-->
+  <string name="TvWishListMP2.10090">NAUJAS ĮRAŠAS\n Antraštė={0}\n Aprašymas={1}\n Kanalas={2}\n Pradžia={3}\n Pabaiga={4}\n Tipas={15}\n Sukurta={17}\n \n \n</string>
+  <string name="TvWishListMP2.10091">{1:00}/{2:00} pas {3:00}:{4:00}</string>
+  <!--************************************************************-->
+  <!--TV Server Configuration-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.10100">Pagrindinis</string>
+  <string name="TvWishListMP2.10101">Lengvas</string>
+  <string name="TvWishListMP2.10102">Ekspertinis</string>
+  <string name="TvWishListMP2.10103">Aukštyn</string>
+  <string name="TvWishListMP2.10104">Žemyn</string>
+  <string name="TvWishListMP2.10105">Trinti</string>
+  <string name="TvWishListMP2.10106">Atšaukti</string>
+  <string name="TvWishListMP2.10107">Numatytasis</string>
+  <string name="TvWishListMP2.10108">Pagalba</string>
+  <string name="TvWishListMP2.10109">Derinimo režimas</string>
+  <string name="TvWishListMP2.10110">TVPageidavimų namų puslapis</string>
+  <string name="TvWishListMP2.10111">Visi aktyvūs</string>
+  <string name="TvWishListMP2.10112">Visi neaktyvūs</string>
+  <string name="TvWishListMP2.10113">Praleisti visus</string>
+  <string name="TvWishListMP2.10114">Nieko nepraleisti</string>
+  <string name="TvWishListMP2.10115">Kanalų filtras</string>
+  <string name="TvWishListMP2.10130">Epaštas</string>
+  <string name="TvWishListMP2.10131">Klientas</string>
+  <string name="TvWishListMP2.10132">Vartotojo vardas</string>
+  <string name="TvWishListMP2.10133">Slaptažodis</string>
+  <string name="TvWishListMP2.10134">Kartoti slaptažodį</string>
+  <string name="TvWishListMP2.10135">Epašto adresas</string>
+  <string name="TvWishListMP2.10136">tiktai jei skiriasi nuo vartotojo vardo</string>
+  <string name="TvWishListMP2.10137">Ieškoti dabar</string>
+  <string name="TvWishListMP2.10138">Adresas</string>
+  <string name="TvWishListMP2.10139">Elaiško gavėjas</string>
+  <string name="TvWishListMP2.10140">Testuoti laiško siuntimą</string>
+  <string name="TvWishListMP2.10141">SMTP</string>
+  <string name="TvWishListMP2.10142">Tiekėjas</string>
+  <string name="TvWishListMP2.10143">Portas</string>
+  <string name="TvWishListMP2.10144">SMTP serveris</string>
+  <string name="TvWishListMP2.10145">SSL</string>
+  <string name="TvWishListMP2.10146">Įjungti Elaiško atsakymą</string>
+  <string name="TvWishListMP2.10147">Epaštu tik naujus</string>
+  <string name="TvWishListMP2.10160">Nustatymai</string>
+  <string name="TvWishListMP2.10161">Tikrinti EPG</string>
+  <string name="TvWishListMP2.10162">Pirmadienis</string>
+  <string name="TvWishListMP2.10163">Antradienis</string>
+  <string name="TvWishListMP2.10164">Trečiadienis</string>
+  <string name="TvWishListMP2.10165">Ketvirtadienis</string>
+  <string name="TvWishListMP2.10166">Penktadienis</string>
+  <string name="TvWishListMP2.10167">Šeštadienis</string>
+  <string name="TvWishListMP2.10168">Sekmadienis</string>
+  <string name="TvWishListMP2.10169">Kiekvienas</string>
+  <string name="TvWishListMP2.10170">Dienos </string>
+  <string name="TvWishListMP2.10171">Valandos</string>
+  <string name="TvWishListMP2.10172">Minutės</string>
+  <string name="TvWishListMP2.10173">pas</string>
+  <string name="TvWishListMP2.10174">Tikrinti EPG</string>
+  <string name="TvWishListMP2.10175">prieš kiekvieną tvarkaraštį</string>
+  <string name="TvWishListMP2.10176">Kita TV serverio tikrinimo data:</string>
+  <string name="TvWishListMP2.10177">Sutampantis kriterijus pasikartojantiems Filmams ir Epizodams</string>
+  <string name="TvWishListMP2.10178">EPG žyma antraštėje arba aprašyme</string>
+  <string name="TvWishListMP2.10179">Kiti pasirinkimai</string>
+  <string name="TvWishListMP2.10180">Automatinis įrašymas</string>
+  <string name="TvWishListMP2.10181">Tvarkaraščio konfliktai</string>
+  <string name="TvWishListMP2.10182">Trinti pakeistą EPG</string>
+  <string name="TvWishListMP2.10183">Atstatyti numatytąsias reikšmes</string>
+  <string name="TvWishListMP2.10184">Lėtas CPU</string>
+  <string name="TvWishListMP2.10185">Praleisti ištrintus</string>
+  <string name="TvWishListMP2.10186">Ištrintų galiojimo pabaiga:</string>
+  <string name="TvWishListMP2.10187">Mėnesiai</string>
+  <string name="TvWishListMP2.10188">Maksimaliai tvarkaraščių pageidavimui</string>
+  <!--Date Time Format with 10189-10191 combined-->
+  <string name="TvWishListMP2.10189">MM/dd/yyyy</string>
+  <string name="TvWishListMP2.10190">HH:mm</string>
+  <string name="TvWishListMP2.10191">{0} pas {1}</string>
+  <string name="TvWishListMP2.10192">Laukiame ComSkip proceso</string>
+  <string name="TvWishListMP2.10193">EPG</string>
+  <string name="TvWishListMP2.10200">Formatai</string>
+  <string name="TvWishListMP2.10201">Datos ir laiko formatas Elaiškams</string>
+  <string name="TvWishListMP2.10202">Elaiško formatas</string>
+  <string name="TvWishListMP2.10203">Kalbos filas</string>
+  <string name="TvWishListMP2.10204">Rūšiavimo kriterijus</string>
+  <string name="TvWishListMP2.10205">Vartotojai ekspertai gali nustatyti įvairius formatus siunčiamiems elaiškams</string>
+  <string name="TvWishListMP2.10206">Rūšiavimas mažėjančia tvarka</string>
+  <string name="TvWishListMP2.10207">Filtro kriterijus</string>
+  <string name="TvWishListMP2.10208">Epaštas</string>
+  <string name="TvWishListMP2.10209">Įrašas</string>
+  <string name="TvWishListMP2.10210">Konfliktai</string>
+  <string name="TvWishListMP2.10211">Trinti visas žinutes</string>
+  <string name="TvWishListMP2.10250">Laukiama visų užduočių iš {0} pabaigos. Bandykite vėliau. Jei užduotys nebaigiamos, restartuokite arba sustabdykite TVserverį patys</string>
+  <string name="TvWishListMP2.10251">Uždaroma TVKonfiguracija</string>
+  <string name="TvWishListMP2.10252">Vykdomas procesas - prašome palaukti kol baigsime</string>
+  <string name="TvWishListMP2.10253">Sėkmingai</string>
+  <string name="TvWishListMP2.10254">Elaiškas nenusiųstas</string>
+  <string name="TvWishListMP2.10255">Minimum {0} yra {1}</string>
+  <string name="TvWishListMP2.10256">Maksimum {0} yra {1}</string>
+  <string name="TvWishListMP2.10257">Negalėjome atidaryti {0}</string>
+  <string name="TvWishListMP2.10258">Norite trinti visas žinutes? ĮSPĖJIMAS: bus ištrintos visa žinučių istorija, taip pat ir ištintos. Įsitikinkite kad TVPageidavimųSarašasMP MediaPortal įskiepis uždarytas!</string>
+  <string name="TvWishListMP2.10259">Žinutės ištrintos</string>
+  <string name="TvWishListMP2.10260">Vykdymas sustabdytas</string>
+  <string name="TvWishListMP2.10261">Ar norite atstatyti visus formatus į numatytąsias reikšmes? Tai perrašys visus nustatymus ir visus formatus</string>
+  <string name="TvWishListMP2.10262">Patikrinkite vartotojo vardą ir slaptažodį\n Serverio klaida:\n {0}</string>
+</resources>

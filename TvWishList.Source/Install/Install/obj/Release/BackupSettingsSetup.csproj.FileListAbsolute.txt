@@ -1,0 +1,22 @@
+C:\Users\hubert\AppData\Local\Temporary Projects\BackupSettingsSetup\bin\Release\BackupSettingsSetup.exe
+C:\Users\hubert\AppData\Local\Temporary Projects\BackupSettingsSetup\bin\Release\BackupSettingsSetup.pdb
+C:\Users\hubert\AppData\Local\Temporary Projects\BackupSettingsSetup\obj\Release\ResolveAssemblyReference.cache
+C:\Users\hubert\AppData\Local\Temporary Projects\BackupSettingsSetup\obj\Release\BackupSettingsSetup.Form1.resources
+C:\Users\hubert\AppData\Local\Temporary Projects\BackupSettingsSetup\obj\Release\BackupSettingsSetup.Properties.Resources.resources
+C:\Users\hubert\AppData\Local\Temporary Projects\BackupSettingsSetup\obj\Release\BackupSettingsSetup.csproj.GenerateResource.Cache
+C:\Users\hubert\AppData\Local\Temporary Projects\BackupSettingsSetup\obj\Release\BackupSettingsSetup.exe
+C:\Users\hubert\AppData\Local\Temporary Projects\BackupSettingsSetup\obj\Release\BackupSettingsSetup.pdb
+C:\Users\hubert\Documents\Visual Studio 2008\Projects\BackupSettingsSetup\BackupSettingsSetup\obj\Release\BackupSettingsSetup.exe
+C:\Users\hubert\Documents\Visual Studio 2008\Projects\BackupSettingsSetup\BackupSettingsSetup\obj\Release\BackupSettingsSetup.pdb
+C:\Users\hubert\Documents\Visual Studio 2008\Projects\BackupSettingsSetup\BackupSettingsSetup\bin\Release\BackupSettingsSetup.exe
+C:\Users\hubert\Documents\Visual Studio 2008\Projects\BackupSettingsSetup\BackupSettingsSetup\bin\Release\BackupSettingsSetup.pdb
+C:\Users\hubert\Documents\Visual Studio 2008\Projects\BackupSettingsSetup\BackupSettingsSetup\obj\Release\ResolveAssemblyReference.cache
+C:\Users\hubert\Documents\Visual Studio 2008\Projects\BackupSettingsSetup\BackupSettingsSetup\obj\Release\BackupSettingsSetup.Properties.Resources.resources
+C:\Users\hubert\Documents\Visual Studio 2008\Projects\BackupSettingsSetup\BackupSettingsSetup\obj\Release\BackupSettingsSetup.csproj.GenerateResource.Cache
+C:\Users\hubert\Documents\Visual Studio 2008\Projects\BackupSettingsSetup\BackupSettingsSetup\obj\Release\BackupSettingsSetup.Install.resources
+D:\Installation\C#Projects\BackupSettings\BackupSettings V0.0.1.6\Source\Install V0.0.0.1\BackupSettingsSetup\obj\Release\BackupSettingsSetup.exe
+D:\Installation\C#Projects\BackupSettings\BackupSettings V0.0.1.6\Source\Install V0.0.0.1\BackupSettingsSetup\obj\Release\BackupSettingsSetup.pdb
+D:\Installation\C#Projects\BackupSettings\BackupSettings V0.0.1.6\Source\Install V0.0.0.1\BackupSettingsSetup\obj\Release\ResolveAssemblyReference.cache
+D:\Installation\C#Projects\BackupSettings\BackupSettings V0.0.1.6\Source\Install V0.0.0.1\BackupSettingsSetup\obj\Release\BackupSettingsInstall.InstallSetup.resources
+D:\Installation\C#Projects\BackupSettings\BackupSettings V0.0.1.6\Source\Install V0.0.0.1\BackupSettingsSetup\obj\Release\Install.Properties.Resources.resources
+D:\Installation\C#Projects\BackupSettings\BackupSettings V0.0.1.6\Source\Install V0.0.0.1\BackupSettingsSetup\obj\Release\BackupSettingsSetup.csproj.GenerateResource.Cache

@@ -3,14 +3,14 @@ REM DEFINE VARIABLES
 REM *************************************************************************
 REM 
 
-SET OLDVERSION=1.3.0.8
-SET NEWVERSION=1.3.0.9
+SET OLDVERSION=1.3.0.9
+SET NEWVERSION=1.3.0.10
 
 
 SET MSFRAMEPATH="C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe"
 SET MSFRAMEPATH_MP2="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 REM SET FILE_REPLACE=..\FileReplaceString.exe
-SET FILE_REPLACE=..\..\FileReplaceString.exe
+SET FILE_REPLACE=FileReplaceString.exe
 REM ******************************END VARIABLES******************************
 
 
@@ -19,50 +19,49 @@ REM *************************************************************************
 REM Version Update
 REM *************************************************************************
 
-MOVE TvWishListV%OLDVERSION%.Release TvWishListV%NEWVERSION%.Release
-MOVE TvWishListV%OLDVERSION%.Source TvWishListV%NEWVERSION%.Source
 MOVE TvWishList.V.%OLDVERSION%.odt TvWishList.V.%NEWVERSION%.odt
 
-DEL TvWishListV%NEWVERSION%.Source\MPEI2\*.mpe1
-DEL TvWishListV%NEWVERSION%.Source\MPEI2\*.xml
+DEL TvWishList.Source\MPEI2\*.mpe1
+DEL TvWishList.Source\MPEI2\*.xml
 
+REM **************************************************************************
 REM Language Conversion From Transifex
-%FILE_REPLACE% "H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.0\LanguageConverter.bat"
-%FILE_REPLACE% "H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.0\TvWishListV1.3.0.0.Source\TransifexLanguageResources\MP2LanguageConversionForMP1.txt"
-%FILE_REPLACE% "H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.0\TvWishListV1.3.0.0.Source\TransifexLanguageResources\MP2LanguageConversionFromMP1.txt"
-REM "H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.0\LanguageConverter.bat"
+REM "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\LanguageConverter.bat"
+REM **************************************************************************
 
 
+REM **************************************************************************
 REM Plugin Code
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishList1.2\TvWishList\TvWishList.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishList1.2\TvWishList\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishList1.2\TvWishList\TvWish.cs" %OLDVERSION% %NEWVERSION%
+REM **************************************************************************
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.2\TvWishList\TvWishList.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.2\TvWishList\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.2\TvWishList\TvWish.cs" %OLDVERSION% %NEWVERSION%
 
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishList1.1\TvWishList\TvWishList.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishList1.1\TvWishList\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.1\TvWishList\TvWishList.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.1\TvWishList\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
 
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishList1.0.1\TvWishList\TvWishList.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishList1.0.1\TvWishList\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.0.1\TvWishList\TvWishList.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.0.1\TvWishList\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
 
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Common_Main_GUI.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishListMP1.2\TvWishListMP\MP1_Main_GUI.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\TvWish.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\TvWishListMP1.2\TvWishListMP\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Common_Main_GUI.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishListMP1.2\TvWishListMP\MP1_Main_GUI.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\TvWish.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishListMP1.2\TvWishListMP\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
 
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\Install\Install\InstallSetup.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\Install\Install\InstallSetup.Designer.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\Install\Install\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\Install\Install\InstallSetup.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\Install\Install\InstallSetup.Designer.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\Install\Install\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
 
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\MPEI2\TvWishList.xmp2" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\MPEI2\TvWishList.xmp2" %OLDVERSION% %NEWVERSION%
 
 REM MP2
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\TvWish.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\Common_Main_GUI.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\TvWish.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\Common_Main_GUI.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
 
-%FILE_REPLACE% "TvWishListV%NEWVERSION%.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\plugin.xml" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\plugin.xml" %OLDVERSION% %NEWVERSION%
 
 %FILE_REPLACE% MP.release.r2d2.bat %OLDVERSION% %NEWVERSION%
 %FILE_REPLACE% MP2.release.r2d2.bat %OLDVERSION% %NEWVERSION%
@@ -81,7 +80,7 @@ REM *************************************************************************
 REM Update Different Versions
 REM *************************************************************************
 
-CD TvWishListV%NEWVERSION%.Source
+CD TvWishList.Source
 
 
 COPY /Y "TvWishList1.2\TvWishList\TvWishList.cs" "TvWishList1.0.1\TvWishList\TvWishList.cs"
@@ -151,30 +150,30 @@ REM *************************************************************************
 
 CD TvWishListV%NEWVERSION%.Source
 
-COPY /Y "Install\Install\bin\Release\Install.exe" "..\TvWishListV%NEWVERSION%.Release\Install.exe"
+COPY /Y "Install\Install\bin\Release\Install.exe" "..\TvWishList.Release\Install.exe"
 
-COPY /Y "TvWishList1.0.1\TvWishList\bin\Release\TvWishList.dll" "..\TvWishListV%NEWVERSION%.Release\TvWishList1.0.1\TvWishList.dll"
-COPY /Y "TvWishList1.1\TvWishList\bin\Release\TvWishList.dll" "..\TvWishListV%NEWVERSION%.Release\TvWishList1.1\TvWishList.dll"
-COPY /Y "TvWishList1.2\TvWishList\bin\Release\TvWishList.dll" "..\TvWishListV%NEWVERSION%.Release\TvWishList1.2\TvWishList.dll"
-COPY /Y "TvWishListMP1.1\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishListV%NEWVERSION%.Release\TvWishListMP1.1\TvWishListMP.dll"
-COPY /Y "TvWishListMP1.2\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishListV%NEWVERSION%.Release\TvWishListMP1.2\TvWishListMP.dll"
+COPY /Y "TvWishList1.0.1\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Release\TvWishList1.0.1\TvWishList.dll"
+COPY /Y "TvWishList1.1\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Release\TvWishList1.1\TvWishList.dll"
+COPY /Y "TvWishList1.2\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Release\TvWishList1.2\TvWishList.dll"
+COPY /Y "TvWishListMP1.1\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishList.Release\TvWishListMP1.1\TvWishListMP.dll"
+COPY /Y "TvWishListMP1.2\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishList.Release\TvWishListMP1.2\TvWishListMP.dll"
 
-XCOPY "MP2 TvWishListMP2\Bin\TvWishListMP2\bin\Release\Plugins\TvWishListMP2" "..\TvWishListV%NEWVERSION%.Release\TvWishListMP2"  /S /C /I /Y
-XCOPY "MP2 TvWishListMP2\Bin\TvWishListMPExtendedProvider0.5\bin\Release\Plugins\TvWishListMPExtendedProvider0.5" "..\TvWishListV%NEWVERSION%.Release\TvWishListMPExtendedProvider0.5"  /S /C /I /Y
-COPY /Y "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll" "..\TvWishListV%NEWVERSION%.Release\TvWishListMP2"
-COPY /Y "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll" "..\TvWishListV%NEWVERSION%.Release\TvWishListMPExtendedProvider0.5"
+XCOPY "MP2 TvWishListMP2\Bin\TvWishListMP2\bin\Release\Plugins\TvWishListMP2" "..\TvWishList.Release\TvWishListMP2"  /S /C /I /Y
+XCOPY "MP2 TvWishListMP2\Bin\TvWishListMPExtendedProvider0.5\bin\Release\Plugins\TvWishListMPExtendedProvider0.5" "..\TvWishList.Release\TvWishListMPExtendedProvider0.5"  /S /C /I /Y
+COPY /Y "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll" "..\TvWishList.Release\TvWishListMP2"
+COPY /Y "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll" "..\TvWishList.Release\TvWishListMPExtendedProvider0.5"
 
 
-REM XCOPY "MP2 TvWishListMP2\TvWishListMP2 Resources\TvWishListMP2 Resources\Skin" "..\TvWishListV%NEWVERSION%.Release\TvWishListMP2\Skin" /S /C /I /Y
-REM XCOPY "MP2 TvWishListMP2\TvWishListMP2 Resources\TvWishListMP2 Resources\Language" "..\TvWishListV%NEWVERSION%.Release\TvWishListMP2\Language" /S /C /I /Y
+REM XCOPY "MP2 TvWishListMP2\TvWishListMP2 Resources\TvWishListMP2 Resources\Skin" "..\TvWishList.Release\TvWishListMP2\Skin" /S /C /I /Y
+REM XCOPY "MP2 TvWishListMP2\TvWishListMP2 Resources\TvWishListMP2 Resources\Language" "..\TvWishList.Release\TvWishListMP2\Language" /S /C /I /Y
 
-XCOPY "MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\MP1 language" "..\TvWishListV%NEWVERSION%.Release\language\TvWishListMP" /S /C /I /Y
+XCOPY "MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\MP1 language" "..\TvWishList.Release\language\TvWishListMP" /S /C /I /Y
 
 
 
 REM ******************** END RELEASE ********************
 
-CD "..\TvWishListV%NEWVERSION%.Release"
+CD "..\TvWishList.Release"
 Install.exe install
 
 "C:\Program Files (x86)\Team MediaPortal\MediaPortal TV Server\SetupTv.exe"

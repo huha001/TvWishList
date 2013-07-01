@@ -250,7 +250,7 @@ namespace TvEngine
         /// <summary>
         /// returns the version of the plugin
         /// </summary>
-        public string Version { get { return "1.3.0.9"; } }
+        public string Version { get { return "1.3.0.10"; } }
 
         /// <summary>
         /// returns the author of the plugin

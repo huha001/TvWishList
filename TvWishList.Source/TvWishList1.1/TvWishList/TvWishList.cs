@@ -250,7 +250,7 @@ namespace TvEngine
         /// <summary>
         /// returns the version of the plugin
         /// </summary>
-        public string Version { get { return "1.3.0.9"; } }
+        public string Version { get { return "1.3.0.10"; } }
 
         /// <summary>
         /// returns the author of the plugin
@@ -524,11 +524,21 @@ namespace TvEngine
                 SystemEvents.PowerModeChanged -= new PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
                 SystemEvents.SessionEnded -= new SessionEndedEventHandler(SystemEvents_SessionEnded);
                 //ITvServerEvent events = GlobalServiceProvider.Instance.Get<ITvServerEvent>();
-                events.OnTvServerEvent -= new TvServerEventHandler(events_OnTvServerEvent);
+                if (events != null)
+                {
+                    events.OnTvServerEvent -= new TvServerEventHandler(events_OnTvServerEvent);
+                }
 
                 //disable filewatchers
-                SetupTvStarted.EnableRaisingEvents = false;
-                NextEpgCheck.EnableRaisingEvents = false;
+                if (SetupTvStarted != null)
+                {
+                    SetupTvStarted.EnableRaisingEvents = false;
+                }
+
+                if (NextEpgCheck != null)
+                {
+                    NextEpgCheck.EnableRaisingEvents = false;
+                }
                 //StartEPGsearch.EnableRaisingEvents = false;
 
                 //stop pipeserver

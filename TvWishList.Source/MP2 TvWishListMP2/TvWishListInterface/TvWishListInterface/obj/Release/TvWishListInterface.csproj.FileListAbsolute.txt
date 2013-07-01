@@ -31,3 +31,8 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.9\TvWishListV1.3.0.
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.9\TvWishListV1.3.0.9.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\obj\Release\TvWishListInterface.csprojResolveAssemblyReference.cache
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.9\TvWishListV1.3.0.9.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\obj\Release\TvWishListInterface.dll
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.3.0.9\TvWishListV1.3.0.9.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\obj\Release\TvWishListInterface.pdb
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.pdb
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\obj\Release\TvWishListInterface.csprojResolveAssemblyReference.cache
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\obj\Release\TvWishListInterface.dll
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\obj\Release\TvWishListInterface.pdb

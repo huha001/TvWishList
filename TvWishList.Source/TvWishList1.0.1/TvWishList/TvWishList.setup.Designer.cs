@@ -253,7 +253,7 @@ namespace SetupTv.Sections
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(476, 406);
+            this.tabPage1.Size = new System.Drawing.Size(473, 406);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Email";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -288,8 +288,6 @@ namespace SetupTv.Sections
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBoxSmtpEmailAdress);
@@ -301,7 +299,7 @@ namespace SetupTv.Sections
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Location = new System.Drawing.Point(18, 53);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(247, 224);
+            this.groupBox2.Size = new System.Drawing.Size(201, 224);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Account";
@@ -330,7 +328,7 @@ namespace SetupTv.Sections
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSmtpEmailAdress.Location = new System.Drawing.Point(6, 183);
             this.textBoxSmtpEmailAdress.Name = "textBoxSmtpEmailAdress";
-            this.textBoxSmtpEmailAdress.Size = new System.Drawing.Size(220, 20);
+            this.textBoxSmtpEmailAdress.Size = new System.Drawing.Size(174, 20);
             this.textBoxSmtpEmailAdress.TabIndex = 53;
             // 
             // TextBoxUserName
@@ -339,7 +337,7 @@ namespace SetupTv.Sections
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxUserName.Location = new System.Drawing.Point(6, 32);
             this.TextBoxUserName.Name = "TextBoxUserName";
-            this.TextBoxUserName.Size = new System.Drawing.Size(217, 20);
+            this.TextBoxUserName.Size = new System.Drawing.Size(171, 20);
             this.TextBoxUserName.TabIndex = 40;
             // 
             // label1
@@ -358,7 +356,7 @@ namespace SetupTv.Sections
             this.TextBoxPassword.Location = new System.Drawing.Point(6, 82);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
-            this.TextBoxPassword.Size = new System.Drawing.Size(220, 20);
+            this.TextBoxPassword.Size = new System.Drawing.Size(174, 20);
             this.TextBoxPassword.TabIndex = 42;
             this.TextBoxPassword.UseSystemPasswordChar = true;
             // 
@@ -369,7 +367,7 @@ namespace SetupTv.Sections
             this.TextBoxPassword2.Location = new System.Drawing.Point(6, 134);
             this.TextBoxPassword2.Name = "TextBoxPassword2";
             this.TextBoxPassword2.PasswordChar = '*';
-            this.TextBoxPassword2.Size = new System.Drawing.Size(220, 20);
+            this.TextBoxPassword2.Size = new System.Drawing.Size(174, 20);
             this.TextBoxPassword2.TabIndex = 43;
             this.TextBoxPassword2.UseSystemPasswordChar = true;
             // 
@@ -416,7 +414,7 @@ namespace SetupTv.Sections
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.TextBoxTestReceiver);
             this.groupBox1.Controls.Add(this.buttonTestSend);
-            this.groupBox1.Location = new System.Drawing.Point(630, 53);
+            this.groupBox1.Location = new System.Drawing.Point(259, 53);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(203, 86);
             this.groupBox1.TabIndex = 49;
@@ -461,7 +459,7 @@ namespace SetupTv.Sections
             this.groupBox4.Controls.Add(this.checkBoxSSL);
             this.groupBox4.Controls.Add(this.listBoxProvider2);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Location = new System.Drawing.Point(630, 161);
+            this.groupBox4.Location = new System.Drawing.Point(259, 161);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(203, 116);
             this.groupBox4.TabIndex = 30;
@@ -550,10 +548,10 @@ namespace SetupTv.Sections
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
+            this.tabControl1.Location = new System.Drawing.Point(3, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(484, 432);
+            this.tabControl1.Size = new System.Drawing.Size(481, 432);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage4
@@ -579,7 +577,7 @@ namespace SetupTv.Sections
             this.tabPage4.Controls.Add(this.buttonDelete);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(476, 406);
+            this.tabPage4.Size = new System.Drawing.Size(473, 406);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Main";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -701,8 +699,9 @@ namespace SetupTv.Sections
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(470, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(467, 320);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -1252,7 +1251,7 @@ namespace SetupTv.Sections
             this.tabPage5.Controls.Add(this.groupBox3);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(476, 406);
+            this.tabPage5.Size = new System.Drawing.Size(473, 406);
             this.tabPage5.TabIndex = 7;
             this.tabPage5.Text = "EPG";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1616,7 +1615,7 @@ namespace SetupTv.Sections
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(476, 406);
+            this.tabPage2.Size = new System.Drawing.Size(473, 406);
             this.tabPage2.TabIndex = 5;
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1832,7 +1831,7 @@ namespace SetupTv.Sections
             this.tabPage3.Controls.Add(this.comboBoxSortCriteria);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(476, 406);
+            this.tabPage3.Size = new System.Drawing.Size(473, 406);
             this.tabPage3.TabIndex = 6;
             this.tabPage3.Text = "Formats";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1843,7 +1842,7 @@ namespace SetupTv.Sections
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEmailFormat.Location = new System.Drawing.Point(23, 62);
             this.textBoxEmailFormat.Name = "textBoxEmailFormat";
-            this.textBoxEmailFormat.Size = new System.Drawing.Size(230, 20);
+            this.textBoxEmailFormat.Size = new System.Drawing.Size(429, 20);
             this.textBoxEmailFormat.TabIndex = 43;
             // 
             // label25
@@ -1857,11 +1856,9 @@ namespace SetupTv.Sections
             // 
             // textBoxDateTimeFormat
             // 
-            this.textBoxDateTimeFormat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDateTimeFormat.Location = new System.Drawing.Point(23, 130);
             this.textBoxDateTimeFormat.Name = "textBoxDateTimeFormat";
-            this.textBoxDateTimeFormat.Size = new System.Drawing.Size(6, 20);
+            this.textBoxDateTimeFormat.Size = new System.Drawing.Size(199, 20);
             this.textBoxDateTimeFormat.TabIndex = 41;
             // 
             // label24
@@ -1875,8 +1872,6 @@ namespace SetupTv.Sections
             // 
             // comboBoxLanguage
             // 
-            this.comboBoxLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxLanguage.AutoCompleteCustomSource.AddRange(new string[] {
             "NO_VALID_EPG",
             "MANUAL_CONFLICT",
@@ -1893,7 +1888,7 @@ namespace SetupTv.Sections
             this.comboBoxLanguage.Location = new System.Drawing.Point(23, 184);
             this.comboBoxLanguage.MaxDropDownItems = 100;
             this.comboBoxLanguage.Name = "comboBoxLanguage";
-            this.comboBoxLanguage.Size = new System.Drawing.Size(6, 21);
+            this.comboBoxLanguage.Size = new System.Drawing.Size(199, 21);
             this.comboBoxLanguage.TabIndex = 39;
             // 
             // checkBoxDeletemessageFile
@@ -2002,7 +1997,7 @@ namespace SetupTv.Sections
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Name = "TvWishListSetup";
-            this.Size = new System.Drawing.Size(490, 438);
+            this.Size = new System.Drawing.Size(487, 438);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

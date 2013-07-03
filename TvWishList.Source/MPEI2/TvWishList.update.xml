@@ -64,7 +64,7 @@ Now you can access to TvWishlist directly from MediaPortal with the client plugi
 - fixed GUI bug on email receiver and smtp from previous version</VersionDescription>
         <DevelopmentStatus>Stable</DevelopmentStatus>
         <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=71&amp;cf_id=24</OnlineLocation>
-        <ReleaseDate>2013-07-01T18:27:26</ReleaseDate>
+        <ReleaseDate>2013-07-03T18:27:26</ReleaseDate>
         <Tags>automation,tv server plugins,tvwishlist,tvwishlistmp,mediaportal plugins</Tags>
         <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.3.0.10.mpe1</Location>
         <Params>

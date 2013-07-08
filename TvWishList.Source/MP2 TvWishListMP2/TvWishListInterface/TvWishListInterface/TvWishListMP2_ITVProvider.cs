@@ -34,7 +34,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
       int Server_Index { get; set; }
       ISchedule NewSchedule { get; set; }
       IRecording NewRecording { get; set; }
-      #endregion properties
+      #endregion properties 
 
 
       bool Init();

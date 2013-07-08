@@ -1,0 +1,735 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--DO NOT CHANGE ENGLISH COMMENTS INTO ANOTHER LANGUAGE-->
+  <!--Owner: huha-->
+  <!--Version 1.2.1.0
+- initial release
+
+
+Version 1.2.1.5
+- added preferred group and episode criteria
+
+Version 1.2.3.0
+- added TvWishListMP2 strings - new strings are 100-102, 1108-1109, 1206, 3001, 3104, 3506-3508, 3652-3653, 5000 and up
+
+Version 1.2.3.6
+-added string 1110, 4312, 5051-5052, 5204-5216,6203, 7002, 8110-8111, 10000 and up
+
+Version 1.2.3.10
+- added 200-201
+
+Version 1.2.3.11
+-added 10192-10193,10262
+
+Version 1.2.3.13
+-added 2853,1059-1062,3509-->
+  <!--TVSERVER VECTORSIZE=5000-->
+  <!--MP2 Display in main menu-->
+  <string name="TvWishListMP2.100">TvWensLijst</string>
+  <string name="TvWishListMP2.101">TvWens</string>
+  <string name="TvWishListMP2.102">Nieuwe TVWens - Zoek naar:</string>
+  <!--SlimTv Buttons in MP2-->
+  <!-- MP1STR:200 -->
+  <string name="TvWishListMP2.CreateTvWish">Creëer TvWens</string>
+  <!-- MP1STR:201 -->
+  <string name="TvWishListMP2.AlternatePrograms">Alternatieve Programma's</string>
+  <!--************************************************************-->
+  <!--TV WishList - Main-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.1000">TvWensLijst - Hoofdmenu -</string>
+  <!--Quick Menu from Skins-->
+  <string name="TvWishListMP2.1050">TvWensLijst Snelmenu</string>
+  <string name="TvWishListMP2.1051">Maak TvWens met titel</string>
+  <string name="TvWishListMP2.1052">Maak TvWens met Alle</string>
+  <string name="TvWishListMP2.1053">Maak TvWens met Titel in E-mailmodus</string>
+  <string name="TvWishListMP2.1054">Maak TvWens met Titel in Weergavemodus</string>
+  <string name="TvWishListMP2.1055">Maak TvWens met Alle in E-mailmodus</string>
+  <string name="TvWishListMP2.1056">Maak TvWens met Alle in Weergavemodus</string>
+  <string name="TvWishListMP2.1057">Ga naar TvWensLijst hoofdmenu</string>
+  <string name="TvWishListMP2.1058">Ga naar TvWensLijst resultaten</string>
+  <string name="TvWishListMP2.1059">Maak TvWens en doorzoek TV Gids</string>
+  <string name="TvWishListMP2.1060">Creëer TvWens</string>
+  <string name="TvWishListMP2.1061">Gebruik Weergavemodus</string>
+  <string name="TvWishListMP2.1062">Gebruik E-mail- en Opnamemodus</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.1100">Weergavemodus</string>
+  <string name="TvWishListMP2.1101">E-mail- en Opnamemodus</string>
+  <string name="TvWishListMP2.1102">Start TV-gids doorzoeken</string>
+  <string name="TvWishListMP2.1103">Bekijk Resultaten</string>
+  <string name="TvWishListMP2.1104">Nieuw</string>
+  <string name="TvWishListMP2.1105">Opslaan</string>
+  <string name="TvWishListMP2.1106">Annuleren</string>
+  <string name="TvWishListMP2.1107">Meer</string>
+  <string name="TvWishListMP2.1108">Resultaten</string>
+  <string name="TvWishListMP2.1109">Modus</string>
+  <string name="TvWishListMP2.1110">Bewerken</string>
+  <!--Run EPG Search-->
+  <string name="TvWishListMP2.1200">Wachten tot lopend proces afgerond is</string>
+  <string name="TvWishListMP2.1201">Vorige zoekopdracht is nog bezig - wachten a.u.b.</string>
+  <string name="TvWishListMP2.1202">TV-gids zoekopdracht loopt - wachten a.u.b.</string>
+  <string name="TvWishListMP2.1203">Time-out fout huidige opdracht - afbreken</string>
+  <string name="TvWishListMP2.1204">TV-gids zoekopdracht afgerond</string>
+  <string name="TvWishListMP2.1205">Time-out fout oude opdracht - afbreken</string>
+  <string name="TvWishListMP2.1206">Verbinding met server mislukt - herstart de TV Server</string>
+  <!--Save-->
+  <string name="TvWishListMP2.1300">TvWens data opgeslagen</string>
+  <string name="TvWishListMP2.1301">TvWens data kon niet opgeslagen worden</string>
+  <!--Cancel-->
+  <string name="TvWishListMP2.1400">TvWens data opnieuw geladen</string>
+  <string name="TvWishListMP2.1401">TvWens data kon niet geladen worden</string>
+  <!--More  Menu-->
+  <string name="TvWishListMP2.1500">Alle actieve</string>
+  <string name="TvWishListMP2.1501">Geen Actieve</string>
+  <string name="TvWishListMP2.1502">Alle herhalingen overslaan</string>
+  <string name="TvWishListMP2.1503">Geen herhalingen overslaan</string>
+  <string name="TvWishListMP2.1504">Kopieer TvWens(en) van Weergavemodus naar E-mail- en Opnamemodus</string>
+  <string name="TvWishListMP2.1505">Kopieer TvWens(en) van E-mail- en Opnamemodus naar Weergavemodus</string>
+  <string name="TvWishListMP2.1506">Verplaats schema's naar TvWensLijst</string>
+  <string name="TvWishListMP2.1507">Exporteer</string>
+  <string name="TvWishListMP2.1508">Importeer</string>
+  <!--More  Status-->
+  <string name="TvWishListMP2.1550">{0} TvWens(en) gekopieërd van Weergave- naar E-mailmodus</string>
+  <string name="TvWishListMP2.1551">Kopieren van TvWensen van Weergave- naar E-mailmodus mislukt</string>
+  <string name="TvWishListMP2.1552">{0} TvWens(en) gekopieërd van E-mail- naar Weergavemodus</string>
+  <string name="TvWishListMP2.1553">Kopieren van TvWensen van E-mail- naar Weergavemodus mislukt</string>
+  <string name="TvWishListMP2.1554">{0} Schema('s) verplaatst naar TvWensLijst</string>
+  <string name="TvWishListMP2.1555">Verplaatsen van schema's naar TvWensLijst mislukt</string>
+  <string name="TvWishListMP2.1556">Exporteren van {0} TvWens(en) afgerond</string>
+  <string name="TvWishListMP2.1557">Exporteren mislukt</string>
+  <string name="TvWishListMP2.1558">Importeren van {0} TvWens(en) afgerond</string>
+  <string name="TvWishListMP2.1559">Importeren mislukt</string>
+  <!--++++++++++++++-->
+  <!--Formats   Main-->
+  <!--++++++++++++++-->
+  <!--TvWish Format Data 1900 - 1905:
+        //  {0}   active
+        //  {1}   searchfor
+        //  {2}   matchtype
+        //  {3}   group
+        //  {4}   recordtype
+        //  {5}   action
+        //  {6}   exclude
+        //  {7}   viewed counter
+        //  {8}   prerecord
+        //  {9}   postrecord
+        //  {10}  episodename
+        //  {11}  episodepart
+        //  {12}  episodenumber
+        //  {13}  seriesnumber
+        //  {14}  keepepisodes
+        //  {15}  keepuntil
+        //  {16}  recommendedcard
+        //  {17}  priority
+        //  {18}  aftertime
+        //  {19}  beforetime
+        //  {20}  afterdays
+        //  {21}  beforedays
+        //  {22}  channel
+        //  {23}  skip
+        //  {24}  name
+        //  {25}  useNameFolders
+        //  {26}  within next hours
+        //  {27}  scheduled counter
+        //  {28}  tvwish id
+        //  {29}  recorded counter
+        //  {30}  deleted counter
+        //  {31}  emailed counter
+        //  {32}  conflicts counter
+        //  {33}  episodecriteria
+        //  {34}  preferredgroup
+        //  {35}  includerecordings
+        //  <br>     new line
+        //  |      item selector for not displaying user disabled items-->
+  <!--Main Menu Format for 16:9 skins Email Mode-->
+  <string name="TvWishListMP2.1900">Actief: {0}\n|Naam: {24}\n|Zoek naar: {1}\n|Match: {2}\n|Sluit uit: {6}\n|Type: {4}\n|Actie: {5}\n|Herhaling overslaan: {23}\n|Gewenste groep: {34}\n|Inclusief opnames: {35}\n|Tellers:\nGepland={27}\nOpgenomen={29}\nVerwijderd={30}\nGe-E-maild={31}\nConflicten={32}\n|\nAlleen groep: {3} en\nAlleen kanaal: {22}\n|Na of op dag: {20} Maar voor of op dag: {21}\n|Tussen tijd: {18} en {19}\n\n|Afleveringscriteria: {33}\n|Naam aflevering: {10}\n|Deel aflevering: {11}\n|Nummer aflevering: {12}\n|Bewaar afleveringen: {14}\n|Bewaar tot: {15}\n|Prioriteit: {17}\n|Voor-opname: {8}\n|Na-opname: {9}\n|Gewenste kaart: {16}\n|Verplaats opnames naar Naam folder: {25}\n|ID={28}\n</string>
+  <!--Main Menu Format for 4:3 skins Email Mode-->
+  <string name="TvWishListMP2.1902">Actief: {0}     |Naam: {24}     Zoek naar: {1}     |Match: {2}     |Sluit uit: {6}     |Type: {4}     |Actie: {5}     |Herhaling overslaan: {23}     |Gewenste groep: {34}     |Inclusief opnames: {35}\n|Tellers:  Gepland={27}  Opgenomen={29}  Verwijderd={30}  Ge-E-maild={31}  Conflicten={32}\n|Alleen groep: {3} en\nAlleen kanaal: {22} |Na of op dag: {20} Maar voor of op dag: {21} |Tussen tijd: {18} en {19}\n|Afleveringscriteria: {33}     |Naam aflevering: {10}     |Deel aflevering: {11}     |Nummer aflevering: {12}     |Bewaar afleveringen: {14}     |Bewaar tot: {15}      |Prioriteit: {17}\n|Voor-opname: {8}      |Na-opname: {9}     |Gewenste kaart: {16}     |Verplaats opnames naar Naam folder: {25}     |ID={28}\n</string>
+  <!--Main Menu Format for 16:9 skins View Only Mode-->
+  <string name="TvWishListMP2.1901">Actief: {0}\n|Naam: {24}\n|Zoek naar: {1}\n|Match: {2}\n|Sluit uit: {6}\n|Type: {4}\n|Hits: {7}\n|\nAleen groep: {3} en\nAlleen kanaal: {22}\n|Na of op dag: {20} Maar voor of op dag: {21}\n|Tussen tijd: {18} en {19}\n|Alleen voor de komende {26} Uren\n|Naam aflevering: {10}\n|Deel aflevering: {11}\n|Nummer aflevering: {12}|\nID={28}\n</string>
+  <!--Main Menu Format for 4:3 skins View Only Mode-->
+  <string name="TvWishListMP2.1903">Actief: {0}     |Naam: {24}    |Zoek naar: {1}     |Match: {2}     |Sluit uit: {6}     |Type: {4}     |Hits: {7}\n|Aleen groep: {3} en\nAlleen kanaal: {22} |Na of op dag: {20} Maar voor of op dag: {21} |Tussen tijd: {18} en {19}     |Alleen voor de komende {26} Uren\n|Naam aflevering: {10}     |Deel aflevering: {11}     |Nummer aflevering: {12}     |ID={28}\n</string>
+  <!--List Item Format Email Mode -  use "||" to change alignment between left and right border-->
+  <string name="TvWishListMP2.1904">{24} || {27}/{29}</string>
+  <!--List Item Format ViewOnly Mode-->
+  <string name="TvWishListMP2.1905">{24} || {7}</string>
+  <!--************************************************************-->
+  <!--TV WishList - Edit-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=2000 TO=4900 OFFSET_FROM=2000 OFFSET_TO=4900-->
+  <string name="TvWishListMP2.2000">TvWensLijst - Invoer</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.2100">Hoofdmenu</string>
+  <string name="TvWishListMP2.2101">Vorige</string>
+  <string name="TvWishListMP2.2102">Volgende</string>
+  <string name="TvWishListMP2.2103">Nieuw</string>
+  <string name="TvWishListMP2.2104">Verwijder</string>
+  <string name="TvWishListMP2.2105">Opslaan</string>
+  <string name="TvWishListMP2.2106">Annuleer alles</string>
+  <string name="TvWishListMP2.2107">Meer</string>
+  <!--Delete-->
+  <string name="TvWishListMP2.2200">TvWens is verwijderd</string>
+  <string name="TvWishListMP2.2201">Fout: TvWens kon niet verwijderd worden</string>
+  <!--Save-->
+  <string name="TvWishListMP2.2300">TvWens data opgeslagen</string>
+  <string name="TvWishListMP2.2301">Fout: TvWens data kon niet opgeslagen worden</string>
+  <!--Cancel-->
+  <string name="TvWishListMP2.2400">TvWensen data opnieuw geladen</string>
+  <string name="TvWishListMP2.2401">TvWensen data kon niet geladen worden</string>
+  <!--More  Menu-->
+  <string name="TvWishListMP2.2450">Alle Items</string>
+  <string name="TvWishListMP2.2451">Gebruiker Gedefinieerde Items</string>
+  <string name="TvWishListMP2.2452">Bekijk een resultaat</string>
+  <string name="TvWishListMP2.2453">Huidige TvWens aan het kopieren naar andere modus</string>
+  <string name="TvWishListMP2.2454">{0} TvWens(en) gekopieërd naar andere modus</string>
+  <string name="TvWishListMP2.2455">Kopiëren van TvWens naar andere modus mislukt</string>
+  <string name="TvWishListMP2.2456">Kloon TvWens</string>
+  <string name="TvWishListMP2.2457">TvWens gekloond</string>
+  <string name="TvWishListMP2.2458">Klonen TvWens mislukt</string>
+  <!--Edit List Items-->
+  <string name="TvWishListMP2.2500">Actief: {0}</string>
+  <string name="TvWishListMP2.2501">Zoek naar: {0}</string>
+  <string name="TvWishListMP2.2502">Match als: {0}</string>
+  <string name="TvWishListMP2.2503">Gebruik alleen groep: {0}</string>
+  <string name="TvWishListMP2.2504">Neem op als: {0}</string>
+  <string name="TvWishListMP2.2505">En doe actie: {0}</string>
+  <string name="TvWishListMP2.2506">Maar sluit {0} uit</string>
+  <string name="TvWishListMP2.2507">Hits: {0} (Reset Hits)</string>
+  <string name="TvWishListMP2.2508">Voor-Opname: {0} Minuten</string>
+  <string name="TvWishListMP2.2509">en Na-Opname: {0} Minuten</string>
+  <string name="TvWishListMP2.2510">Filter op aflevering: {0}</string>
+  <string name="TvWishListMP2.2511">Filter op deel: {0}</string>
+  <string name="TvWishListMP2.2512">Filter op nummer: {0}</string>
+  <string name="TvWishListMP2.2513">Filter op serienummer: {0}</string>
+  <string name="TvWishListMP2.2514">Bewaar: {0} Opnames</string>
+  <string name="TvWishListMP2.2515">Tot: {0} </string>
+  <string name="TvWishListMP2.2516">Gewenste kaart is: {0}</string>
+  <string name="TvWishListMP2.2517">Zet prioriteit op: {0} (Min 0, Max 9)</string>
+  <string name="TvWishListMP2.2518">Na tijd: {0}</string>
+  <string name="TvWishListMP2.2519">En voor tijd: {0}</string>
+  <string name="TvWishListMP2.2520">Na en op weekdagen: {0}</string>
+  <string name="TvWishListMP2.2521">Voor en op weekdagen: {0}</string>
+  <string name="TvWishListMP2.2522">En allen kanaal: {0}</string>
+  <string name="TvWishListMP2.2523">Sla herhalingen over is: {0}</string>
+  <string name="TvWishListMP2.2524">Naam: {0}</string>
+  <string name="TvWishListMP2.2525">Verplaats Opnames naar: {0} Folder</string>
+  <string name="TvWishListMP2.2526">Laat alleen zien in de komende: {0} Uren</string>
+  <string name="TvWishListMP2.2533">Gebruik aflevering match criteria: {0} </string>
+  <string name="TvWishListMP2.2534">Gewenste groep: {0} </string>
+  <string name="TvWishListMP2.2535">Inclusief opnames: {0} </string>
+  <!--MatchType-->
+  <string name="TvWishListMP2.2600">Gedeelte van titel</string>
+  <string name="TvWishListMP2.2601">Exacte titel</string>
+  <string name="TvWishListMP2.2602">Gedeelte van tekst</string>
+  <string name="TvWishListMP2.2603">Woord in titel</string>
+  <string name="TvWishListMP2.2604">Woord in tekst</string>
+  <string name="TvWishListMP2.2605">Woord in tekst/titel</string>
+  <string name="TvWishListMP2.2606">Reguliere expressie</string>
+  <!--RecordType-->
+  <string name="TvWishListMP2.2650">Eenmalig</string>
+  <string name="TvWishListMP2.2651">Alles</string>
+  <string name="TvWishListMP2.2652">Alles op zelfde kanaal</string>
+  <string name="TvWishListMP2.2653">Alles op zelfde kanaal, op zelfde dag</string>
+  <string name="TvWishListMP2.2654">&gt;Alles op zelfde kanaal, op zelfde tijd</string>
+  <string name="TvWishListMP2.2655">&gt;Alles op zelfde kanaal, op zelfde dag en tijd</string>
+  <!--Action-->
+  <string name="TvWishListMP2.2700">Opnemen</string>
+  <string name="TvWishListMP2.2701">E-mail</string>
+  <string name="TvWishListMP2.2702">E-mail en opnemen</string>
+  <string name="TvWishListMP2.2703">Bekijk</string>
+  <!--Days-->
+  <string name="TvWishListMP2.2750">Maandag</string>
+  <string name="TvWishListMP2.2751">Dinsdag</string>
+  <string name="TvWishListMP2.2752">Woensdag</string>
+  <string name="TvWishListMP2.2753">Donderdag</string>
+  <string name="TvWishListMP2.2754">Vrijdag</string>
+  <string name="TvWishListMP2.2755">Zaterdag</string>
+  <string name="TvWishListMP2.2756">Zondag</string>
+  <!--Dialog Headers for Edit Items-->
+  <string name="TvWishListMP2.2800">Actief</string>
+  <string name="TvWishListMP2.2801">Zoek naar</string>
+  <string name="TvWishListMP2.2802">Match Type</string>
+  <string name="TvWishListMP2.2803">Groep</string>
+  <string name="TvWishListMP2.2804">Opname Type</string>
+  <string name="TvWishListMP2.2805">Actie</string>
+  <string name="TvWishListMP2.2806">Sluit uit</string>
+  <string name="TvWishListMP2.2807">Hits</string>
+  <string name="TvWishListMP2.2808">Voor-Opname tijd</string>
+  <string name="TvWishListMP2.2809">Na-Opname tijd</string>
+  <string name="TvWishListMP2.2810">Afleveringsnaam</string>
+  <string name="TvWishListMP2.2811">Afleveringsdeel</string>
+  <string name="TvWishListMP2.2812">Afleveringsnummer</string>
+  <string name="TvWishListMP2.2813">Seizoensnummer</string>
+  <string name="TvWishListMP2.2814">Behoud afleveringen</string>
+  <string name="TvWishListMP2.2815">Behoud tot</string>
+  <string name="TvWishListMP2.2816">Gewenste kaart</string>
+  <string name="TvWishListMP2.2817">Prioriteit</string>
+  <string name="TvWishListMP2.2818">Na tijd</string>
+  <string name="TvWishListMP2.2819">Voor tijd</string>
+  <string name="TvWishListMP2.2820">Na dag</string>
+  <string name="TvWishListMP2.2821">Voor dag</string>
+  <string name="TvWishListMP2.2822">Kanaal</string>
+  <string name="TvWishListMP2.2823">Overslaan</string>
+  <string name="TvWishListMP2.2824">Naam</string>
+  <string name="TvWishListMP2.2825">Verplaats opname naar folder</string>
+  <string name="TvWishListMP2.2826">Laat alleen de komende uren zien</string>
+  <string name="TvWishListMP2.2833">Verander aflevering match criteria</string>
+  <string name="TvWishListMP2.2834">Gewenste groep</string>
+  <string name="TvWishListMP2.2835">Inclusief opnames</string>
+  <!--Use Name Folder-->
+  <string name="TvWishListMP2.2850">Aflevering</string>
+  <string name="TvWishListMP2.2851">TvWens naam</string>
+  <string name="TvWishListMP2.2852">Geen</string>
+  <string name="TvWishListMP2.2853">Automatisch</string>
+  <!--Keep Until-->
+  <string name="TvWishListMP2.2900"> Altijd</string>
+  <string name="TvWishListMP2.2901"> Dagen na opname</string>
+  <string name="TvWishListMP2.2902"> Weken na opname</string>
+  <string name="TvWishListMP2.2903"> Maanden na opname</string>
+  <string name="TvWishListMP2.2904"> Datum</string>
+  <string name="TvWishListMP2.2905"> Bekeken</string>
+  <string name="TvWishListMP2.2906"> Ruimte nodig is</string>
+  <string name="TvWishListMP2.2920">{0} Dagen na opname</string>
+  <string name="TvWishListMP2.2921">{0} Weken na opname</string>
+  <string name="TvWishListMP2.2922">{0} Maanden na opname</string>
+  <!--DO NOT CHANGE FORMAT in 2923-->
+  <string name="TvWishListMP2.2923">YYYY-MM-DD</string>
+  <!--Change episode matching criteria-->
+  <string name="TvWishListMP2.2950">Sla overeenkomende TV-Gids omschrijving over? (Ja)</string>
+  <string name="TvWishListMP2.2951">Sla overeenkomende TV-Gids omschrijving over? (Nee)</string>
+  <string name="TvWishListMP2.2952">Sla overeenkomende afleveringsnamen en delen over? (Ja)</string>
+  <string name="TvWishListMP2.2953">Sla overeenkomende afleveringsnamen en delen over? (Nee)</string>
+  <string name="TvWishListMP2.2954">Sla overeenkomende Seizoen(en) en Afleveringsnummers over? (Ja)</string>
+  <string name="TvWishListMP2.2955">Sla overeenkomende Seizoen(en) en Afleveringsnummers over? (Nee)</string>
+  <string name="TvWishListMP2.2960">Omschrijving.</string>
+  <string name="TvWishListMP2.2961">Naam</string>
+  <string name="TvWishListMP2.2962">Nummer</string>
+  <string name="TvWishListMP2.2970">Zet alle criteria aan</string>
+  <string name="TvWishListMP2.2971">Zet alle criteria uit</string>
+  <!--************************************************************-->
+  <!--TV WishList - View Results-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.3000">TvWensLijst - Gevonden resultaten</string>
+  <string name="TvWishListMP2.3001">Programma</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.3100">Hoofdmenu</string>
+  <string name="TvWishListMP2.3101">Bijwerken</string>
+  <string name="TvWishListMP2.3102">Sorteer</string>
+  <string name="TvWishListMP2.3103">Filter</string>
+  <string name="TvWishListMP2.3104">Sorteer Volgorde</string>
+  <!--Sort Menu-->
+  <string name="TvWishListMP2.3200">Sorteer Menu</string>
+  <string name="TvWishListMP2.3201">Titel</string>
+  <string name="TvWishListMP2.3202">Start</string>
+  <string name="TvWishListMP2.3203">Aangemaakt</string>
+  <string name="TvWishListMP2.3204">Genre</string>
+  <string name="TvWishListMP2.3205">Classificatie</string>
+  <string name="TvWishListMP2.3206">Kijkwijzer</string>
+  <string name="TvWishListMP2.3207">Waardering</string>
+  <string name="TvWishListMP2.3208">Type</string>
+  <string name="TvWishListMP2.3209">Bericht</string>
+  <string name="TvWishListMP2.3210">Zoekopdracht</string>
+  <string name="TvWishListMP2.3211">Naam aflevering</string>
+  <string name="TvWishListMP2.3212">Nummer aflevering</string>
+  <string name="TvWishListMP2.3213">Deel aflevering</string>
+  <!--Filter Menu-->
+  <string name="TvWishListMP2.3250">Filter Menu</string>
+  <string name="TvWishListMP2.3251">Bekeken</string>
+  <string name="TvWishListMP2.3252">Niet bekeken</string>
+  <string name="TvWishListMP2.3253">Ge-E-maild</string>
+  <string name="TvWishListMP2.3254">Niet ge-e-mailed</string>
+  <string name="TvWishListMP2.3255">Gepland</string>
+  <string name="TvWishListMP2.3256">Niet gepland</string>
+  <string name="TvWishListMP2.3257">Opgenomen</string>
+  <string name="TvWishListMP2.3258">Niet opgenomen</string>
+  <string name="TvWishListMP2.3259">Verwijderd</string>
+  <string name="TvWishListMP2.3260">Niet verwijderd</string>
+  <string name="TvWishListMP2.3261">Conflicten</string>
+  <string name="TvWishListMP2.3262">Geen conflicten</string>
+  <string name="TvWishListMP2.3263">Alles</string>
+  <string name="TvWishListMP2.3264">Niks</string>
+  <!--Item Menu-->
+  <string name="TvWishListMP2.3500">Ga naar TV</string>
+  <string name="TvWishListMP2.3501">Verwijder plan</string>
+  <string name="TvWishListMP2.3502">Plan</string>
+  <string name="TvWishListMP2.3503">Verwijder bericht</string>
+  <string name="TvWishListMP2.3504">Verwijder opname en film</string>
+  <string name="TvWishListMP2.3505">Ga naar opnames</string>
+  <string name="TvWishListMP2.3506">Ga naar Videos</string>
+  <string name="TvWishListMP2.3507">Goto Series</string>
+  <string name="TvWishListMP2.3508">Goto EPG</string>
+  <string name="TvWishListMP2.3509">Afspelen</string>
+  <!--Item Status-->
+  <string name="TvWishListMP2.3600">Plan is toegevoegd</string>
+  <string name="TvWishListMP2.3601">Toevoegen plan mislukt</string>
+  <string name="TvWishListMP2.3602">Plan is verwijderd</string>
+  <string name="TvWishListMP2.3603">Verwijdern plan mislukt</string>
+  <string name="TvWishListMP2.3604">Bericht is verwijderd</string>
+  <string name="TvWishListMP2.3605">Verwijderen bericht mislukt</string>
+  <string name="TvWishListMP2.3606">Opname is verwijderd</string>
+  <string name="TvWishListMP2.3607">Verwijderen opname mislukt</string>
+  <string name="TvWishListMP2.3608">Wil je dit bestand echt verwijderen?</string>
+  <!--Message Changes-->
+  <string name="TvWishListMP2.3650">Bestand {0} heeft {1} GB</string>
+  <string name="TvWishListMP2.3651">Bestand is verwijderd</string>
+  <string name="TvWishListMP2.3652">Sorteer volgorde oplopend</string>
+  <string name="TvWishListMP2.3653">Sorteer volgorde aflopend</string>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Message Format Data 3900-3905:
+        //  {0}  Title
+        //  {1}  Description
+        //  {2}  Channel
+        //  {3}  Start
+        //  {4}  End
+        //  {5}  EpisodeName
+        //  {6}  EpisodeNum
+        //  {7}  EpisodeNumber
+        //  {8}  EpisodePart
+        //  {9}  Genre
+        //  {10} Classification
+        //  {11} OriginalAirDate
+        //  {12} ParentalRating
+        //  {13} SeriesNum
+        //  {14} StarRating
+        //  {15} type
+        //  {16} channel_id
+        //  {17} created
+        //  {18} searchstring
+        //  {19} tvwish_id
+        //  {20} recording_id
+        //  {21} Message   
+        //  <br>   new line-->
+  <!--Found Format for 16:9 skins Email Mode-->
+  <string name="TvWishListMP2.3900">{21}\nTitel: {0}\nKanaal: {2}\nStart: {3}\nEind: {4}\nType: {15}\nOmschrijving: {1}\n\nGenre: {9}\nClassificatie: {10}\nKijkwijzer: {12}\nWaardering: {14}\nDeel aflevering: {8}\nNaam aflevering: {5}\nNummer aflevering: {6}\nGezocht op: {18} op {17}\nTvWensID={19}\nOpnameID={20}\nKanaalID={16}\n\n</string>
+  <!--Found Format for 4:3 skins Email Mode-->
+  <string name="TvWishListMP2.3902">{21}     Titel: {0}     Kanaal: {2}     Start: {3}     Eind: {4}     Type: {15}\nOmschrijving: {1}\nGenre: {9}     Classificatie: {10}     Kijkwijzer: {12}     Waardering: {14}     Deel aflevering: {8}     Naam aflevering: {5}     Nummer aflevering: {6}     Gezocht op: {18} op {17}\nTvWensID={19}     OpnameID={20}     KanaalID={16}\n</string>
+  <!--Found Format for 16:9 skins View Only Mode-->
+  <string name="TvWishListMP2.3901">{21}\nTitel: {0}\nKanaal: {2}\nStart: {3}\nEind: {4}\nType: {15}\nOmschrijving: {1}\n\nGenre: {9}\nClassificatie: {10}\nKijkwijzer: {12}\nWaardering: {14}\nDeel aflevering: {8}\nNaam aflevering: {5}\nNummer aflevering: {6}\nGezocht op: {18} op {17}\nTvWensID={19}\nOpnameID={20}\nKanaalID={16}\n\n</string>
+  <!--Found Format for 4:3 skins View Only Mode-->
+  <string name="TvWishListMP2.3903">{21}     Titel: {0}     Kanaal: {2}     Start: {3}     Eind: {4}    Type: {15}\nOmschrijving: {1}\nGenre: {9}     Classificatie: {10}     Kijkwijzer: {12}     Waardering: {14}     Deel aflevering: {8}     Naam aflevering: {5}     Nummer aflevering: {6}     Gezocht op: {18} op {17}\nTvWensID={19}     OpnameID={20}     KanaalID={16}\n</string>
+  <!--List Item Format Email Mode - use "||" to change alignment between left and right border-->
+  <string name="TvWishListMP2.3904">{0} || {3}</string>
+  <!--List Item Format ViewOnly Mode-->
+  <string name="TvWishListMP2.3905">{0} || {3}</string>
+  <!--************************************************************-->
+  <!--General-->
+  <!--************************************************************-->
+  <!--Bool-->
+  <string name="TvWishListMP2.4000">Ja</string>
+  <string name="TvWishListMP2.4001">Nee</string>
+  <!--Default Data TvWish-->
+  <string name="TvWishListMP2.4100">Elke</string>
+  <string name="TvWishListMP2.4101">Altijd</string>
+  <string name="TvWishListMP2.4102">Handmatig</string>
+  <string name="TvWishListMP2.4103">Geen</string>
+  <string name="TvWishListMP2.4104">Alle Kanalen</string>
+  <string name="TvWishListMP2.4105">Alle</string>
+  <!--Mode Header-->
+  <string name="TvWishListMP2.4200">E-mail- en Opnamemodus</string>
+  <string name="TvWishListMP2.4201">Weergavemodus</string>
+  <!--Errors-->
+  <string name="TvWishListMP2.4300">Controleer MediaPortal log bestand</string>
+  <string name="TvWishListMP2.4301">Geen items gevonden</string>
+  <string name="TvWishListMP2.4302">Fout tijdens maken Item-lijst</string>
+  <string name="TvWishListMP2.4303">Geen nummer</string>
+  <string name="TvWishListMP2.4304">Ongeldige format</string>
+  <string name="TvWishListMP2.4305">Fout</string>
+  <string name="TvWishListMP2.4306">TvWensLijst MediaPortal plugin is niet gelijk aan TvWensLijst TV Server plugin</string>
+  <string name="TvWishListMP2.4307">Opname folder moest veranderd worden in Afleveringsfolder</string>
+  <string name="TvWishListMP2.4308">Opname Type moest gewijzigd worden naar Alle</string>
+  <string name="TvWishListMP2.4309">Behoud Afleveringsnummer moest gewijzigd worden naar Alle</string>
+  <string name="TvWishListMP2.4310">Verplaatsen plan werkt alleen voor E-Mail modus</string>
+  <string name="TvWishListMP2.4311"> Tv wensen lijst is in gebruik\nbij een ander proces\nProbeer later opnieuw\nAls het andere proces niet afgerond kan worden\ndan het systeem herstarten \nof de TV Server handmatig stoppen</string>
+  <string name="TvWishListMP2.4312">Timeout Fout: Herstart the server.\nAls het probleem zich blijft voordoen, verhoog dan de timeout waarde (Expert settings)</string>
+  <!--Others-->
+  <string name="TvWishListMP2.4400">Info</string>
+  <string name="TvWishListMP2.4401">Waarschuwing</string>
+  <string name="TvWishListMP2.4402">Ja</string>
+  <string name="TvWishListMP2.4403">Nee</string>
+  <string name="TvWishListMP2.4404">Alle TvWensen</string>
+  <string name="TvWishListMP2.4405">Tv Wensen: {0}</string>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Date Time Format for all modules
+        //   {0:0000} year
+        //   {1:00}   month
+        //   {2:00}   day
+        //   {3:00}   hour
+        //   {4:00}   minute
+        //   {5:00}   second
+        //   {6}      timeofday
+        //   {7}      date-->
+  <string name="TvWishListMP2.4900">{1:00}/{2:00}/{0:00} at {3:00}:{4:00}</string>
+  <!--************************************************************-->
+  <!--Config Main MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:5000 -->
+  <string name="TvWishListMP2.ConfigMain_GUI">Hoofd Configuratie</string>
+  <!-- MP1STR:5001 -->
+  <string name="TvWishListMP2.ConfigMain_GUI_Help">Configureer de belangrijkste instellingen</string>
+  <!-- MP1STR:5050 -->
+  <string name="TvWishListMP2.ConfigTvserver">Voordat de MediaPortal plugin gebruikt wordt, moet de TvWensLijst TV Server plugin geconfigureerd zijn</string>
+  <string name="TvWishListMP2.5051">Voordat je de MediaPortal plugin gebruikt moet je</string>
+  <string name="TvWishListMP2.5052">de TvWishList Server plugin geconfigureerd hebben</string>
+  <!-- MP1STR:5100 -->
+  <string name="TvWishListMP2.CancelButtonText">Annuleer</string>
+  <!-- MP1STR:5101 -->
+  <string name="TvWishListMP2.SaveButtonText">Opslaan</string>
+  <!-- MP1STR:5102 -->
+  <string name="TvWishListMP2.HelpButtonText">Help</string>
+  <!-- MP1STR:5200 -->
+  <string name="TvWishListMP2.Verbose">Uitgebreide</string>
+  <!-- MP1STR:5201 -->
+  <string name="TvWishListMP2.DisableQuickMenu">Schakel TvWens snelmenu van Dialoog uit</string>
+  <!-- MP1STR:5202 -->
+  <string name="TvWishListMP2.TimeOut">Time-out</string>
+  <!-- MP1STR:5203 -->
+  <string name="TvWishListMP2.TimeOutDescription">Verander de Time-out instelling van 60 alleen als je Time-out problemen ervaart</string>
+  <!-- MP1STR:5204 -->
+  <string name="TvWishListMP2.SaveToTvServer">This will save your client setting to the tv server</string>
+  <!-- MP1STR:5205 -->
+  <string name="TvWishListMP2.LoadFromTvServer">This will load your client setting from the tv server</string>
+  <!-- MP1STR:5206 -->
+  <string name="TvWishListMP2.DisableInfoWindows">Schakel Info berichten uit</string>
+  <!-- MP1STR:5207 -->
+  <string name="TvWishListMP2.Load">Laad</string>
+  <!-- MP1STR:5208 -->
+  <string name="TvWishListMP2.SaveLoad">Bewaar/Laad Client instellingen op/van Tv Server</string>
+  <!-- MP1STR:5209 -->
+  <string name="TvWishListMP2.SaveQuestion">Wil je de client instellingen bewaren op de Tv Server (vorige instellingen worden overschreven)?</string>
+  <!-- MP1STR:5210 -->
+  <string name="TvWishListMP2.LoadQuestion">Wil je de client instellingen laden van de Tv Server (huidige client instellingen worden overschreven)?</string>
+  <!-- MP1STR:5211 -->
+  <string name="TvWishListMP2.SaveToTV">Bewaar op Tv Server</string>
+  <!-- MP1STR:5212 -->
+  <string name="TvWishListMP2.LoadFromTV">Laad van Tv Server</string>
+  <!-- MP1STR:5213 -->
+  <string name="TvWishListMP2.LoadComplete">Client instellingen zijn geladen van de Tv Server</string>
+  <!-- MP1STR:5214 -->
+  <string name="TvWishListMP2.LoadError">Client instellingen konden niet van de Tv Server geladen worden</string>
+  <!-- MP1STR:5215 -->
+  <string name="TvWishListMP2.SaveComplete">Client instellingen zijn bewaard op de Tv Server</string>
+  <!-- MP1STR:5216 -->
+  <string name="TvWishListMP2.SaveError">Client instellingen konde niet bewaard worden op de Tv Server</string>
+  <!--************************************************************-->
+  <!--Config Filter MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:6000 -->
+  <string name="TvWishListMP2.ConfigFilter_GUI">Filter Configuratie</string>
+  <!-- MP1STR:6001 -->
+  <string name="TvWishListMP2.ConfigFilter_GUI_Help">Configureer de filter instellingen. Alle geselecteerde onderdelen zijn aangezet om een TvWens aan te passen. Uitgeschakelde onderdelen gebruiken de standaard waardes.</string>
+  <!-- MP1STR:6100 -->
+  <string name="TvWishListMP2.SelectItemLabel">Selecteer de filter onderdelen die je wilt aanpassen</string>
+  <!-- MP1STR:6101 -->
+  <string name="TvWishListMP2.UnSelectItemLabel">Niet geselecteerde onderdelen kunnen niet aangeapast worden voor een TvWens en gebruiken de standaard waardes</string>
+  <!-- MP1STR:6200 -->
+  <string name="TvWishListMP2.AllButtonText">Alle</string>
+  <!-- MP1STR:6201 -->
+  <string name="TvWishListMP2.NoneButtonText">Geen</string>
+  <!-- MP1STR:6202 -->
+  <string name="TvWishListMP2.DefaultsButtonText">Standaard</string>
+  <!-- MP1STR:6203 -->
+  <string name="TvWishListMP2.DefaultsQuestion">Herstellen naar standaard waarden overschrijft ALLE velden op alle tabbladen, inclusief persoonlijk gedefinieerde waarden. Doorgaan?</string>
+  <!--************************************************************-->
+  <!--Config Defaults MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:7000 -->
+  <string name="TvWishListMP2.ConfigDefaults_GUI">Standaard instellingen</string>
+  <!-- MP1STR:7001 -->
+  <string name="TvWishListMP2.ConfigDefaults_GUI_Help">Configureer de standaard instellingen. Deze worden door elke nieuwe TvWens gebruikt. Uitgeschakelde onderdelen krijgen de standaard instelling.</string>
+  <string name="TvWishListMP2.7002">Standaard check</string>
+  <!--************************************************************-->
+  <!--Config Formats MP2-->
+  <!--************************************************************-->
+  <!-- MP1STR:8000 -->
+  <string name="TvWishListMP2.ConfigFormats_GUI">Formats Configuratie</string>
+  <!-- MP1STR:8001 -->
+  <string name="TvWishListMP2.ConfigFormats_GUI_Help">Configureer de format instellingen. Lege formats gebruiken de formats gedefinieerd in de taalbestanden</string>
+  <!-- MP1STR:8100 -->
+  <string name="TvWishListMP2.DateAndTimeFormat">Datum en Tijd Formats</string>
+  <!-- MP1STR:8101 -->
+  <string name="TvWishListMP2.MainItemFormat">Hoofdmenu Onderdelen Format</string>
+  <!-- MP1STR:8102 -->
+  <string name="TvWishListMP2.ResultItemFormat">Resultaten Menu Onderdeel Format</string>
+  <!-- MP1STR:8103 -->
+  <string name="TvWishListMP2.MainTextBoxFormat">Hoofdmenu Tekstbox Format</string>
+  <!-- MP1STR:8104 -->
+  <string name="TvWishListMP2.ResultTextBoxFormat">Resultaat Menu Tekstbox Format</string>
+  <!-- MP1STR:8105 -->
+  <string name="TvWishListMP2.GroupboxGeneral">Generale Formats</string>
+  <!-- MP1STR:8106 -->
+  <string name="TvWishListMP2.GroupboxListItemFormats">Lijst Onderdeel Formats</string>
+  <!-- MP1STR:8107 -->
+  <string name="TvWishListMP2.GroupboxEmailAndRecordModus">E-mail- en Opnamemodus</string>
+  <!-- MP1STR:8108 -->
+  <string name="TvWishListMP2.GroupboxViewOnlyModus">Weergavemodus</string>
+  <!-- MP1STR:8109 -->
+  <string name="TvWishListMP2.FormatExpertLabel">Formats zouden alleen door experts aangepast moeten worden. Lege velden gebruiken de standaards van de taalbestanden.</string>
+  <string name="TvWishListMP2.8110">Instellingen moeten alleen door experts aangepast worden.</string>
+  <string name="TvWishListMP2.8111">Lege velden gebruiken de standaards van het taalbestand.</string>
+  <!--************************************************************-->
+  <!--TV Server Run EPG Messages-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=10000 TO=10300 OFFSET_FROM=0 OFFSET_TO=300-->
+  <string name="TvWishListMP2.10001">Wachten op oude opdracht(en). {0}s tot einde</string>
+  <string name="TvWishListMP2.10002">Fout: TvWensLijst heeft de oude opdrachten niet beëindingd. Herstart de computer</string>
+  <string name="TvWishListMP2.10003">Lezen van instellingen</string>
+  <string name="TvWishListMP2.10004">Laden berichten</string>
+  <string name="TvWishListMP2.10005">Laden TvWensen</string>
+  <string name="TvWishListMP2.10006">Zoek naar {0}</string>
+  <string name="TvWishListMP2.10007">E-mail versturen naar {0}</string>
+  <string name="TvWishListMP2.10008">Fout: Geen SMTP server ingesteld</string>
+  <string name="TvWishListMP2.10009">Fout: Geen gebruikersnaam ingesteld</string>
+  <string name="TvWishListMP2.10010">Fout: Geen wachtwoord ingesteld</string>
+  <string name="TvWishListMP2.10011">Fout: Geen e-mailadres van ontvanger ingesteld</string>
+  <string name="TvWishListMP2.10012">Fout: Ongeldige provider instellingen</string>
+  <string name="TvWishListMP2.10013">Fout: Server adres niet gespecificeerd</string>
+  <string name="TvWishListMP2.10014">Fout: Geen internetverbinding met de POP3 server</string>
+  <string name="TvWishListMP2.10015">Fout: Geen SMTP poort ingesteld</string>
+  <string name="TvWishListMP2.10016">Versturen retour e-mails voltooid</string>
+  <string name="TvWishListMP2.10017">Fout: Versturen retour e-mails mislukt. Controleer de gebruikersnaam</string>
+  <string name="TvWishListMP2.10018">Fout:Versturen retour e-mails mislukt. Controleer het wachtwoord</string>
+  <string name="TvWishListMP2.10019">Fout: Versturen retour e-mails mislukt</string>
+  <string name="TvWishListMP2.10020">Klaar</string>
+  <string name="TvWishListMP2.10021">Verwerken TV Gids informatie {0} op {1} en {2}</string>
+  <string name="TvWishListMP2.10022">Verwerken Opnames {0} op {1}</string>
+  <string name="TvWishListMP2.10023">Fout: Het wachtwoord komt niet overeen en is opnieuw ingesteld. Voer het wachtwoord opnieuw in</string>
+  <string name="TvWishListMP2.10024">Fatale Fout: Controleer het logbestand</string>
+  <string name="TvWishListMP2.10025">Fout in SQL query - controleer de expressie {0}</string>
+  <!--************************************************************-->
+  <!--TV Server Message  Creation-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.10050">Plan {0} heeft geen juiste TV Gids informatie maar kon hersteld worden</string>
+  <string name="TvWishListMP2.10051">Plan {0} heeft geen juiste TV Gids informatie. Controleer plannen op conflicten</string>
+  <string name="TvWishListMP2.10052">Plan {0} heeft geen juiste TV Gids informatie. Controleer plannen op conflicten</string>
+  <string name="TvWishListMP2.10053">TV Gids informatie voor Aflevering/Omschrijving of Tijd is veranderd - Huidige plan aan het verwijderen om daarna te herplannen.</string>
+  <string name="TvWishListMP2.10054">Plan conflict moet handmatig opgelost worden</string>
+  <string name="TvWishListMP2.10055">Uitsluiten programma {0} vanwege uitsluit filter {1}</string>
+  <string name="TvWishListMP2.10056">Uitsluiten programma {0} vanwege woordcontrole filter</string>
+  <string name="TvWishListMP2.10057">Uitsluiten programma {0} vanwege woordcontrole filter</string>
+  <string name="TvWishListMP2.10058">Maximaal aantal ({0}) programma's gevonden. Extra overeenkomsten worden genegeerd</string>
+  <string name="TvWishListMP2.10059">{0} met {1} GB</string>
+  <string name="TvWishListMP2.10060">Toevoegen programma {0} mislukt</string>
+  <string name="TvWishListMP2.10061">Creëren plan voor programma {0} mislukt</string>
+  <string name="TvWishListMP2.10062">Programma {0} al gepland</string>
+  <string name="TvWishListMP2.10063">Programma {0} overgeslagen omdat het niet tussen {1} en {2} is</string>
+  <string name="TvWishListMP2.10064">Programma {0} overgeslagen omdat het niet tussen {1} en {2} is</string>
+  <string name="TvWishListMP2.10065">Programma {0} overgeslagen omdat het niet in de komende {1} uren is</string>
+  <string name="TvWishListMP2.10066">Programma {0} overgeslagen omdat het niet voldoet aan kanaal filter {1}</string>
+  <string name="TvWishListMP2.10067">Programma {0} overgeslagen omdat het niet overeen komt met aflevering deel {1}</string>
+  <string name="TvWishListMP2.10068">Programma {0} overgeslagen omdat het niet overeen komt met gewenste afleveringsnaam {1}</string>
+  <string name="TvWishListMP2.10069">Programma {0} overgeslagen omdat het niet overeen komt met siezoen nummer {1}</string>
+  <string name="TvWishListMP2.10070">Programma {0} overgeslagen omdat het niet overeen komt met aflevering nummer {1}</string>
+  <string name="TvWishListMP2.10071">Programma {0} al opgenomen</string>
+  <string name="TvWishListMP2.10072">Programma {0} is al verwijderd en word overgeslagen</string>
+  <string name="TvWishListMP2.10073">Start tijd van programma {0} ligt in het verleden - Plan wordt overgeslagen</string>
+  <string name="TvWishListMP2.10074">Herhaald plan {0} gevonden - Overslaan</string>
+  <string name="TvWishListMP2.10075">Programma {0} heeft conflicten en word niet gepland</string>
+  <string name="TvWishListMP2.10076">Plan {0} wordt verwijderd vanwege lagere prioriteit</string>
+  <string name="TvWishListMP2.10077">Plan {0} heeft niet genoeg prioriteit om conflicten te verwijderen - Overslaan</string>
+  <string name="TvWishListMP2.10078">Beter plan gevonden in geprefereerde groep</string>
+  <string name="TvWishListMP2.10079">TvWensLijst vond programma van TvWens [{0}]: {1}\nTvWensLijst heeft het programma gepland</string>
+  <string name="TvWishListMP2.10080">TvWensLijst vond programma van TvWens [{0}]: {1}\nTvWensLijst heeft niks gepland maar herinnert je aan het programma</string>
+  <!--Email Format Default - will be sent with each email for a found program (use format entries from message format at 3900)-->
+  <string name="TvWishListMP2.10090">NIEUWE INVOER\nTitel={0}\nOmschrijving={1}\nKanaal={2}\nStart={3}\nEinde={4}\nType={15}\nGecreëerd={17}\n\n\n</string>
+  <string name="TvWishListMP2.10091">{1:00}/{2:00} op {3:00}:{4:00}</string>
+  <!--************************************************************-->
+  <!--TV Server Configuration-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.10100">Hoofd</string>
+  <string name="TvWishListMP2.10101">Eenvoudig</string>
+  <string name="TvWishListMP2.10102">Expert</string>
+  <string name="TvWishListMP2.10103">Omhoog</string>
+  <string name="TvWishListMP2.10104">Omlaag</string>
+  <string name="TvWishListMP2.10105">Verwijder</string>
+  <string name="TvWishListMP2.10106">Annuleer</string>
+  <string name="TvWishListMP2.10107">Standaard</string>
+  <string name="TvWishListMP2.10108">Help</string>
+  <string name="TvWishListMP2.10109">Debugmodus</string>
+  <string name="TvWishListMP2.10110">TvWensLijst Hoofdpagina</string>
+  <string name="TvWishListMP2.10111">Alles Actief</string>
+  <string name="TvWishListMP2.10112">Alles Inactief</string>
+  <string name="TvWishListMP2.10113">Sla alles over</string>
+  <string name="TvWishListMP2.10114">Sla niks over</string>
+  <string name="TvWishListMP2.10115">Kanaal filter</string>
+  <string name="TvWishListMP2.10130">E-mail</string>
+  <string name="TvWishListMP2.10131">Account</string>
+  <string name="TvWishListMP2.10132">Gebruikersnaam</string>
+  <string name="TvWishListMP2.10133">Wachtwooord</string>
+  <string name="TvWishListMP2.10134">Herhaal wachtwoord</string>
+  <string name="TvWishListMP2.10135">E-mail adres</string>
+  <string name="TvWishListMP2.10136">alleen indien anders als gebruikersnaam</string>
+  <string name="TvWishListMP2.10137">Zoek nu</string>
+  <string name="TvWishListMP2.10138">Adres</string>
+  <string name="TvWishListMP2.10139">E-mail ontvanger</string>
+  <string name="TvWishListMP2.10140">Test E-mail verstuurd</string>
+  <string name="TvWishListMP2.10141">SMTP</string>
+  <string name="TvWishListMP2.10142">Provider</string>
+  <string name="TvWishListMP2.10143">Poort</string>
+  <string name="TvWishListMP2.10144">SMTP Server</string>
+  <string name="TvWishListMP2.10145">SSL</string>
+  <string name="TvWishListMP2.10146">E-mail antwoord inschakelen</string>
+  <string name="TvWishListMP2.10147">E-mail alleen nieuwe</string>
+  <string name="TvWishListMP2.10160">Instellingen</string>
+  <string name="TvWishListMP2.10161">Check TV Gids</string>
+  <string name="TvWishListMP2.10162">Maandag</string>
+  <string name="TvWishListMP2.10163">Dinsdag</string>
+  <string name="TvWishListMP2.10164">Woensdag</string>
+  <string name="TvWishListMP2.10165">Donderdag</string>
+  <string name="TvWishListMP2.10166">Vrijdag</string>
+  <string name="TvWishListMP2.10167">Zaterdag</string>
+  <string name="TvWishListMP2.10168">Zondag</string>
+  <string name="TvWishListMP2.10169">Elke</string>
+  <string name="TvWishListMP2.10170">Dagen</string>
+  <string name="TvWishListMP2.10171">Uren</string>
+  <string name="TvWishListMP2.10172">Minuten</string>
+  <string name="TvWishListMP2.10173">Op</string>
+  <string name="TvWishListMP2.10174">Check TV Gids</string>
+  <string name="TvWishListMP2.10175">voor elk plan</string>
+  <string name="TvWishListMP2.10176">Volgende Tv Server controle datum:</string>
+  <string name="TvWishListMP2.10177">Match criteria voor herhaalde films en afleveringen</string>
+  <string name="TvWishListMP2.10178">TV Gids herhalingsmarkering:</string>
+  <string name="TvWishListMP2.10179">Andere opties</string>
+  <string name="TvWishListMP2.10180">Automatische opname</string>
+  <string name="TvWishListMP2.10181">Plan conflicten</string>
+  <string name="TvWishListMP2.10182">Verwijder aangepaste TV Gids</string>
+  <string name="TvWishListMP2.10183">Herstel standaard waarden</string>
+  <string name="TvWishListMP2.10184">Langzame CPU</string>
+  <string name="TvWishListMP2.10185">Verwijderingen overslaan</string>
+  <string name="TvWishListMP2.10186">Verwijderingen expiratie</string>
+  <string name="TvWishListMP2.10187">Maanden</string>
+  <string name="TvWishListMP2.10188">Max aantal plannen per TvWens</string>
+  <!--Date Time Format with 10189-10191 combined-->
+  <string name="TvWishListMP2.10189">MM/dd/yyyy</string>
+  <string name="TvWishListMP2.10190">HH:mm</string>
+  <string name="TvWishListMP2.10191">{0} op {1}</string>
+  <string name="TvWishListMP2.10192">Wacht op ComSkip Proces</string>
+  <string name="TvWishListMP2.10193">EPG</string>
+  <string name="TvWishListMP2.10200">Formaten</string>
+  <string name="TvWishListMP2.10201">Datum and Tijd formaten voor E-mails</string>
+  <string name="TvWishListMP2.10202">E-mail formaat</string>
+  <string name="TvWishListMP2.10203">Taalbestand</string>
+  <string name="TvWishListMP2.10204">Sorteer criteria</string>
+  <string name="TvWishListMP2.10205">Geavanceerde gebruikers kunnen persoonlijke formaten definieren voor verstuurde E-mails</string>
+  <string name="TvWishListMP2.10206">Aflopende sortering</string>
+  <string name="TvWishListMP2.10207">Filter criteria</string>
+  <string name="TvWishListMP2.10208">E-mail</string>
+  <string name="TvWishListMP2.10209">Opnemen</string>
+  <string name="TvWishListMP2.10210">Conflicten</string>
+  <string name="TvWishListMP2.10211">Verwijder alle berichten</string>
+  <string name="TvWishListMP2.10250">Wachten op oude taken van {0}. Probeer later opnieuw. Als de taken niet klaar zijn: herstart of stop de Tvservice</string>
+  <string name="TvWishListMP2.10251">TV configuratie sluiten</string>
+  <string name="TvWishListMP2.10252">Bezig met verwerken - wachten op voltooiing</string>
+  <string name="TvWishListMP2.10253">Succes</string>
+  <string name="TvWishListMP2.10254">Versturen E-mail mislukt</string>
+  <string name="TvWishListMP2.10255">Minimum {0} is {1}</string>
+  <string name="TvWishListMP2.10256">Maximum {0} is {1}</string>
+  <string name="TvWishListMP2.10257">Kon {0} niet openen</string>
+  <string name="TvWishListMP2.10258">Alle berichten verwijderen? WAARSCHUWING: Dit verwijderd de volledige berichten historie, inclusief verwijderde berichten. Zorg dat de MediaPortal Client plugin gesloten is!</string>
+  <string name="TvWishListMP2.10259">Berichten verwijderd</string>
+  <string name="TvWishListMP2.10260">Operatie geannuleerd</string>
+  <string name="TvWishListMP2.10261">Wil je alle formaten herstellen naar standaard waarden? Dit overschrijft alle instellingen en alle formaten</string>
+  <string name="TvWishListMP2.10262">Controleer je gebruikersnaam en wachtwoord\nServer fout was: {0}</string>
+</resources>

@@ -26,7 +26,7 @@ using System.Linq;
 using System.Text;
 using MediaPortal.Common;
 using MediaPortal.Common.Logging;
-using MPExtended.Services.TVAccessService.Interfaces;
+//using MPExtended.Services.TVAccessService.Interfaces;
 using MediaPortal.Plugins.TvWishListMP2.MPExtended;
 using MediaPortal.Plugins.TvWishListMP2.Models;
 using TvWishList;

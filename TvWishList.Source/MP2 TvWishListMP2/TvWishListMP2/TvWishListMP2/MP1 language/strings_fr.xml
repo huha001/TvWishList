@@ -28,7 +28,7 @@ Version 1.2.3.13
   <!--MP2 Display in main menu-->
   <String id="100">TvWish-Liste</String>
   <String id="101">TvWish</String>
-  <String id="102">Nouvelle TvWish - Recherche pour:</String>
+  <String id="102">Nouvelle TvWish - Recherche pour :</String>
   <!--SlimTv Buttons in MP2-->
   <!-- MP2STR:CreateTvWish -->
   <String id="200">Créer une TvWish</String>
@@ -169,10 +169,10 @@ Version 1.2.3.13
   <String id="2107">Plus</String>
   <!--Delete-->
   <String id="2200">TvWish a été effacé</String>
-  <String id="2201">Erreur: les données de TvWish n'ont pu être effacées</String>
+  <String id="2201">Erreur : les données de TvWish n'ont pu être effacées</String>
   <!--Save-->
   <String id="2300">Les données de TvWish ont été sauvegardées</String>
-  <String id="2301">Erreur: les données de TvWish n'ont pu être sauvées</String>
+  <String id="2301">Erreu : les données de TvWish n'ont pu être sauvées</String>
   <!--Cancel-->
   <String id="2400">Les données de TvWish ont été chargées</String>
   <String id="2401">Les données de TvWish n'ont pu être chargées</String>
@@ -187,36 +187,36 @@ Version 1.2.3.13
   <String id="2457">TvWish cloné</String>
   <String id="2458">Le clonage de TvWish a échoué</String>
   <!--Edit List Items-->
-  <String id="2500">Activé: {0}</String>
-  <String id="2501">Recherche pour: {0}</String>
-  <String id="2502">Concordance de: {0}</String>
-  <String id="2503">Utiliser uniquement le groupe:{0}</String>
-  <String id="2504">Enregistrer comme: {0}</String>
-  <String id="2505">Et réaliser l'action: {0}</String>
-  <String id="2506">Mais exclure:{0}</String>
-  <String id="2507">Hits:{0} (réinitialiser les Hits)</String>
-  <String id="2508">Enregistrer à l'avance: {0} Minutes</String>
-  <String id="2509">Et prolonger l'enregistrement de: {0}</String>
-  <String id="2510">Filtrer par épisode: {0}</String>
-  <String id="2511">Filtrer par parties: {0}</String>
-  <String id="2512">Filtrer par numéro: {0}</String>
-  <String id="2513">Filtrer par le numéro de la série:{0}</String>
-  <String id="2514">Conserver: {0} enregistrements</String>
-  <String id="2515">Jusqu'à: {0}</String>
-  <String id="2516">Carte recommandée: {0}</String>
-  <String id="2517">Définir la priorité: {0} (Min 0, Max9)</String>
-  <String id="2518">Avant l'heure: {0}</String>
-  <String id="2519">Et après l'heure: {0}</String>
-  <String id="2520">Après et jusqu'au jour de le semaine: {0}</String>
-  <String id="2521">Avant et jusqu'au jour de le semaine: {0}</String>
+  <String id="2500">Activé : {0}</String>
+  <String id="2501">Recherche pour : {0}</String>
+  <String id="2502">Concordance de : {0}</String>
+  <String id="2503">Utiliser uniquement le groupe: {0}</String>
+  <String id="2504">Enregistrer comme : {0}</String>
+  <String id="2505">Et réaliser l'action : {0}</String>
+  <String id="2506">Mais exclure : {0}</String>
+  <String id="2507">Hits : {0} (réinitialiser les Hits)</String>
+  <String id="2508">Enregistrer à l'avance : {0} Minutes</String>
+  <String id="2509">Et prolonger l'enregistrement de : {0}</String>
+  <String id="2510">Filtrer par épisode : {0}</String>
+  <String id="2511">Filtrer par parties : {0}</String>
+  <String id="2512">Filtrer par numéro : {0}</String>
+  <String id="2513">Filtrer par le numéro de la série :{0}</String>
+  <String id="2514">Conserver : {0} enregistrements</String>
+  <String id="2515">Jusqu'à : {0}</String>
+  <String id="2516">Carte recommandée : {0}</String>
+  <String id="2517">Définir la priorité : {0} (Min 0, Max9)</String>
+  <String id="2518">Avant l'heure : {0}</String>
+  <String id="2519">Et après l'heure : {0}</String>
+  <String id="2520">Après et jusqu'au jour de le semaine : {0}</String>
+  <String id="2521">Avant et jusqu'au jour de le semaine : {0}</String>
   <String id="2522">Et seulement la chaine {0}</String>
-  <String id="2523">Episodes Doubles non inclus est: {0}</String>
-  <String id="2524">Intitulé: {0}</String>
+  <String id="2523">Episodes Doubles non inclus est : {0}</String>
+  <String id="2524">Intitulé : {0}</String>
   <String id="2525">Tranférer les enregistrements vers le dossier {0}</String>
   <String id="2526">Montrer uniquement pour les {0} prochaines heures </String>
-  <String id="2533">Utiliser les critères d'appariements des épisodes: {0}</String>
-  <String id="2534">Préférer le groupe de chaines: {0}</String>
-  <String id="2535">Y compris les enregistrements: {0}</String>
+  <String id="2533">Utiliser les critères d'appariements des épisodes : {0}</String>
+  <String id="2534">Préférer le groupe de chaines : {0}</String>
+  <String id="2535">Y compris les enregistrements : {0}</String>
   <!--MatchType-->
   <String id="2600">Titre Partiel</String>
   <String id="2601">Titre Complet</String>
@@ -449,7 +449,7 @@ Version 1.2.3.13
   <String id="4402">Oui</String>
   <String id="4403">Non</String>
   <String id="4404">La totalité des TvWish</String>
-  <String id="4405">TvWish: {0}</String>
+  <String id="4405">TvWish : {0}</String>
   <!--++++++++++++++-->
   <!--Formats   View-->
   <!--++++++++++++++-->
@@ -462,7 +462,7 @@ Version 1.2.3.13
         //   {5:00}   second
         //   {6}      timeofday
         //   {7}      date-->
-  <String id="4900">{1:00}/{2:00}/{0:00} à {3:00}:{4:00}</String>
+  <String id="4900">{1:00}/{2:00}/{0:00} à {3:00} : {4:00}</String>
   <!--************************************************************-->
   <!--Config Main MP2-->
   <!--************************************************************-->
@@ -499,9 +499,9 @@ Version 1.2.3.13
   <!-- MP2STR:SaveLoad -->
   <String id="5208">Sauvegarder/Charger les paramètres Client sur/depuis le serveur TV</String>
   <!-- MP2STR:SaveQuestion -->
-  <String id="5209">Voulez vous sauvegarder les paramètres  Client sur le serveur TV, et écrasez les paramètres précédents?</String>
+  <String id="5209">Voulez-vous sauvegarder les paramètres  Client sur le serveur TV, et écrasez les paramètres précédents?</String>
   <!-- MP2STR:LoadQuestion -->
-  <String id="5210">Voulez vous charger les paramètres  Client depuis le serveur TV, et écrasez les paramètres en cours? </String>
+  <String id="5210">Voulez-vous charger les paramètres  Client depuis le serveur TV, et écrasez les paramètres en cours? </String>
   <!-- MP2STR:SaveToTV -->
   <String id="5211">Sauvegarder vers le serveur TV</String>
   <!-- MP2STR:LoadFromTV -->
@@ -532,7 +532,7 @@ Version 1.2.3.13
   <!-- MP2STR:DefaultsButtonText -->
   <String id="6202">Par défaut</String>
   <!-- MP2STR:DefaultsQuestion -->
-  <String id="6203">La remise à zéro écrasera toutes les configurations y compris les vôtres - voulez vous continuer?</String>
+  <String id="6203">La remise à zéro écrasera toutes les configurations y compris les vôtres - voulez-vous continuer?</String>
   <!--************************************************************-->
   <!--Config Defaults MP2-->
   <!--************************************************************-->
@@ -575,20 +575,20 @@ Version 1.2.3.13
   <!--************************************************************-->
   <!--TVSERVER USE FROM=10000 TO=10300 OFFSET_FROM=0 OFFSET_TO=300-->
   <String id="10001">En attente de processus {0} à terminer</String>
-  <String id="10002">Erreur: TvWish ne peut terminer certains processus - Redémarrer votre ordinateur</String>
+  <String id="10002">Erreur : TvWish ne peut terminer certains processus - Redémarrer votre ordinateur</String>
   <String id="10003">Lecture des paramètres de données</String>
   <String id="10004">Récupération de messages</String>
   <String id="10005">Récupérations de TvWihs</String>
   <String id="10006">Recherche pour {0}</String>
   <String id="10007">Envoie d'email vers {0}</String>
-  <String id="10008">Erreur: Aucun Serveur Smtp  défini</String>
-  <String id="10009">Erreur: Aucun nom d'utilisateur défini</String>
-  <String id="10010">Erreur: Aucun mot de passe défini</String>
-  <String id="10011">Erreur: Aucune adresse email définie</String>
-  <String id="10012">Erreur: Les paramètres du fournisseurs non valides</String>
-  <String id="10013">Erreur: Absence d'adresse pour le serveur </String>
-  <String id="10014">Erreur: Impossible de se connecter au serveur POP3</String>
-  <String id="10015">Erreur: Aucun port Smtp défini</String>
+  <String id="10008">Erreur : Aucun Serveur Smtp  défini</String>
+  <String id="10009">Erreur : Aucun nom d'utilisateur défini</String>
+  <String id="10010">Erreur : Aucun mot de passe défini</String>
+  <String id="10011">Erreur : Aucune adresse email définie</String>
+  <String id="10012">Erreur : Les paramètres du fournisseurs non valides</String>
+  <String id="10013">Erreur : Absence d'adresse pour le serveur </String>
+  <String id="10014">Erreur : Impossible de se connecter au serveur POP3</String>
+  <String id="10015">Erreur : Aucun port Smtp défini</String>
   <String id="10016">Envoie d'emails de rappel effectué</String>
   <String id="10017">Erreur: L'envoi d'email de rappel a échoué - vérifier le nom d'utilisateur</String>
   <String id="10018">Erreur: L'envoi d'email de rappel a échoué - vérifier le mot de passe</String>
@@ -728,10 +728,10 @@ Version 1.2.3.13
   <String id="10255">Minimum {0} est {1}</String>
   <String id="10256">Maximum {0} est {1}</String>
   <String id="10257">Impossible d'ouvrir {0}</String>
-  <String id="10258">Voulez-vous supprimer tous vos messages? ATTENTION: Cette opération efface l'historique des messages, y compris les messages supprimés. Assurez-vous que le plugin TvWishListMP MediaPortal est fermé! \"</String>
+  <String id="10258">Voulez-vous supprimer tous vos messages? ATTENTION: Cette opération efface l'historique des messages, y compris les messages supprimés. Assurez vous que le plugin TvWishListMP MediaPortal est fermé! \"</String>
   <String id="10259">Messages effacés</String>
   <String id="10260">Opération abandonnée</String>
-  <String id="10261">Voulez vous réaliser une restauration complète avec la configuration par défaut?  Ceci écrasera la configuration existant</String>
+  <String id="10261">Voulez-vous réaliser une restauration complète avec la configuration par défaut?  Ceci écrasera la configuration existant</String>
   <String id="10262">Vérifier votre nom d'utilisateur et mot de passe \n Erreur Serveur:\n {0}</String>
   </Section>
 </Language>

@@ -284,7 +284,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                         mydialog.ShowDialog(ERROR_RESOURCE, SAVE_ERROR_RESOURCE, DialogType.OkDialog, false, DialogButtonType.Ok);
                     }
                 }
-                return true;
+                return;
             });
 
         }
@@ -311,7 +311,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                         mydialog.ShowDialog(ERROR_RESOURCE, LOAD_ERROR_RESOURCE, DialogType.OkDialog, false, DialogButtonType.Ok);
                     }
                 }
-                return true;
+                return;
             });
         }
 

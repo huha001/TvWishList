@@ -131,6 +131,7 @@ namespace SetupTv.Sections
             InitializeComponent();
             mymessage = new XmlMessages("", "",true);
             myTvWishes = new TvWishProcessing();
+            dataGridView1.DataError += DataGridView_DataError;
             Log.Debug("TvWishListSetup()");
         }
         #endregion Constructor
@@ -140,9 +141,21 @@ namespace SetupTv.Sections
             //unlock TvWishList
             Log.Debug("TvWishList Setup Dispose");
             myTvWishes.UnLockTvWishList();
+            if (dataGridView1 != null)
+            {
+                dataGridView1.DataError -= DataGridView_DataError;
+            }
         }
 
         #region SetupTv.SectionSettings
+
+        void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            Log.Error("Exception in datagridview row="+e.RowIndex.ToString()+" column="+e.ColumnIndex.ToString());
+            Log.Error("Exception=" + e.Exception);
+        }
+
         public override void OnSectionActivated()
         {
             //set Debug flag first
@@ -163,7 +176,7 @@ namespace SetupTv.Sections
                 epgwatchclass.newlabelmessage += new setuplabelmessage(labelupdate);
             }
             //dataGridView1.RowsAdded += new DataGridViewRowsAddedEventHandler(dataGridView1_RowsAdded);
-
+            
             
             // set actual groups from TV server
 

@@ -261,7 +261,7 @@ namespace SetupTv.Sections
             // checkBoxEmailOnlynew
             // 
             this.checkBoxEmailOnlynew.AutoSize = true;
-            this.checkBoxEmailOnlynew.Location = new System.Drawing.Point(259, 321);
+            this.checkBoxEmailOnlynew.Location = new System.Drawing.Point(248, 321);
             this.checkBoxEmailOnlynew.Name = "checkBoxEmailOnlynew";
             this.checkBoxEmailOnlynew.Size = new System.Drawing.Size(100, 17);
             this.checkBoxEmailOnlynew.TabIndex = 162;
@@ -271,7 +271,7 @@ namespace SetupTv.Sections
             // checkBoxemailreply
             // 
             this.checkBoxemailreply.AutoSize = true;
-            this.checkBoxemailreply.Location = new System.Drawing.Point(259, 298);
+            this.checkBoxemailreply.Location = new System.Drawing.Point(248, 298);
             this.checkBoxemailreply.Name = "checkBoxemailreply";
             this.checkBoxemailreply.Size = new System.Drawing.Size(117, 17);
             this.checkBoxemailreply.TabIndex = 63;
@@ -410,11 +410,10 @@ namespace SetupTv.Sections
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.TextBoxTestReceiver);
             this.groupBox1.Controls.Add(this.buttonTestSend);
-            this.groupBox1.Location = new System.Drawing.Point(259, 53);
+            this.groupBox1.Location = new System.Drawing.Point(248, 53);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(203, 86);
             this.groupBox1.TabIndex = 49;
@@ -451,7 +450,6 @@ namespace SetupTv.Sections
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.numericUpDownSmtpPort);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.TextBoxSmtpServer);
@@ -459,7 +457,7 @@ namespace SetupTv.Sections
             this.groupBox4.Controls.Add(this.checkBoxSSL);
             this.groupBox4.Controls.Add(this.listBoxProvider2);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Location = new System.Drawing.Point(259, 161);
+            this.groupBox4.Location = new System.Drawing.Point(248, 161);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(203, 116);
             this.groupBox4.TabIndex = 30;
@@ -522,9 +520,9 @@ namespace SetupTv.Sections
             "1und1",
             "custom",
             "web.de"});
-            this.listBoxProvider2.Location = new System.Drawing.Point(9, 38);
+            this.listBoxProvider2.Location = new System.Drawing.Point(13, 35);
             this.listBoxProvider2.Name = "listBoxProvider2";
-            this.listBoxProvider2.Size = new System.Drawing.Size(92, 17);
+            this.listBoxProvider2.Size = new System.Drawing.Size(95, 17);
             this.listBoxProvider2.Sorted = true;
             this.listBoxProvider2.TabIndex = 36;
             this.listBoxProvider2.SelectedIndexChanged += new System.EventHandler(this.listBoxProvider2_SelectedIndexChanged);

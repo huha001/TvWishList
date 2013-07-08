@@ -3049,7 +3049,7 @@ namespace TvWishList
                 { //this is watching the result of the dialog box and displaying in the Status label of the screen (do not forget to dispose)
                     IWorkflowManager workflowManager = ServiceRegistration.Get<IWorkflowManager>();
                     workflowManager.NavigatePop(1); //same as escape (takes one entry from the stack)
-                    return true;
+                    return;
                 });
             }
             else if (_textNumber == 4311) //4311: Tv wish list is being processed by another process<br>Try again later<br>If the other process hangs reboot the system or stop the tv server manually
@@ -3058,7 +3058,7 @@ namespace TvWishList
                 { //this is watching the result of the dialog box and displaying in the Status label of the screen (do not forget to dispose)
                     IWorkflowManager workflowManager = ServiceRegistration.Get<IWorkflowManager>();
                     workflowManager.NavigatePop(1); //same as escape (takes one entry from the stack)
-                    return true;
+                    return;
                 });
             }          
             else
@@ -3472,7 +3472,7 @@ namespace TvWishList
 
         public string TvWishVersion()
         {
-            return ("1.3.0.10");
+            return ("1.3.0.11");
         }
 
 

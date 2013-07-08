@@ -27,7 +27,6 @@ using MediaPortal.Plugins.TvWishListMP2.MPExtended;
 using MediaPortal.Plugins.TvWishListMP2.Models;
 using TvWishList;
 using System.Threading;
-using MediaPortal.Plugins.TvWishListMP2.Models;
 using Log = TvLibrary.Log.huha.Log;
 
 namespace MediaPortal.Plugins.TvWishListMP2.MPExtended

@@ -3472,7 +3472,7 @@ namespace TvWishList
 
         public string TvWishVersion()
         {
-            return ("1.3.0.10");
+            return ("1.3.0.11");
         }
 
 

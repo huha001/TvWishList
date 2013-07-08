@@ -22,6 +22,7 @@
     <DefineConstants>TRACE;DEBUG;MP2</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +31,8 @@
     <DefineConstants>TRACE;MP2</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MediaPortal.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
@@ -44,21 +47,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Release\MediaPortal.Utilities.dll</HintPath>
     </Reference>
-    <Reference Include="MPExtended.Services.Common.Interfaces, Version=0.5.0.0, Culture=neutral, PublicKeyToken=8ccaf7b9f3e31d46, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\MPExtended.Services.Common.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="MPExtended.Services.TVAccessService.Interfaces, Version=0.5.0.0, Culture=neutral, PublicKeyToken=8ccaf7b9f3e31d46, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\MPExtended.Services.TVAccessService.Interfaces.dll</HintPath>
-    </Reference>
     <Reference Include="SkinEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Release\SkinEngine.dll</HintPath>
     </Reference>
-    <Reference Include="SlimTvInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="SlimTv.Interfaces, Version=2.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\SlimTvInterfaces.dll</HintPath>
+      <HintPath>bin\Release\SlimTv.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -39,7 +39,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Settings
         public bool Verbose { get; set; }
 
         [Setting(SettingScope.User, false)]
-        public bool DisableQuickMenu { get; set; }
+        public bool DisableQuickMenu { get; set; } 
 
         [Setting(SettingScope.User, true)]
         public bool DisableInfoWindow { get; set; }

@@ -31,11 +31,11 @@
     <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
   </PropertyGroup>
   <PropertyGroup>
-    <SolutionDir>H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.2.3.7\TvWishListV1.2.3.7.Source\TvWishList1.0.1\</SolutionDir>
+    <SolutionDir>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.0.1\</SolutionDir>
     <SolutionExt>.sln</SolutionExt>
     <SolutionFileName>TvWishList.sln</SolutionFileName>
     <SolutionName>TvWishList</SolutionName>
-    <SolutionPath>H:\User Daten\Visual C# Projects\TvWishList\TvWishListV1.2.3.7\TvWishListV1.2.3.7.Source\TvWishList1.0.1\TvWishList.sln</SolutionPath>
+    <SolutionPath>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.0.1\TvWishList.sln</SolutionPath>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>

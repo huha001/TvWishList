@@ -3,8 +3,8 @@ REM DEFINE VARIABLES
 REM *************************************************************************
 REM 
 
-SET OLDVERSION=1.3.0.9
-SET NEWVERSION=1.3.0.10
+SET OLDVERSION=1.3.0.10
+SET NEWVERSION=1.3.0.11
 
 
 SET MSFRAMEPATH="C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe"
@@ -138,6 +138,8 @@ COPY /Y "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\T
 
 
 %MSFRAMEPATH_MP2% "MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2.sln" /p:Configuration=Release
+
+
 %MSFRAMEPATH_MP2% "MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5.sln" /p:Configuration=Release
 
 REM ******************** END COMPILE  ********************
@@ -158,8 +160,15 @@ COPY /Y "TvWishList1.2\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Rel
 COPY /Y "TvWishListMP1.1\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishList.Release\TvWishListMP1.1\TvWishListMP.dll"
 COPY /Y "TvWishListMP1.2\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishList.Release\TvWishListMP1.2\TvWishListMP.dll"
 
+
+
+copy /Y "MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\bin\Release\SlimTv.Interfaces.dll" "MP2 TvWishListMP2\Bin\TvWishListMP2\bin\Release\Plugins\TvWishListMP2\SlimTv.Interfaces.dll"
 XCOPY "MP2 TvWishListMP2\Bin\TvWishListMP2\bin\Release\Plugins\TvWishListMP2" "..\TvWishList.Release\TvWishListMP2"  /S /C /I /Y
+
+copy /Y "MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\bin\Release\MPExtended.Services.Common.Interfaces.dll" "MP2 TvWishListMP2\Bin\TvWishListMPExtendedProvider0.5\bin\Release\Plugins\TvWishListMPExtendedProvider0.5\MPExtended.Services.Common.Interfaces.dll"
+copy /Y "MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\bin\Release\MPExtended.Services.TVAccessService.Interfaces.dll" "MP2 TvWishListMP2\Bin\TvWishListMPExtendedProvider0.5\bin\Release\Plugins\TvWishListMPExtendedProvider0.5\MPExtended.Services.TVAccessService.Interfaces.dll"
 XCOPY "MP2 TvWishListMP2\Bin\TvWishListMPExtendedProvider0.5\bin\Release\Plugins\TvWishListMPExtendedProvider0.5" "..\TvWishList.Release\TvWishListMPExtendedProvider0.5"  /S /C /I /Y
+
 COPY /Y "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll" "..\TvWishList.Release\TvWishListMP2"
 COPY /Y "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll" "..\TvWishList.Release\TvWishListMPExtendedProvider0.5"
 

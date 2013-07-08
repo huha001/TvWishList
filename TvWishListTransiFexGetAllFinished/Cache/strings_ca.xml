@@ -1,0 +1,735 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--DO NOT CHANGE ENGLISH COMMENTS INTO ANOTHER LANGUAGE-->
+  <!--Owner: huha-->
+  <!--Version 1.2.1.0
+- initial release
+
+
+Version 1.2.1.5
+- added preferred group and episode criteria
+
+Version 1.2.3.0
+- added TvWishListMP2 strings - new strings are 100-102, 1108-1109, 1206, 3001, 3104, 3506-3508, 3652-3653, 5000 and up
+
+Version 1.2.3.6
+-added string 1110, 4312, 5051-5052, 5204-5216,6203, 7002, 8110-8111, 10000 and up
+
+Version 1.2.3.10
+- added 200-201
+
+Version 1.2.3.11
+-added 10192-10193,10262
+
+Version 1.2.3.13
+-added 2853,1059-1062,3509-->
+  <!--TVSERVER VECTORSIZE=5000-->
+  <!--MP2 Display in main menu-->
+  <string name="TvWishListMP2.100">TVWishList</string>
+  <string name="TvWishListMP2.101">TV Wish</string>
+  <string name="TvWishListMP2.102">New TV Wish - Cerca per:</string>
+  <!--SlimTv Buttons in MP2-->
+  <!--MP1STR:200-->
+  <string name="TvWishListMP2.CreateTvWish">Crea un Tv Wsih</string>
+  <!--MP1STR:201-->
+  <string name="TvWishListMP2.AlternatePrograms">Alterna Programes</string>
+  <!--************************************************************-->
+  <!--TV WishList - Main-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.1000">TV WishList - Principal</string>
+  <!--Quick Menu from Skins-->
+  <string name="TvWishListMP2.1050">TvWishList Menú ràpid</string>
+  <string name="TvWishListMP2.1051">Crea un Tv Wish amb Títol</string>
+  <string name="TvWishListMP2.1052">Crea un Tv Wish amb Tot</string>
+  <string name="TvWishListMP2.1053">Crea un Tv Wish amb Títol en Mode Email</string>
+  <string name="TvWishListMP2.1054">Crea un Tv Wish amb Títol en Mode NomésVisualitza</string>
+  <string name="TvWishListMP2.1055">Crea un Tv Wish amb Tot en Mode Email</string>
+  <string name="TvWishListMP2.1056">Crea un Tv Wish amb Tot en Mode NomésVisualitza</string>
+  <string name="TvWishListMP2.1057">Vés a TvWishList Principal</string>
+  <string name="TvWishListMP2.1058">Vés a TvWishList Resultats</string>
+  <string name="TvWishListMP2.1059">Crea un Tv Wsih i Cerca l\'EPG</string>
+  <string name="TvWishListMP2.1060">Crea un Tv Wsih</string>
+  <string name="TvWishListMP2.1061">S\'està utilitzant el Mode Només Visualitza</string>
+  <string name="TvWishListMP2.1062">S\'està utilitzant el Mode Email i Enregistra</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.1100">Mode Només Visualitza</string>
+  <string name="TvWishListMP2.1101">Mode Email i Enregistra</string>
+  <string name="TvWishListMP2.1102">Realitza una cerca de l\'EPG</string>
+  <string name="TvWishListMP2.1103">Visualitza els resultats</string>
+  <string name="TvWishListMP2.1104">Nou</string>
+  <string name="TvWishListMP2.1105">Desa</string>
+  <string name="TvWishListMP2.1106">Cancel·la</string>
+  <string name="TvWishListMP2.1107">Més</string>
+  <string name="TvWishListMP2.1108">Resultats</string>
+  <string name="TvWishListMP2.1109">Mode</string>
+  <string name="TvWishListMP2.1110">Edita</string>
+  <!--Run EPG Search-->
+  <string name="TvWishListMP2.1200">S\'està esperant la finalització del procès antic</string>
+  <string name="TvWishListMP2.1201">La cerca anterior enacara dura - \nespereu</string>
+  <string name="TvWishListMP2.1202">La cerca de l\'EPG encara dura - espereu</string>
+  <string name="TvWishListMP2.1203">El Fil en actiu no s\'ha acabat\na temps - s\'està interrompent</string>
+  <string name="TvWishListMP2.1204">S\'ha completat la cerca de l\'EPG</string>
+  <string name="TvWishListMP2.1205">El Fil antic no s\'ha acabat\na temps - s\'està interrompent</string>
+  <string name="TvWishListMP2.1206">La connexió dirigida al servidor ha fallat - engegueu de nou el TV Server</string>
+  <!--Save-->
+  <string name="TvWishListMP2.1300">S\'han desat les dades del TvWish</string>
+  <string name="TvWishListMP2.1301">No s\'han desat les dades del TvWish</string>
+  <!--Cancel-->
+  <string name="TvWishListMP2.1400">S\'han carregat de nou les dades del TvWish</string>
+  <string name="TvWishListMP2.1401">No s\'han carregat les dades del TvWish</string>
+  <!--More  Menu-->
+  <string name="TvWishListMP2.1500">Tots en actiu</string>
+  <string name="TvWishListMP2.1501">Cap en actiu</string>
+  <string name="TvWishListMP2.1502">Omet-los tots</string>
+  <string name="TvWishListMP2.1503">No n\'ometis cap</string>
+  <string name="TvWishListMP2.1504">Copia TvWishes de Només Visualitza a Email</string>
+  <string name="TvWishListMP2.1505">Copia TvWishes de Email a Només Visualitza</string>
+  <string name="TvWishListMP2.1506">Desplaça Planificacions a TvWishList</string>
+  <string name="TvWishListMP2.1507">Exporta</string>
+  <string name="TvWishListMP2.1508">Importa</string>
+  <!--More  Status-->
+  <string name="TvWishListMP2.1550">S\'han copiat {0} Wish(es) del\nNomés Visualitza al Mode Email</string>
+  <string name="TvWishListMP2.1551">La còpia de TvWishes del Només\nVisualitza al Mode Email ha fallat</string>
+  <string name="TvWishListMP2.1552">S\'han copiat {0} Wish(es) de\nl\'Email al Mode Només Visualitza</string>
+  <string name="TvWishListMP2.1553">La còpia de TvWishes de l\'Email\nal Mode Només Visualitza ha fallat</string>
+  <string name="TvWishListMP2.1554">S\'ha desplaçat {0} Planificació(ons) al TvWishList</string>
+  <string name="TvWishListMP2.1555">El desplaçament de les Planificacions al TvWishList ha fallat</string>
+  <string name="TvWishListMP2.1556">S\'ha completat l\'exportació {0} wish(es)</string>
+  <string name="TvWishListMP2.1557">L\'exportació ha fallat</string>
+  <string name="TvWishListMP2.1558">S\'ha completat l\'importació {0} wish(es)</string>
+  <string name="TvWishListMP2.1559">L\'importació ha fallat</string>
+  <!--++++++++++++++-->
+  <!--Formats   Main-->
+  <!--++++++++++++++-->
+  <!--TvWish Format Data 1900 - 1905:
+        //  {0}   active
+        //  {1}   searchfor
+        //  {2}   matchtype
+        //  {3}   group
+        //  {4}   recordtype
+        //  {5}   action
+        //  {6}   exclude
+        //  {7}   viewed counter
+        //  {8}   prerecord
+        //  {9}   postrecord
+        //  {10}  episodename
+        //  {11}  episodepart
+        //  {12}  episodenumber
+        //  {13}  seriesnumber
+        //  {14}  keepepisodes
+        //  {15}  keepuntil
+        //  {16}  recommendedcard
+        //  {17}  priority
+        //  {18}  aftertime
+        //  {19}  beforetime
+        //  {20}  afterdays
+        //  {21}  beforedays
+        //  {22}  channel
+        //  {23}  skip
+        //  {24}  name
+        //  {25}  useNameFolders
+        //  {26}  within next hours
+        //  {27}  scheduled counter
+        //  {28}  tvwish id
+        //  {29}  recorded counter
+        //  {30}  deleted counter
+        //  {31}  emailed counter
+        //  {32}  conflicts counter
+        //  {33}  episodecriteria
+        //  {34}  preferredgroup
+        //  {35}  includerecordings
+        //  <br>     new line
+        //  |      item selector for not displaying user disabled items-->
+  <!--Main Menu Format for 16:9 skins Email Mode-->
+  <string name="TvWishListMP2.1900">En actiu: {0}\n|Nom: {24}\n|Cerca: {1}\n|Coincidències: {2}\n|Exclou: {6}\n|Tipus: {4}\n|Acció: {5}\n|Omet els Repetits: {23}\n|Grup Preferit: {34}\n|i Inclou Enregistraments: {35}\n|Comptadors:\nPlanificat={27}\nEnregistrat={29}\nSuprimit={30}\nPer Email={31}\nConflictes={32}\n|\nNomés Grup: {3} I Només Canal: {22}\n|Després O En Dia: {20} Excepte Abans O El Dia: {21}\n|Entre les: {18} i les {19}\n\n|Criteri d\'Episodi: {33}\n|Nom d\'Episodi: {10}\n|Part d\'Episodi: {11}\n|Número d\'Episodi: {12}\n|Guarda els Episodis: {14}\n|Guarda Fins: {15}\n|Prioritat: {17}\n|Preenregistrament: {8}\n|Postenregistrament: {9}\n|Targeta Recomanada: {16}\n|Desplaça Enregistraments a la Carpeta: {25}\n|ID={28}\n</string>
+  <!--Main Menu Format for 4:3 skins Email Mode-->
+  <string name="TvWishListMP2.1902">En actiu: {0}     |Nom: {24}     Cerca: {1}     |Coincidències: {2}     |Exclou: {6}     |Tipus: {4}     |Acció: {5}     |Omet els Repetits: {23}     |Grup Preferit: {34}     |i Inclou Enregistraments: {35}\n|Comptadors:  Planificat={27}  Enregistrat={29}  Suprimit={30}  Per Email={31}  Conflicets={32}\n|Només Grup: {3} I Només Canal: {22} |Després O En Dia: {20} Excepte Abans O El Dia: {21} |Entre les: {18} i les {19}\n|Criteri d\'Episodi: {33}     |Nom d\'Episodi: {10}     |Part d\'Episodi: {11}     |Número d\'Episodi: {12}     |Guarda els Episodis: {14}     |Guarda Fins: {15}      |Prioritat: {17}\n|Preenregistrament: {8}      |Postenregistrament: {9}     |Targeta Recomanada: {16}     |Desplaça Enregistraments a la Carpeta: {25}\n|ID={28}\n</string>
+  <!--Main Menu Format for 16:9 skins View Only Mode-->
+  <string name="TvWishListMP2.1901">En actiu: {0}\n|Nom: {24}\n|Cerca: {1}\n|Coincidències: {2}\n|Exclou: {6}\n|Tipus: {4}\n|Troballes: {7}\n|\nNomés Grup: {3} I Només Canal: {22}\n|Després O En Dia: {20} Excepte Abans O El Dia: {21}\n|Entre les: {18} i les {19}\n|Mostra\'l durant Les Properes {26} Hores\n|Nom d\'Episodi: {10}\n|Part d\'Episodi: {11}\n|Número d\'Episodi: {12}\n|ID={28}\n</string>
+  <!--Main Menu Format for 4:3 skins View Only Mode-->
+  <string name="TvWishListMP2.1903">En actiu: {0}     |Nom: {24}    |Cerca: {1}     |Coincidències: {2}     |Exclou: {6}     |Tipus: {4}     |Troballes: {7}\n|Només Grup: {3} I Només Canal: {22} |Després O En Dia: {20} Excepte Abans O El Dia: {21} |Entre les: {18} i les {19}     |Mostra\'l durant Les Properes {26} Hores\n|Nom d\'Episodi: {10}     |Part d\'Episodi: {11}     |Número d\'Episodi: {12}\n|ID={28}\n</string>
+  <!--List Item Format Email Mode -  use "||" to change alignment between left and right border-->
+  <string name="TvWishListMP2.1904">{24} || {27}/{29}</string>
+  <!--List Item Format ViewOnly Mode-->
+  <string name="TvWishListMP2.1905">{24} || {7}</string>
+  <!--************************************************************-->
+  <!--TV WishList - Edit-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=2000 TO=4900 OFFSET_FROM=2000 OFFSET_TO=4900-->
+  <string name="TvWishListMP2.2000">TV WishList - Entrada</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.2100">Menú Principal</string>
+  <string name="TvWishListMP2.2101">Anterior</string>
+  <string name="TvWishListMP2.2102">Següent</string>
+  <string name="TvWishListMP2.2103">Nou</string>
+  <string name="TvWishListMP2.2104">Suprimeix</string>
+  <string name="TvWishListMP2.2105">Desa</string>
+  <string name="TvWishListMP2.2106">Cancel·la\'ls tots</string>
+  <string name="TvWishListMP2.2107">Més</string>
+  <!--Delete-->
+  <string name="TvWishListMP2.2200">S\'ha suprimit el TvWish</string>
+  <string name="TvWishListMP2.2201">Error: no s\'han suprimit dades del TvWish</string>
+  <!--Save-->
+  <string name="TvWishListMP2.2300">S\'han desat les dades del TvWish</string>
+  <string name="TvWishListMP2.2301">Error: no s\'han desat dades del TvWish</string>
+  <!--Cancel-->
+  <string name="TvWishListMP2.2400">S\'han carregat de nou dades del TvWish</string>
+  <string name="TvWishListMP2.2401">No s\'han carregat de nou dades del TvWish</string>
+  <!--More  Menu-->
+  <string name="TvWishListMP2.2450">Tots els Elements</string>
+  <string name="TvWishListMP2.2451">Elements Definits per l\'Usuari</string>
+  <string name="TvWishListMP2.2452">Visualitza el Resultat Individual</string>
+  <string name="TvWishListMP2.2453">S\'està copiant el Tv Wish actual al Mode Altres</string>
+  <string name="TvWishListMP2.2454">S\'han copiat {0} Wish(es) al Mode Altres</string>
+  <string name="TvWishListMP2.2455">La còpia del Tv Wish al Mode Altres ha fallat</string>
+  <string name="TvWishListMP2.2456">Duplica el Tv wish</string>
+  <string name="TvWishListMP2.2457">S\'ha duplicat el Tv wish</string>
+  <string name="TvWishListMP2.2458">La duplicació del Tv wish ha fallat</string>
+  <!--Edit List Items-->
+  <string name="TvWishListMP2.2500">En actiu: {0}</string>
+  <string name="TvWishListMP2.2501">Cerca: {0}</string>
+  <string name="TvWishListMP2.2502">Coincideix Amb: {0}</string>
+  <string name="TvWishListMP2.2503">Utilitza Unicament el Grup: {0}</string>
+  <string name="TvWishListMP2.2504">Enregistra com a: {0}</string>
+  <string name="TvWishListMP2.2505">I Realitza l\'Acció: {0}</string>
+  <string name="TvWishListMP2.2506">Exclou: {0}</string>
+  <string name="TvWishListMP2.2507">Troballes: {0} (Reinicia les Troballes)</string>
+  <string name="TvWishListMP2.2508">Preenregistrament: {0} Minuts</string>
+  <string name="TvWishListMP2.2509">i Postenregistrament: {0} Minuts</string>
+  <string name="TvWishListMP2.2510">Filtra Per Episodi: {0}</string>
+  <string name="TvWishListMP2.2511">Filtra Per Part: {0}</string>
+  <string name="TvWishListMP2.2512">Filtra Per Número: {0}</string>
+  <string name="TvWishListMP2.2513">Filtra Per Númerodesèrie: {0}</string>
+  <string name="TvWishListMP2.2514">Guarda: {0} Enregistraments</string>
+  <string name="TvWishListMP2.2515">Fins: {0} </string>
+  <string name="TvWishListMP2.2516">La targeta recomanada és: {0}</string>
+  <string name="TvWishListMP2.2517">Estableix la Prioritat en: {0} (Min 0, Max 9)</string>
+  <string name="TvWishListMP2.2518">Després de les: {0}</string>
+  <string name="TvWishListMP2.2519">I Abans de les: {0}</string>
+  <string name="TvWishListMP2.2520">Després i Durant Laborable: {0}</string>
+  <string name="TvWishListMP2.2521">Abans i Durant Laborable: {0}</string>
+  <string name="TvWishListMP2.2522">I Només Canal: {0}</string>
+  <string name="TvWishListMP2.2523">Omet Episodis Repetits és: {0}</string>
+  <string name="TvWishListMP2.2524">Nom: {0}</string>
+  <string name="TvWishListMP2.2525">Mou Enregistraments a: Carpeta {0}</string>
+  <string name="TvWishListMP2.2526">Mostra Només les Properes: {0} Hora(es)</string>
+  <string name="TvWishListMP2.2533">Utilitza Criteris de Coincidència d\'Episodi: {0}</string>
+  <string name="TvWishListMP2.2534">Grup de Canal Preferit: {0}</string>
+  <string name="TvWishListMP2.2535">S\'inlouen Enregistraments: {0} </string>
+  <!--MatchType-->
+  <string name="TvWishListMP2.2600">Títol Parcial</string>
+  <string name="TvWishListMP2.2601">Títol Exacte</string>
+  <string name="TvWishListMP2.2602">Text Parcial</string>
+  <string name="TvWishListMP2.2603">Mot al Títol</string>
+  <string name="TvWishListMP2.2604">Mot al Text</string>
+  <string name="TvWishListMP2.2605">Mot al Text/Títol</string>
+  <string name="TvWishListMP2.2606">Expressió</string>
+  <!--RecordType-->
+  <string name="TvWishListMP2.2650">Només un Cop</string>
+  <string name="TvWishListMP2.2651">Tot</string>
+  <string name="TvWishListMP2.2652">Tots al Mateix Canal</string>
+  <string name="TvWishListMP2.2653">Tots al Mateix Canal el Mateix Dia</string>
+  <string name="TvWishListMP2.2654">Tots al Mateix Canal a la Mateixa Hora</string>
+  <string name="TvWishListMP2.2655">Tots al Mateix Canal el Mateix Dia i Hora</string>
+  <!--Action-->
+  <string name="TvWishListMP2.2700">Enregistra</string>
+  <string name="TvWishListMP2.2701">Email</string>
+  <string name="TvWishListMP2.2702">Email i Enregistra</string>
+  <string name="TvWishListMP2.2703">Visualitza</string>
+  <!--Days-->
+  <string name="TvWishListMP2.2750">Dilluns</string>
+  <string name="TvWishListMP2.2751">Dimarts</string>
+  <string name="TvWishListMP2.2752">Dimecres</string>
+  <string name="TvWishListMP2.2753">Dijous</string>
+  <string name="TvWishListMP2.2754">Divendres</string>
+  <string name="TvWishListMP2.2755">Dissabte</string>
+  <string name="TvWishListMP2.2756">Diumenge</string>
+  <!--Dialog Headers for Edit Items-->
+  <string name="TvWishListMP2.2800">En actiu</string>
+  <string name="TvWishListMP2.2801">Cerca</string>
+  <string name="TvWishListMP2.2802">Tipus de Coincidència</string>
+  <string name="TvWishListMP2.2803">Grup</string>
+  <string name="TvWishListMP2.2804">Tipus d\'Enregistrament</string>
+  <string name="TvWishListMP2.2805">Acció</string>
+  <string name="TvWishListMP2.2806">Exclou</string>
+  <string name="TvWishListMP2.2807">Troballes</string>
+  <string name="TvWishListMP2.2808">Temps de Preenregistrament</string>
+  <string name="TvWishListMP2.2809">Temps de Postenregistrament</string>
+  <string name="TvWishListMP2.2810">Nom d\'Episodi</string>
+  <string name="TvWishListMP2.2811">Part d\'Episodi</string>
+  <string name="TvWishListMP2.2812">Número d\'Episodi</string>
+  <string name="TvWishListMP2.2813">Número de Sèrie</string>
+  <string name="TvWishListMP2.2814">Guarda Episodis</string>
+  <string name="TvWishListMP2.2815">Guarda fins</string>
+  <string name="TvWishListMP2.2816">Targeta Recomanada</string>
+  <string name="TvWishListMP2.2817">Prioritat</string>
+  <string name="TvWishListMP2.2818">Després del</string>
+  <string name="TvWishListMP2.2819">Abans del</string>
+  <string name="TvWishListMP2.2820">Després del Dia</string>
+  <string name="TvWishListMP2.2821">Abans del Dia</string>
+  <string name="TvWishListMP2.2822">Canal</string>
+  <string name="TvWishListMP2.2823">Omet</string>
+  <string name="TvWishListMP2.2824">Nom</string>
+  <string name="TvWishListMP2.2825">Desplaça Enregistraments a la Carpeta</string>
+  <string name="TvWishListMP2.2826">Mostra durant La/Les Propera/es Hora/es</string>
+  <string name="TvWishListMP2.2833">Canvia el Criteri de Coincidència d\'Episodi</string>
+  <string name="TvWishListMP2.2834">Grup de Canals Preferits</string>
+  <string name="TvWishListMP2.2835">S\'estan incloent els Enregistraments</string>
+  <!--Use Name Folder-->
+  <string name="TvWishListMP2.2850">Episodi</string>
+  <string name="TvWishListMP2.2851">Nom del Tv Wish</string>
+  <string name="TvWishListMP2.2852">Cap</string>
+  <string name="TvWishListMP2.2853">Automàtic</string>
+  <!--Keep Until-->
+  <string name="TvWishListMP2.2900">Sempre</string>
+  <string name="TvWishListMP2.2901">Dies Des de l\'Enregistrament</string>
+  <string name="TvWishListMP2.2902">Setmanes Des de l\'Enregistrament</string>
+  <string name="TvWishListMP2.2903">Mesos Dse de l\'Enregistrament</string>
+  <string name="TvWishListMP2.2904">Data</string>
+  <string name="TvWishListMP2.2905">Vist</string>
+  <string name="TvWishListMP2.2906">Espai Necessari</string>
+  <string name="TvWishListMP2.2920">{0} Dies Des de l\'Enregistrament</string>
+  <string name="TvWishListMP2.2921">{0} Setmanes Des de l\'Enregistrament</string>
+  <string name="TvWishListMP2.2922">{0} Mesos Des de l\'Enregistrament</string>
+  <!--DO NOT CHANGE FORMAT in 2923-->
+  <string name="TvWishListMP2.2923">AAAA-MM-DD</string>
+  <!--Change episode matching criteria-->
+  <string name="TvWishListMP2.2950">Voleu Ometre les Descripcions d\'EPG Coincidents? (Sí)</string>
+  <string name="TvWishListMP2.2951">Voleu Ometre les Descripcions d\'EPG Coincidents? (No)</string>
+  <string name="TvWishListMP2.2952">Voleu Ometre els Noms i Parts d\'Episodis Coincidents? (Sí)</string>
+  <string name="TvWishListMP2.2953">Voleu Ometre els Noms i Parts d\'Episodis Coincidents? (No)</string>
+  <string name="TvWishListMP2.2954">Voleu Ometre les Sèries i Números d\'Episodis Coincidents? (Sí)</string>
+  <string name="TvWishListMP2.2955">Voleu Ometre les Sèries i Números d\'Episodis Coincidents? (No)</string>
+  <string name="TvWishListMP2.2960">Descr.</string>
+  <string name="TvWishListMP2.2961">Nom</string>
+  <string name="TvWishListMP2.2962">Número</string>
+  <string name="TvWishListMP2.2970">Activa tots els criteris</string>
+  <string name="TvWishListMP2.2971">Desactiva tots els criteris</string>
+  <!--************************************************************-->
+  <!--TV WishList - View Results-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.3000">TVWishList - Resultats</string>
+  <string name="TvWishListMP2.3001">Programa</string>
+  <!--Buttons-->
+  <string name="TvWishListMP2.3100">Menú Priincipal</string>
+  <string name="TvWishListMP2.3101">Actualitza</string>
+  <string name="TvWishListMP2.3102">Ordena</string>
+  <string name="TvWishListMP2.3103">Filtra</string>
+  <string name="TvWishListMP2.3104">Ordena Per</string>
+  <!--Sort Menu-->
+  <string name="TvWishListMP2.3200">Menú Ordena</string>
+  <string name="TvWishListMP2.3201">Títol</string>
+  <string name="TvWishListMP2.3202">Inicia</string>
+  <string name="TvWishListMP2.3203">Creat el</string>
+  <string name="TvWishListMP2.3204">Gènere</string>
+  <string name="TvWishListMP2.3205">Classificació</string>
+  <string name="TvWishListMP2.3206">Valoració Parental</string>
+  <string name="TvWishListMP2.3207">Valoració d\'estels</string>
+  <string name="TvWishListMP2.3208">Tipus</string>
+  <string name="TvWishListMP2.3209">Missatge</string>
+  <string name="TvWishListMP2.3210">Cadena de Cerca</string>
+  <string name="TvWishListMP2.3211">Nom d\'Episodi</string>
+  <string name="TvWishListMP2.3212">Número d\'Episodi</string>
+  <string name="TvWishListMP2.3213">Part d\'Episodi</string>
+  <!--Filter Menu-->
+  <string name="TvWishListMP2.3250">Menú Filtre</string>
+  <string name="TvWishListMP2.3251">Visualitza</string>
+  <string name="TvWishListMP2.3252">No hi ha visualització</string>
+  <string name="TvWishListMP2.3253">Enviat per Email</string>
+  <string name="TvWishListMP2.3254">No enviat per Email</string>
+  <string name="TvWishListMP2.3255">Planificat</string>
+  <string name="TvWishListMP2.3256">No Planificat</string>
+  <string name="TvWishListMP2.3257">Enregistrat</string>
+  <string name="TvWishListMP2.3258">No Enregistrat</string>
+  <string name="TvWishListMP2.3259">Suprimit</string>
+  <string name="TvWishListMP2.3260">No Suprimit</string>
+  <string name="TvWishListMP2.3261">Conflictes</string>
+  <string name="TvWishListMP2.3262">No hi han Conflictes</string>
+  <string name="TvWishListMP2.3263">Tot</string>
+  <string name="TvWishListMP2.3264">Cap</string>
+  <!--Item Menu-->
+  <string name="TvWishListMP2.3500">Vés a TV</string>
+  <string name="TvWishListMP2.3501">Suprimeix Planificació</string>
+  <string name="TvWishListMP2.3502">Planificació</string>
+  <string name="TvWishListMP2.3503">Suprimeix Missatge</string>
+  <string name="TvWishListMP2.3504">Suprimeix Enregistrament i Pel·lícula</string>
+  <string name="TvWishListMP2.3505">Vés a Enregistraments</string>
+  <string name="TvWishListMP2.3506">Vés a Vídeos</string>
+  <string name="TvWishListMP2.3507">Vés a Sèries</string>
+  <string name="TvWishListMP2.3508">Vés a EPG</string>
+  <string name="TvWishListMP2.3509">Reprodueix</string>
+  <!--Item Status-->
+  <string name="TvWishListMP2.3600">S\'ha afegit Planificació</string>
+  <string name="TvWishListMP2.3601">L\'addició de Planificació ha fallat</string>
+  <string name="TvWishListMP2.3602">S\'ha suprimit Planificació</string>
+  <string name="TvWishListMP2.3603">La supressió de planificació ha fallat</string>
+  <string name="TvWishListMP2.3604">S\'ha suprimit Missatge</string>
+  <string name="TvWishListMP2.3605">La supressió de missatge ha fallat</string>
+  <string name="TvWishListMP2.3606">S\'ha suprimit Enregistrament</string>
+  <string name="TvWishListMP2.3607">La supressió d\'enregistrament ha fallat</string>
+  <string name="TvWishListMP2.3608">Voleu suprimir el fitxer?</string>
+  <!--Message Changes-->
+  <string name="TvWishListMP2.3650">El fitxer {0} ocupa {1} GB</string>
+  <string name="TvWishListMP2.3651">S\'ha suprimit Fitxer</string>
+  <string name="TvWishListMP2.3652">L\'ordre és ascendent</string>
+  <string name="TvWishListMP2.3653">L\'ordre és descendent</string>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Message Format Data 3900-3905:
+        //  {0}  Title
+        //  {1}  Description
+        //  {2}  Channel
+        //  {3}  Start
+        //  {4}  End
+        //  {5}  EpisodeName
+        //  {6}  EpisodeNum
+        //  {7}  EpisodeNumber
+        //  {8}  EpisodePart
+        //  {9}  Genre
+        //  {10} Classification
+        //  {11} OriginalAirDate
+        //  {12} ParentalRating
+        //  {13} SeriesNum
+        //  {14} StarRating
+        //  {15} type
+        //  {16} channel_id
+        //  {17} created
+        //  {18} searchstring
+        //  {19} tvwish_id
+        //  {20} recording_id
+        //  {21} Message   
+        //  <br>   new line-->
+  <!--Found Format for 16:9 skins Email Mode-->
+  <string name="TvWishListMP2.3900">{21}\nTítol: {0}\nCanal: {2}\nInici: {3}\nFinalització: {4}\nTipus: {15}\nDescripció: {1}\n\nGènere: {9}\nClassificació: {10}\nValoració Parental: {12}\nValoració d\'estels: {14}\nPart d\'Episodi: {8}\nNom d\'Episodi: {5}\nNúmero d\'Episodi: {6}\nTrobat per: {18} a {17}\n\n</string>
+  <!--Found Format for 4:3 skins Email Mode-->
+  <string name="TvWishListMP2.3902">{21}     Títol: {0}     Canal: {2}     Inici: {3}     Finalització: {4}     Tipus: {15}\nDescripció: {1}\nGènere: {9}     Classificació: {10}     Valoració Parental: {12}     Valoració d\'estels: {14}     Part d\'Episodi: {8}     Nom d\'Episodi: {5}     Número d\'Episodi: {6}     Trobat per: {18} a {17}\n</string>
+  <!--Found Format for 16:9 skins View Only Mode-->
+  <string name="TvWishListMP2.3901">{21}\nTítol: {0}\nCanal: {2}\nInici: {3}\nFinalització: {4}\nTipus: {15}\nDescripció: {1}\n\nGènere: {9}\nClassificació: {10}\nValoració Parental: {12}\nValoració d\'estels: {14}\nPart d\'Episodi: {8}\nNom d\'Episodi: {5}\nNúmero d\'Episodi: {6}\nTrobat per: {18} a {17}\n\n</string>
+  <!--Found Format for 4:3 skins View Only Mode-->
+  <string name="TvWishListMP2.3903">{21}     Títol: {0}     Canal: {2}     Inici: {3}     Finalització: {4}    Tipus: {15}\nDescripció: {1}\nGènere: {9}     Classificació: {10}     Valoració Parental: {12}     Valoració d\'estels: {14}     Part d\'Episodi: {8}     Nom d\'Episodi: {5}     Número d\'Episodi: {6}     Trobat per: {18} a {17}\n</string>
+  <!--List Item Format Email Mode - use "||" to change alignment between left and right border-->
+  <string name="TvWishListMP2.3904">{0} || {3}</string>
+  <!--List Item Format ViewOnly Mode-->
+  <string name="TvWishListMP2.3905">{0} || {3}</string>
+  <!--************************************************************-->
+  <!--General-->
+  <!--************************************************************-->
+  <!--Bool-->
+  <string name="TvWishListMP2.4000">Cert</string>
+  <string name="TvWishListMP2.4001">Fals</string>
+  <!--Default Data TvWish-->
+  <string name="TvWishListMP2.4100">Qualsevol</string>
+  <string name="TvWishListMP2.4101">Sempre</string>
+  <string name="TvWishListMP2.4102">Personalitzat</string>
+  <string name="TvWishListMP2.4103">Cap</string>
+  <string name="TvWishListMP2.4104">Tots els Canals</string>
+  <string name="TvWishListMP2.4105">Tot</string>
+  <!--Mode Header-->
+  <string name="TvWishListMP2.4200">Mode Email i Enregistra</string>
+  <string name="TvWishListMP2.4201">Mode Només Visualitza</string>
+  <!--Errors-->
+  <string name="TvWishListMP2.4300">Comprova el Registre del MediaPortal</string>
+  <string name="TvWishListMP2.4301">No s\'han trobat Elements</string>
+  <string name="TvWishListMP2.4302">S\'ha produït un error en crear la llista d\'elements</string>
+  <string name="TvWishListMP2.4303">No hi ha Número</string>
+  <string name="TvWishListMP2.4304">Format no vàlid</string>
+  <string name="TvWishListMP2.4305">Error</string>
+  <string name="TvWishListMP2.4306">Els Connectors TvWishList del MediaPortal\ni el del TV Server No Coincideixen</string>
+  <string name="TvWishListMP2.4307">S\'ha de canviar la Carpeta d\'Enregistrament\na Carpeta d\'Episodi</string>
+  <string name="TvWishListMP2.4308">S\'ha de canviar el Tipus d\'Enregistrament a Tot</string>
+  <string name="TvWishListMP2.4309">S\'ha de canviar Guarda el número d\'Episodis a Tot</string>
+  <string name="TvWishListMP2.4310">Només es pot Desplaçar Planificacions en Mode Email</string>
+  <string name="TvWishListMP2.4311">Un altre procès està treballant\namb la llista Tv wish\nTorneu-ho a provar més tard\nSi l\'altre procès no es ciompleta\n inicieu de nou el sistema o \natureu manualment el tv server</string>
+  <string name="TvWishListMP2.4312">Error de temps excedit: Inicieu de nou el servidor.\nSi passa de nou, a la configuració experta, incrementeu-hi el temps d\'espera</string>
+  <!--Others-->
+  <string name="TvWishListMP2.4400">Informació</string>
+  <string name="TvWishListMP2.4401">Avís</string>
+  <string name="TvWishListMP2.4402">Sí</string>
+  <string name="TvWishListMP2.4403">No</string>
+  <string name="TvWishListMP2.4404">Tots els Tv Wishes</string>
+  <string name="TvWishListMP2.4405">Tv Wish: {0}</string>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Date Time Format for all modules
+        //   {0:0000} year
+        //   {1:00}   month
+        //   {2:00}   day
+        //   {3:00}   hour
+        //   {4:00}   minute
+        //   {5:00}   second
+        //   {6}      timeofday
+        //   {7}      date-->
+  <string name="TvWishListMP2.4900">{1:00}/{2:00} a {3:00}:{4:00}</string>
+  <!--************************************************************-->
+  <!--Config Main MP2-->
+  <!--************************************************************-->
+  <!--MP1STR:5000-->
+  <string name="TvWishListMP2.ConfigMain_GUI">Configuració Principal</string>
+  <!--MP1STR:5001-->
+  <string name="TvWishListMP2.ConfigMain_GUI_Help">Configura els paràmetres principals</string>
+  <!--MP1STR:5050-->
+  <string name="TvWishListMP2.ConfigTvserver">S\'ha de configurar i comprovar el connector Tvserver del TvWishList abans d\'utilitzar el del MediaPortal</string>
+  <string name="TvWishListMP2.5051">S\'ha de configurar i comprovar el connector Tvserver </string>
+  <string name="TvWishListMP2.5052">del TvWishList abans d\'utilitzar el del MediaPortal</string>
+  <!--MP1STR:5100-->
+  <string name="TvWishListMP2.CancelButtonText">Cancel·la</string>
+  <!--MP1STR:5101-->
+  <string name="TvWishListMP2.SaveButtonText">Desa</string>
+  <!--MP1STR:5102-->
+  <string name="TvWishListMP2.HelpButtonText">Ajuda</string>
+  <!--MP1STR:5200-->
+  <string name="TvWishListMP2.Verbose">Depuració</string>
+  <!--MP1STR:5201-->
+  <string name="TvWishListMP2.DisableQuickMenu">Desactiva el Menú Ràpid del TvWish</string>
+  <!--MP1STR:5202-->
+  <string name="TvWishListMP2.TimeOut">Temps d\'espera</string>
+  <!--MP1STR:5203-->
+  <string name="TvWishListMP2.TimeOutDescription">Només canvieu Temps d\'espera 60 si es produeixen errors</string>
+  <!--MP1STR:5204-->
+  <string name="TvWishListMP2.SaveToTvServer">Es desarà la configuració de client al tv server</string>
+  <!--MP1STR:5205-->
+  <string name="TvWishListMP2.LoadFromTvServer">Es carregarà la configuració de client del tv server</string>
+  <!--MP1STR:5206-->
+  <string name="TvWishListMP2.DisableInfoWindows">Desactiva les Finestres de Missatges d\'Informació</string>
+  <!--MP1STR:5207-->
+  <string name="TvWishListMP2.Load">Carrega</string>
+  <!--MP1STR:5208-->
+  <string name="TvWishListMP2.SaveLoad">Desa/Carrega la Configuració de Client al/del Tv Server</string>
+  <!--MP1STR:5209-->
+  <string name="TvWishListMP2.SaveQuestion">Voleu desar la configuració de client al Tv server i sobreescriure\'n així les anteriors?</string>
+  <!--MP1STR:5210-->
+  <string name="TvWishListMP2.LoadQuestion">Voleu carregar la configuració de client del Tv server i sobreescriure\'n així les actuals?</string>
+  <!--MP1STR:5211-->
+  <string name="TvWishListMP2.SaveToTV">Desa al Tv Server</string>
+  <!--MP1STR:5212-->
+  <string name="TvWishListMP2.LoadFromTV">Carrega del Tv Server</string>
+  <!--MP1STR:5213-->
+  <string name="TvWishListMP2.LoadComplete">S\'ha carregat configuració de client del Tv server</string>
+  <!--MP1STR:5214-->
+  <string name="TvWishListMP2.LoadError">No s\'ha carregat configuració de client del Tv server</string>
+  <!--MP1STR:5215-->
+  <string name="TvWishListMP2.SaveComplete">S\'ha desat la configuració de client al Tv server</string>
+  <!--MP1STR:5216-->
+  <string name="TvWishListMP2.SaveError">No s\'ha desat la configuració de client al Tv server</string>
+  <!--************************************************************-->
+  <!--Config Filter MP2-->
+  <!--************************************************************-->
+  <!--MP1STR:6000-->
+  <string name="TvWishListMP2.ConfigFilter_GUI">Configuració de Filtre</string>
+  <!--MP1STR:6001-->
+  <string name="TvWishListMP2.ConfigFilter_GUI_Help">Configureu el filtre. Els elements seleccionats es podran editar pel tvwish. Els elements deshabilitats utilitzaran valors per defecte.</string>
+  <!--MP1STR:6100-->
+  <string name="TvWishListMP2.SelectItemLabel">Seleccioneu quins elements de filtre voleu editar</string>
+  <!--MP1STR:6101-->
+  <string name="TvWishListMP2.UnSelectItemLabel">Els elements deseleccionats no es podran editar pel Tv wish i utilitzaran valors per defecte.</string>
+  <!--MP1STR:6200-->
+  <string name="TvWishListMP2.AllButtonText">Tot</string>
+  <!--MP1STR:6201-->
+  <string name="TvWishListMP2.NoneButtonText">Cap</string>
+  <!--MP1STR:6202-->
+  <string name="TvWishListMP2.DefaultsButtonText">Per defecte</string>
+  <!--MP1STR:6203-->
+  <string name="TvWishListMP2.DefaultsQuestion">En recuperar els valors per defecte se sobreescriuran tots els camps a totes les pestanyes, així com els personalitzats - voleu continuar?</string>
+  <!--************************************************************-->
+  <!--Config Defaults MP2-->
+  <!--************************************************************-->
+  <!--MP1STR:7000-->
+  <string name="TvWishListMP2.ConfigDefaults_GUI">Configuració Per defecte</string>
+  <!--MP1STR:7001-->
+  <string name="TvWishListMP2.ConfigDefaults_GUI_Help">Configura paràmetres per defecte. Els valors seleccionats s\'utilitzaran per als nous tvwish. Els elements deshabilitats utilitzaran valors assignats per defecte.</string>
+  <string name="TvWishListMP2.7002">Verificació Per defecte</string>
+  <!--************************************************************-->
+  <!--Config Formats MP2-->
+  <!--************************************************************-->
+  <!--MP1STR:8000-->
+  <string name="TvWishListMP2.ConfigFormats_GUI">Configuració de Formats</string>
+  <!--MP1STR:8001-->
+  <string name="TvWishListMP2.ConfigFormats_GUI_Help">Configura paràmetres de format. Els formats buits utilitzaran els definits als fitxers d\'idioma</string>
+  <!--MP1STR:8100-->
+  <string name="TvWishListMP2.DateAndTimeFormat">Formats de Data i Hora</string>
+  <!--MP1STR:8101-->
+  <string name="TvWishListMP2.MainItemFormat">Format d\'Element de Menú Principal</string>
+  <!--MP1STR:8102-->
+  <string name="TvWishListMP2.ResultItemFormat">Format d\'Element de Menú Resultats</string>
+  <!--MP1STR:8103-->
+  <string name="TvWishListMP2.MainTextBoxFormat">Format de Quadre de text de Menú Principal</string>
+  <!--MP1STR:8104-->
+  <string name="TvWishListMP2.ResultTextBoxFormat">Format de Quadre de text de Menú Resultats</string>
+  <!--MP1STR:8105-->
+  <string name="TvWishListMP2.GroupboxGeneral">Formats Generals</string>
+  <!--MP1STR:8106-->
+  <string name="TvWishListMP2.GroupboxListItemFormats">Formats d\'Element de Llista</string>
+  <!--MP1STR:8107-->
+  <string name="TvWishListMP2.GroupboxEmailAndRecordModus">Mode Email i Enregistrament</string>
+  <!--MP1STR:8108-->
+  <string name="TvWishListMP2.GroupboxViewOnlyModus">Mode Només Visualitza</string>
+  <!--MP1STR:8109-->
+  <string name="TvWishListMP2.FormatExpertLabel">Només usuaris experts haurien de modificar els formats. Els camps buits utilitzaran per defecte el del fitxer d\'idioma</string>
+  <string name="TvWishListMP2.8110">Només usuaris experts haurien de modificar els formats.</string>
+  <string name="TvWishListMP2.8111">Els camps buits utilitzaran per defecte el del fitxer d\'idioma.</string>
+  <!--************************************************************-->
+  <!--TV Server Run EPG Messages-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=10000 TO=10300 OFFSET_FROM=0 OFFSET_TO=300-->
+  <string name="TvWishListMP2.10001">S\'està esperant que finalitzin els treballs {0}</string>
+  <string name="TvWishListMP2.10002">Error: el TvWishList no ha finalitzat els treballs - engega de nou l\'ordinador</string>
+  <string name="TvWishListMP2.10003">S\'està llegint paràmetres de les dades</string>
+  <string name="TvWishListMP2.10004">S\'està carregant Missatges</string>
+  <string name="TvWishListMP2.10005">S\'està carregant Tv wishes</string>
+  <string name="TvWishListMP2.10006">S\'està cercant {0}</string>
+  <string name="TvWishListMP2.10007">S\'està enviant l\'email a {0}</string>
+  <string name="TvWishListMP2.10008">Error: No s\'ha definit cap Servidor Smtp</string>
+  <string name="TvWishListMP2.10009">Error: No s\'ha definit cap nom d\'usuari</string>
+  <string name="TvWishListMP2.10010">Error: No s\'ha definit cap contrasenya</string>
+  <string name="TvWishListMP2.10011">Error: No s\'ha definit cap adreça per a rebre email</string>
+  <string name="TvWishListMP2.10012">Error: la configuració del proveïdor no és vàlida</string>
+  <string name="TvWishListMP2.10013">Error: No s\'ha especificat l\'adreça del Servidor</string>
+  <string name="TvWishListMP2.10014">Error: La connexió per internet al servidor POP3 ha fallat</string>
+  <string name="TvWishListMP2.10015">Error: No s\'ha definit cap port Smtp</string>
+  <string name="TvWishListMP2.10016">S\'ha completat l\'enviament d\'emails</string>
+  <string name="TvWishListMP2.10017">Error: L\'enviament d\'emails ha fallat - verifiqueu el nom d\'usuari</string>
+  <string name="TvWishListMP2.10018">Error: L\'enviament d\'emails ha fallat - verifiqueu la contrasenya</string>
+  <string name="TvWishListMP2.10019">Error: L\'enviament d\'emails ha fallat</string>
+  <string name="TvWishListMP2.10020">Preparat</string>
+  <string name="TvWishListMP2.10021">S\'estàn processant dades d\'EPG {0} a {1} a les {2}</string>
+  <string name="TvWishListMP2.10022">S\'està processant l\'Enregistrament {0} a les {1}</string>
+  <string name="TvWishListMP2.10023">Error: la contrasenya no coincideix i s\'ha reiniciat - introduïu-la de nou</string>
+  <string name="TvWishListMP2.10024">Error Greu: Verifiqueu el Registre</string>
+  <string name="TvWishListMP2.10025">Error a la consulta SQL - verifiqueu l\'expressió {0}</string>
+  <!--************************************************************-->
+  <!--TV Server Message  Creation-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.10050">No hi han dades EPG vàlides de la planificació {0} però es pot corregir</string>
+  <string name="TvWishListMP2.10051">No hi han dades EPG vàlides de la planificació {0} - cerqueu conflictes a les planificacions</string>
+  <string name="TvWishListMP2.10052">No hi han dades EPG vàlides de la planificació {0} - cerqueu conflictes a les planificacions</string>
+  <string name="TvWishListMP2.10053">Les dades d\'Episodi/Descripció o l\'Hora de l\'EPG han canviat - s\'està suprimint la planificació actual i s\'intena planificar de nou</string>
+  <string name="TvWishListMP2.10054">S\'ha de solucionar manualment el conflicte de planificació</string>
+  <string name="TvWishListMP2.10055">S\'exclou el programa {0} degut al filtre d\'exclusio {1}</string>
+  <string name="TvWishListMP2.10056">S\'exclou el programa {0} degut al filtre de comprovació de mots</string>
+  <string name="TvWishListMP2.10057">S\'exclou el programa {0} degut al filtre de comprovació de mots</string>
+  <string name="TvWishListMP2.10058">S\'han trobat el màxim de programes ({0}) - altres coincidències són descartades</string>
+  <string name="TvWishListMP2.10059">{0} amb {1} GB</string>
+  <string name="TvWishListMP2.10060">L\'addició del programa {0} ha fallat</string>
+  <string name="TvWishListMP2.10061">La planificació del programa {0} ha fallat</string>
+  <string name="TvWishListMP2.10062">Ja s\'havia planificat el programa {0}</string>
+  <string name="TvWishListMP2.10063">S\'omet el programa {0} ja que no és entre {1} i {2}</string>
+  <string name="TvWishListMP2.10064">S\'omet el programa {0} ja que no és entre {1} i {2}</string>
+  <string name="TvWishListMP2.10065">S\'omet el programa {0} ja que no és abans de {1} hores</string>
+  <string name="TvWishListMP2.10066">S\'omet el programa {0} ja que no satisfà el filtre de canal {1}</string>
+  <string name="TvWishListMP2.10067">S\'omet el programa {0} ja que no satisfà el filtre d\'episodi {1}</string>
+  <string name="TvWishListMP2.10068">S\'omet el programa {0} ja que no satisfà el filtre de nom d\'episodi {1}</string>
+  <string name="TvWishListMP2.10069">S\'omet el programa {0} ja que no satisfà el filtre de número de sèrie {1}</string>
+  <string name="TvWishListMP2.10070">S\'omet el programa {0} ja que no satisfà el filtre de número d\'episodi {1}</string>
+  <string name="TvWishListMP2.10071">Ja s\'havia enregistrat el programa {0}</string>
+  <string name="TvWishListMP2.10072">Ja s\'havia suprimit el programa {0} i s\'ha omès</string>
+  <string name="TvWishListMP2.10073">Ja ha passat l\'hora d\'inici del programa {0} - se n\'omet la planificació</string>
+  <string name="TvWishListMP2.10074">S\'ha trobat la Planificació {0} repetida - s\'omet</string>
+  <string name="TvWishListMP2.10075">El programa {0} presenta conflictes i no serà planificat</string>
+  <string name="TvWishListMP2.10076">S\'està suprimint la planificació {0} degut a la baixa prioritat</string>
+  <string name="TvWishListMP2.10077">La planificació {0} no disposa de suficient prioritat per a suprimir conflictes - s\'omet</string>
+  <string name="TvWishListMP2.10078">S\'ha trobet una Planificació més adequada al Grup Preferits</string>
+  <string name="TvWishListMP2.10079">El TvWishList ha trobat un programa del Tv Wish [{0}]: {1}\nEl TvWishList ha planificat el programa</string>
+  <string name="TvWishListMP2.10080">El TvWishList ha trobat un programa del Tv Wish [{0}]: {1}\nEl TvWishList no ha planificat el programa però us n\'avisarà</string>
+  <!--Email Format Default - will be sent with each email for a found program (use format entries from message format at 3900)-->
+  <string name="TvWishListMP2.10090">NOVA ENTRADA\nTítol={0}\nDescripció={1}\nCanal={2}\nInici={3}\nFinalització={4}\nTipus={15}\nCreat el={17}\n\n\n</string>
+  <string name="TvWishListMP2.10091">{1:00}/{2:00} a {3:00}:{4:00}</string>
+  <!--************************************************************-->
+  <!--TV Server Configuration-->
+  <!--************************************************************-->
+  <string name="TvWishListMP2.10100">Principal</string>
+  <string name="TvWishListMP2.10101">Fàcil</string>
+  <string name="TvWishListMP2.10102">Experta</string>
+  <string name="TvWishListMP2.10103">Amunt</string>
+  <string name="TvWishListMP2.10104">Avall</string>
+  <string name="TvWishListMP2.10105">Suprimeix</string>
+  <string name="TvWishListMP2.10106">Cancel·la</string>
+  <string name="TvWishListMP2.10107">Per defecte</string>
+  <string name="TvWishListMP2.10108">Ajuda</string>
+  <string name="TvWishListMP2.10109">Mode depuració</string>
+  <string name="TvWishListMP2.10110">Pàgina incial del TvWishList</string>
+  <string name="TvWishListMP2.10111">Tot actiu</string>
+  <string name="TvWishListMP2.10112">Tots els inactius</string>
+  <string name="TvWishListMP2.10113">Omet-los tots</string>
+  <string name="TvWishListMP2.10114">No n\'ometis cap</string>
+  <string name="TvWishListMP2.10115">Filtre de Canal</string>
+  <string name="TvWishListMP2.10130">Email</string>
+  <string name="TvWishListMP2.10131">Compte</string>
+  <string name="TvWishListMP2.10132">Nom d\'Usuari</string>
+  <string name="TvWishListMP2.10133">Contrasenya</string>
+  <string name="TvWishListMP2.10134">Repetiu la contrasenya</string>
+  <string name="TvWishListMP2.10135">Adreça d\'Email</string>
+  <string name="TvWishListMP2.10136">només si difereix del nom d\'usuari</string>
+  <string name="TvWishListMP2.10137">Cerca ara</string>
+  <string name="TvWishListMP2.10138">Adreça</string>
+  <string name="TvWishListMP2.10139">Receptor d\'Email</string>
+  <string name="TvWishListMP2.10140">Prova d\'Enviament de Mail</string>
+  <string name="TvWishListMP2.10141">SMTP</string>
+  <string name="TvWishListMP2.10142">Proveïdor</string>
+  <string name="TvWishListMP2.10143">Port</string>
+  <string name="TvWishListMP2.10144">Servidor SMTP</string>
+  <string name="TvWishListMP2.10145">SSL</string>
+  <string name="TvWishListMP2.10146">Activa la Resposta d\'Email</string>
+  <string name="TvWishListMP2.10147">Només envia els nous</string>
+  <string name="TvWishListMP2.10160">Configuració</string>
+  <string name="TvWishListMP2.10161">Verifica l\'EPG</string>
+  <string name="TvWishListMP2.10162">Dilluns</string>
+  <string name="TvWishListMP2.10163">Dimarts</string>
+  <string name="TvWishListMP2.10164">Dimecres</string>
+  <string name="TvWishListMP2.10165">Dijous</string>
+  <string name="TvWishListMP2.10166">Divendres</string>
+  <string name="TvWishListMP2.10167">Dissabte</string>
+  <string name="TvWishListMP2.10168">Diumenge</string>
+  <string name="TvWishListMP2.10169">Cada</string>
+  <string name="TvWishListMP2.10170">Dies</string>
+  <string name="TvWishListMP2.10171">Hores</string>
+  <string name="TvWishListMP2.10172">Minuts</string>
+  <string name="TvWishListMP2.10173">A les</string>
+  <string name="TvWishListMP2.10174">Verifica l\'EPG</string>
+  <string name="TvWishListMP2.10175">abans de cada planificació</string>
+  <string name="TvWishListMP2.10176">Propera data de verificació del Tv Server</string>
+  <string name="TvWishListMP2.10177">Criteri de coincidència per a Pel·lícules i Episodis Repetits</string>
+  <string name="TvWishListMP2.10178">Marca de Repeticó d\'EPG al Títol o la Descripció</string>
+  <string name="TvWishListMP2.10179">Altres Opcions</string>
+  <string name="TvWishListMP2.10180">Enregistrament Automàtic</string>
+  <string name="TvWishListMP2.10181">Conflictes de Planificació</string>
+  <string name="TvWishListMP2.10182">Suprimeix l\'EPG Modificat</string>
+  <string name="TvWishListMP2.10183">Restaura Valors Per defecte</string>
+  <string name="TvWishListMP2.10184">CPU lenta</string>
+  <string name="TvWishListMP2.10185">Omet Suprimits</string>
+  <string name="TvWishListMP2.10186">Venciment Suprimit</string>
+  <string name="TvWishListMP2.10187">Mesos</string>
+  <string name="TvWishListMP2.10188">Màxim de Planificacions Per Wish</string>
+  <!--Date Time Format with 10189-10191 combined-->
+  <string name="TvWishListMP2.10189">MM/dd/aaaa</string>
+  <string name="TvWishListMP2.10190">HH:mm</string>
+  <string name="TvWishListMP2.10191">{0} a les {1}</string>
+  <string name="TvWishListMP2.10192">Espera els Processos del ComSkip</string>
+  <string name="TvWishListMP2.10193">EPG</string>
+  <string name="TvWishListMP2.10200">Formats</string>
+  <string name="TvWishListMP2.10201">Formay de Data i Hora per Emails</string>
+  <string name="TvWishListMP2.10202">Format d\'Email</string>
+  <string name="TvWishListMP2.10203">Fitxer d\'Idioma</string>
+  <string name="TvWishListMP2.10204">Criteri d\'Ordenació</string>
+  <string name="TvWishListMP2.10205">Els usuaris experts poden personalitzar els formats per als emails enviats</string>
+  <string name="TvWishListMP2.10206">Ordre descendent</string>
+  <string name="TvWishListMP2.10207">Criteri de Filtre</string>
+  <string name="TvWishListMP2.10208">Email</string>
+  <string name="TvWishListMP2.10209">Enregistra</string>
+  <string name="TvWishListMP2.10210">Conflictes</string>
+  <string name="TvWishListMP2.10211">Suprimeix Tots els Missatges</string>
+  <string name="TvWishListMP2.10250">S\'està esperant que finalitzin els treballs de {0}. Torneu-ho a provar. Haureu d\'iniciar de nou o aturar manualment el Tvserver, si els treballs no finalitzen.</string>
+  <string name="TvWishListMP2.10251">S\'està tancant la Configuració de TV</string>
+  <string name="TvWishListMP2.10252">S\'està processant - espereu a que s\'acabi</string>
+  <string name="TvWishListMP2.10253">Amb èxit</string>
+  <string name="TvWishListMP2.10254">L\'enviament d\'Email ha fallat</string>
+  <string name="TvWishListMP2.10255">El mínim {0} és {1}</string>
+  <string name="TvWishListMP2.10256">El màxim {0} és {1}</string>
+  <string name="TvWishListMP2.10257">No s\'ha obert {0}</string>
+  <string name="TvWishListMP2.10258">Voleu suprimir tots els missatges? AVÍS: s\'esborrarà l\'historial de missatges, inclosos els suprimits. Assegureu-vos que el connector MediaPortal del TvWishListMP sigui tancat!\"</string>
+  <string name="TvWishListMP2.10259">S\'ha suprimit els missatges</string>
+  <string name="TvWishListMP2.10260">S\'ha cancel·lat l\'operació</string>
+  <string name="TvWishListMP2.10261">Voleu restablir els valors per defecte a tots els formats? Se sobreescriuran totes les configuracions i formats</string>
+  <string name="TvWishListMP2.10262">Check your username and password\n Server Error was:\n{0}</string>
+</resources>

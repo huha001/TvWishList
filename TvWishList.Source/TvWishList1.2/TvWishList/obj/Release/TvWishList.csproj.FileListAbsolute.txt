@@ -1029,4 +1029,4 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\T
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.2\TvWishList\obj\Release\TvWishList.csproj.GenerateResource.Cache
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.2\TvWishList\obj\Release\TvWishList.dll
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.2\TvWishList\obj\Release\TvWishList.pdb
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.2\TvWishList\obj\Release\TvWishList.csprojResolveAssemblyReference.cache
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.2\TvWishList\obj\Release\ResolveAssemblyReference.cache

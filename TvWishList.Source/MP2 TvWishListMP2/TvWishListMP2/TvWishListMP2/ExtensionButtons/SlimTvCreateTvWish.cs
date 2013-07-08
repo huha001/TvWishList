@@ -22,13 +22,12 @@
 
 #endregion
 
-using MediaPortal.Plugins.SlimTvClient.Interfaces.Extensions;
-using MediaPortal.Plugins.SlimTvClient.Interfaces.Items;
+using MediaPortal.Plugins.SlimTv.Interfaces.Extensions;
+using MediaPortal.Plugins.SlimTv.Interfaces.Items;
 using MediaPortal.Common;
 using MediaPortal.Common.Logging;
 using MediaPortal.Plugins.TvWishListMP2.Models;
 using Log = TvLibrary.Log.huha.Log;
-         
 namespace MediaPortal.Plugins.TvWishListMP2.ExtensionButtons
 {
   /// <summary>

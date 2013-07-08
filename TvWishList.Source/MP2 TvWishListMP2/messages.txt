@@ -1,0 +1,4 @@
+1) new .dll files copied from MP2alfa2 and updated code
+2) added in TvWishListMP2.csproj twice
+<PlatformTarget>x86</PlatformTarget>
+to compile for x86 and avoid info warning

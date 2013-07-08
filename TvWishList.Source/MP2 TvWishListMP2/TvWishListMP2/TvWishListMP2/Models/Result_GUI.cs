@@ -48,7 +48,7 @@ using MediaPortal.UI.SkinEngine.ScreenManagement;
 using MediaPortal.UI.SkinEngine.Controls.Visuals;
 
 using MediaPortal.Plugins.TvWishListMP2.MPExtended;
-using MPExtended.Services.TVAccessService.Interfaces;
+//using MPExtended.Services.TVAccessService.Interfaces;
 
 using MediaPortal.Plugins.TvWishListMP2.Settings; //needed for configuration setting loading
 
@@ -1641,8 +1641,8 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                                         myTvWishes.MyMessageBox(4305, 3607);   //Error, Deleting recording failed
                                     }
                                 }
-
-                                return true;
+                                 
+                                return;
                             });
 
                         }//end delete recording

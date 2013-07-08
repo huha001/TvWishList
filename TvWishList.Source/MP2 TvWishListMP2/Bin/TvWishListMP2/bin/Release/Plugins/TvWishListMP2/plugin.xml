@@ -5,11 +5,11 @@
     Author="huha"
     Copyright="GPL"
     Description="TvWishList plugin for MediaPortal2"
-    PluginVersion="1.3.0.10">
+    PluginVersion="1.3.0.11">
 
   <Runtime>
     <Assembly FileName="TvWishListMP2.dll"/>
-    <Assembly FileName="SlimTvInterfaces.dll"/>
+    <Assembly FileName="SlimTv.Interfaces.dll"/>
     <Assembly FileName="TvWishListInterface.dll"/>
   </Runtime>
 
@@ -32,7 +32,9 @@
     <Model Id="6e96da05-1c6a-4fed-8fed-b14ad114c4a2" Name="Result_GUI" ClassName="MediaPortal.Plugins.TvWishListMP2.Models.Result_GUI"/>
   </Register>
 
+  <!--
   <Register Location="/Services">
+    
     <Service Id="TvWishListICardService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.ICard"
         ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Card"/>
     <Service Id="TvWishListIChannelService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.IChannel"
@@ -46,12 +48,14 @@
     <Service Id="TvWishListIRecordingService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.IRecording"
         ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Recording"/>
     <Service Id="TvWishListIScheduleService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.ISchedule"
-        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Schedule"/>
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Schedule"/>      
     <Service Id="TvWishListISettingService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.ISetting"
         ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Setting"/>
     <Service Id="TvWishListIServerNameService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.IServerName"
         ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.ServerName"/>
   </Register>
+  -->
+  
   
   <Register Location="/Workflow/States">
     <!-- This is the workflow state which corresponds to the mytestplugin screen. Each workflow state corresponds to
@@ -107,18 +111,18 @@
 
 
   
-  <Builder Name="TvWishListMP2TvExtensionBuilder1" ClassName="MediaPortal.Plugins.SlimTvClient.Interfaces.Extensions.SlimTvExtensionBuilder"/>
+  <Builder Name="TvWishListMP2TvExtensionBuilder1" ClassName="MediaPortal.Plugins.SlimTv.Interfaces.Extensions.SlimTvExtensionBuilder"/>
   <Register Location="/SlimTv/Extensions">
     <TvWishListMP2TvExtensionBuilder1 Id="{eb81047e-f3c5-4fae-8000-a67e306dfd8c}" Caption="[TvWishListMP2.CreateTvWish]" ClassName="MediaPortal.Plugins.TvWishListMP2.ExtensionButtons.SlimTvCreateTvWish"/>
   </Register>
 
-  <Builder Name="TvWishListMP2TvExtensionBuilder2" ClassName="MediaPortal.Plugins.SlimTvClient.Interfaces.Extensions.SlimTvExtensionBuilder"/>
+  <Builder Name="TvWishListMP2TvExtensionBuilder2" ClassName="MediaPortal.Plugins.SlimTv.Interfaces.Extensions.SlimTvExtensionBuilder"/>
   <Register Location="/SlimTv/Extensions">
     <TvWishListMP2TvExtensionBuilder2 Id="{eb81047e-f3c5-4fae-8000-a67e306dfd8d}" Caption="[TvWishListMP2.AlternatePrograms]" ClassName="MediaPortal.Plugins.TvWishListMP2.ExtensionButtons.SlimTvRunSingleEPG"/>
   </Register>
 
   
-  <Builder Name="TvWishListMP2TvExtensionBuilder3" ClassName="MediaPortal.Plugins.SlimTvClient.Interfaces.Extensions.SlimTvExtensionBuilder"/>
+  <Builder Name="TvWishListMP2TvExtensionBuilder3" ClassName="MediaPortal.Plugins.SlimTv.Interfaces.Extensions.SlimTvExtensionBuilder"/>
   <Register Location="/SlimTv/Extensions">
     <TvWishListMP2TvExtensionBuilder3 Id="{eb81047e-f3c5-4fae-8000-a67e306dfd8e}" Caption="[TvWishListMP2.1050]" ClassName="MediaPortal.Plugins.TvWishListMP2.ExtensionButtons.SlimTvTvWishListQuickMenu"/>
   </Register>

@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[huhaMediaPortalPlugins.english-golden-source]
+file_filter = Cache\strings_<lang>.xml
+source_lang = en
+type = ANDROID
+

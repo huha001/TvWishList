@@ -34,8 +34,8 @@ using MediaPortal.Common.Utils;
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.3.0.10")]
-[assembly: AssemblyFileVersion("1.3.0.10")]
+[assembly: AssemblyVersion("1.3.0.11")]
+[assembly: AssemblyFileVersion("1.3.0.11")]
 
 //new
 #if(TV12)

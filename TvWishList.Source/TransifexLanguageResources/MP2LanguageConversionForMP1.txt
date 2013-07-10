@@ -1,7 +1,0 @@
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList.Source\TransifexLanguageResources
-H:\User Daten\Visual C# Projects\TvWishList\\TvWishListGitRepository\TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\MP1 language
-TvWishListMP2
-4
-False
-False
-True

@@ -59,8 +59,8 @@ using MediaPortal.Common.Utils;
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.3.0.11")]
-[assembly: AssemblyFileVersion("1.3.0.11")]
+[assembly: AssemblyVersion("1.3.0.12")]
+[assembly: AssemblyFileVersion("1.3.0.12")]
 
 #if ( MP12 )
 [assembly: CompatibleVersion("1.4.0.0", "1.1.6.27644")]

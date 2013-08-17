@@ -7,9 +7,9 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>R
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>REM  
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>SET OLDVERSION=1.3.0.10 
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>SET OLDVERSION=1.3.0.11 
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>SET NEWVERSION=1.3.0.11 
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>SET NEWVERSION=1.3.0.12 
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>SET MSFRAMEPATH="C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe" 
 
@@ -27,8 +27,8 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>R
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>REM ************************************************************************* 
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>MOVE TvWishList.V.1.3.0.10.odt TvWishList.V.1.3.0.11.odt 
-Das System kann die angegebene Datei nicht finden.
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>MOVE TvWishList.V.1.3.0.11.odt TvWishList.V.1.3.0.12.odt 
+        1 Datei(en) verschoben.
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>DEL TvWishList.Source\MPEI2\*.mpe1 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\*.mpe1 konnte nicht gefunden werden
@@ -50,215 +50,360 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>R
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>REM ************************************************************************** 
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.2\TvWishList\TvWishList.cs" 1.3.0.10 1.3.0.11 
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.2\TvWishList\TvWishList.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishList1.2\TvWishList\TvWishList.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+        public string Version { get { return "1.3.0.11"; } }
+to
+        public string Version { get { return "1.3.0.12"; } }
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.2\TvWishList\Properties\AssemblyInfo.cs" 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.2\TvWishList\Properties\AssemblyInfo.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishList1.2\TvWishList\Properties\AssemblyInfo.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+[assembly: AssemblyVersion("1.3.0.11")]
+to
+[assembly: AssemblyVersion("1.3.0.12")]
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.2\TvWishList\TvWish.cs" 1.3.0.10 1.3.0.11 
+Substituting line
+[assembly: AssemblyFileVersion("1.3.0.11")]
+to
+[assembly: AssemblyFileVersion("1.3.0.12")]
+
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.2\TvWishList\TvWish.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishList1.2\TvWishList\TvWish.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+            return ("1.3.0.11");
+to
+            return ("1.3.0.12");
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.1\TvWishList\TvWishList.cs" 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.1\TvWishList\TvWishList.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishList1.1\TvWishList\TvWishList.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+        public string Version { get { return "1.3.0.11"; } }
+to
+        public string Version { get { return "1.3.0.12"; } }
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.1\TvWishList\Properties\AssemblyInfo.cs" 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.1\TvWishList\Properties\AssemblyInfo.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishList1.1\TvWishList\Properties\AssemblyInfo.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+[assembly: AssemblyVersion("1.3.0.11")]
+to
+[assembly: AssemblyVersion("1.3.0.12")]
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.0.1\TvWishList\TvWishList.cs" 1.3.0.10 1.3.0.11 
+Substituting line
+[assembly: AssemblyFileVersion("1.3.0.11")]
+to
+[assembly: AssemblyFileVersion("1.3.0.12")]
+
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.0.1\TvWishList\TvWishList.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishList1.0.1\TvWishList\TvWishList.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+        public string Version { get { return "1.3.0.11"; } }
+to
+        public string Version { get { return "1.3.0.12"; } }
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.0.1\TvWishList\Properties\AssemblyInfo.cs" 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishList1.0.1\TvWishList\Properties\AssemblyInfo.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishList1.0.1\TvWishList\Properties\AssemblyInfo.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+[assembly: AssemblyVersion("1.3.0.11")]
+to
+[assembly: AssemblyVersion("1.3.0.12")]
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Common_Main_GUI.cs" 1.3.0.10 1.3.0.11 
+Substituting line
+[assembly: AssemblyFileVersion("1.3.0.11")]
+to
+[assembly: AssemblyFileVersion("1.3.0.12")]
+
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Common_Main_GUI.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Common_Main_GUI.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+            return "1.3.0.11";
+to
+            return "1.3.0.12";
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishListMP1.2\TvWishListMP\MP1_Main_GUI.cs" 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishListMP1.2\TvWishListMP\MP1_Main_GUI.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishListMP1.2\TvWishListMP\MP1_Main_GUI.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\TvWish.cs" 1.3.0.10 1.3.0.11 
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\TvWish.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\TvWish.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+            return ("1.3.0.11");
+to
+            return ("1.3.0.12");
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishListMP1.2\TvWishListMP\Properties\AssemblyInfo.cs" 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\TvWishListMP1.2\TvWishListMP\Properties\AssemblyInfo.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\TvWishListMP1.2\TvWishListMP\Properties\AssemblyInfo.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+[assembly: AssemblyVersion("1.3.0.11")]
+to
+[assembly: AssemblyVersion("1.3.0.12")]
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\Install\Install\InstallSetup.cs" 1.3.0.10 1.3.0.11 
+Substituting line
+[assembly: AssemblyFileVersion("1.3.0.11")]
+to
+[assembly: AssemblyFileVersion("1.3.0.12")]
+
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\Install\Install\InstallSetup.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\Install\Install\InstallSetup.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\Install\Install\InstallSetup.Designer.cs" 1.3.0.10 1.3.0.11 
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\Install\Install\InstallSetup.Designer.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\Install\Install\InstallSetup.Designer.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+            this.Text = "TvWishList Installer V1.3.0.11";
+to
+            this.Text = "TvWishList Installer V1.3.0.12";
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\Install\Install\Properties\AssemblyInfo.cs" 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\Install\Install\Properties\AssemblyInfo.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\Install\Install\Properties\AssemblyInfo.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+[assembly: AssemblyVersion("1.3.0.11")]
+to
+[assembly: AssemblyVersion("1.3.0.12")]
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MPEI2\TvWishList.xmp2" 1.3.0.10 1.3.0.11 
+Substituting line
+[assembly: AssemblyFileVersion("1.3.0.11")]
+to
+[assembly: AssemblyFileVersion("1.3.0.12")]
+
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MPEI2\TvWishList.xmp2" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\MPEI2\TvWishList.xmp2
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+V1.3.0.11:
+to
+V1.3.0.12:
+
+Substituting line
+    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.3.0.11.mpe1</Location>
+to
+    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.3.0.12.mpe1</Location>
+
+Substituting line
+        <Folder>..\..\TvWishListV1.3.0.11.Release</Folder>
+to
+        <Folder>..\..\TvWishListV1.3.0.12.Release</Folder>
+
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>REM MP2 
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\TvWish.cs" 1.3.0.10 1.3.0.11 
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\TvWish.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\TvWish.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+            return ("1.3.0.11");
+to
+            return ("1.3.0.12");
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\Common_Main_GUI.cs" 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\Common_Main_GUI.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\CommonCodeMP1MP2\Common_Main_GUI.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+            return "1.3.0.11";
+to
+            return "1.3.0.12";
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\Properties\AssemblyInfo.cs" 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\Properties\AssemblyInfo.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\Properties\AssemblyInfo.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+[assembly: AssemblyVersion("1.3.0.11")]
+to
+[assembly: AssemblyVersion("1.3.0.12")]
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Properties\AssemblyInfo.cs" 1.3.0.10 1.3.0.11 
+Substituting line
+[assembly: AssemblyFileVersion("1.3.0.11")]
+to
+[assembly: AssemblyFileVersion("1.3.0.12")]
+
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Properties\AssemblyInfo.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Properties\AssemblyInfo.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+[assembly: AssemblyVersion("1.3.0.11")]
+to
+[assembly: AssemblyVersion("1.3.0.12")]
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Properties\AssemblyInfo.cs" 1.3.0.10 1.3.0.11 
+Substituting line
+[assembly: AssemblyFileVersion("1.3.0.11")]
+to
+[assembly: AssemblyFileVersion("1.3.0.12")]
+
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Properties\AssemblyInfo.cs" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Properties\AssemblyInfo.cs
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+[assembly: AssemblyVersion("1.3.0.11")]
+to
+[assembly: AssemblyVersion("1.3.0.12")]
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\plugin.xml" 1.3.0.10 1.3.0.11 
+Substituting line
+[assembly: AssemblyFileVersion("1.3.0.11")]
+to
+[assembly: AssemblyFileVersion("1.3.0.12")]
+
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\plugin.xml" 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\plugin.xml
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
+Substituting line
+    PluginVersion="1.3.0.11">
+to
+    PluginVersion="1.3.0.12">
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe MP.release.r2d2.bat 1.3.0.10 1.3.0.11 
+
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe MP.release.r2d2.bat 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=MP.release.r2d2.bat
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
 Exception message is Die Datei "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\MP.release.r2d2.bat" konnte nicht gefunden werden.
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe MP2.release.r2d2.bat 1.3.0.10 1.3.0.11 
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>FileReplaceString.exe MP2.release.r2d2.bat 1.3.0.11 1.3.0.12 
 FileReplaceString <filename> <search string> <replace string>
 Will replace the search string by the replace string for each match 
 within the ASCII file filename
 args=3
 filename=MP2.release.r2d2.bat
-search string=1.3.0.10
-replace string=1.3.0.11
+search string=1.3.0.11
+replace string=1.3.0.12
 Exception message is Die Datei "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\MP2.release.r2d2.bat" konnte nicht gefunden werden.
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList>REM ******************** END VERSION UPDATE ******************** 
@@ -383,10 +528,10 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\T
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>"C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe" TvWishList1.2\TvWishList.sln /p:Configuration=Release 
 Microsoft (R)-Buildmodul, Version 3.5.30729.6387
-[Microsoft .NET Framework, Version 2.0.50727.6400]
+[Microsoft .NET Framework, Version 2.0.50727.6407]
 Copyright (C) Microsoft Corporation 2007. Alle Rechte vorbehalten.
 
-Build started 08.07.2013 23:43:40.
+Build started 17.08.2013 15:47:20.
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.2\TvWishList.sln" on node 0 (default targets).
   Building solution configuration "Release|Any CPU".
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.2\TvWishList.sln" (1) is building "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.2\TvWishList\TvWishList.csproj" (2) on node 0 (default targets).
@@ -409,47 +554,39 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.39
+Time Elapsed 00:00:01.16
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>"C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe" TvWishList1.1\TvWishList.sln /p:Configuration=Release 
 Microsoft (R)-Buildmodul, Version 3.5.30729.6387
-[Microsoft .NET Framework, Version 2.0.50727.6400]
+[Microsoft .NET Framework, Version 2.0.50727.6407]
 Copyright (C) Microsoft Corporation 2007. Alle Rechte vorbehalten.
 
-Build started 08.07.2013 23:43:42.
+Build started 17.08.2013 15:47:22.
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.1\TvWishList.sln" on node 0 (default targets).
   Building solution configuration "Release|Any CPU".
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.1\TvWishList.sln" (1) is building "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.1\TvWishList\TvWishList.csproj" (2) on node 0 (default targets).
 Project file contains ToolsVersion="4.0", which is not supported by this version of MSBuild. Treating the project as if it had ToolsVersion="3.5".
-C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets : warning MSB3088: Die Zustandsdatei obj\Release\TvWishList.csproj.GenerateResource.Cache konnte nicht gelesen werden. Die Assembly "Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" kann nicht gefunden werden.
+CoreResGen:
   Die Ressourcendatei TvWishList.setup.resx wird zu obj\Release\SetupTv.Sections.TvWishListSetup.resources verarbeitet.
 CopyFilesToOutputDirectory:
   Die Datei wird von "obj\Release\TvWishList.dll" in "bin\Release\TvWishList.dll" kopiert.
   TvWishList -> H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.1\TvWishList\bin\Release\TvWishList.dll
   Die Datei wird von "obj\Release\TvWishList.pdb" in "bin\Release\TvWishList.pdb" kopiert.
-IncrementalClean:
-  Die Datei "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.1\TvWishList\obj\Release\TvWishList.csprojResolveAssemblyReference.cache" wird gel”scht.
 Done Building Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.1\TvWishList\TvWishList.csproj" (default targets).
 Done Building Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.1\TvWishList.sln" (default targets).
 
 Build succeeded.
-
-"H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.1\TvWishList.sln" (default target) (1) ->
-"H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.1\TvWishList\TvWishList.csproj" (default target) (2) ->
-(CoreResGen target) -> 
-  C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets : warning MSB3088: Die Zustandsdatei obj\Release\TvWishList.csproj.GenerateResource.Cache konnte nicht gelesen werden. Die Assembly "Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" kann nicht gefunden werden.
-
-    1 Warning(s)
+    0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.63
+Time Elapsed 00:00:01.67
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>"C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe" TvWishList1.0.1\TvWishList.sln /p:Configuration=Release 
 Microsoft (R)-Buildmodul, Version 3.5.30729.6387
-[Microsoft .NET Framework, Version 2.0.50727.6400]
+[Microsoft .NET Framework, Version 2.0.50727.6407]
 Copyright (C) Microsoft Corporation 2007. Alle Rechte vorbehalten.
 
-Build started 08.07.2013 23:43:45.
+Build started 17.08.2013 15:47:24.
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.0.1\TvWishList.sln" on node 0 (default targets).
   Building solution configuration "Release|Any CPU".
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.0.1\TvWishList.sln" (1) is building "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishList1.0.1\TvWishList\TvWishList.csproj" (2) on node 0 (default targets).
@@ -474,14 +611,14 @@ Build succeeded.
     1 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.69
+Time Elapsed 00:00:01.81
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>"C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe" TvWishListMP1.1\TvWishListMP.sln /p:Configuration=Release 
 Microsoft (R)-Buildmodul, Version 3.5.30729.6387
-[Microsoft .NET Framework, Version 2.0.50727.6400]
+[Microsoft .NET Framework, Version 2.0.50727.6407]
 Copyright (C) Microsoft Corporation 2007. Alle Rechte vorbehalten.
 
-Build started 08.07.2013 23:43:47.
+Build started 17.08.2013 15:47:26.
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.1\TvWishListMP.sln" on node 0 (default targets).
   Building solution configuration "Release|Any CPU".
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.1\TvWishListMP.sln" (1) is building "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.1\TvWishListMP\TvWishListMP.csproj" (2) on node 0 (default targets).
@@ -502,14 +639,14 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.38
+Time Elapsed 00:00:01.41
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>"C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe" TvWishListMP1.2\TvWishListMP.sln /p:Configuration=Release 
 Microsoft (R)-Buildmodul, Version 3.5.30729.6387
-[Microsoft .NET Framework, Version 2.0.50727.6400]
+[Microsoft .NET Framework, Version 2.0.50727.6407]
 Copyright (C) Microsoft Corporation 2007. Alle Rechte vorbehalten.
 
-Build started 08.07.2013 23:43:49.
+Build started 17.08.2013 15:47:28.
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.2\TvWishListMP.sln" on node 0 (default targets).
   Building solution configuration "Release|Any CPU".
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.2\TvWishListMP.sln" (1) is building "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.2\TvWishListMP\TvWishListMP.csproj" (2) on node 0 (default targets).
@@ -518,13 +655,11 @@ EntityDeploy:
   Processing 0 EDMX files.
   Finished processing 0 EDMX files.
 CoreResGen:
-  Es gibt keine Ressourcen, die im Hinblick auf ihre Quelldateien veraltet sind. Die Ressourcengenerierung wird ausgelassen.
+  Die Ressourcendatei Setup.resx wird zu obj\Release\TvWishList.TvWishListSetup.resources verarbeitet.
 CopyFilesToOutputDirectory:
   Die Datei wird von "obj\Release\TvWishListMP.dll" in "bin\Release\TvWishListMP.dll" kopiert.
   TvWishListMP -> H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.2\TvWishListMP\bin\Release\TvWishListMP.dll
   Die Datei wird von "obj\Release\TvWishListMP.pdb" in "bin\Release\TvWishListMP.pdb" kopiert.
-IncrementalClean:
-  Die Datei "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.2\TvWishListMP\obj\Release\TvWishListMP.csprojResolveAssemblyReference.cache" wird gel”scht.
 Done Building Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.2\TvWishListMP\TvWishListMP.csproj" (default targets).
 Done Building Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.2\TvWishListMP.sln" (default targets).
 
@@ -532,14 +667,14 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.53
+Time Elapsed 00:00:01.32
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>"C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe" Install\Install.sln /p:Configuration=Release 
 Microsoft (R)-Buildmodul, Version 3.5.30729.6387
-[Microsoft .NET Framework, Version 2.0.50727.6400]
+[Microsoft .NET Framework, Version 2.0.50727.6407]
 Copyright (C) Microsoft Corporation 2007. Alle Rechte vorbehalten.
 
-Build started 08.07.2013 23:43:51.
+Build started 17.08.2013 15:47:29.
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\Install\Install.sln" on node 0 (default targets).
   Building solution configuration "Release|Any CPU".
 Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\Install\Install.sln" (1) is building "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\Install\Install\Install.csproj" (2) on node 0 (default targets).
@@ -548,15 +683,15 @@ EntityDeploy:
   Processing 0 EDMX files.
   Finished processing 0 EDMX files.
 CoreResGen:
-  Es gibt keine Ressourcen, die im Hinblick auf ihre Quelldateien veraltet sind. Die Ressourcengenerierung wird ausgelassen.
+  Die Ressourcendatei InstallSetup.resx wird zu obj\Release\TvWishListInstall.InstallSetup.resources verarbeitet.
+  Die Ressourcendatei License.resx wird zu obj\Release\ShowLicense.License.resources verarbeitet.
+  Die Ressourcendatei Properties\Resources.resx wird zu obj\Release\Install.Properties.Resources.resources verarbeitet.
 _CopyAppConfigFile:
 Skipping target "_CopyAppConfigFile" because all output files are up-to-date with respect to the input files.
 CopyFilesToOutputDirectory:
   Die Datei wird von "obj\Release\Install.exe" in "bin\Release\Install.exe" kopiert.
   Install -> H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\Install\Install\bin\Release\Install.exe
   Die Datei wird von "obj\Release\Install.pdb" in "bin\Release\Install.pdb" kopiert.
-IncrementalClean:
-  Die Datei "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\Install\Install\obj\Release\Install.csprojResolveAssemblyReference.cache" wird gel”scht.
 Done Building Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\Install\Install\Install.csproj" (default targets).
 Done Building Project "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\Install\Install.sln" (default targets).
 
@@ -564,15 +699,15 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:00.81
+Time Elapsed 00:00:01.00
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\TvWishListInterface.sln" /p:Configuration=Release 
 Microsoft (R)-Buildmodul, Version 4.0.30319.17929
-[Microsoft .NET Framework, Version 4.0.30319.18046]
+[Microsoft .NET Framework, Version 4.0.30319.18051]
 Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
 
 Die Projekte in dieser Projektmappe werden nacheinander erstellt. Um eine parallele Erstellung zu erm”glichen, mssen Sie den Schalter "/m" hinzufgen.
-Der Buildvorgang wurde am 08.07.2013 23:43:52 gestartet.
+Der Buildvorgang wurde am 17.08.2013 15:47:31 gestartet.
 Projekt "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\TvWishListInterface.sln" auf Knoten "1" (Standardziele).
 ValidateSolutionConfiguration:
   Die Projektmappenkonfiguration "Release|Any CPU" wird erstellt.
@@ -592,15 +727,15 @@ PostBuildEvent:
   mkdir "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\..\Bin\TvWishListInterface\bin\Release\Plugins\TvWishListInterface\Skin"
   robocopy "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Skin" "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\..\Bin\TvWishListInterface\bin\Release\Plugins\TvWishListInterface\Skin" /MIR /NP
   xcopy /Y "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll"  "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\..\Bin\TvWishListInterface\bin\Release\Plugins\TvWishListInterface\"
-  Datei plugin.xml nicht gefunden
   0 Datei(en) kopiert
+  Datei plugin.xml nicht gefunden
   Ein Unterverzeichnis oder eine Datei mit dem Namen "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\..\Bin\TvWishListInterface\bin\Release\Plugins\TvWishListInterface\Language" existiert bereits.
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robustes Dateikopieren fr Windows                              
   -------------------------------------------------------------------------------
   
-    Gestartet: Montag, 8. Juli 2013 23:43:53
+    Gestartet: Samstag, 17. August 2013 15:47:31
      Quelle : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Language\
        Ziel : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\Bin\TvWishListInterface\bin\Release\Plugins\TvWishListInterface\Language\
   
@@ -610,7 +745,7 @@ PostBuildEvent:
   
   ------------------------------------------------------------------------------
   
-  2013/07/08 23:43:53 FEHLER 2 (0x00000002) Zugriff auf Quellverzeichnis H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Language\
+  2013/08/17 15:47:31 FEHLER 2 (0x00000002) Zugriff auf Quellverzeichnis H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Language\
   Das System kann die angegebene Datei nicht finden.
   
   Ein Unterverzeichnis oder eine Datei mit dem Namen "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\..\Bin\TvWishListInterface\bin\Release\Plugins\TvWishListInterface\Skin" existiert bereits.
@@ -619,7 +754,7 @@ PostBuildEvent:
      ROBOCOPY     ::     Robustes Dateikopieren fr Windows                              
   -------------------------------------------------------------------------------
   
-    Gestartet: Montag, 8. Juli 2013 23:43:53
+    Gestartet: Samstag, 17. August 2013 15:47:32
      Quelle : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Skin\
        Ziel : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\Bin\TvWishListInterface\bin\Release\Plugins\TvWishListInterface\Skin\
   
@@ -629,7 +764,7 @@ PostBuildEvent:
   
   ------------------------------------------------------------------------------
   
-  2013/07/08 23:43:53 FEHLER 2 (0x00000002) Zugriff auf Quellverzeichnis H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Skin\
+  2013/08/17 15:47:32 FEHLER 2 (0x00000002) Zugriff auf Quellverzeichnis H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Skin\
   Das System kann die angegebene Datei nicht finden.
   
   H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll
@@ -641,7 +776,7 @@ Der Buildvorgang wurde erfolgreich ausgefhrt.
     0 Warnung(en)
     0 Fehler
 
-Verstrichene Zeit 00:00:00.62
+Verstrichene Zeit 00:00:00.66
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>COPY /Y "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Release\TvWishListInterface.dll" "MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\bin\Release\TvWishListInterface.dll" 
         1 Datei(en) kopiert.
@@ -651,11 +786,11 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\T
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" "MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2.sln" /p:Configuration=Release 
 Microsoft (R)-Buildmodul, Version 4.0.30319.17929
-[Microsoft .NET Framework, Version 4.0.30319.18046]
+[Microsoft .NET Framework, Version 4.0.30319.18051]
 Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
 
 Die Projekte in dieser Projektmappe werden nacheinander erstellt. Um eine parallele Erstellung zu erm”glichen, mssen Sie den Schalter "/m" hinzufgen.
-Der Buildvorgang wurde am 08.07.2013 23:43:53 gestartet.
+Der Buildvorgang wurde am 17.08.2013 15:47:32 gestartet.
 Projekt "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2.sln" auf Knoten "1" (Standardziele).
 ValidateSolutionConfiguration:
   Die Projektmappenkonfiguration "Release|Any CPU" wird erstellt.
@@ -683,7 +818,7 @@ PostBuildEvent:
      ROBOCOPY     ::     Robustes Dateikopieren fr Windows                              
   -------------------------------------------------------------------------------
   
-    Gestartet: Montag, 8. Juli 2013 23:43:54
+    Gestartet: Samstag, 17. August 2013 15:47:33
      Quelle : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\Language\
        Ziel : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\Bin\TvWishListMP2\bin\Release\Plugins\TvWishListMP2\Language\
   
@@ -694,27 +829,15 @@ PostBuildEvent:
   ------------------------------------------------------------------------------
   
   	                   9	H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\Language\
-  	         Neuer		   49666	strings_ca.xml
-  	         Neuer		   49587	strings_de.xml
-  	         Neuer		   51633	strings_fr.xml
-  	         Neuer		   47820	strings_id.xml
-  	         Neuer		   50102	strings_lt.xml
-  	         Neuer		   48394	strings_nl.xml
-  	         Neuer		   48388	strings_sk.xml
-  	         Neuer		   48761	strings_sv.xml
   
   ------------------------------------------------------------------------------
   
              Insgesamt   KopiertšbersprungenKeine šbereinstimmung    FEHLER    Extras
   Verzeich.:         1         0         0         0         0         0
-    Dateien:         9         8         1         0         0         0
-      Bytes:   435.9 k   385.1 k    50.8 k         0         0         0
+    Dateien:         9         0         9         0         0         0
+      Bytes:   435.9 k         0   435.9 k         0         0         0
      Zeiten:   0:00:00   0:00:00                       0:00:00   0:00:00
-  
-  
-  Geschwindigkeit:            49293875 Bytes/Sek.
-  Geschwindigkeit:            2820.618 Megabytes/Min.
-     Beendet: Montag, 8. Juli 2013 23:43:54
+     Beendet: Samstag, 17. August 2013 15:47:33
   
   Ein Unterverzeichnis oder eine Datei mit dem Namen "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\..\Bin\TvWishListMP2\bin\Release\Plugins\TvWishListMP2\Skin" existiert bereits.
   
@@ -722,7 +845,7 @@ PostBuildEvent:
      ROBOCOPY     ::     Robustes Dateikopieren fr Windows                              
   -------------------------------------------------------------------------------
   
-    Gestartet: Montag, 8. Juli 2013 23:43:54
+    Gestartet: Samstag, 17. August 2013 15:47:33
      Quelle : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\Skin\
        Ziel : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\Bin\TvWishListMP2\bin\Release\Plugins\TvWishListMP2\Skin\
   
@@ -748,7 +871,7 @@ PostBuildEvent:
     Dateien:        24         0        24         0         0         0
       Bytes:   358.7 k         0   358.7 k         0         0         0
      Zeiten:   0:00:00   0:00:00                       0:00:00   0:00:00
-     Beendet: Montag, 8. Juli 2013 23:43:54
+     Beendet: Samstag, 17. August 2013 15:47:33
   
   H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\bin\Release\TvWishListMP2.dll
   1 Datei(en) kopiert
@@ -759,15 +882,15 @@ Der Buildvorgang wurde erfolgreich ausgefhrt.
     0 Warnung(en)
     0 Fehler
 
-Verstrichene Zeit 00:00:01.09
+Verstrichene Zeit 00:00:01.16
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" "MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5.sln" /p:Configuration=Release 
 Microsoft (R)-Buildmodul, Version 4.0.30319.17929
-[Microsoft .NET Framework, Version 4.0.30319.18046]
+[Microsoft .NET Framework, Version 4.0.30319.18051]
 Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
 
 Die Projekte in dieser Projektmappe werden nacheinander erstellt. Um eine parallele Erstellung zu erm”glichen, mssen Sie den Schalter "/m" hinzufgen.
-Der Buildvorgang wurde am 08.07.2013 23:43:54 gestartet.
+Der Buildvorgang wurde am 17.08.2013 15:47:33 gestartet.
 Projekt "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5.sln" auf Knoten "1" (Standardziele).
 ValidateSolutionConfiguration:
   Die Projektmappenkonfiguration "Release|Any CPU" wird erstellt.
@@ -795,7 +918,7 @@ PostBuildEvent:
      ROBOCOPY     ::     Robustes Dateikopieren fr Windows                              
   -------------------------------------------------------------------------------
   
-    Gestartet: Montag, 8. Juli 2013 23:43:55
+    Gestartet: Samstag, 17. August 2013 15:47:34
      Quelle : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Language\
        Ziel : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\Bin\TvWishListMPExtendedProvider0.5\bin\Release\Plugins\TvWishListMPExtendedProvider0.5\Language\
   
@@ -805,7 +928,7 @@ PostBuildEvent:
   
   ------------------------------------------------------------------------------
   
-  2013/07/08 23:43:55 FEHLER 2 (0x00000002) Zugriff auf Quellverzeichnis H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Language\
+  2013/08/17 15:47:34 FEHLER 2 (0x00000002) Zugriff auf Quellverzeichnis H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Language\
   Das System kann die angegebene Datei nicht finden.
   
   Ein Unterverzeichnis oder eine Datei mit dem Namen "H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\..\Bin\TvWishListMPExtendedProvider0.5\bin\Release\Plugins\TvWishListMPExtendedProvider0.5\Skin" existiert bereits.
@@ -814,7 +937,7 @@ PostBuildEvent:
      ROBOCOPY     ::     Robustes Dateikopieren fr Windows                              
   -------------------------------------------------------------------------------
   
-    Gestartet: Montag, 8. Juli 2013 23:43:55
+    Gestartet: Samstag, 17. August 2013 15:47:34
      Quelle : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Skin\
        Ziel : H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\Bin\TvWishListMPExtendedProvider0.5\bin\Release\Plugins\TvWishListMPExtendedProvider0.5\Skin\
   
@@ -824,7 +947,7 @@ PostBuildEvent:
   
   ------------------------------------------------------------------------------
   
-  2013/07/08 23:43:55 FEHLER 2 (0x00000002) Zugriff auf Quellverzeichnis H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Skin\
+  2013/08/17 15:47:34 FEHLER 2 (0x00000002) Zugriff auf Quellverzeichnis H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\Skin\
   Das System kann die angegebene Datei nicht finden.
   
   H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider0.5\TvWishListMPExtendedProvider0.5\bin\Release\TvWishListMPExtendedProvider0.5.dll
@@ -836,7 +959,7 @@ Der Buildvorgang wurde erfolgreich ausgefhrt.
     0 Warnung(en)
     0 Fehler
 
-Verstrichene Zeit 00:00:00.72
+Verstrichene Zeit 00:00:00.76
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>REM ******************** END COMPILE  ******************** 
 
@@ -846,7 +969,7 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\T
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>REM ************************************************************************* 
 
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>CD TvWishListV1.3.0.11.Source 
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>CD TvWishListV1.3.0.12.Source 
 Das System kann den angegebenen Pfad nicht finden.
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source>COPY /Y "Install\Install\bin\Release\Install.exe" "..\TvWishList.Release\Install.exe" 
@@ -951,7 +1074,6 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\T
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Release>Install.exe install 
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Release>"C:\Program Files (x86)\Team MediaPortal\MediaPortal TV Server\SetupTv.exe"
-Zugriff verweigert
 
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Release>"C:\Program Files\Team MediaPortal\MediaPortal TV Server\SetupTv.exe"
 Das System kann den angegebenen Pfad nicht finden.

@@ -1338,7 +1338,8 @@ namespace MyTVMail
           {
               StringBuilder SqlSelectCommand = new StringBuilder();
               SqlSelectCommand.Append("select * from Program ");
-              SqlSelectCommand.AppendFormat(string.Format("where {0}", Expression));  //!!!!!!!!!!!!!!!!!!!!!!EscapeSQLString cannot be checked for expression
+              SqlSelectCommand.AppendFormat("where {0}", Expression);  //!!!!!!!!!!!!!!!!!!!!!!EscapeSQLString cannot be checked for expression
+              SqlSelectCommand.Append(" order by StartTime");
               SqlStatement stmt = new SqlBuilder(StatementType.Select, typeof(Program)).GetStatement(true);
               SqlStatement ManualJoinSQL = new SqlStatement(StatementType.Select, stmt.Command, SqlSelectCommand.ToString(),typeof(Program));
               myprogramlist = ObjectFactory.GetCollection<Program>(ManualJoinSQL.Execute());

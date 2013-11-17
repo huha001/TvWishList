@@ -37,7 +37,7 @@ namespace TvWishList
   /// This class will hold all text used in the application
   /// The text is loaded for the current language from
   /// the file language/[language]/strings.xml
-  /// </summary>
+  /// </summary> 
   public class PluginGuiLocalizeStrings
   {
     #region Variables
@@ -285,6 +285,28 @@ namespace TvWishList
 
     public static string GetCultureName(string language)
     {
+        if (_cultures == null)
+        {
+            _cultures = new Dictionary<string, string>();
+
+            CultureInfo[] cultureList = CultureInfo.GetCultures(CultureTypes.AllCultures);
+
+            for (int i = 0; i < cultureList.Length; i++)
+            {
+                if (!_cultures.ContainsKey(cultureList[i].EnglishName))
+                {
+                    _cultures.Add(cultureList[i].EnglishName, cultureList[i].Name);
+                }
+            }
+        }
+        if (_cultures.ContainsKey(language))
+            return _cultures[language];
+
+        return null;
+    }
+          /*
+    public static string GetCultureName(string language)
+    {
       if (_cultures == null)
       {
         _cultures = new Dictionary<string, string>();
@@ -301,7 +323,7 @@ namespace TvWishList
         return _cultures[language];
 
       return null;
-    }
+    }*/
 
     #endregion
   }

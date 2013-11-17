@@ -250,7 +250,7 @@ namespace TvEngine
         /// <summary>
         /// returns the version of the plugin
         /// </summary>
-        public string Version { get { return "1.3.0.12"; } }
+        public string Version { get { return "1.3.0.13"; } }
 
         /// <summary>
         /// returns the author of the plugin
@@ -2189,7 +2189,7 @@ namespace TvEngine
     public class StreamString
     {
         private Stream ioStream;
-        private UnicodeEncoding streamEncoding;
+        private UnicodeEncoding streamEncoding; 
 
         public StreamString(Stream ioStream)
         {

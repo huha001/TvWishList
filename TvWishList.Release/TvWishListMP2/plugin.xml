@@ -5,7 +5,7 @@
     Author="huha"
     Copyright="GPL"
     Description="TvWishList plugin for MediaPortal2"
-    PluginVersion="1.3.0.12">
+    PluginVersion="1.3.0.13">
 
   <Runtime>
     <Assembly FileName="TvWishListMP2.dll"/>
@@ -16,10 +16,7 @@
   <DependsOn>
     <!-- Configuration Manager Plugin -->
     <PluginReference PluginId="{1AFF4467-64B0-4ca1-AF28-9AEDF3525BCE}"/>  
-    <!-- SlimTvClient -->
-    <PluginReference PluginId="{63040BB4-4638-49b7-A82F-F4530D4D43B9}"/>    
-    <!-- SlimTVMPExtendedProvider -->
-    <PluginReference PluginId="{FD70FD97-CB53-4500-8632-0ADCEF359489}"/>
+    
   </DependsOn>
   
   <Register Location="/Models">

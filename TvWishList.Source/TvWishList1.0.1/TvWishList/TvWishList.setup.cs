@@ -40,9 +40,9 @@ using System.Security.Cryptography;
 using System.Net.Mail;
 using System.Windows.Forms;
 using System.Xml;
-using similaritymetrics;
+//using similaritymetrics;
 
-using TvLibrary.Log.huha;
+using TvLibrary.Log.huha; 
 using TvControl;
 using SetupTv;
 using TvEngine;

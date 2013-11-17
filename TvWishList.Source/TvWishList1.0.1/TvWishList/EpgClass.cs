@@ -45,7 +45,7 @@ using System.Net.Mail;
 using System.Windows.Forms;
 using System.Xml;
 using System.Threading;
-using similaritymetrics;
+//using similaritymetrics;
 
 using TvLibrary.Log.huha;
 using TvControl;

@@ -46,7 +46,7 @@ using Gentle.Framework;
 
 namespace TvWishList
 {
-    public partial class Edit_GUI : GUIWindow 
+    public partial class Edit_GUI : GUIWindow  
     {
         [SkinControlAttribute(3)]
         protected GUIButtonControl buttonPrev = null;

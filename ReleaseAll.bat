@@ -3,8 +3,8 @@ REM DEFINE VARIABLES
 REM *************************************************************************
 REM 
 
-SET OLDVERSION=1.3.0.11
-SET NEWVERSION=1.3.0.12
+SET OLDVERSION=1.3.0.12
+SET NEWVERSION=1.3.0.13
 
 
 SET MSFRAMEPATH="C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe"
@@ -47,6 +47,10 @@ REM **************************************************************************
 %FILE_REPLACE% "TvWishList.Source\TvWishListMP1.2\TvWishListMP\MP1_Main_GUI.cs" %OLDVERSION% %NEWVERSION%
 %FILE_REPLACE% "TvWishList.Source\TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\TvWish.cs" %OLDVERSION% %NEWVERSION%
 %FILE_REPLACE% "TvWishList.Source\TvWishListMP1.2\TvWishListMP\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+
+%FILE_REPLACE% "TvWishList.Source\TvWishListMP1.6\TvWishListMP\MP1_Main_GUI.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishListMP1.6\TvWishListMP\CommonCodeMP1MP2\TvWish.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishListMP1.6\TvWishListMP\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
 
 %FILE_REPLACE% "TvWishList.Source\Install\Install\InstallSetup.cs" %OLDVERSION% %NEWVERSION%
 %FILE_REPLACE% "TvWishList.Source\Install\Install\InstallSetup.Designer.cs" %OLDVERSION% %NEWVERSION%
@@ -105,6 +109,25 @@ COPY /Y "TvWishList1.2\TvWishList\TvWish.cs" "TvWishList1.1\TvWishList\TvWish.cs
 COPY /Y "TvWishList1.2\TvWishList\Log.cs" "TvWishList1.1\TvWishList\Log.cs"
 COPY /Y "TvWishList1.2\TvWishList\LanguageTranslation.cs" "TvWishList1.1\TvWishList\LanguageTranslation.cs"
 
+
+COPY /Y "TvWishListMP1.6\TvWishListMP\MP1_Main_GUI.cs" "TvWishListMP1.2\TvWishListMP\MP1_Main_GUI.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\MP1_Edit_GUI.cs" "TvWishListMP1.2\TvWishListMP\MP1_Edit_GUI.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\MP1_Result_GUI.cs" "TvWishListMP1.2\TvWishListMP\MP1_Result_GUI.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\CommonCodeMP1MP2\Common_Main_GUI.cs" "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Common_Main_GUI.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\CommonCodeMP1MP2\Common_Edit_GUI.cs" "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Common_Edit_GUI.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\CommonCodeMP1MP2\Common_Result_GUI.cs" "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Common_Result_GUI.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\TvDatabaseConnect.cs" "TvWishListMP1.2\TvWishListMP\TvDatabaseConnect.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\CommonCodeMP1MP2\TvWish.cs" "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\TvWish.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\CommonCodeMP1MP2\Log.cs" "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Log.cs"
+REM COPY /Y "TvWishListMP1.6\TvWishListMP\CommonCodeMP1MP2\InstallPaths.cs" "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\InstallPaths.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\CommonCodeMP1MP2\LocalizeStrings.cs" "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\LocalizeStrings.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\CommonCodeMP1MP2\Messages.cs" "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Messages.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\Setup.cs" "TvWishListMP1.2\TvWishListMP\Setup.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\Setup.Designer.cs" "TvWishListMP1.2\TvWishListMP\Setup.Designer.cs"
+COPY /Y "TvWishListMP1.6\TvWishListMP\Setup.resx" "TvWishListMP1.2\TvWishListMP\Setup.resx"
+
+
+
 COPY /Y "TvWishListMP1.2\TvWishListMP\MP1_Main_GUI.cs" "TvWishListMP1.1\TvWishListMP\MP1_Main_GUI.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\MP1_Edit_GUI.cs" "TvWishListMP1.1\TvWishListMP\MP1_Edit_GUI.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\MP1_Result_GUI.cs" "TvWishListMP1.1\TvWishListMP\MP1_Result_GUI.cs"
@@ -114,6 +137,9 @@ COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Common_Result_GUI.cs" "Tv
 COPY /Y "TvWishListMP1.2\TvWishListMP\TvDatabaseConnect.cs" "TvWishListMP1.1\TvWishListMP\TvDatabaseConnect.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\TvWish.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\TvWish.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Log.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\Log.cs"
+
+
+
 REM COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\InstallPaths.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\InstallPaths.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\LocalizeStrings.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\LocalizeStrings.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Messages.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\Messages.cs"
@@ -130,6 +156,7 @@ REM *************************************************************************
 %MSFRAMEPATH% TvWishList1.0.1\TvWishList.sln /p:Configuration=Release
 %MSFRAMEPATH% TvWishListMP1.1\TvWishListMP.sln /p:Configuration=Release
 %MSFRAMEPATH% TvWishListMP1.2\TvWishListMP.sln /p:Configuration=Release
+%MSFRAMEPATH_MP2% TvWishListMP1.6\TvWishListMP.sln /p:Configuration=Release
 %MSFRAMEPATH% Install\Install.sln /p:Configuration=Release
 
 %MSFRAMEPATH_MP2% "MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\TvWishListInterface.sln" /p:Configuration=Release
@@ -159,7 +186,7 @@ COPY /Y "TvWishList1.1\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Rel
 COPY /Y "TvWishList1.2\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Release\TvWishList1.2\TvWishList.dll"
 COPY /Y "TvWishListMP1.1\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishList.Release\TvWishListMP1.1\TvWishListMP.dll"
 COPY /Y "TvWishListMP1.2\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishList.Release\TvWishListMP1.2\TvWishListMP.dll"
-
+COPY /Y "TvWishListMP1.6\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishList.Release\TvWishListMP1.6\TvWishListMP.dll"
 
 
 copy /Y "MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\bin\Release\SlimTv.Interfaces.dll" "MP2 TvWishListMP2\Bin\TvWishListMP2\bin\Release\Plugins\TvWishListMP2\SlimTv.Interfaces.dll"

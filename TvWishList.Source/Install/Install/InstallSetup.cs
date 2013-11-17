@@ -631,12 +631,34 @@ namespace TvWishListInstall
                     File.Copy(@"TvWishListMP1.1\TvWishListMP.dll", MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll", true);
                     textoutputdebug(@"TvWishListMP1.1\TvWishListMP.dll  copied to" + "\n" + MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll" + "\n");
                 }
-                else //MP1.2 if newer than 1.1.6.0
+                else if (FileVersionComparison(MediaPortalFileVersionInfo.FileVersion.ToString(), "1.5.0.1") == (int)CompareFileVersion.Older)//MP1.2 if older than 1.5.0.1
                 {
                     textoutputdebug("Installing MP1.2 Plugin version" + "\n");
                     File.Copy(@"TvWishListMP1.2\TvWishListMP.dll", MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll", true);
                     textoutputdebug(@"TvWishListMP1.2\TvWishListMP.dll  copied to" + "\n" + MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll" + "\n");
                 }
+                else //MP1.5 if newer or equal than 1.5.0.1
+                {
+                    textoutputdebug("Installing MP1.6 Plugin version" + "\n");
+                    File.Copy(@"TvWishListMP1.6\TvWishListMP.dll", MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll", true);
+                    textoutputdebug(@"TvWishListMP1.6\TvWishListMP.dll  copied to" + "\n" + MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll" + "\n");
+                }
+
+
+
+
+
+
+
+                /*else 
+                {
+                    textoutputdebug("Installing MP1.2 Plugin version" + "\n");
+                    File.Copy(@"TvWishListMP1.2\TvWishListMP.dll", MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll", true);
+                    textoutputdebug(@"TvWishListMP1.2\TvWishListMP.dll  copied to" + "\n" + MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll" + "\n");
+                }*/
+
+
+                
 
             }
             catch (Exception exc)

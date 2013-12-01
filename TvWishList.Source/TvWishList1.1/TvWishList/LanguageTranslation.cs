@@ -24,7 +24,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text; 
 using System.IO;
 
 //using TvControl;
@@ -33,14 +33,19 @@ using System.IO;
 //using TvEngine.Events;
 //using TvLibrary.Interfaces;
 //using TvLibrary.Implementations;
+#if (MPTV2)
+using MediaPortal.Plugins.TvWishList.Items;
+#else
 using TvDatabase;
+#endif
 //using MediaPortal.Plugins;
 //using TvEngine.PowerScheduler.Interfaces;
 using TvLibrary.Log.huha;
+using MediaPortal.Plugins;
 
-namespace TvWishList
+namespace MediaPortal.Plugins.TvWishList
 {
-    class LanguageTranslation
+    public class LanguageTranslation
     {
         string[] Language = null;
 
@@ -60,6 +65,43 @@ namespace TvWishList
             TvBusinessLayer layer = new TvBusinessLayer();
             Setting setting = null;
             setting = layer.GetSetting("TvWishList_TV_USER_FOLDER", "NOT_DEFINED");
+
+
+
+            string TV_USER_FOLDER;
+            TV_USER_FOLDER = layer.GetSetting("TvWishList_TV_USER_FOLDER", "NOT_FOUND").Value;
+            if ((File.Exists(TV_USER_FOLDER + @"\TvService.exe") == true) || (Directory.Exists(TV_USER_FOLDER) == false))
+            {
+                //autodetect paths
+                InstallPaths instpaths = new InstallPaths();  //define new instance for folder detection
+#if (MPTV2) //Native MP2 Tv server
+                instpaths.GetInstallPathsMP2();
+                TV_USER_FOLDER = instpaths.TV2_USER_FOLDER;
+#else
+                    instpaths.GetInstallPaths();
+                    TV_USER_FOLDER = instpaths.TV_USER_FOLDER;
+#endif
+                Log.Debug("TV server user folder detected at " + TV_USER_FOLDER);
+
+                if ((File.Exists(TV_USER_FOLDER + @"\TvService.exe") == true) || (Directory.Exists(TV_USER_FOLDER) == false))
+                {
+                    Log.Error(@" TV server user folder does not exist - using C:\MediaPortal\TvWishList");
+                    Log.Debug(@" TV server user folder does not exist - using C:\MediaPortal\TvWishList");
+                    TV_USER_FOLDER = @"C:\MediaPortal";
+                    if (Directory.Exists(TV_USER_FOLDER) == false)
+                        Directory.CreateDirectory(TV_USER_FOLDER + @"\TvWishList");
+                }
+                else
+                {//store found TV_USER_FOLDER
+                    setting = layer.GetSetting("TvWishList_TV_USER_FOLDER", "NOT_FOUND");
+                    setting.Value = TV_USER_FOLDER;
+                    setting.Persist();
+                }
+            }
+
+
+
+
 
             if (Directory.Exists(setting.Value) == false)
             {
@@ -104,7 +146,8 @@ namespace TvWishList
                         myline = myline.Replace("<!--TVSERVER VECTORSIZE=", string.Empty);
                         myline = myline.Replace("-->", string.Empty);
 
-                        int size = Convert.ToInt32(myline);
+                        int size = 0;
+                        int.TryParse(myline, out size);
                         Log.Debug("size = " + size.ToString());
 
                         Language = new string[size];
@@ -143,15 +186,19 @@ namespace TvWishList
                             Log.Error("Invalid tv server command " + line.Replace("{","_") + " - cannot use language files");
                             return false;
                         }
-                        
 
-                        minimum = Convert.ToInt32(tokenarray[0]);
+
+                        minimum = 0;
+                        int.TryParse(tokenarray[0], out minimum);
                         Log.Debug(" new minimum=" + minimum.ToString());
-                        maximum = Convert.ToInt32(tokenarray[1]);
+                        maximum = 0;
+                        int.TryParse(tokenarray[1], out maximum);
                         Log.Debug(" new maximum=" + maximum.ToString());
-                        offsetMinimum = Convert.ToInt32(tokenarray[2]);
+                        offsetMinimum = 0;
+                        int.TryParse(tokenarray[2], out offsetMinimum);
                         Log.Debug(" new offsetMinimum=" + offsetMinimum.ToString());
-                        offsetMaximum = Convert.ToInt32(tokenarray[3]);
+                        offsetMaximum = 0;
+                        int.TryParse(tokenarray[3], out offsetMaximum);
                         Log.Debug(" new offsetMaximum=" + offsetMaximum.ToString());
                         offset = minimum - offsetMinimum;
                         Log.Debug(" new offset=" + offset.ToString());
@@ -227,12 +274,13 @@ namespace TvWishList
 
                             
                             //Debug
-                            string output = valueString.Replace("{", "_");
-                            output = output.Replace("}", "_");
-                            Log.Debug("output ="+output);
-                            
+                            //string output = valueString.Replace("{", "_");
+                            //output = output.Replace("}", "_");
+                            //Log.Debug("output ="+output);
 
-                            int number = Convert.ToInt32(digitString);
+
+                            int number = 0;
+                            int.TryParse(digitString, out number);
 
                             //Log.Debug("number=" + number.ToString());
 
@@ -243,9 +291,9 @@ namespace TvWishList
 
                                 
                                 //Debug
-                                string output2 = Language[number].Replace("{", "_");
-                                output2 = output2.Replace("}", "_");                               
-                                Log.Debug("language[" + number.ToString() + "]=" + output2);
+                                //string output2 = Language[number].Replace("{", "_");
+                                //output2 = output2.Replace("}", "_");                               
+                                //Log.Debug("language[" + number.ToString() + "]=" + output2);
                             }
 
                         }

@@ -23,8 +23,9 @@
 #endregion
 
 using System.Collections.Generic;
+using MediaPortal.Plugins.TvWishList.Items;
 
-namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
+namespace MediaPortal.Plugins.TvWishList
 {
   public interface ITvWishListTVProvider
   {
@@ -44,7 +45,6 @@ namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
         #region ITvServerDatabase
         bool GetConnectedServers(out IList<IServerName> serverNames);       
         #endregion ITvServerDatabase
-
 
 
         #region Settings
@@ -79,7 +79,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
         bool ReadAllCards(out IList<ICard> allCards);        
         #endregion cards
 
-      #region Schedules
+        #region Schedules
         bool ReadAllSchedules(out IList<ISchedule> allSchedules);
         
         bool ScheduleNew();
@@ -87,8 +87,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
         bool ScheduleDelete();
       #endregion Schedules
 
-
-      #region Recordings
+        #region Recordings
         bool ReadAllRecordings(out IList<IRecording> allRecordings);        
       #endregion Recordings
 

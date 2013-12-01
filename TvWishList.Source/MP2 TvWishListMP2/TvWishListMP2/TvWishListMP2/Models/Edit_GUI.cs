@@ -27,7 +27,7 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.Threading;
 
-using TvWishList;
+//using TvWishList;
 using System.Runtime.InteropServices;
 
 using MediaPortal.Common;
@@ -48,8 +48,8 @@ using MediaPortal.UI.Presentation.UiNotifications;
 using MediaPortal.UI.SkinEngine.ScreenManagement;
 using MediaPortal.UI.SkinEngine.Controls.Visuals;
 
-using MediaPortal.Plugins.TvWishListMP2.MPExtended;
-
+using MediaPortal.Plugins.TvWishList;
+using MediaPortal.Plugins.TvWishList.Items;
 using MediaPortal.Plugins.TvWishListMP2.Settings; //needed for configuration setting loading
 
 using Log = TvLibrary.Log.huha.Log;

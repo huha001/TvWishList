@@ -56,7 +56,7 @@ using Log = TvLibrary.Log.huha.Log;
 //using GUIKeyboard = MediaPortal.GUI.Library.huha.GUIKeyboard;
 
 
-namespace TvWishList
+namespace MediaPortal.Plugins.TvWishList
 {
     
   public partial class Main_GUI : GUIWindow, ISetupForm
@@ -195,7 +195,17 @@ namespace TvWishList
         
         //TvWishes Initialization
         myTvWishes = new TvWishProcessing();
-            
+
+        // get pipename from Tvserver as MPExtended uses TV1 and NativeTvserver TV2
+        // get hostname from tvserver for multiseat installation
+        TvBusinessLayer layer = new TvBusinessLayer();
+        Setting setting;
+        setting = layer.GetSetting("TvWishList_PipeName", "MP2TvWishListPipe");
+        string pipename = setting.Value;
+        setting = layer.GetSetting("TvWishList_MachineName", "localhost");
+        string hostname = setting.Value;
+        myPipeClient = new PipeClient(myTvWishes,hostname,pipename);
+        
         
         //activating GUI List Window
         if (GUIWindowManager.GetWindow(_guilistwindowid) == null)
@@ -306,6 +316,12 @@ namespace TvWishList
         PREVIOUSWINDOW = this.PreviousWindowId;        
         Log.Debug("Previous WidowID=" + PREVIOUSWINDOW);
 
+        //update hostname for pipes if different server was chose
+        TvBusinessLayer layer = new TvBusinessLayer();
+        Setting setting;
+        setting = layer.GetSetting("TvWishList_MachineName", "localhost");
+        myPipeClient.HostName = setting.Value;
+
         if (VersionMismatch) //bye
         {
             myTvWishes.MyMessageBox(4305, 4306); //TvWishList MediaPortal Plugin Does Not Match To TvWishList TV Server Plugin
@@ -380,7 +396,7 @@ namespace TvWishList
         UpdateListItems();
 
 
-#if (MP12)
+#if (MP12 || MP16)
         //check for parameters
         if (_loadParameter != null)
         {
@@ -707,7 +723,7 @@ namespace TvWishList
         GUIControl.SetControlLabel(_mainwindowid, 8, String.Format(PluginGuiLocalizeStrings.Get(1107)));//More       
     }
 
-    protected void UpdateListItems()
+    public void UpdateListItems()
     {
         Log.Debug("[TVWishListMP]:UpdateListItems");
 

@@ -20,7 +20,9 @@
  *
  */
 #endregion Copyright (C)
-
+//*************************
+//Version 0.0.0.11
+//*************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +37,7 @@ using System.Xml;
 
 
 
-#if (MP12 || MP11)
+#if (MP11 || MP12 || MP16)
 using MediaPortal.GUI.Library;
 using Log = TvLibrary.Log.huha.Log;
 using TvControl;
@@ -58,25 +60,45 @@ using MediaPortal.UI.Control.InputManager;
 using MediaPortal.UI.Presentation.UiNotifications;
 using MediaPortal.UI.SkinEngine.ScreenManagement;
 using MediaPortal.UI.SkinEngine.Controls.Visuals;
-using MediaPortal.Plugins.TvWishListMP2.MPExtended;
+
+//using TvWishList;
+using MediaPortal.Plugins.TvWishList.Items;
 #else
 using TvLibrary.Log.huha;
+
+
+
+#if (MPTV2)
+// native TV3.5 for MP2
+//using Mediaportal.TV.Server.Plugins.Base.Interfaces;
+//using Mediaportal.TV.Server.SetupControls;
+//using Mediaportal.TV.Server.TVControl.Events;
+//using Mediaportal.TV.Server.TVControl.Interfaces.Events;
+//using Mediaportal.TV.Server.TVControl.Interfaces.Services;
+//using Mediaportal.Common.Utils;
+using MediaPortal.Plugins.TvWishList.Items;
+#else
+// MP1 TV server
 using TvControl;
 using TvDatabase;
 using Gentle.Framework;
+#endif
+
+
+
 //using SetupTv; 
 //using TvEngine;
 //using TvEngine.Events;
 //using TvLibrary.Interfaces;
 //using TvLibrary.Implementations;
 
-//using MediaPortal.Plugins;
+//using Mediaportal.Plugins;
 //using TvEngine.PowerScheduler.Interfaces;
 #endif
 
-//Version 0.0.0.7
 
-namespace TvWishList
+
+namespace MediaPortal.Plugins.TvWishList
 {
 
     #region Declarations
@@ -577,7 +599,7 @@ namespace TvWishList
             //LogDebug("_dateTimeFormat= " + datetimeformat.Replace('{','['), (int)LogSetting.DEBUG);         
 
             //load MP language
-#if (MP12 || MP11)
+#if (MP11 || MP12 || MP16)
             PluginGuiLocalizeStrings.LoadMPlanguage();
 #elif (TV101 || TV11 || TV12)
             PluginGuiLocalizeStrings.ReadLanguageFile();
@@ -741,7 +763,9 @@ namespace TvWishList
                             }
                             else if (xml_message_node.Name.ToUpper() == "PARENTALRATING")  
                             {
-                                newmessage.ParentalRating = Convert.ToInt32(xml_message_node.InnerText);
+                                int parentalRating = -1;
+                                int.TryParse(xml_message_node.InnerText, out parentalRating);
+                                newmessage.ParentalRating = parentalRating;
                             }
                             else if (xml_message_node.Name.ToUpper() == "SERIESNUM")
                             {
@@ -749,15 +773,21 @@ namespace TvWishList
                             }
                             else if (xml_message_node.Name.ToUpper() == "STARRATING")
                             {
-                                newmessage.StarRating = Convert.ToInt32(xml_message_node.InnerText);
+                                int starRating = -1;
+                                int.TryParse(xml_message_node.InnerText, out starRating);
+                                newmessage.StarRating = starRating;
                             }
                             else if (xml_message_node.Name.ToUpper() == "PROGRAM_ID")  //legacy bad name
                             {
-                                newmessage.channel_id = Convert.ToInt32(xml_message_node.InnerText);
+                                int channel_id = -1;
+                                int.TryParse(xml_message_node.InnerText, out channel_id);
+                                newmessage.channel_id = channel_id;
                             }
                             else if (xml_message_node.Name.ToUpper() == "CHANNEL_ID")
                             {
-                                newmessage.channel_id = Convert.ToInt32(xml_message_node.InnerText);
+                                int channel_id = -1;
+                                int.TryParse(xml_message_node.InnerText, out channel_id);
+                                newmessage.channel_id = channel_id;
                             }
                             else if (xml_message_node.Name.ToUpper() == "MESSAGE")
                             {
@@ -777,7 +807,9 @@ namespace TvWishList
                             }
                             else if (xml_message_node.Name.ToUpper() == "PROCESSED")
                             {
-                                newmessage.processed = Convert.ToBoolean(xml_message_node.InnerText);
+                                Boolean processed = false;
+                                Boolean.TryParse(xml_message_node.InnerText, out processed);
+                                newmessage.processed = processed;
                             }
                             else if (xml_message_node.Name.ToUpper() == "TVWISHID")
                             {
@@ -1389,7 +1421,7 @@ namespace TvWishList
                 newmessage.EpisodePart = "";
                 newmessage.EpisodeNumber = "";
                 
-#elif ( TV11 || TV12 || MP12)
+#elif ( TV11 || TV12 || MP12 || MP16)
                 newmessage.EpisodeName = newprogram.EpisodeName;
                 newmessage.EpisodePart = newprogram.EpisodePart;
                 newmessage.EpisodeNumber = newprogram.EpisodeNumber;
@@ -1472,7 +1504,7 @@ namespace TvWishList
                     newmessage.EpisodeName = "";                    
                     newmessage.EpisodePart = "";
                     newmessage.EpisodeNumber = "";
-#elif ( TV11 || TV12 || MP12)
+#elif ( TV11 || TV12 || MP12 || MP16)
                     Program newprogram = Program.RetrieveByTitleTimesAndChannel(newmessage.title, newmessage.start, newmessage.end, newmessage.channel_id);
                     newmessage.EpisodeName = newprogram.EpisodeName;                    
                     newmessage.EpisodePart = newprogram.EpisodePart;
@@ -1557,7 +1589,7 @@ namespace TvWishList
                     newmessage.EpisodeName = "";                    
                     newmessage.EpisodePart = "";
                     newmessage.EpisodeNumber = "";
-#elif ( TV11 || TV12 || MP12)
+#elif ( TV11 || TV12 || MP12 || MP16)
                     newmessage.EpisodeName = newrecording.EpisodeName;
                     newmessage.EpisodePart = newrecording.EpisodePart;
                     newmessage.EpisodeNumber = newrecording.EpisodeNumber;
@@ -2207,16 +2239,16 @@ namespace TvWishList
         [CLSCompliant(false)]
         public void outputscheduletoresponse(Schedule schedule, Int32 this_setting)
         {
+            //_debug = true;
+            
             bool restoreDebug = _debug;
             _debug = true;
             LogDebug("*****************************SCHEDULE****************************************", this_setting);
             LogDebug("ProgramName=           " + schedule.ProgramName, this_setting);
             try
             {
-
                 Channel channel = Channel.Retrieve(schedule.IdChannel);
                 LogDebug("Channel=               " + channel.DisplayName, this_setting);
-
             }
             catch
             {
@@ -2261,14 +2293,19 @@ namespace TvWishList
 
                   //Debug only for 1.2
                   //LogDebug("BitRateMode=" + schedule.BitRateMode.ToString(), this_setting);
+#if (!MPTV2)
                   LogDebug("CacheKey=" + schedule.CacheKey.ToString(), this_setting);
-                  LogDebug("Canceled=" + schedule.Canceled.ToString(), this_setting);
-                  LogDebug("Directory=" + schedule.Directory.ToString(), this_setting);
                   LogDebug("DoesUseEpisodeManagement=" + schedule.DoesUseEpisodeManagement.ToString(), this_setting);
-                  LogDebug("IdSchedule=" + schedule.IdSchedule.ToString(), this_setting);
                   LogDebug("IsChanged=" + schedule.IsChanged.ToString(), this_setting);
                   LogDebug("IsManual=" + schedule.IsManual.ToString(), this_setting);
                   LogDebug("IsPersisted=" + schedule.IsPersisted.ToString(), this_setting);
+                  LogDebug("RecommendedCard=" + schedule.RecommendedCard.ToString(), this_setting);
+                  LogDebug("SessionBroker=" + schedule.SessionBroker.ToString(), this_setting);
+                  LogDebug("ValidationMessages=" + schedule.ValidationMessages.ToString(), this_setting);
+#endif
+                  LogDebug("Canceled=" + schedule.Canceled.ToString(), this_setting);
+                  LogDebug("Directory=" + schedule.Directory.ToString(), this_setting);                  
+                  LogDebug("IdSchedule=" + schedule.IdSchedule.ToString(), this_setting);                 
                   LogDebug("KeepDate=" + schedule.KeepDate.ToString(), this_setting);
                   LogDebug("KeepMethod=" + schedule.KeepMethod.ToString(), this_setting);
                   LogDebug("MaxAirings=" + schedule.MaxAirings.ToString(), this_setting);
@@ -2277,15 +2314,14 @@ namespace TvWishList
                   LogDebug("Priority=" + schedule.Priority.ToString(), this_setting);
                   LogDebug("Quality=" + schedule.Quality.ToString(), this_setting);
                   //LogDebug("QualityType=" + schedule.QualityType.ToString(), this_setting);
-                  LogDebug("RecommendedCard=" + schedule.RecommendedCard.ToString(), this_setting);
+                  
                   LogDebug("Series=" + schedule.Series.ToString(), this_setting);
-                  LogDebug("SessionBroker=" + schedule.SessionBroker.ToString(), this_setting);
-                  LogDebug("ValidationMessages=" + schedule.ValidationMessages.ToString(), this_setting);
+                  
                   LogDebug("Channel ID=            " + schedule.IdChannel, this_setting);
                 
                   //end debug
 
-#if (TV11 || TV12 || MP11 || MP12)
+#if (TV11 || TV12 || MP11 || MP12 || MP16)
                   Program myprogram = Program.RetrieveByTitleTimesAndChannel(schedule.ProgramName,schedule.StartTime,schedule.EndTime,schedule.IdChannel);
                   LogDebug("Description=          " + myprogram.Description, this_setting);
                   LogDebug("Genre=           " + myprogram.Genre, this_setting);
@@ -2329,7 +2365,7 @@ namespace TvWishList
             LogDebug("Genre=           " + program.Genre, this_setting);
             LogDebug("Classification=           " + program.Classification, this_setting);
             LogDebug("EpisodeNum=           " + program.EpisodeNum, this_setting);
-#if(TV11 || TV12 || MP11 || MP12)
+#if(TV11 || TV12 || MP11 || MP12 || MP16)
           LogDebug("EpisodeName=           " + program.EpisodeName, this_setting);
           LogDebug("EpisodeNumber=           " + program.EpisodeNumber, this_setting);         
           LogDebug("EpisodePart=           " + program.EpisodePart, this_setting);
@@ -2401,7 +2437,7 @@ namespace TvWishList
             LogDebug("TimesWatched=           " + recording.TimesWatched.ToString(), this_setting);
             LogDebug("StopTime=           " + recording.StopTime, this_setting);
 
-#if(TV11 || TV12 || MP11 || MP12)
+#if(TV11 || TV12 || MP11 || MP12 || MP16)
           LogDebug("EpisodeNum=           " + recording.EpisodeNum, this_setting);
           LogDebug("EpisodeName=           " + recording.EpisodeName, this_setting);
           LogDebug("EpisodeNumber=           " + recording.EpisodeNumber, this_setting);
@@ -2414,7 +2450,9 @@ namespace TvWishList
 
             LogDebug("IdRecording=           " + recording.IdRecording, this_setting);
             LogDebug("IdChannel=           " + recording.IdChannel, this_setting);
+#if (!MPTV2)
             LogDebug("IdServer=           " + recording.IdServer, this_setting);
+#endif
 
             try
             {

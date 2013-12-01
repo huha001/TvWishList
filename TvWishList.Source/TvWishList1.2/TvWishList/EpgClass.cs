@@ -27,7 +27,7 @@
 
 using System;
 using System.IO;
-using System.Collections;
+using System.Collections; 
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -47,23 +47,51 @@ using System.Xml;
 using System.Threading;
 //using similaritymetrics;
 
-using TvLibrary.Log.huha;
+
+
+
+#if (MPTV2)
+// native TV3.5 for MP2
+using Mediaportal.TV.Server.Plugins.Base.Interfaces;
+using Mediaportal.TV.Server.SetupControls;
+using Mediaportal.TV.Server.TVControl;
+using Mediaportal.TV.Server.TVControl.ServiceAgents;
+using Mediaportal.TV.Server.TVControl.Events;
+using Mediaportal.TV.Server.TVControl.Interfaces.Events;
+using Mediaportal.TV.Server.TVControl.Interfaces.Services;
+using Mediaportal.TV.Server.TVDatabase;
+using MediaPortal.Plugins.TvWishList.Items;
+#else
+// MP1 TV server
 using TvControl;
-using SetupTv;
-using TvEngine;
 using TvEngine.Events;
-using TvLibrary.Interfaces;
-using TvLibrary.Implementations;
 using TvDatabase;
+using Gentle.Framework;
+using TvLibrary.Implementations;
+using MySql.Data.MySqlClient;
+using StatementType = Gentle.Framework.StatementType;
+#endif
+
+
+
+
+
+
+
+using TvLibrary.Log.huha;
+
+//using SetupTv;
+using MediaPortal.Plugins.TvWishList.Setup;
+using TvEngine;
+using TvLibrary.Interfaces;
+
+
 using MediaPortal.Plugins;
 using TvEngine.PowerScheduler.Interfaces;
-using TvWishList;
+//using TvWishList;
 
-using MySql.Data.MySqlClient;
-using Gentle.Framework;
-using StatementType = Gentle.Framework.StatementType;
 
-namespace MyTVMail
+namespace MediaPortal.Plugins.TvWishList
 {
   
   public delegate void setuplabelmessage(string text, PipeCommands type );
@@ -218,6 +246,7 @@ namespace MyTVMail
           //Lock TvWishList with timeout error
           bool success = false;
           int seconds = 60;
+          Log.Debug("Lock TvWishList EpgSearch");
           for (int i = 0; i < seconds / 10; i++)
           {
               success = myTvWishes.LockTvWishList("TvWishList EpgSearch");
@@ -245,7 +274,7 @@ namespace MyTVMail
               labelmessage(languagetext, PipeCommands.StartEpg);
 
               //checkboxes
-
+              Log.Debug("Reading Settings");
 
               setting = layer.GetSetting("TvWishList_SkipDeleted", "false");
               if (BoolConversion(setting.Value, false))
@@ -458,7 +487,9 @@ namespace MyTVMail
 
 
               setting = layer.GetSetting("TvWishList_MaxTvWishId", "0");
-              myTvWishes.MaxTvWishId = Convert.ToInt32(setting.Value);
+              int maxTvWishId = 0;
+              int.TryParse(setting.Value, out maxTvWishId);
+              myTvWishes.MaxTvWishId = maxTvWishId;
               Log.Debug("EpgClass: MaxTvWishId=" + myTvWishes.MaxTvWishId.ToString(), (int)LogSetting.DEBUG);
 
 
@@ -856,18 +887,56 @@ namespace MyTVMail
 
 
                   //LogDebug("GetConflictingSchedules: Cards.Count =" + cards.Count.ToString(), (int)LogSetting.DEBUG);
-
+#if (!MPTV2)
                   List<Schedule>[] cardSchedules = new List<Schedule>[cards.Count];
                   for (int i = 0; i < cards.Count; i++)
                   {
                       cardSchedules[i] = new List<Schedule>();
                   }
-                  Schedule overlappingSchedule = null;
+                  Schedule overlappingSchedule = null; 
+#endif
 
                   bool ok = false;
+                  Log.Debug("allschedules.count=" + allschedules.Count.ToString());
                   foreach (Schedule oneschedule in allschedules)
                   {
-                      ok = AssignSchedulesToCard(oneschedule, cardSchedules, out overlappingSchedule, DEBUG);
+#if (MPTV2)
+                      if (Schedule.GetConflictingSchedules(oneschedule).Count > 0)
+                      {
+                          ok = false;
+                      }
+                      else
+                      {
+                          ok = true;
+                      }
+                      Log.Debug("ok="+ok.ToString());
+                      /*
+                      Mediaportal.TV.Server.TVDatabase.Entities.Schedule onerawschedule = ServiceAgents.Instance.ScheduleServiceAgent.GetSchedule(oneschedule.IdSchedule);
+                      List<Mediaportal.TV.Server.TVDatabase.Entities.Schedule> notViewableSchedules = new List<Mediaportal.TV.Server.TVDatabase.Entities.Schedule>();
+                      ServiceAgents.Instance.ScheduleServiceAgent.GetConflictingSchedules(onerawschedule, out notViewableSchedules);
+                      try
+                      {
+                          if (notViewableSchedules.Count > 0)
+                          {
+                              ok = false;
+                          }
+                          else
+                          {
+                              ok = true;
+                          }
+                      }
+                      catch
+                      {
+                          ok = false;
+                      }*/
+
+#else
+
+                      ok = AssignSchedulesToCard(oneschedule, cardSchedules, out overlappingSchedule, DEBUG); //overlappingSchedule not used
+#endif
+
+
+
                       if (ok == false)//conflict exists
                       {
                           LogDebug("", (int)LogSetting.INFO);
@@ -933,7 +1002,7 @@ namespace MyTVMail
                   myTvWishes.save_longsetting(dataString, "TvWishList_ListViewMessages");
               }
 
-
+              Log.Debug("RESPONSE="+RESPONSE);
 
               if ((_emailreply == true) && (RESPONSE != "") && (VIEW_ONLY_MODE == false))
               {
@@ -1336,6 +1405,12 @@ namespace MyTVMail
           LogDebug("SQL query for: " + Expression, (int)LogSetting.DEBUG);
           try
           {
+#if (MPTV2)
+              string command = "select * from programs where "+Expression;
+
+              Log.Debug("command=" + command);
+              myprogramlist = Program.GeneralSqlQuery(command);
+#else
               StringBuilder SqlSelectCommand = new StringBuilder();
               SqlSelectCommand.Append("select * from Program ");
               SqlSelectCommand.AppendFormat("where {0}", Expression);  //!!!!!!!!!!!!!!!!!!!!!!EscapeSQLString cannot be checked for expression
@@ -1343,6 +1418,7 @@ namespace MyTVMail
               SqlStatement stmt = new SqlBuilder(StatementType.Select, typeof(Program)).GetStatement(true);
               SqlStatement ManualJoinSQL = new SqlStatement(StatementType.Select, stmt.Command, SqlSelectCommand.ToString(),typeof(Program));
               myprogramlist = ObjectFactory.GetCollection<Program>(ManualJoinSQL.Execute());
+#endif
           }
           catch (Exception exc)
           {
@@ -1365,18 +1441,17 @@ namespace MyTVMail
               LogDebug("\n************************************************************", (int)LogSetting.DEBUG);
               LogDebug("****Next program in autocompletion:", (int)LogSetting.DEBUG);
               outputprogramresponse(myprogram, (int)LogSetting.DEBUG); //Debug only
-              
+
               // process groupname
               if (mywish.group != lng.TranslateString("All Channels",4104))
               {
                   if ((IsChannelInGroup(oneprogram.IdChannel, mywish.group) == false) && (IsRadioChannelInGroup(oneprogram.IdChannel, mywish.group) == false))
                   {
                       LogDebug("!!!!!!!Groupname " + mywish.group + " not matching for title " + oneprogram.Title + " at " + oneprogram.StartTime.ToString(), (int)LogSetting.DEBUG);
-                      continue;
-                      
+                      continue;                     
                   }
               }
-
+              
               //process exclude
               if (mywish.exclude != string.Empty)
               {
@@ -1448,7 +1523,7 @@ namespace MyTVMail
                   }
 
               }//end exclude
-
+              
               // process valid word check
               if (mywish.b_wordmatch == true)
               {
@@ -1504,8 +1579,7 @@ namespace MyTVMail
 
               } //end processing valid wordcheck
 
-
-                
+ 
                   string channelname = "Error_with_ID_" + oneprogram.IdChannel.ToString();
                   try
                   {
@@ -1779,12 +1853,19 @@ namespace MyTVMail
           LogDebug("SQL query for: " + Expression, (int)LogSetting.DEBUG);
           try
           {
+#if (MPTV2)
+              string command = "select * from recordings where " + Expression;
+              Log.Debug("command=" + command);
+              myRecordingList = Recording.GeneralSqlQuery(command);
+
+#else
               StringBuilder SqlSelectCommand = new StringBuilder();
               SqlSelectCommand.Append("select * from Recording ");
-              SqlSelectCommand.AppendFormat(string.Format("where {0}", Expression));  //!!!!!!!!!!!!!!!!!!EscapeSQLString cannot bechecked for expression
+              SqlSelectCommand.AppendFormat(string.Format("where {0}", Expression));  
               SqlStatement stmt = new SqlBuilder(StatementType.Select, typeof(Recording)).GetStatement(true);
               SqlStatement ManualJoinSQL = new SqlStatement(StatementType.Select, stmt.Command, SqlSelectCommand.ToString(), typeof(Recording));
               myRecordingList = ObjectFactory.GetCollection<Recording>(ManualJoinSQL.Execute());
+#endif
               Log.Debug("SQL Result:myRecordingList.Count" + myRecordingList.Count.ToString());
           }
           catch (Exception exc)
@@ -1935,8 +2016,7 @@ namespace MyTVMail
                       Log.Debug("myrecording.Title=" + myrecording.Title);
                       Log.Debug("myrecording.Description=" + myrecording.Description);
                       FileInfo myfileinfo = new FileInfo(myrecording.FileName);
-                      //long filesize = myfileinfo.Length / (1024 * 1024);
-                      //double gigabyte = Convert.ToDouble(filesize)/1024;
+                      
                       double filesize = Convert.ToDouble(myfileinfo.Length)/(1024*1024*1024);
 
                       string message =  lng.TranslateString("{0} with {1} GB",59,myrecording.FileName,filesize.ToString("F2"));
@@ -1994,7 +2074,11 @@ namespace MyTVMail
 
       public string GetDateTimeString()
       {
+#if (MPTV2)
+          string provider = "mysql";
+#else
           string provider = ProviderFactory.GetDefaultProvider().Name.ToLowerInvariant();
+#endif
           if (provider == "mysql")
           {
               return "yyyy-MM-dd HH:mm:ss";
@@ -2004,7 +2088,11 @@ namespace MyTVMail
 
       public string EscapeSQLString(string original)
       {
+#if (MPTV2)
+          string provider = "mysql";
+#else
           string provider = ProviderFactory.GetDefaultProvider().Name.ToLowerInvariant();
+#endif
           if (provider == "mysql")
           {
               return original.Replace("'", "\\'");
@@ -2015,6 +2103,68 @@ namespace MyTVMail
           }
       }
 
+
+
+
+#if (MPTV2)
+// native TVE3.5 for MP2
+      // checks if the channel is within the group of groupname
+      public bool IsChannelInGroup(int channelid, string groupname)
+      {
+          try
+          {
+              //Log.Debug("channelid = " + channelid.ToString() + "    groupname=" + groupname);
+              Mediaportal.TV.Server.TVDatabase.Entities.Channel rawchannel = ServiceAgents.Instance.ChannelServiceAgent.GetChannel(channelid);
+              //Log.Debug("rawchannel.DisplayName=" + rawchannel.DisplayName);
+              Mediaportal.TV.Server.TVDatabase.Entities.ChannelGroup rawchannelgroup = ServiceAgents.Instance.ChannelGroupServiceAgent.GetChannelGroupByNameAndMediaType(groupname, Mediaportal.TV.Server.TVDatabase.Entities.Enums.MediaTypeEnum.TV);
+              //Log.Debug("rawchannelgroup.GroupName =" + rawchannelgroup.GroupName);
+              IList<Mediaportal.TV.Server.TVDatabase.Entities.Channel> rawchannels = ServiceAgents.Instance.ChannelServiceAgent.GetAllChannelsByGroupIdAndMediaType(rawchannelgroup.IdGroup, Mediaportal.TV.Server.TVDatabase.Entities.Enums.MediaTypeEnum.TV);
+              //Log.Debug(rawchannels.Count.ToString() + " channels found in group");
+              foreach (Mediaportal.TV.Server.TVDatabase.Entities.Channel myrawchannel in rawchannels)
+              {
+                  //Log.Debug("myrawchannel.DisplayName=" + myrawchannel.DisplayName);
+                  if (myrawchannel.DisplayName == rawchannel.DisplayName)
+                  {
+                      Log.Debug("return true");
+                      return true;
+                  }
+              }
+          }
+          catch { }
+          Log.Debug("return false");
+          return false;
+      }
+
+      // checks if the channel is within the group of radiogroupname
+      public bool IsRadioChannelInGroup(int channelid, string radiogroupname)
+      {
+          try
+          {
+              //Log.Debug("channelid = " + channelid.ToString() + "    radiogroupname=" + radiogroupname);
+              Mediaportal.TV.Server.TVDatabase.Entities.Channel rawchannel = ServiceAgents.Instance.ChannelServiceAgent.GetChannel(channelid);
+              //Log.Debug("rawchannel.DisplayName=" + rawchannel.DisplayName);
+              Mediaportal.TV.Server.TVDatabase.Entities.ChannelGroup rawchannelgroup = ServiceAgents.Instance.ChannelGroupServiceAgent.GetChannelGroupByNameAndMediaType(radiogroupname, Mediaportal.TV.Server.TVDatabase.Entities.Enums.MediaTypeEnum.Radio);
+              //Log.Debug("rawchannelgroup.GroupName =" + rawchannelgroup.GroupName);
+              IList<Mediaportal.TV.Server.TVDatabase.Entities.Channel> rawchannels = ServiceAgents.Instance.ChannelServiceAgent.GetAllChannelsByGroupIdAndMediaType(rawchannelgroup.IdGroup, Mediaportal.TV.Server.TVDatabase.Entities.Enums.MediaTypeEnum.Radio);
+              //Log.Debug(rawchannels.Count.ToString() + " channels found in group");
+
+              foreach (Mediaportal.TV.Server.TVDatabase.Entities.Channel myrawchannel in rawchannels)
+              {
+                  //Log.Debug("myrawchannel.DisplayName=" + myrawchannel.DisplayName);
+                  if (myrawchannel == rawchannel)
+                  {
+                      Log.Debug("return true");
+                      return true;
+                  }
+              }
+          }
+          catch { }
+          Log.Debug("return false");
+          return false;
+
+      }
+
+#else
       // checks if the channel is within the group of groupname
       public bool IsChannelInGroup(int channelid, string groupname)
       {
@@ -2099,7 +2249,7 @@ namespace MyTVMail
           return false;
       }
 
-
+#endif
       
       
 
@@ -2207,7 +2357,7 @@ namespace MyTVMail
               schedule = layer.AddSchedule(oneprogram.IdChannel, oneprogram.Title, oneprogram.StartTime, oneprogram.EndTime, 0);
               schedule.PreRecordInterval = mywish.i_prerecord;
               schedule.PostRecordInterval = mywish.i_postrecord;
-              schedule.ScheduleType = 0;             
+              schedule.ScheduleType = 0;
               schedule.Series = mywish.b_series;
 
               if (mywish.useFolderName == lng.TranslateString("Automatic", 2853)) //automatic seriesname with MP management
@@ -2229,6 +2379,7 @@ namespace MyTVMail
                       schedule.Series = false;
                       LogDebug("schedule.Series changed to false for automatic", (int)LogSetting.DEBUG);
                   }
+                  
               }
             
               LogDebug("schedule.Series=" + schedule.Series.ToString(), (int)LogSetting.DEBUG);
@@ -2240,6 +2391,7 @@ namespace MyTVMail
               schedule.Priority = mywish.i_priority;
               schedule.Persist();
 
+              
               
           }
           catch
@@ -2586,7 +2738,9 @@ namespace MyTVMail
               {
                   string[] tokens = oneprogram.SeriesNum.Split('\\','/');
                   Log.Debug("tokens[0]=" + tokens[0]);
-                  int programNumber = Convert.ToInt32(tokens[0]);
+
+                  int programNumber = -1;
+                  int.TryParse(tokens[0], out programNumber);
                   Log.Debug("programNumber=" + programNumber.ToString());
                   //process expressions
                   bool expression = false;
@@ -2603,8 +2757,9 @@ namespace MyTVMail
                               {  // a- or -a
                                   Log.Debug("a- or -a case");
                                   string temp = myExpression.Replace("-", string.Empty);
-                               
-                                  int maxValue = Convert.ToInt32(temp);
+
+                                  int maxValue = 0;
+                                  int.TryParse(temp, out maxValue);
                                   Log.Debug("Expression = " + mywish.seriesnumber + " maxValue=" + maxValue.ToString());
                                   if (programNumber <= maxValue)
                                   {
@@ -2615,10 +2770,12 @@ namespace MyTVMail
                               }
                               else //a-b
                               {
-                                  int minValue = Convert.ToInt32(numberarray[0]);
+                                  int minValue = 0;
+                                  int.TryParse(numberarray[0], out minValue);
                                   Log.Debug("Expression = " + mywish.seriesnumber + " minValue=" + minValue.ToString());
 
-                                  int maxValue = Convert.ToInt32(numberarray[1]);
+                                  int maxValue = 0;
+                                  int.TryParse(numberarray[1], out maxValue);
                                   Log.Debug("Expression = " + mywish.seriesnumber + " maxValue=" + maxValue.ToString());
 
                                   if ((programNumber >= minValue) && (programNumber <= maxValue))
@@ -2638,7 +2795,8 @@ namespace MyTVMail
                       else if (myExpression.Contains("+") == true)
                       {
                           string temp = myExpression.Replace("+", string.Empty);
-                          int minValue = Convert.ToInt32(temp);
+                          int minValue = 0;
+                          int.TryParse(temp, out minValue);
                           Log.Debug("Expression = " + mywish.seriesnumber + " minValue=" + minValue.ToString());
                           if (programNumber >= minValue)
                           {
@@ -2649,7 +2807,8 @@ namespace MyTVMail
                       }                      
                       else
                       {
-                          int minValue = Convert.ToInt32(myExpression);
+                          int minValue = 0;
+                          int.TryParse(myExpression, out minValue);
                           Log.Debug("Expression = " + mywish.seriesnumber + " intValue=" + minValue.ToString());
                           if (programNumber == minValue)
                           {
@@ -2697,7 +2856,8 @@ namespace MyTVMail
               {
                   string[] tokens = oneprogram.EpisodeNum.Split('\\', '/');
                   Log.Debug("tokens[0]=" + tokens[0]);
-                  int programNumber = Convert.ToInt32(tokens[0]);
+                  int programNumber = 0;
+                  int.TryParse(tokens[0], out programNumber);
                   Log.Debug("programNumber=" + programNumber.ToString());
                   //process expressions
                   bool expression = false;
@@ -2714,7 +2874,8 @@ namespace MyTVMail
                                   Log.Debug("a- or -a case");
                                   string temp = myExpression.Replace("-", string.Empty);
 
-                                  int maxValue = Convert.ToInt32(temp);
+                                  int maxValue = 0;
+                                  int.TryParse(temp, out maxValue);
                                   Log.Debug("Expression = " + mywish.episodenumber + " maxValue=" + maxValue.ToString());
                                   if (programNumber <= maxValue)
                                   {
@@ -2725,10 +2886,12 @@ namespace MyTVMail
                               }
                               else //a-b
                               {
-                                  int minValue = Convert.ToInt32(numberarray[0]);
+                                  int minValue = 0;
+                                  int.TryParse(numberarray[0], out minValue);
                                   Log.Debug("Expression = " + mywish.episodenumber + " minValue=" + minValue.ToString());
 
-                                  int maxValue = Convert.ToInt32(numberarray[1]);
+                                  int maxValue = 0;
+                                  int.TryParse(numberarray[1], out maxValue);
                                   Log.Debug("Expression = " + mywish.episodenumber + " maxValue=" + maxValue.ToString());
 
                                   if ((programNumber >= minValue) && (programNumber <= maxValue))
@@ -2748,7 +2911,8 @@ namespace MyTVMail
                       else if (myExpression.Contains("+") == true)
                       {
                           string temp = myExpression.Replace("+", string.Empty);
-                          int minValue = Convert.ToInt32(temp);
+                          int minValue = 0;
+                          int.TryParse(temp, out minValue);
                           Log.Debug("Expression = " + mywish.episodenumber + " intValue2=" + minValue.ToString());
                           if (programNumber >= minValue)
                           {                       
@@ -2759,7 +2923,8 @@ namespace MyTVMail
                       }
                       else
                       {
-                          int minValue = Convert.ToInt32(myExpression);
+                          int minValue = 0;
+                          int.TryParse(myExpression, out minValue);
                           Log.Debug("Expression = " + mywish.episodenumber + " intValue=" + minValue.ToString());
                           if (programNumber == minValue)
                           {
@@ -2837,6 +3002,7 @@ namespace MyTVMail
               
               foreach (Recording onerecording in Recording.ListAll())
               {
+                  Log.Debug("Recording=" + onerecording.Title);
                   string recordedTitle = ProcessEpgMarker(onerecording.Title);
                   string recordedDescription = ProcessEpgMarker(onerecording.Description);
 
@@ -3132,9 +3298,15 @@ namespace MyTVMail
           LogDebug("check for conflicts", (int)LogSetting.DEBUG);
           if ((VIEW_ONLY_MODE == false)&& (_scheduleconflicts == false))  //scheduleconflicts = true will trigger priority processing
           {
+              //BUG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#if(MPTV2)
+              IList<Schedule> conflict_schedules = Schedule.GetConflictingSchedules(schedule);
+#else
               IList<Schedule> conflict_schedules = GetAllConflictSchedules(schedule, nonPreferredGroupSchedule);
-               
-              if (conflict_schedules.Count > 0) 
+#endif
+              int conflict_count = conflict_schedules.Count;
+
+              if (conflict_count > 0) 
               {
                   LogDebug("", (int)LogSetting.INFO);
                   LogDebug("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", (int)LogSetting.INFO); //do not send reply mail for already scheduled movies
@@ -3145,7 +3317,13 @@ namespace MyTVMail
                   //conflictprograms.Add(oneprogram);
                   mymessage.addmessage(oneprogram, message, MessageType.Conflict, mywish.name, (int)XmlMessages.MessageEvents.MANUAL_CONFLICT, mywish.tvwishid, string.Empty);
 
+                  Log.Debug("Schedule number before deleting"+Schedule.ListAll().Count.ToString());
+
                   schedule.Delete();
+
+                  
+                  Log.Debug("Schedule number after deleting" + Schedule.ListAll().Count.ToString());
+
                   return false;
               }
           }
@@ -3254,8 +3432,13 @@ namespace MyTVMail
               LogDebug("", (int)LogSetting.INFO);
               LogDebug("*******************************************************************************\n", (int)LogSetting.INFO);
               message = lng.TranslateString("TvWishList found program from Tv Wish [{0}]: {1}\nTvWishList did schedule the program", 79, (counter + 1).ToString(), mywish.name);
-              LogDebug("*******************************************************************************\n", (int)LogSetting.INFO);
               LogDebug(message, (int)LogSetting.INFO);
+              LogDebug("*******************************************************************************\n", (int)LogSetting.INFO);
+              
+
+
+              
+
               mymessage.addmessage(schedule, message, mywish.t_action, mywish.name, (int)XmlMessages.MessageEvents.SCHEDULE_FOUND, mywish.tvwishid, string.Empty);
               outputscheduletoresponse(schedule, (int)LogSetting.DEBUG);
               LogDebug("End of new schedule", (int)LogSetting.INFO);
@@ -3413,25 +3596,6 @@ namespace MyTVMail
           
       }
 
-      [CLSCompliant(false)]
-      public IList<Schedule> GetAllConflictSchedules(Schedule schedule, Schedule nonPreferredGroupSchedule)
-      {
-          IList<Schedule> allconflict_schedules = GetConflictingSchedules(schedule);
-          Log.Debug("GetAllConflictSchedules(Schedule schedule, Schedule nonPreferredGroupSchedule) allconflict_schedules.Count=" + allconflict_schedules.Count.ToString());
-          //remove nonPreferredGroupSchedule from conflicts as it will be deleted later on if scheduled
-          for (int i = allconflict_schedules.Count - 1; i >= 0; i--)
-          {
-              if (allconflict_schedules[i] == nonPreferredGroupSchedule)
-              {
-                  LogDebug("Removing nonPreferredGroupSchedule from conflicts", (int)LogSetting.DEBUG);
-                  allconflict_schedules.RemoveAt(i);
-                  break;
-              }
-          }
-
-          return allconflict_schedules;
-      }
-
 
       /// <summary>
       /// Adds or updates an attribute of the xml file
@@ -3477,28 +3641,32 @@ namespace MyTVMail
               if (newSeriesNumber != string.Empty)
               {
                   string[] tokens = newSeriesNumber.Split('\\', '/');
-                  newSeriesNumberInt = Convert.ToInt32(tokens[0]);
+                  newSeriesNumberInt = -1;
+                  int.TryParse(tokens[0], out newSeriesNumberInt);
                   Log.Debug("newSeriesNumberInt=" + newSeriesNumberInt.ToString());
               }
               
               if (newEpisodeNumber != string.Empty)
               {
                   string[] tokens = newEpisodeNumber.Split('\\', '/');
-                  newEpisodeNumberInt = Convert.ToInt32(tokens[0]);
+                  newEpisodeNumberInt = -1;
+                  int.TryParse(tokens[0], out newEpisodeNumberInt);
                   Log.Debug("newEpisodeNumberInt=" + newEpisodeNumberInt.ToString());
               }
 
               if (oldSeriesNumber != string.Empty)
               {
                   string[] tokens = oldSeriesNumber.Split('\\', '/');
-                  oldSeriesNumberInt = Convert.ToInt32(tokens[0]);
+                  oldSeriesNumberInt = -1;
+                  int.TryParse(tokens[0], out oldSeriesNumberInt);
                   Log.Debug("oldSeriesNumberInt=" + oldSeriesNumberInt.ToString());
               }
 
               if (oldEpisodeNumber != string.Empty)
               {
                   string[] tokens = oldEpisodeNumber.Split('\\', '/');
-                  oldEpisodeNumberInt = Convert.ToInt32(tokens[0]);
+                  oldEpisodeNumberInt = -1;
+                  int.TryParse(tokens[0], out oldEpisodeNumberInt);
                   Log.Debug("oldEpisodeNumberInt=" + oldEpisodeNumberInt.ToString());
               }
 
@@ -3747,28 +3915,31 @@ namespace MyTVMail
 #if (TV11 || TV12)
 
                   //Debug only for 1.2
+#if (!MPTV2)
                   LogDebug("BitRateMode=" + schedule.BitRateMode.ToString(), this_setting);
                   LogDebug("CacheKey=" + schedule.CacheKey.ToString(), this_setting);
-                  LogDebug("Canceled=" + schedule.Canceled.ToString(), this_setting);
-                  LogDebug("Directory=" + schedule.Directory.ToString(), this_setting);
                   LogDebug("DoesUseEpisodeManagement=" + schedule.DoesUseEpisodeManagement.ToString(), this_setting);
-                  LogDebug("IdParentSchedule=" + schedule.IdParentSchedule.ToString(), this_setting);
-                  LogDebug("IdSchedule=" + schedule.IdSchedule.ToString(), this_setting);
                   LogDebug("IsChanged=" + schedule.IsChanged.ToString(), this_setting);
                   LogDebug("IsManual=" + schedule.IsManual.ToString(), this_setting);
                   LogDebug("IsPersisted=" + schedule.IsPersisted.ToString(), this_setting);
+                   LogDebug("QualityType=" + schedule.QualityType.ToString(), this_setting);
+                  LogDebug("RecommendedCard=" + schedule.RecommendedCard.ToString(), this_setting);
+                   LogDebug("SessionBroker=" + schedule.SessionBroker.ToString(), this_setting);
+                  LogDebug("ValidationMessages=" + schedule.ValidationMessages.ToString(), this_setting);
+#endif
+                  LogDebug("Canceled=" + schedule.Canceled.ToString(), this_setting);
+                  LogDebug("Directory=" + schedule.Directory, this_setting);
+                  LogDebug("IdParentSchedule=" + schedule.IdParentSchedule.ToString(), this_setting);
+                  LogDebug("IdSchedule=" + schedule.IdSchedule.ToString(), this_setting);                
                   LogDebug("KeepDate=" + schedule.KeepDate.ToString(), this_setting);
                   LogDebug("KeepMethod=" + schedule.KeepMethod.ToString(), this_setting);
                   LogDebug("MaxAirings=" + schedule.MaxAirings.ToString(), this_setting);
                   LogDebug("PostRecordInterval=" + schedule.PostRecordInterval.ToString(), this_setting);
                   LogDebug("PreRecordInterval=" + schedule.PreRecordInterval.ToString(), this_setting);
                   LogDebug("Priority=" + schedule.Priority.ToString(), this_setting);
-                  LogDebug("Quality=" + schedule.Quality.ToString(), this_setting);
-                  LogDebug("QualityType=" + schedule.QualityType.ToString(), this_setting);
-                  LogDebug("RecommendedCard=" + schedule.RecommendedCard.ToString(), this_setting);
+                  LogDebug("Quality=" + schedule.Quality.ToString(), this_setting);                 
                   LogDebug("Series=" + schedule.Series.ToString(), this_setting);
-                  LogDebug("SessionBroker=" + schedule.SessionBroker.ToString(), this_setting);
-                  LogDebug("ValidationMessages=" + schedule.ValidationMessages.ToString(), this_setting);
+                 
                   //end debug
 
 
@@ -3951,7 +4122,36 @@ namespace MyTVMail
       }
 
 
+      [CLSCompliant(false)]
+      public IList<Schedule> GetAllConflictSchedules(Schedule schedule, Schedule nonPreferredGroupSchedule)
+      {
+          IList<Schedule> allconflict_schedules = GetConflictingSchedules(schedule);
+          Log.Debug("GetAllConflictSchedules(Schedule schedule, Schedule nonPreferredGroupSchedule) allconflict_schedules.Count=" + allconflict_schedules.Count.ToString());
+          //remove nonPreferredGroupSchedule from conflicts as it will be deleted later on if scheduled
+          for (int i = allconflict_schedules.Count - 1; i >= 0; i--)
+          {
+              if (allconflict_schedules[i] == nonPreferredGroupSchedule)
+              {
+                  LogDebug("Removing nonPreferredGroupSchedule from conflicts", (int)LogSetting.DEBUG);
+                  allconflict_schedules.RemoveAt(i);
+                  break;
+              }
+          }
 
+          return allconflict_schedules;
+      }
+
+#if(MPTV2)
+      //-------------------------------------------------------------------------------------------------------------        
+      // collects all conflicts in LIST <Schedule> conflicts and returns the list for the existing schedule
+      //------------------------------------------------------------------------------------------------------------- 
+      [CLSCompliant(false)]
+      public IList<Schedule> GetConflictingSchedules(Schedule schedule)
+      {
+          return Schedule.GetConflictingSchedules(schedule);
+      }
+#else
+      
       
 
 
@@ -4326,7 +4526,7 @@ namespace MyTVMail
           }
           return recordings;
       }
-
+#endif
 
       public void labelmessage(string text, PipeCommands type)
       {

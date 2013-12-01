@@ -34,7 +34,7 @@ using Log = TvLibrary.Log.huha.Log;
 
 using Action = MediaPortal.GUI.Library.Action;
 //using Layout = MediaPortal.GUI.Library.GUIFacadeControl.Layout;
-using TvWishList;
+//using TvWishList;
 using MediaPortal.Configuration;
 
 using TvControl;
@@ -42,9 +42,9 @@ using TvDatabase;
 using Gentle.Framework;
  
 //using GUIKeyboard = MediaPortal.GUI.Library.huha.GUIKeyboard;
- 
 
-namespace TvWishList
+
+namespace MediaPortal.Plugins.TvWishList
 {
     public partial class Edit_GUI : GUIWindow  
     {

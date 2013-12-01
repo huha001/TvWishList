@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PipeCommands.cs" />
     <Compile Include="LanguageTranslation.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Messages.cs" />

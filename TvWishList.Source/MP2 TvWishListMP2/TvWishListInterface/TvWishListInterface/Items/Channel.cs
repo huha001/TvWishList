@@ -25,8 +25,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
+namespace MediaPortal.Plugins.TvWishList.Items
 {
+
     public interface IChannel
     {
         #region Channel Member

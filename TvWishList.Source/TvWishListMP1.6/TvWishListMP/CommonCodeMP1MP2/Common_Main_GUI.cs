@@ -41,9 +41,10 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading;
 
-using TvWishList;
+//using TvWishList;
+using Log = TvLibrary.Log.huha.Log;
 
-#if (MP12 || MP11)
+#if (MP11 || MP12 || MP16)
 
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
@@ -53,7 +54,6 @@ using Action = MediaPortal.GUI.Library.Action;
 using TvControl;
 using TvDatabase;
 using Gentle.Framework;
-using Log = TvLibrary.Log.huha.Log;
 //using GUIKeyboard = MediaPortal.GUI.Library.huha.GUIKeyboard;
 
 #elif (MP2)
@@ -75,16 +75,16 @@ using MediaPortal.UI.Presentation.UiNotifications;
 using MediaPortal.UI.SkinEngine.ScreenManagement;
 using MediaPortal.UI.SkinEngine.Controls.Visuals;
 
-using MediaPortal.Plugins.TvWishListMP2.MPExtended;
-
-using MediaPortal.Plugins.TvWishListMP2.Settings; 
+using MediaPortal.Plugins.TvWishList;
+using MediaPortal.Plugins.TvWishList.Items;
+using MediaPortal.Plugins.TvWishListMP2.Settings; //needed for configuration setting loading 
 #endif
 
 //Version 0.0.0.1
 
 
-#if (MP12 || MP11)
-namespace TvWishList
+#if (MP11 || MP12 || MP16)
+namespace MediaPortal.Plugins.TvWishList
 #elif (MP2)
 namespace MediaPortal.Plugins.TvWishListMP2.Models
 #endif
@@ -106,7 +106,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
         }
 
 
-        bool _Debug = false;
+        bool _Debug = false;  
         public bool Debug
         {
             get { return _Debug; }
@@ -122,6 +122,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         TvWishProcessing myTvWishes = null;
         XmlMessages mymessages = null;
+        PipeClient myPipeClient = null;
 
         TvWish mynewwish = null;
         bool Single = true;
@@ -136,26 +137,29 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         //pipe client
 
-        NamedPipeClientStream pipeClient = null;
+        //NamedPipeClientStream pipeClient = null;
         string ClientMessage = string.Empty;
-        string ReceivedMessage = "Error";
+        //string ReceivedMessage = "Error";
         //bool OldConnect = false;
         string TimeOutValueString = "60";               //60s default, will be read from config settings
         string HostComputer = "localhost";              //needs to be defined
 
         //Pipelocking mechanism
-        System.Threading.Thread PipeRunThread;
-        System.Threading.Thread PipeRunThreadTimeOutCounter = null;
-        bool PipeRunThreadActive = false;
+        //System.Threading.Thread PipeRunThread;
+        //System.Threading.Thread PipeRunThreadTimeOutCounter = null;
 
-        bool TvServerLoadSettings_FAILED = false;   //avoids saving corrupted data after an incorrect load operation        
+#if (MP11 || MP12 || MP16)
+        bool PipeRunThreadActive = false;
+#endif
+
+        public bool TvServerLoadSettings_FAILED = false;   //avoids saving corrupted data after an incorrect load operation        
 
         // default format strings for text boxes at init() initialized from language file and customized user formats
         string _TextBoxFormat_4to3_EmailFormat_Org = "";
         string _TextBoxFormat_16to9_EmailFormat_Org = "";
         string _UserEmailFormat_Org = "";
         string _TextBoxFormat_4to3_ViewOnlyFormat_Org = "";
-        string _TextBoxFormat_16to9_ViewOnlyFormat_Org = "";
+        string _TextBoxFormat_16to9_ViewOnlyFormat_Org = ""; 
         string _UserViewOnlyFormat_Org = "";
 
         string _TextBoxFormat_4to3_EmailFormat = "";
@@ -181,7 +185,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         public string Version()
         {
-            return "1.3.0.13";
+            return "1.4.0.0";
         }
 
         public enum PipeCommands
@@ -661,7 +665,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                 ClientMessage = PipeCommands.ExportTvWishes.ToString() + "VIEWONLY=FALSE TIMEOUT:" + TimeOutValueString;
             }
 
-            string response = RunSingleCommand(ClientMessage);
+            string response = myPipeClient.RunSingleCommand(ClientMessage);
             myTvWishes.MyMessageBox(4400, response);
         }
 
@@ -679,7 +683,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                 ClientMessage = PipeCommands.ImportTvWishes.ToString() + "VIEWONLY=FALSE TIMEOUT:" + TimeOutValueString;
             }
 
-            string response = RunSingleCommand(ClientMessage);
+            string response = myPipeClient.RunSingleCommand(ClientMessage);
 
             TvserverdatabaseLoadSettings();
 
@@ -726,7 +730,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             {   //use dialog menu for command
 
 
-#if (MP11 || MP12)
+#if (MP11 || MP12 || MP16)
                 GUIDialogMenu dlg = (GUIDialogMenu)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
                 dlg.ShowQuickNumbers = false;
                 dlg.SetHeading(PluginGuiLocalizeStrings.Get(1050)); //TvWishList Quick Menu
@@ -989,7 +993,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             else if (command == SkinCommands.GOTO_RESULTS.ToString())
             {
                 //goto view results
-#if (MP11 || MP12)
+#if (MP11 || MP12 ||MP16)
                 GUIWindowManager.ActivateWindow(_guilistwindowid);
 #else //MP2
                 //push to Result Page
@@ -1232,7 +1236,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             }
             else
             {
-#if (MP11 || MP12)
+#if (MP11 || MP12 || MP16)
                 GUIWindowManager.ActivateWindow(_guieditwindowid);
 #else
                 //push to Edit Page
@@ -1320,7 +1324,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
                 //run epg search
                 Log.Debug("run epg search");
-                RunThreadProcessing();
+                myPipeClient.RunThreadProcessing();
 
 
                 if (Single)
@@ -1444,7 +1448,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                 myTvWishes.UpdateCounters(mymessages.ListAllTvMessages());
                 Log.Debug("mp load settings after update counters: TvMessages.Count=" + mymessages.ListAllTvMessages().Count.ToString());
 #if (MP2)
-                MyTvWishListMP2MPExtendedProvider.Instance.DeInit();
+                MyTvProvider.Instance.DeInit();
 #endif
                 TvServerLoadSettings_FAILED = false;
             }
@@ -1511,7 +1515,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                 setting.Value = myTvWishes.MaxTvWishId.ToString();
                 setting.Persist();
 #if (MP2)
-                MyTvWishListMP2MPExtendedProvider.Instance.DeInit();
+                MyTvProvider.Instance.DeInit();
 #endif
                 TimeSpan diff = DateTime.Now.Subtract(startTvserverdatabaseLoadSettings);
                 Log.Debug("Tv Server SaveSetting time was :" + diff.ToString());
@@ -1593,8 +1597,8 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
         public void OnButtonRun()
         {
             Log.Debug("[Main_GUI]:OnButtonRun");
-                                  
-
+            myPipeClient.OnButtonRun();                      
+/*
             //button lock
             if (myTvWishes.ButtonActive)
             {
@@ -1631,7 +1635,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             {
                 Log.Error("Run Thread could not be started - exception message is\n" + ex.Message);
             }
-
+*/
 
         }
 
@@ -1726,8 +1730,11 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         #endregion public methods
 
+
+        
         #region client pipes
 
+        /*
 
         private void RunThreadProcessing()
         {
@@ -1930,9 +1937,9 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                     }
 
                     //restore language file -  do not restore back
-                    /*setting = layer.GetSetting("TvWishList_LanguageFile", "strings_en.xml");
-                    setting.Value = backupLanguageFile;
-                    setting.Persist();*/
+                    //setting = layer.GetSetting("TvWishList_LanguageFile", "strings_en.xml");
+                    //setting.Value = backupLanguageFile;
+                    //setting.Persist();
 
                     success = true;
                     break;
@@ -2078,12 +2085,12 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             Log.Debug("ClientThreadRoutineRunSingleCommand: Pipe Client Thread Completed");
             //OldConnect = false;
             return;
-        }
+        }*/
 
         #endregion clientpipes
 
     }
-
+    /*
     //needed for pipes:
     // Defines the data protocol for reading and writing strings on our stream
     public class StreamString
@@ -2144,6 +2151,6 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             string contents = File.ReadAllText(fn);
             ss.WriteString(contents);
         }
-    }
+    }*/
 
 }

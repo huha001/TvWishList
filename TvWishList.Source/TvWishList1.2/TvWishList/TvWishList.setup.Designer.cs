@@ -21,7 +21,7 @@
  */
 #endregion Copyright (C)
 
-namespace SetupTv.Sections
+namespace MediaPortal.Plugins.TvWishList.Setup
 {
     partial class TvWishListSetup
     {
@@ -51,33 +51,33 @@ namespace SetupTv.Sections
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.checkBoxEmailOnlynew = new System.Windows.Forms.CheckBox();
             this.checkBoxemailreply = new System.Windows.Forms.CheckBox();
@@ -699,14 +699,13 @@ namespace SetupTv.Sections
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(467, 320);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.NullValue = true;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = true;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column1.HeaderText = "Active";
             this.Column1.Name = "Column1";
             this.Column1.Width = 43;
@@ -722,8 +721,8 @@ namespace SetupTv.Sections
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle29.NullValue = "Partial Title";
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2.NullValue = "Partial Title";
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column3.HeaderText = "Match Type";
             this.Column3.Items.AddRange(new object[] {
             "Partial Title",
@@ -738,8 +737,8 @@ namespace SetupTv.Sections
             // 
             // Column4
             // 
-            dataGridViewCellStyle30.NullValue = "All Channels";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.NullValue = "All Channels";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column4.HeaderText = "Group";
             this.Column4.Items.AddRange(new object[] {
             "All Channels"});
@@ -748,8 +747,8 @@ namespace SetupTv.Sections
             // 
             // Column5
             // 
-            dataGridViewCellStyle31.NullValue = "All";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle4.NullValue = "All";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column5.HeaderText = "Record Type";
             this.Column5.Items.AddRange(new object[] {
             "Only Once",
@@ -763,8 +762,8 @@ namespace SetupTv.Sections
             // 
             // Column6
             // 
-            dataGridViewCellStyle32.NullValue = "Both";
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle5.NullValue = "Both";
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column6.HeaderText = "Action";
             this.Column6.Items.AddRange(new object[] {
             "Record",
@@ -783,8 +782,8 @@ namespace SetupTv.Sections
             // 
             // Column8
             // 
-            dataGridViewCellStyle33.NullValue = "0";
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle6.NullValue = "0";
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column8.HeaderText = "Viewed";
             this.Column8.Name = "Column8";
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -793,8 +792,8 @@ namespace SetupTv.Sections
             // 
             // Column9
             // 
-            dataGridViewCellStyle34.NullValue = "5";
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle7.NullValue = "5";
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column9.HeaderText = "Pre Record";
             this.Column9.Name = "Column9";
             this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -803,8 +802,8 @@ namespace SetupTv.Sections
             // 
             // Column10
             // 
-            dataGridViewCellStyle35.NullValue = "10";
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle8.NullValue = "10";
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column10.HeaderText = "Post Record";
             this.Column10.Name = "Column10";
             this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -843,8 +842,8 @@ namespace SetupTv.Sections
             // 
             // Column15
             // 
-            dataGridViewCellStyle36.NullValue = "All";
-            this.Column15.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle9.NullValue = "All";
+            this.Column15.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column15.HeaderText = "Keep Episodes";
             this.Column15.Name = "Column15";
             this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -853,8 +852,8 @@ namespace SetupTv.Sections
             // 
             // Column16
             // 
-            dataGridViewCellStyle37.NullValue = "Always";
-            this.Column16.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle10.NullValue = "Always";
+            this.Column16.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column16.HeaderText = "Keep Until";
             this.Column16.Name = "Column16";
             this.Column16.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -863,8 +862,8 @@ namespace SetupTv.Sections
             // 
             // Column17
             // 
-            dataGridViewCellStyle38.NullValue = "Any";
-            this.Column17.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle11.NullValue = "Any";
+            this.Column17.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column17.HeaderText = "Recommended Card";
             this.Column17.Items.AddRange(new object[] {
             "Any"});
@@ -874,8 +873,8 @@ namespace SetupTv.Sections
             // 
             // Column18
             // 
-            dataGridViewCellStyle39.NullValue = "0";
-            this.Column18.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle12.NullValue = "0";
+            this.Column18.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column18.HeaderText = "Priority";
             this.Column18.Items.AddRange(new object[] {
             "0",
@@ -894,8 +893,8 @@ namespace SetupTv.Sections
             // 
             // Column19
             // 
-            dataGridViewCellStyle40.NullValue = "Any";
-            this.Column19.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle13.NullValue = "Any";
+            this.Column19.DefaultCellStyle = dataGridViewCellStyle13;
             this.Column19.HeaderText = "After Time";
             this.Column19.Name = "Column19";
             this.Column19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -903,8 +902,8 @@ namespace SetupTv.Sections
             // 
             // Column20
             // 
-            dataGridViewCellStyle41.NullValue = "Any";
-            this.Column20.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle14.NullValue = "Any";
+            this.Column20.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column20.HeaderText = "Before Time";
             this.Column20.Name = "Column20";
             this.Column20.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -912,8 +911,8 @@ namespace SetupTv.Sections
             // 
             // Column21
             // 
-            dataGridViewCellStyle42.NullValue = "Any";
-            this.Column21.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle15.NullValue = "Any";
+            this.Column21.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column21.HeaderText = "After Day";
             this.Column21.Items.AddRange(new object[] {
             "Any",
@@ -930,8 +929,8 @@ namespace SetupTv.Sections
             // 
             // Column22
             // 
-            dataGridViewCellStyle43.NullValue = "Any";
-            this.Column22.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle16.NullValue = "Any";
+            this.Column22.DefaultCellStyle = dataGridViewCellStyle16;
             this.Column22.HeaderText = "Before Day";
             this.Column22.Items.AddRange(new object[] {
             "Any",
@@ -948,8 +947,8 @@ namespace SetupTv.Sections
             // 
             // Column23
             // 
-            dataGridViewCellStyle44.NullValue = "Any";
-            this.Column23.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle17.NullValue = "Any";
+            this.Column23.DefaultCellStyle = dataGridViewCellStyle17;
             this.Column23.HeaderText = "Channel";
             this.Column23.Items.AddRange(new object[] {
             "Any"});
@@ -961,9 +960,9 @@ namespace SetupTv.Sections
             // Column24
             // 
             this.Column24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle45.NullValue = true;
-            this.Column24.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.NullValue = true;
+            this.Column24.DefaultCellStyle = dataGridViewCellStyle18;
             this.Column24.HeaderText = "Skip Repeated Episodes";
             this.Column24.Name = "Column24";
             this.Column24.Width = 130;
@@ -976,8 +975,8 @@ namespace SetupTv.Sections
             // 
             // Column27
             // 
-            dataGridViewCellStyle46.NullValue = "None";
-            this.Column27.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle19.NullValue = "None";
+            this.Column27.DefaultCellStyle = dataGridViewCellStyle19;
             this.Column27.HeaderText = "Use Folder";
             this.Column27.Items.AddRange(new object[] {
             "None",
@@ -990,16 +989,16 @@ namespace SetupTv.Sections
             // 
             // Column26
             // 
-            dataGridViewCellStyle47.NullValue = "Any";
-            this.Column26.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle20.NullValue = "Any";
+            this.Column26.DefaultCellStyle = dataGridViewCellStyle20;
             this.Column26.HeaderText = "Within Next Hours";
             this.Column26.Name = "Column26";
             this.Column26.Width = 118;
             // 
             // Column28
             // 
-            dataGridViewCellStyle48.NullValue = "0";
-            this.Column28.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle21.NullValue = "0";
+            this.Column28.DefaultCellStyle = dataGridViewCellStyle21;
             this.Column28.HeaderText = "Scheduled";
             this.Column28.Name = "Column28";
             this.Column28.Visible = false;
@@ -1014,8 +1013,8 @@ namespace SetupTv.Sections
             // 
             // Column30
             // 
-            dataGridViewCellStyle49.NullValue = "0";
-            this.Column30.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle22.NullValue = "0";
+            this.Column30.DefaultCellStyle = dataGridViewCellStyle22;
             this.Column30.HeaderText = "Recorded";
             this.Column30.Name = "Column30";
             this.Column30.Visible = false;
@@ -1023,8 +1022,8 @@ namespace SetupTv.Sections
             // 
             // Column31
             // 
-            dataGridViewCellStyle50.NullValue = "0";
-            this.Column31.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle23.NullValue = "0";
+            this.Column31.DefaultCellStyle = dataGridViewCellStyle23;
             this.Column31.HeaderText = "Deleted";
             this.Column31.Name = "Column31";
             this.Column31.Visible = false;
@@ -1032,8 +1031,8 @@ namespace SetupTv.Sections
             // 
             // Column32
             // 
-            dataGridViewCellStyle51.NullValue = "0";
-            this.Column32.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle24.NullValue = "0";
+            this.Column32.DefaultCellStyle = dataGridViewCellStyle24;
             this.Column32.HeaderText = "Emailed";
             this.Column32.Name = "Column32";
             this.Column32.Visible = false;
@@ -1041,8 +1040,8 @@ namespace SetupTv.Sections
             // 
             // Column33
             // 
-            dataGridViewCellStyle52.NullValue = "0";
-            this.Column33.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle25.NullValue = "0";
+            this.Column33.DefaultCellStyle = dataGridViewCellStyle25;
             this.Column33.HeaderText = "Conflicts";
             this.Column33.Name = "Column33";
             this.Column33.Visible = false;
@@ -1050,8 +1049,8 @@ namespace SetupTv.Sections
             // 
             // Column34
             // 
-            dataGridViewCellStyle53.NullValue = "Descr.+Name+Number";
-            this.Column34.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle26.NullValue = "Descr.+Name+Number";
+            this.Column34.DefaultCellStyle = dataGridViewCellStyle26;
             this.Column34.HeaderText = "Episode Criteria";
             this.Column34.Items.AddRange(new object[] {
             "None",
@@ -1067,8 +1066,8 @@ namespace SetupTv.Sections
             // 
             // Column35
             // 
-            dataGridViewCellStyle54.NullValue = "All Channels";
-            this.Column35.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle27.NullValue = "All Channels";
+            this.Column35.DefaultCellStyle = dataGridViewCellStyle27;
             this.Column35.HeaderText = "Preferred Group";
             this.Column35.Items.AddRange(new object[] {
             "All Channels"});

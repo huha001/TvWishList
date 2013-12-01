@@ -180,3 +180,8 @@ H:\User Daten\Visual C# Projects\TvWishList\Testen\MP2 TvWishListMP2\TvWishListM
 H:\User Daten\Visual C# Projects\TvWishList\Testen\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\obj\Release\TvWishListMP2.pdb
 H:\User Daten\Visual C# Projects\TvWishList\Testen\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\bin\Release\TvWishListMP2.dll
 H:\User Daten\Visual C# Projects\TvWishList\Testen\MP2 TvWishListMP2\TvWishListMP2\TvWishListMP2\bin\Release\TvWishListMP2.pdb
+H:\User Daten\Visual C# Projects\TvWishList New TVE35\TvWishListMP2\TvWishListMP2\bin\Release\TvWishListMP2.dll
+H:\User Daten\Visual C# Projects\TvWishList New TVE35\TvWishListMP2\TvWishListMP2\bin\Release\TvWishListMP2.pdb
+H:\User Daten\Visual C# Projects\TvWishList New TVE35\TvWishListMP2\TvWishListMP2\obj\Release\TvWishListMP2.csprojResolveAssemblyReference.cache
+H:\User Daten\Visual C# Projects\TvWishList New TVE35\TvWishListMP2\TvWishListMP2\obj\Release\TvWishListMP2.dll
+H:\User Daten\Visual C# Projects\TvWishList New TVE35\TvWishListMP2\TvWishListMP2\obj\Release\TvWishListMP2.pdb

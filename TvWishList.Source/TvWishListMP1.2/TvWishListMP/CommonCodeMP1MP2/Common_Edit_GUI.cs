@@ -28,13 +28,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using TvWishList;
+//using TvWishList;
+using Log = TvLibrary.Log.huha.Log;
 
-#if (MP12 || MP11)
+#if (MP11 || MP12 || MP16)
 
 using MediaPortal.GUI.Library;
 using MediaPortal.Dialogs;
-using Log = TvLibrary.Log.huha.Log;
 using Action = MediaPortal.GUI.Library.Action;
 //using Layout = MediaPortal.GUI.Library.GUIFacadeControl.Layout;
 using MediaPortal.Configuration;
@@ -62,15 +62,15 @@ using MediaPortal.UI.Presentation.UiNotifications;
 using MediaPortal.UI.SkinEngine.ScreenManagement;
 using MediaPortal.UI.SkinEngine.Controls.Visuals;
 
-using MediaPortal.Plugins.TvWishListMP2.MPExtended;
-
-using MediaPortal.Plugins.TvWishListMP2.Settings; 
+using MediaPortal.Plugins.TvWishList;
+using MediaPortal.Plugins.TvWishList.Items;
+using MediaPortal.Plugins.TvWishListMP2.Settings; //needed for configuration setting loading
 #endif
 
 //Version 0.0.0.1
 
-#if (MP12 || MP11)
-namespace TvWishList
+#if (MP11 || MP12 || MP16)
+namespace MediaPortal.Plugins.TvWishList
 #elif (MP2)
 namespace MediaPortal.Plugins.TvWishListMP2.Models
 #endif

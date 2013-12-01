@@ -21,6 +21,10 @@
  */
 #endregion Copyright (C)
 
+//*************************
+//Version 0.0.20
+//*************************
+
 using System;
 using System.Globalization;
 using System.Windows.Forms;
@@ -41,9 +45,10 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading;
 
-using TvWishList;
 
-#if (MP12 || MP11)
+using MediaPortal.Plugins.TvWishList;
+
+#if (MP11 || MP12 || MP16)
 using MediaPortal.GUI.Library;
 using MediaPortal.Dialogs;
 //using Log = TvLibrary.Log.huha.Log;
@@ -53,7 +58,7 @@ using TvDatabase;
 using MediaPortal.Common;
 using MediaPortal.Common.Commands;
 using MediaPortal.Common.General;
-//using MediaPortal.Common.Logging;
+//using Mediaportal.Common.Logging;
 using MediaPortal.Common.Messaging;
 using MediaPortal.Common.Runtime;
 using MediaPortal.Common.Settings;
@@ -66,19 +71,44 @@ using MediaPortal.UI.Control.InputManager;
 using MediaPortal.UI.Presentation.UiNotifications;
 using MediaPortal.UI.SkinEngine.ScreenManagement;
 using MediaPortal.UI.SkinEngine.Controls.Visuals;
-using MediaPortal.Plugins.TvWishListMP2.MPExtended;
 
+using MediaPortal.Plugins.TvWishList.Items;
 using MediaPortal.Plugins.TvWishListMP2.Models;
+//using TvWishList;
 
 #else
+
+
+#if (MPTV2)
+// native TV3.5 for MP2
+using Mediaportal.TV.Server.Plugins.Base.Interfaces;
+using Mediaportal.TV.Server.SetupControls;
+using Mediaportal.TV.Server.TVControl.Events;
+using Mediaportal.TV.Server.TVControl.Interfaces.Events;
+using Mediaportal.TV.Server.TVControl.Interfaces.Services;
+using Mediaportal.Common.Utils;
+using MediaPortal.Plugins.TvWishList.Items;
+//using SetupTv.Sections;
+
+
+#else
+// MP1 TV server
 using TvDatabase;
-//using TvLibrary.Log.huha;
 using TvControl;
-using SetupTv;
-using TvEngine;
 using TvEngine.Events;
-using TvLibrary.Interfaces;
 using TvLibrary.Implementations;
+#endif
+
+
+
+
+//using TvLibrary.Log.huha;
+
+using MediaPortal.Plugins.TvWishList.Setup;
+using TvEngine;
+
+using TvLibrary.Interfaces;
+
 using MediaPortal.Plugins;
 using TvEngine.PowerScheduler.Interfaces; 
 #endif 
@@ -86,9 +116,9 @@ using TvEngine.PowerScheduler.Interfaces;
 
 using Log = TvLibrary.Log.huha.Log;
 
-//version 0.0.17
 
-namespace TvWishList
+
+namespace MediaPortal.Plugins.TvWishList
 {
     public enum TvWishEntries
     {
@@ -245,6 +275,14 @@ namespace TvWishList
             set { _buttonActive = value; }
         }
 
+        //Buttonlock
+        private bool _tvSetup = false;
+        public bool TvSetup
+        {
+            get { return (bool)_tvSetup; }
+            set { _tvSetup = value; }
+        }
+
         List<TvWish> TvWishes = new List<TvWish>();
 
         //_bool translator is been set with user values after loadsettings in main screen at init() in MP loadsettings()
@@ -281,7 +319,6 @@ namespace TvWishList
 #endif
 
         #endregion
-
 
         #region Properties
         public bool Debug
@@ -374,7 +411,7 @@ namespace TvWishList
             //Log.Debug("Initializing TvWishProcessing");
 
             //load MP language
-            #if (MP12 || MP11)
+            #if (MP11 || MP12 || MP16)
             PluginGuiLocalizeStrings.LoadMPlanguage();
             #elif (TV101 || TV11 || TV12)
             PluginGuiLocalizeStrings.ReadLanguageFile();
@@ -1263,7 +1300,8 @@ namespace TvWishList
                             {  // a- or -a
                                 Log.Debug("a- or -a case");
                                 string temp = myExpression.Replace("-", string.Empty);
-                                intValue = Convert.ToInt32(temp);
+                                intValue = 0;
+                                int.TryParse(temp, out intValue);
 
                                 Log.Debug("+ Expression = " + checkingValue + " intValue=" + intValue.ToString());
                                 if ((intValue >= minValue) && (intValue <= maxValue))
@@ -1283,7 +1321,8 @@ namespace TvWishList
                             else //a-b
                             {
                                 Log.Debug("a-b case");
-                                intValue = Convert.ToInt32(numberarray[0]);
+                                intValue = 0;
+                                int.TryParse(numberarray[0], out intValue);
                                 Log.Debug("-2 Expression = " + checkingValue + " intValue1=" + intValue.ToString());
                                 if ((intValue >= minValue) && (intValue <= maxValue))
                                 {//do nothing                           
@@ -1297,7 +1336,8 @@ namespace TvWishList
                                     return;
                                 }
 
-                                intValue = Convert.ToInt32(numberarray[1]);
+                                intValue = 0;
+                                int.TryParse(numberarray[1], out intValue);
                                 Log.Debug("Expression = " + checkingValue + " intValue2=" + intValue.ToString());
                                 if ((intValue >= minValue) && (intValue <= maxValue))
                                 {//do nothing                           
@@ -1327,7 +1367,8 @@ namespace TvWishList
                     {
                         Log.Debug("+ case");
                         string temp = myExpression.Replace("+", string.Empty);
-                        intValue = Convert.ToInt32(temp);
+                        intValue = 0;
+                        int.TryParse(temp, out intValue);
                         Log.Debug("+ Expression = " + checkingValue + " intValue=" + intValue.ToString());
                         if ((intValue >= minValue) && (intValue <= maxValue))
                         {//do nothing                           
@@ -1344,7 +1385,8 @@ namespace TvWishList
                     else //single number
                     {
                         Log.Debug("single number case");
-                        intValue = Convert.ToInt32(myExpression);
+                        intValue = 0;
+                        int.TryParse(myExpression, out intValue);
                         Log.Debug("single number Expression = " + checkingValue + " intValue=" + intValue.ToString());
                     }
                     if ((intValue >= minValue) && (intValue <= maxValue))
@@ -1452,8 +1494,10 @@ namespace TvWishList
                 }
                 else if (tokenarray.Length >= 2)
                 {
-                    hours = Convert.ToInt32(tokenarray[0]);
-                    minutes = Convert.ToInt32(tokenarray[1]);
+                    hours = 0;
+                    int.TryParse(tokenarray[0], out hours);
+                    minutes = 0;
+                    int.TryParse(tokenarray[1], out minutes);
                     if ((hours >= 0) && (hours <= 23) && (minutes >= 0) && (minutes <= 59))
                     {
                         stringValue = hours.ToString("00") + ":" + minutes.ToString("00"); //ensure correct double digit format
@@ -1470,7 +1514,8 @@ namespace TvWishList
                 }
                 else if (tokenarray.Length == 1)
                 {
-                    hours = Convert.ToInt32(tokenarray[0]);
+                    hours = 0;
+                    int.TryParse(tokenarray[0], out hours);
                     minutes = 0;
                     if ((hours >= 0) && (hours <= 23) && (minutes >= 0) && (minutes <= 59))
                     {
@@ -1773,7 +1818,8 @@ namespace TvWishList
                 {
                     checkingValue = checkingValue.Replace("days", "");
                     checkingValue = checkingValue.Replace("Days", "");
-                    keepDays = Convert.ToInt32(checkingValue);
+                    keepDays = 0;
+                    int.TryParse(checkingValue, out keepDays);
                     keepMethod = 2;
                     Log.Debug(keepDays.ToString()+"days identified");
                 }
@@ -1794,7 +1840,9 @@ namespace TvWishList
                 {
                     checkingValue = checkingValue.Replace("weeks", "");
                     checkingValue = checkingValue.Replace("Weeks", "");
-                    keepDays = Convert.ToInt32(checkingValue)*7;
+                    keepDays = 0;
+                    int.TryParse(checkingValue, out keepDays);
+                    keepDays = keepDays * 7;
                     keepMethod = 2;
                     Log.Debug(keepDays.ToString() + "weeks identified");
                 }
@@ -1814,7 +1862,9 @@ namespace TvWishList
                 {
                     checkingValue = checkingValue.Replace("months", "");
                     checkingValue = checkingValue.Replace("Months", "");
-                    keepDays = Convert.ToInt32(checkingValue) * 31;
+                    keepDays = 0;
+                    int.TryParse(checkingValue, out keepDays);
+                    keepDays = keepDays * 31;
                     keepMethod = 2;
                     Log.Debug(keepDays.ToString() + "months identified");
                 }
@@ -2189,7 +2239,8 @@ namespace TvWishList
                 //double checking if _MaxTvWishId is screwed up
                 try
                 {
-                    int number = Convert.ToInt32(mywish.tvwishid);
+                    int number = 0;
+                    int.TryParse(mywish.tvwishid, out number);
                     if (_MaxTvWishId < number)
                     {
                         Log.Error("Fatal Error: mywish.tvwishid=" + mywish.tvwishid);
@@ -2888,7 +2939,7 @@ namespace TvWishList
         }
 
 
-#if  (MP12 || MP11)
+#if  (MP11 || MP12 || MP16)
         public void MyMessageBox(int header, string text)
         {
             if (text == string.Empty)
@@ -2967,7 +3018,7 @@ namespace TvWishList
         }
 
 #elif (MP2)
-        //This processes in general a diialog box for MP2. The thread processing ensures that the dialog box can also be used within the routines of iWorkflowmodel e.g. EnterModelContext or ExitModelContext
+        //This processes in general a dialog box for MP2. The thread processing ensures that the dialog box can also be used within the routines of iWorkflowmodel e.g. EnterModelContext or ExitModelContext
         //multiple message boxes must be delayed till the first one is processed
         private int _textNumber = 0;
         private int _headerNumber = 0;
@@ -3148,6 +3199,7 @@ namespace TvWishList
                 if (Main_GUI.Instance.Active)
                 {
                     Main_GUI.Instance.Status = text;
+                    Log.Debug("StatusLabel=" + text);
                 }
             }
 
@@ -3198,13 +3250,14 @@ namespace TvWishList
             
 
 
-#if (MP2) //send pipe command for speeding up savesettings
+#if (MP2) 
+            //send pipe command for speeding up savesettings
             string response = string.Empty;
             string command = Main_GUI.PipeCommands.RemoveLongSetting.ToString() + mysetting + ":10";
             Log.Debug("command=" + command);
             for (int i = 1; i < 120; i++)
             {
-                response = Main_GUI.Instance.RunSingleCommand(command);
+                response = PipeClient.Instance.RunSingleCommand(command);
                 if (response == PluginGuiLocalizeStrings.Get(1200))  //Waiting for old process to finish
                 {
                     Log.Debug("Waiting for old process to finish");
@@ -3223,7 +3276,43 @@ namespace TvWishList
             {//error occured
                 Log.Error("Error in pipecommand response="+response);
             }
-            
+#elif(MPTV2)
+            //Log.Debug("TvWishListSetup.Setup=" + TvWishListSetup.Setup.ToString());
+            Log.Debug("TvSetup = " + TvSetup.ToString());
+
+            if (TvSetup)
+            {// Command comes from setup form as TvWishList setup is activated
+                //send pipe command for speeding up savesettings
+                string response = string.Empty;
+                string command = PipeCommands.RemoveLongSetting.ToString() + mysetting + ":10";
+                Log.Debug("command=" + command);
+                for (int i = 1; i < 120; i++)
+                {
+
+                    response = PipeClient.Instance.RunSingleCommand(command);
+                    if (response == PluginGuiLocalizeStrings.Get(1200))  //Waiting for old process to finish
+                    {
+                        Log.Debug("Waiting for old process to finish");
+                        Thread.Sleep(1000);
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+
+                }
+                Log.Debug("Server response=" + response);
+
+                if (response.StartsWith("Error"))
+                {//error occured
+                    Log.Error("Error in pipecommand response=" + response);
+                }
+            }
+            else  //command comes from tvserver as TvWishList setup is deactivated
+            {
+                Setting.DeleteSettings(mysetting);
+            }
 #else
 
 
@@ -3472,7 +3561,7 @@ namespace TvWishList
 
         public string TvWishVersion()
         {
-            return ("1.3.0.13");
+            return ("1.4.0.0");
         }
 
 
@@ -3488,99 +3577,7 @@ namespace TvWishList
             Version2String = 93
         };
 
-        /*
-        private int FileVersionComparison(string version1, string version2)
-        {
-            //valid return code: 
-            //  1 version1 is newer than version2
-            // -1 version1 is older than version2
-            //  0 version1 is same as version2
-            // 99 error occured
-
-            //errorchecking version1
-            string[] tokenarray1 = version1.Split('.');
-            if (tokenarray1.Length != 4)
-            {
-                return (int)CompareFileVersion.Version1Error;
-            }
-            for (int i = 0; i < tokenarray1.Length; i++)
-            {
-                try
-                {
-                    int j = Convert.ToInt32(tokenarray1[i]);
-                }
-                catch
-                {
-                    return (int)CompareFileVersion.Version1String;
-                }
-            }
-
-            //errorchecking version2
-            string[] tokenarray2 = version2.Split('.');
-            if (tokenarray2.Length != 4)
-            {
-                return (int)CompareFileVersion.Version2Error;
-            }
-            for (int i = 0; i < tokenarray2.Length; i++)
-            {
-                try
-                {
-                    int j = Convert.ToInt32(tokenarray2[i]);
-                }
-                catch
-                {
-                    return (int)CompareFileVersion.Version2String;
-                }
-            }
-
-            if (Convert.ToInt32(tokenarray1[0]) > Convert.ToInt32(tokenarray2[0]))
-            {
-                return (int)CompareFileVersion.Newer;
-            }
-            else if (Convert.ToInt32(tokenarray1[0]) < Convert.ToInt32(tokenarray2[0]))
-            {
-                return (int)CompareFileVersion.Older;
-            }
-            else //same
-            {
-                if (Convert.ToInt32(tokenarray1[1]) > Convert.ToInt32(tokenarray2[1]))
-                {
-                    return (int)CompareFileVersion.Newer;
-                }
-                else if (Convert.ToInt32(tokenarray1[1]) < Convert.ToInt32(tokenarray2[1]))
-                {
-                    return (int)CompareFileVersion.Older;
-                }
-                else //same
-                {
-                    if (Convert.ToInt32(tokenarray1[2]) > Convert.ToInt32(tokenarray2[2]))
-                    {
-                        return (int)CompareFileVersion.Newer;
-                    }
-                    else if (Convert.ToInt32(tokenarray1[2]) < Convert.ToInt32(tokenarray2[2]))
-                    {
-                        return (int)CompareFileVersion.Older;
-                    }
-                    else //same
-                    {
-                        if (Convert.ToInt32(tokenarray1[3]) > Convert.ToInt32(tokenarray2[3]))
-                        {
-                            return (int)CompareFileVersion.Newer;
-                        }
-                        else if (Convert.ToInt32(tokenarray1[3]) < Convert.ToInt32(tokenarray2[3]))
-                        {
-                            return (int)CompareFileVersion.Older;
-                        }
-                        else //same
-                        {
-                            return (int)CompareFileVersion.Equal;
-                        }
-                    }
-                }
-            }
-
-        }
-        */
+        
 
         #endregion API_For_External_Users
 

@@ -1,0 +1,5 @@
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Debug\TvWishListInterface.dll
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\bin\Debug\TvWishListInterface.pdb
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\obj\Debug\TvWishListInterface.dll
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\obj\Debug\TvWishListInterface.pdb
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\obj\Debug\TvWishListInterface.csprojResolveAssemblyReference.cache

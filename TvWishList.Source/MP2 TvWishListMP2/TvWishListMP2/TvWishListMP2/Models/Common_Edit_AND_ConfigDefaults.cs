@@ -25,7 +25,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 
-using TvWishList;
+//using TvWishList;
 
 using MediaPortal.Common;
 using MediaPortal.Common.Commands;
@@ -45,7 +45,8 @@ using MediaPortal.UI.Presentation.UiNotifications;
 using MediaPortal.UI.SkinEngine.ScreenManagement;
 using MediaPortal.UI.SkinEngine.Controls.Visuals;
 
-using MediaPortal.Plugins.TvWishListMP2.MPExtended;
+using MediaPortal.Plugins.TvWishList;
+using MediaPortal.Plugins.TvWishList.Items;
 
 using Log = TvLibrary.Log.huha.Log;
 

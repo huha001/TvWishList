@@ -67,14 +67,24 @@ namespace TvWishListInstall
             //setup
             bool install = false;
             bool uninstall = false;
+            bool killserver = false;
 
-            if ((args.Length == 1) && (args[0].ToLower() == "install"))
+            for (int i = 0; i < args.Length; i++)
             {
-                install = true;
-            }
-            else if ((args.Length == 1) && (args[0].ToLower() == "uninstall"))
-            {
-                uninstall = true;
+
+
+                if (args[i].ToLower() == "-install")
+                {
+                    install = true;
+                }
+                else if (args[i].ToLower() == "-uninstall")
+                {
+                    uninstall = true;
+                }
+                else if (args[i].ToLower() == "-killtvserveronmyownrisk")
+                {
+                    killserver = true;
+                }
             }
 
             InstallPaths instpaths = new InstallPaths();  //define new instance for folder detection
@@ -106,7 +116,7 @@ namespace TvWishListInstall
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new License(licensefile));
-            Application.Run(new InstallSetup(install, uninstall));
+            Application.Run(new InstallSetup(install, uninstall,killserver));
         }
     }
 }

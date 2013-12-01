@@ -93,8 +93,8 @@
   <ItemGroup>
     <Compile Include="LanguageTranslation.cs" />
     <Compile Include="Log.cs" />
-    <Compile Include="LongSettings.cs" />
     <Compile Include="Messages.cs" />
+    <Compile Include="PipeCommands.cs" />
     <Compile Include="TvWish.cs" />
     <Compile Include="TvWishList.cs" />
     <Compile Include="TvWishList.setup.cs">

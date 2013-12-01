@@ -1,4 +1,4 @@
-﻿namespace TvWishList
+﻿namespace MediaPortal.Plugins.TvWishList
 {
     partial class TvWishListSetup
     {

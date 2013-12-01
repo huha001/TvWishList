@@ -1,0 +1,23 @@
+<Plugin
+    DescriptorVersion="1.0" 
+    Name="TvWishListMPExtendedProvider"
+    PluginId="{ac9bb4ed-5301-2cf8-835a-2c656e9785ba}"
+    Author="huha"
+    Copyright="GPL"
+    Description="The TvWishListMPExtendedProvider uses MPExtended0.5 and MP TvServer to provide basic TV capabilities for TvWishList."
+    PluginVersion="1.0">
+
+  <Runtime>
+    <Assembly FileName="TvWishListInterface.dll"/>
+    <Assembly FileName="TvWishListMPExtendedProvider.dll"/> 
+  </Runtime>  
+
+  <Register Location="/Services">
+                                                                             
+    <Service Id="TvWishListMPExtendedProviderService" RegistrationClassName="MediaPortal.Plugins.TvWishList.ITvWishListTVProvider"        
+        ServiceClassName="MediaPortal.Plugins.TvWishListMPExtendedProvider.TvWishListMPExtendedProvider"/>
+    
+  </Register>
+  
+  
+</Plugin>

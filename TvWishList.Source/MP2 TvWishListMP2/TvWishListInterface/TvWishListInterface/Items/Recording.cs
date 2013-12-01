@@ -27,7 +27,7 @@ using System.Text;
 
 
 
-namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
+namespace MediaPortal.Plugins.TvWishList.Items
 {
     public interface IRecording
     {

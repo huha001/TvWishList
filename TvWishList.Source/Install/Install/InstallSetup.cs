@@ -34,17 +34,16 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.InteropServices;
+using System.Runtime.InteropServices; 
 using System.ServiceProcess;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using MediaPortal.Plugins;
 
-
 namespace TvWishListInstall
 {
-    public partial class InstallSetup : Form
+    public partial class InstallSetup : Form 
     {
         bool DEBUG=false;
 
@@ -86,102 +85,132 @@ namespace TvWishListInstall
             Version2String = 93
         };
 
-        public InstallSetup(bool installflag, bool uninstallflag)
+        public InstallSetup(bool installflag, bool uninstallflag, bool killserverflag)
         {
-            InitializeComponent();
-            checkBoxInstallSkins.Checked = true;
-            checkBoxSkinMods.Checked = true;
-
-            AutoDetect();
-
-            UpdatePathVariables();
-            
-            if ((Directory.Exists(TV_PROGRAM_FOLDER) == true) && (Directory.Exists(TV_USER_FOLDER) == true) && (TV_PROGRAM_FOLDER != "") && (TV_USER_FOLDER != ""))
-            { //found TVserver 
-                textoutputdebug("TV Server installation detected - TV Server plugin can be installed");
-                checkBoxTV.Checked = true;
-                
-            }
-            if ((Directory.Exists(MP_PROGRAM_FOLDER) == true) && (Directory.Exists(MP_USER_FOLDER) == true) && (MP_PROGRAM_FOLDER != "") && (MP_USER_FOLDER != ""))
-            {//found Media Portal 
-                textoutputdebug("Media Portal installation detected - Media Portal Plugin can be installed");
-                checkBoxMP.Checked = true;
-            }
-            if ((Directory.Exists(MP2_PROGRAM_FOLDER) == true) && (Directory.Exists(MP2_USER_FOLDER) == true) && (MP2_PROGRAM_FOLDER != "") && (MP2_USER_FOLDER != ""))
-            {//found Media Portal 
-                textoutputdebug("Media Portal2 installation detected - Media Portal2 Plugin can be installed");
-                checkBoxMP2C.Checked = true;
-            }
-
-
-            if (((Directory.Exists(MP_PROGRAM_FOLDER) == true) && (Directory.Exists(MP_USER_FOLDER) == true) && (MP_PROGRAM_FOLDER != "") && (MP_USER_FOLDER != "")) || ((Directory.Exists(TV_PROGRAM_FOLDER) == true) && (Directory.Exists(TV_USER_FOLDER) == true)&&(TV_PROGRAM_FOLDER != "")&&(TV_USER_FOLDER != "")))
-            {//no error
-                textoutputdebug("Check the folder paths and click the Install button");
-            }
-            else // no installation detected
+            try
             {
-                textoutputdebug("No installation has been detected - please select installation paths manually");               
-            }
+                InitializeComponent();
+                checkBoxInstallSkins.Checked = true;
+                checkBoxSkinMods.Checked = true;
+                checkBoxKillTvServer.Checked = false;
 
-
-            UpdateGUI();
-             
-
-            if (File.Exists(installdirectory + @"\Install.exe") == false)  //1st try current directory
-            {//select install directory manually if current directory is not set to the extracted TvWishList folder
-                if (File.Exists(MP_USER_FOLDER + @"\Installer\TvWishList\Install.exe") == true) //2nd try mpi installer directory                               
+                if (killserverflag)
                 {
-                    installdirectory = MP_USER_FOLDER + @"\Installer\TvWishList";
+                    checkBoxKillTvServer.Show(); 
                 }
                 else
                 {
-                    if (File.Exists(System.Environment.CurrentDirectory + @"\%Installer%\TvWishList\Install.exe") == true) //3rd try %installer% directory
-                    {
-                        installdirectory = System.Environment.CurrentDirectory + @"\%Installer%\TvWishList";
-                    }
+                    checkBoxKillTvServer.Hide(); 
+                }
 
-                    else
-                    {
-                        FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-                        folderDialog.Description = "Select Extracted TvWishList Release Folder (Contains Install.exe)";
-                        folderDialog.ShowNewFolderButton = false;
-                        if (folderDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            if (File.Exists(folderDialog.SelectedPath + @"\Install.exe") == true)
-                            {
-                                installdirectory = folderDialog.SelectedPath;
+                AutoDetect();
 
-                            }
-                            else
-                            {
-                                textoutputdebug("Install.exe does not exist in the selected folder \naborting installation\n" + folderDialog.SelectedPath + "\n");
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            textoutputdebug("User selected invalid TvWishList folder or canceled \n aborting installation" + "\n");
-                            return;
-                        }
+                UpdatePathVariables();
+
+                if ((Directory.Exists(TV_PROGRAM_FOLDER) == true) && (Directory.Exists(TV_USER_FOLDER) == true) && (TV_PROGRAM_FOLDER != "") && (TV_USER_FOLDER != ""))
+                { //found TVserver 
+                    textoutputdebug("TV Server installation detected - TV Server plugin can be installed");
+                    checkBoxTV.Checked = true;
+
+                }
+                if ((Directory.Exists(MP_PROGRAM_FOLDER) == true) && (Directory.Exists(MP_USER_FOLDER) == true) && (MP_PROGRAM_FOLDER != "") && (MP_USER_FOLDER != ""))
+                {//found Media Portal 
+                    textoutputdebug("Media Portal installation detected - Media Portal Plugin can be installed");
+                    checkBoxMP.Checked = true;
+                }
+                if ((Directory.Exists(MP2_PROGRAM_FOLDER) == true) && (Directory.Exists(MP2_USER_FOLDER) == true) && (MP2_PROGRAM_FOLDER != "") && (MP2_USER_FOLDER != ""))
+                {//found Media Portal 
+                    textoutputdebug("Media Portal2 installation detected - Media Portal2 Plugin can be installed");
+                    checkBoxMP2C.Checked = true;
+                }
+
+                if ((Directory.Exists(SV2_PROGRAM_FOLDER) == true) && (Directory.Exists(SV2_USER_FOLDER) == true) && (SV2_PROGRAM_FOLDER != "") && (SV2_USER_FOLDER != ""))
+                {//found Media Portal 
+                    //check for tvservice installation in addition
+                    if (Directory.Exists(instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins"))
+                    {
+                        textoutputdebug("Media Portal2 Native TV Server installation detected - Media Portal2 Native TV Server Plugin can be installed");
+                        checkBoxMP2S.Checked = true;
                     }
                 }
 
+
+                if (((Directory.Exists(MP_PROGRAM_FOLDER) == true) && (Directory.Exists(MP_USER_FOLDER) == true) && (MP_PROGRAM_FOLDER != "") && (MP_USER_FOLDER != "")) ||
+                    ((Directory.Exists(TV_PROGRAM_FOLDER) == true) && (Directory.Exists(TV_USER_FOLDER) == true) && (TV_PROGRAM_FOLDER != "") && (TV_USER_FOLDER != "")) ||
+                    ((Directory.Exists(MP2_PROGRAM_FOLDER) == true) && (Directory.Exists(MP2_USER_FOLDER) == true) && (MP2_PROGRAM_FOLDER != "") && (MP2_USER_FOLDER != "")) ||
+                    ((Directory.Exists(instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins") == true) && (Directory.Exists(SV2_USER_FOLDER) == true) && (SV2_PROGRAM_FOLDER != "") && (SV2_USER_FOLDER != "")))
+                {//no error
+                    textoutputdebug("Check the folder paths and click the Install button");
+                }
+                else // no installation detected
+                {
+                    textoutputdebug("No installation has been detected - please select installation paths manually");
+                }
+
+
+                UpdateGUI();
+
+
+                if (File.Exists(installdirectory + @"\Install.exe") == false)  //1st try current directory
+                {//select install directory manually if current directory is not set to the extracted TvWishList folder
+                    if (File.Exists(MP_USER_FOLDER + @"\Installer\TvWishList\Install.exe") == true) //2nd try mpi installer directory                               
+                    {
+                        installdirectory = MP_USER_FOLDER + @"\Installer\TvWishList";
+                    }
+                    else
+                    {
+                        if (File.Exists(System.Environment.CurrentDirectory + @"\%Installer%\TvWishList\Install.exe") == true) //3rd try %installer% directory
+                        {
+                            installdirectory = System.Environment.CurrentDirectory + @"\%Installer%\TvWishList";
+                        }
+
+                        else
+                        {
+                            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+                            folderDialog.Description = "Select Extracted TvWishList Release Folder (Contains Install.exe)";
+                            folderDialog.ShowNewFolderButton = false;
+                            if (folderDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                if (File.Exists(folderDialog.SelectedPath + @"\Install.exe") == true)
+                                {
+                                    installdirectory = folderDialog.SelectedPath;
+
+                                }
+                                else
+                                {
+                                    textoutputdebug("Install.exe does not exist in the selected folder \naborting installation\n" + folderDialog.SelectedPath + "\n");
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                textoutputdebug("User selected invalid TvWishList folder or canceled \n aborting installation" + "\n");
+                                return;
+                            }
+                        }
+                    }
+
+                }
+
+                textoutputdebug("Current installer directory is " + System.Environment.CurrentDirectory);
+
+
+                if (installflag == true)
+                {
+                    INSTALL = true;
+                }
+                else if (uninstallflag == true)
+                {
+                    UNINSTALL = true;
+                }
+                m_timer = new System.Timers.Timer(10); //close after 0.1s
+                m_timer.Enabled = true;
+                m_timer.Elapsed += new System.Timers.ElapsedEventHandler(autoinstallation);
             }
-
-            textoutputdebug("Current installer directory is " + System.Environment.CurrentDirectory);
-
-
-            if (installflag == true)
+            catch(Exception exc)
             {
-                INSTALL = true;
+                textoutputdebug("Error: Exception is: "+exc.Message);
             }
-            else if (uninstallflag == true)
-            {
-                UNINSTALL=true;               
-            }
-            m_timer = new System.Timers.Timer(10); //close after 0.1s
-            m_timer.Enabled = true;
-            m_timer.Elapsed += new System.Timers.ElapsedEventHandler(autoinstallation);
         }
 
         public void AutoDetect()
@@ -206,7 +235,8 @@ namespace TvWishListInstall
 
             textBoxMP2P.Text = instpaths.MP2_PROGRAM_FOLDER;
             textBoxMP2U.Text = instpaths.MP2_USER_FOLDER;
-            
+            textBoxSV2P.Text = instpaths.SV2_PROGRAM_FOLDER;
+            textBoxSV2U.Text = instpaths.SV2_USER_FOLDER;
 
         }
 
@@ -225,7 +255,11 @@ namespace TvWishListInstall
             if (textBoxMP1U.Text == string.Empty)
                 textBoxMP1U.Text = "NOT_DEFINED";
 
-            
+            if (textBoxSV2P.Text == string.Empty)
+                textBoxSV2P.Text = "NOT_DEFINED";
+
+            if (textBoxSV2U.Text == string.Empty)
+                textBoxSV2U.Text = "NOT_DEFINED";
 
             if (textBoxMP2P.Text == string.Empty)
                 textBoxMP2P.Text = "NOT_DEFINED";
@@ -241,7 +275,8 @@ namespace TvWishListInstall
 
             MP2_PROGRAM_FOLDER = textBoxMP2P.Text;
             MP2_USER_FOLDER = textBoxMP2U.Text; ;
-           
+            SV2_PROGRAM_FOLDER = textBoxSV2P.Text;
+            SV2_USER_FOLDER = textBoxSV2U.Text;
 
 
             //update instpaths variables a swell if not called for autodetect
@@ -252,7 +287,8 @@ namespace TvWishListInstall
 
             instpaths.MP2_PROGRAM_FOLDER = textBoxMP2P.Text;
             instpaths.MP2_USER_FOLDER = textBoxMP2U.Text; ;
-            
+            instpaths.SV2_PROGRAM_FOLDER = textBoxSV2P.Text;
+            instpaths.SV2_USER_FOLDER = textBoxSV2U.Text;
 
 
             //get all install directories
@@ -290,7 +326,11 @@ namespace TvWishListInstall
                 checkBoxMP2C.Checked = false;
             }
 
-            
+            if ((checkBoxMP2S.Checked == true) && ((SV2_PROGRAM_FOLDER == "NOT_DEFINED") || (SV2_USER_FOLDER == "NOT_DEFINED")))
+            {
+                MessageBox.Show("Unchecking MediaPortal2 Server because paths are not correctly defined\nCheck the path configuration first", "Error");
+                checkBoxMP2S.Checked = false;
+            }
 
             if ((textBoxMP1P.Text != "NOT_DEFINED") && (textBoxMP1U.Text != "NOT_DEFINED"))
             {
@@ -315,8 +355,13 @@ namespace TvWishListInstall
             else
                 checkBoxMP2C.Hide();
 
+            if ((textBoxSV2P.Text != "NOT_DEFINED") && (textBoxSV2U.Text != "NOT_DEFINED"))
+                checkBoxMP2S.Show();
+            else
+                checkBoxMP2S.Hide();
+
             
-            if (!checkBoxTV.Checked && !checkBoxMP.Checked && !checkBoxMP2C.Checked)
+            if (!checkBoxTV.Checked && !checkBoxMP.Checked && !checkBoxMP2C.Checked && !checkBoxMP2S.Checked)
                 textoutputdebug("No Plugin Selection was found - Check the settings and/or installation paths");
 
         }
@@ -340,10 +385,6 @@ namespace TvWishListInstall
             }
             
         }
-
-
-
-
 
         private void buttoninstall_Click(object sender, EventArgs e)
         {
@@ -390,13 +431,14 @@ namespace TvWishListInstall
 
 
                             Process[] tprocs = null;
-                            tprocs= Process.GetProcessesByName("TVService");
+                            tprocs= Process.GetProcessesByName("TvService");
                             bool TvserviceRunning=false;
                             foreach (Process tproc in tprocs)
                             {
                                 TvserviceRunning = true;
                             }
 
+                            //textoutputdebug("DEBUG TvserviceRunning=" + TvserviceRunning.ToString());
 
                             //Stopping tv service
                             if (TvserviceRunning == true)
@@ -501,7 +543,71 @@ namespace TvWishListInstall
                 }
             }//end MP2 client installation
 
-            if (((Directory.Exists(MP_PROGRAM_FOLDER) == true) && (Directory.Exists(MP_USER_FOLDER) == true) && (MP_PROGRAM_FOLDER != "") && (MP_USER_FOLDER != "")) || ((Directory.Exists(TV_PROGRAM_FOLDER) == true) && (Directory.Exists(TV_USER_FOLDER) == true)&&(TV_PROGRAM_FOLDER != "")&&(TV_USER_FOLDER != "")) || ((Directory.Exists(MP2_PROGRAM_FOLDER) == true) && (Directory.Exists(MP2_USER_FOLDER) == true) && (MP2_PROGRAM_FOLDER != "") && (MP2_USER_FOLDER != "")))
+            if ((checkBoxMP2S.Checked) && (Directory.Exists(SV2_PROGRAM_FOLDER) == true) && (Directory.Exists(SV2_USER_FOLDER) == true) && (SV2_PROGRAM_FOLDER != "") && (SV2_USER_FOLDER != ""))
+            {//install Media Portal Plugin
+                switch (MessageBox.Show("Do you want to install the TvWishList Media Portal2 Native Tv Server Plugin?\nYes is recommended ", "MediaPortal2 Server BackupSettings Plugin Installation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                {
+                    case DialogResult.Yes:
+                        {
+                            
+                            // "Yes" processing
+                            textoutputdebug("\nInstalling Native TV Server Plugin TvWishList in ");
+                            textoutputdebug(instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins" + "\n");
+
+                            //check for setupTv.exe
+                            Process[] sprocs = Process.GetProcessesByName("SetupTv");
+                            foreach (Process sproc in sprocs) // loop is only executed if Media portal is running
+                            {
+                                textoutputdebug("You need to close Tv Server Configuration before you install the plugin\n");
+                                MessageBox.Show("You need to close Tv Server Configuration before you install the plugin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            Process[] tprocs = null;
+                            tprocs = Process.GetProcessesByName("MP2-Server");
+                            bool TvserviceRunning = false;
+                            foreach (Process tproc in tprocs)
+                            {
+                                TvserviceRunning = true;
+                            }
+
+                            //Stopping tv service
+                            if (TvserviceRunning == true)
+                            {
+                                // stop MP2 server
+                                StopTvServiceMP2();
+                            }
+                            else
+                            {
+                                textoutputdebug("MP2 Service is not running" + "\n");
+                            }
+
+                            MP2TvServerInstall();
+
+                            //Starting tv service
+                            if (TvserviceRunning == true)
+                            {
+                                // start MP2 server
+                                StartTvServiceMP2();
+
+                            }
+
+                            break;
+                        }
+                    case DialogResult.No:
+                        {
+                            // "No" processing
+                            textoutputdebug("Installation aborted by user\n");
+                            break;
+
+                        }
+                }
+            }//end MP2 server installation
+
+            if (((Directory.Exists(MP_PROGRAM_FOLDER) == true) && (Directory.Exists(MP_USER_FOLDER) == true) && (MP_PROGRAM_FOLDER != "") && (MP_USER_FOLDER != "")) || 
+                ((Directory.Exists(TV_PROGRAM_FOLDER) == true) && (Directory.Exists(TV_USER_FOLDER) == true)&&(TV_PROGRAM_FOLDER != "")&&(TV_USER_FOLDER != "")) || 
+                ((Directory.Exists(MP2_PROGRAM_FOLDER) == true) && (Directory.Exists(MP2_USER_FOLDER) == true) && (MP2_PROGRAM_FOLDER != "") && (MP2_USER_FOLDER != "")) ||
+                ((Directory.Exists(instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins") == true) && (Directory.Exists(SV2_USER_FOLDER) == true) && (SV2_PROGRAM_FOLDER != "") && (SV2_USER_FOLDER != "")))
             {//no error
             }
             else
@@ -512,6 +618,7 @@ namespace TvWishListInstall
 
             textoutputdebug("Plugin installation finished\n");
         }
+
 
         private void TvServerInstall()
         {
@@ -631,13 +738,13 @@ namespace TvWishListInstall
                     File.Copy(@"TvWishListMP1.1\TvWishListMP.dll", MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll", true);
                     textoutputdebug(@"TvWishListMP1.1\TvWishListMP.dll  copied to" + "\n" + MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll" + "\n");
                 }
-                else if (FileVersionComparison(MediaPortalFileVersionInfo.FileVersion.ToString(), "1.5.0.1") == (int)CompareFileVersion.Older)//MP1.2 if older than 1.5.0.1
+                else if (FileVersionComparison(MediaPortalFileVersionInfo.FileVersion.ToString(), "1.5.99.0") == (int)CompareFileVersion.Older)//MP1.2 if older than 1.5.99.0
                 {
                     textoutputdebug("Installing MP1.2 Plugin version" + "\n");
                     File.Copy(@"TvWishListMP1.2\TvWishListMP.dll", MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll", true);
                     textoutputdebug(@"TvWishListMP1.2\TvWishListMP.dll  copied to" + "\n" + MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll" + "\n");
                 }
-                else //MP1.5 if newer or equal than 1.5.0.1
+                else //MP1.6 if newer or equal than 1.5.99.0
                 {
                     textoutputdebug("Installing MP1.6 Plugin version" + "\n");
                     File.Copy(@"TvWishListMP1.6\TvWishListMP.dll", MP_PROGRAM_FOLDER + @"\plugins\Windows\TvWishListMP.dll", true);
@@ -747,10 +854,208 @@ namespace TvWishListInstall
             textoutputdebug("MediaPortal Plugin installation succeeded");
             textoutputdebug("You can start now the Media Portal Configuration and enable the plugin in the section \"Windows Plugins\" " + "\n");
                             
+        }       
+
+        private void MP2TvServerInstall()
+        {
+            textoutputdebug("Installing MediaPortal2 Tv server plugin TvWishList");
+            bool success = false;
+            string pluginPath = string.Empty;
+            try  //copy TvWishList.dll
+            {
+                pluginPath = instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins";
+                
+                // first delete old dll files
+                if (File.Exists(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll") == true)
+                {
+                    try
+                    {
+                        File.Delete(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+
+                    }
+                    catch
+                    {
+                        textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+                        textoutputdebug("Try to uninstall first and then reinstall");
+                        textoutputdebug("If it does not help reboot your computer\n");
+                        return;
+                    }
+                }
+                
+                textoutputdebug("Installing Native Tvserver Plugin version");
+                File.Copy(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll", pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll", true);
+                textoutputdebug(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll  copied to " + "\n" + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll" + "\n");
+
+
+
+                //old version must bedeleted
+                pluginPath = instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\SetupTv\plugins";
+
+                if (File.Exists(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll") == true)
+                {
+                    try
+                    {
+                        File.Delete(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+
+                    }
+                    catch
+                    {
+                        textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+                        textoutputdebug("Try to uninstall first and then reinstall");
+                        textoutputdebug("If it does not help reboot your computer\n");
+                        return;
+                    }
+                }
+
+                /* not available at the beginning will be done by setuptv
+                File.Copy(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll", pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll", true);
+                textoutputdebug(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll  copied to " + "\n" + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll" + "\n");
+                */
+
+                success = true;
+
+            }
+            catch (Exception exc)
+            {
+                textoutputdebug("Error: Could not copy TvWishList2.0\\Mediaportal.TV.Server.Plugins.TvWishList.dll to\n" + pluginPath);
+                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                textoutputdebug("Try to uninstall first and then reinstall");
+                textoutputdebug("If it does not help reboot your computer");
+                return;
+            }
+
+            string TvWishListUser = instpaths.DIR_SV2_Data + @"\SlimTVCore\TvWishList";
+
+            try  //copy TvWishList.pdf
+            {
+
+                // first create directory
+                if (Directory.Exists(TvWishListUser) == false)
+                    Directory.CreateDirectory(TvWishListUser);
+
+                File.Copy("TvWishList.pdf", TvWishListUser + @"\TvWishList.pdf", true);
+                textoutputdebug("TvWishList.pdf  copied to \n" + TvWishListUser + @"\TvWishList.pdf" + "\n");
+
+            }
+            catch (Exception exc)
+            {
+                textoutputdebug("Error: Could not copy TvWishList.pdf to\n" + TvWishListUser + @"\TvWishList.pdf");
+                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                return;
+            }
+
+            try //language
+            {
+                string destination = TvWishListUser + @"\Languages\";
+                //DirectoryCopy(source, destination,filepattern,overwrite,verbose,recursive)                                
+                DirectoryCopy(@"language\TvWishListMP", destination, "*", true, false, true);
+                textoutputdebug("language directory  copied to \n" + destination + "\n");
+            }
+            catch (Exception exc)
+            {
+                textoutputdebug("Error: Could not copy language directory\n");
+                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                return;
+            }
+
+            if (success == true)
+            {
+                textoutputdebug("Plugin installation succeeded");
+                //textoutputdebug("You can start now the TV Server Configuration and enable the plugin\n");
+            }
         }
 
         private void MP2ClientInstall()
         {
+            textoutputdebug("Installing MediaPortal2 client plugin TvWishListMP2");
+            //delete old provider(s)
+
+            string TvWishListProviderMP2Folder = instpaths.DIR_MP2_Plugins + @"\TvWishListMP2NativeTvProvider";
+            
+            if (Directory.Exists(TvWishListProviderMP2Folder))
+            {//Delete old files
+                try
+                {
+                    textoutputdebug("Deleting folder "+TvWishListProviderMP2Folder);
+                    DirectoryDelete(TvWishListProviderMP2Folder);
+                    
+                }
+                catch (Exception exc)
+                {
+                    textoutputdebug("Error: Could not delete folder " + TvWishListProviderMP2Folder + " \n");
+                    textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                    return;
+                }
+            }
+
+            TvWishListProviderMP2Folder = instpaths.DIR_MP2_Plugins + @"\TvWishListMPExtendedProvider0.5";
+            
+            if (Directory.Exists(TvWishListProviderMP2Folder))
+            {//Delete old files
+                try
+                {
+                    textoutputdebug("Deleting folder " + TvWishListProviderMP2Folder);
+                    DirectoryDelete(TvWishListProviderMP2Folder);
+                }
+                catch (Exception exc)
+                {
+                    textoutputdebug("Error: Could not delete folder " + TvWishListProviderMP2Folder + " \n");
+                    textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                    return;
+                }
+            }
+
+            TvWishListProviderMP2Folder = instpaths.DIR_MP2_Plugins + @"\TvWishListMPExtendedProvider";
+            
+            if (Directory.Exists(TvWishListProviderMP2Folder))
+            {//Delete old files
+                try
+                {
+                    textoutputdebug("Deleting folder " + TvWishListProviderMP2Folder);
+                    DirectoryDelete(TvWishListProviderMP2Folder);
+                }
+                catch (Exception exc)
+                {
+                    textoutputdebug("Error: Could not delete folder " + TvWishListProviderMP2Folder + " \n");
+                    textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                    return;
+                }
+            }
+            
+
+            //install correct provider depending on SlimTv plugin - do not install if no slimtv plugin could be found
+            //textoutputdebug("DEBUG nat provider=" + instpaths.DIR_MP2_Plugins + @"SlimTv.NativeProvider");
+            string TvWishListProviderMP2Name=string.Empty;
+            if (Directory.Exists(instpaths.DIR_MP2_Plugins + @"\SlimTv.NativeProvider"))
+            {
+                TvWishListProviderMP2Folder = instpaths.DIR_MP2_Plugins + @"\TvWishListMP2NativeTvProvider";
+                TvWishListProviderMP2Name = "TvWishListMP2NativeTvProvider";
+            }
+            else if (Directory.Exists(instpaths.DIR_MP2_Plugins + @"\SlimTv.MPExtendedProvider"))
+            {
+                TvWishListProviderMP2Folder = instpaths.DIR_MP2_Plugins + @"\TvWishListMPExtendedProvider";
+                TvWishListProviderMP2Name = "TvWishListMPExtendedProvider";
+            }
+            else
+            {
+                textoutputdebug("SlimTv provider (SlimTv.NativeProvider or SlimTv.MPExtendedProvider) could not be found - aborting installation");
+                return;
+            }
+            
+            textoutputdebug("Installing MediaPortal Plugin " + TvWishListProviderMP2Name + " in ");
+            textoutputdebug(TvWishListProviderMP2Folder + "\n");
+
+            try //copy plugin folder
+            {
+                DirectoryCopy(TvWishListProviderMP2Name, TvWishListProviderMP2Folder, "*", true, true, true);
+            }
+            catch (Exception exc)
+            {
+                textoutputdebug("Error: Could not copy folder " + TvWishListProviderMP2Name + " to\n" + TvWishListProviderMP2Folder);
+                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                return;
+            }
+
             //install TvWishListMP2 Client plugin
             string TvWishListMP2Folder = instpaths.DIR_MP2_Plugins + @"\TvWishListMP2";
             textoutputdebug("Installing MediaPortal Plugin TvWishListMP2 in ");
@@ -781,38 +1086,6 @@ namespace TvWishListInstall
                 return;
             }
 
-            //install TvWishListInterfaces Client plugin
-            string TvWishListProviderMP2Folder = instpaths.DIR_MP2_Plugins + @"\TvWishListMPExtendedProvider0.5";
-            string TvWishListProviderMP2Name = "TvWishListMPExtendedProvider0.5";
-
-            textoutputdebug("Installing MediaPortal Plugin " + TvWishListProviderMP2Name + " in ");
-            textoutputdebug(TvWishListProviderMP2Folder + "\n");
-
-            try
-            {
-                if (Directory.Exists(TvWishListProviderMP2Folder))
-                {//Delete old files
-                    DirectoryDelete(TvWishListProviderMP2Folder);
-                }
-            }
-            catch (Exception exc)
-            {
-                textoutputdebug("Error: Could delete folder " + TvWishListProviderMP2Folder + " \n");
-                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
-                return;
-            }
-
-            try //copy plugin folder
-            {
-                DirectoryCopy(TvWishListProviderMP2Name, TvWishListProviderMP2Folder, "*", true, true, true);
-            }
-            catch (Exception exc)
-            {
-                textoutputdebug("Error: Could not copy folder " + TvWishListProviderMP2Name + " to\n" + TvWishListProviderMP2Folder);
-                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
-                return;
-            }
-
             try  //copy TvWishList.pdf
             {
 
@@ -835,40 +1108,83 @@ namespace TvWishListInstall
         /// Stop the TvService
         /// </summary>
         /// <returns></returns>
-        public static bool StopTvService()
+        public bool StopTvService2()
         {
-            try
+            textoutputdebug("Stopping TvService");
+            if (checkBoxKillTvServer.Checked)
             {
-                using (ServiceController sc = new ServiceController("TvService"))
+                //kill tv service
+                string processname = "TvService";
+                textoutputdebug("Trying to kill " + processname);
+                Process[] tprocs = null;
+                tprocs = Process.GetProcessesByName(processname);
+                foreach (Process tproc in tprocs)
                 {
-                    switch (sc.Status)
-                    {
-                        case ServiceControllerStatus.Running:
-                            sc.Stop();
-                            break;
-                        case ServiceControllerStatus.StopPending:
-                            break;
-                        case ServiceControllerStatus.Stopped:
-                            return true;
-                        default:
-                            return false;
-                    }
-                    sc.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(60));
-                    return sc.Status == ServiceControllerStatus.Stopped;
+                    textoutputdebug("Killing " + processname);
+                    tproc.Kill();           
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("ServiceHelper: Stopping tvservice failed. Please check your installation. \nError: "+ ex.ToString());
-                return false;
+
+                try
+                {
+                    using (ServiceController sc = new ServiceController("TvService"))
+                    {
+                        switch (sc.Status)
+                        {
+                            case ServiceControllerStatus.Running:
+                                sc.Stop();
+                                break;
+                            case ServiceControllerStatus.StopPending:
+                                break;
+                            case ServiceControllerStatus.Stopped:
+                                return true;
+                            default:
+                                {
+                                    MessageBox.Show("Tv service could not be stopped - please stop it manually before continuing", "Error");
+                                    return false;
+                                }
+                        }
+                        sc.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(60));
+
+                        if (sc.Status != ServiceControllerStatus.Stopped)
+                        {
+                            MessageBox.Show("Tv service could not be stopped - please stop it manually before continuing","Error");
+                        }
+
+
+                        return sc.Status == ServiceControllerStatus.Stopped;
+                        
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ServiceHelper: Stopping tvservice failed. \nError: " + ex.ToString());
+                    MessageBox.Show("Tv service could not be stopped - please stop it manually before continuing", "Error");
+                    /*if (checkBoxKillTvServer.Checked) //too risky
+                    {
+                        //kill tv service
+                        Process[] tprocs = null;
+                        tprocs = Process.GetProcessesByName("TvService");
+                        foreach (Process tproc in tprocs)
+                        {
+                            tproc.Kill();
+                        }
+                    }*/
+                    return false;
+                }
             }
+            textoutputdebug("Tv service has been stopped");
+            System.Threading.Thread.Sleep(2000);
+            return true;
         }
 
         /// <summary>
         /// Starts the TvService
         /// </summary>
         /// <returns></returns>
-        public static bool StartTvService()
+        public bool StartTvService2()
         {
             return Start("TvService");
         }
@@ -897,69 +1213,218 @@ namespace TvWishListInstall
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ServiceHelper: Starting "+aServiceName.ToString()+" failed. Please check your installation. \nError: "+ex.ToString());
+                MessageBox.Show("ServiceHelper: Starting " + aServiceName.ToString() + " failed. Please check your installation. \nError: " + ex.ToString());
                 return false;
             }
         }
 
-        /* old implementation
-        private void StopTvService()
+        
+        public bool StartTvServiceMP2()
         {
-            textoutputdebug("Stopping TV Service");
-            Process proc = new Process();
-            ProcessStartInfo startinfo = new ProcessStartInfo();
-            startinfo.FileName = "cmd.exe";
-            startinfo.WorkingDirectory = "";
-            startinfo.Arguments = @"/c net stop tvservice";
-            startinfo.UseShellExecute = false;
-            startinfo.CreateNoWindow = true;
-            startinfo.RedirectStandardError = true;
-            startinfo.RedirectStandardInput = true;
-            startinfo.RedirectStandardOutput = true;
-            proc.StartInfo = startinfo;
-            proc.EnableRaisingEvents = false;
+
+            textoutputdebug("Starting Native TV Service");
+            Process proc2 = new Process();
+            ProcessStartInfo startinfo2 = new ProcessStartInfo();
+            startinfo2.FileName = "cmd.exe";
+            startinfo2.WorkingDirectory = "";
+            startinfo2.Arguments = @"/c net start MP2-Server";
+            startinfo2.WindowStyle = ProcessWindowStyle.Hidden;
+            startinfo2.UseShellExecute = false;
+            startinfo2.CreateNoWindow = true;
+            startinfo2.RedirectStandardError = true;
+            startinfo2.RedirectStandardInput = true;
+            startinfo2.RedirectStandardOutput = true;
+
+            proc2.StartInfo = startinfo2;
+            proc2.EnableRaisingEvents = false;
 
             try
             {
-                proc.Start();
+                proc2.Start();
             }
             catch (Exception exc)
             {
-                textoutputdebug("Error: Could not execute command \n" + startinfo.FileName + " " + startinfo.Arguments);
-                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
-                return;
+                textoutputdebug("<RED>Could not execute command \n" + startinfo2.FileName + " " + startinfo2.Arguments);
+                textoutputdebug("<RED>Exception message was:\n" + exc.Message + "\n");
+                return false;
             }
-            proc.WaitForExit(1000 * 60); //wait 1 minutes maximum
-            if (proc.HasExited == true)
+            proc2.WaitForExit(1000 * 60 * 1); //wait 1 minute maximum
+            if (proc2.HasExited == true)
             {
-                if (proc.ExitCode != 0)
+                if (proc2.ExitCode != 0)
                 {
-                    textoutputdebug("Tv Service error: Stopping Tv service caused an error code " + proc.ExitCode);
+                    textoutputdebug("<RED>Tv Service error: Starting Tv service caused an error code " + proc2.ExitCode);
 
-                    //textoutputdebug("Reboot and repeat installation\n");
-                    //return;
-                }
-                else
-                {
-                    textoutputdebug("TV Service Stopped" + "\n");
+                    textoutputdebug("<RED>Reboot and check the TV service status from the MP2 server configuration tool\n");
+                    return false;
                 }
             }
             else
             {
-                textoutputdebug("Tv Service timeout error: Could not stop Tv service within time limit");
-                //textoutputdebug("Reboot and repeat installation\n");
-                //return;
+                textoutputdebug("<RED>Tv Service timeout error: Could not stop Tv service within time limit\n");
+                textoutputdebug("<RED>Reboot and check the TV service status from the MP2 server configuration tool\n");
+                return false;
             }
+
+            textoutputdebug("Native TV Service Started");
+            return true;
         }
 
-        private void StartTvService()
+        public bool StopTvServiceMP2()
+        {
+            textoutputdebug("Stopping Native TV Service");
+
+            if (checkBoxKillTvServer.Checked)
+            {
+                string processname = "MP2-Server";
+                textoutputdebug("Trying to kill " + processname);
+                Process[] tprocs = null;
+                tprocs = Process.GetProcessesByName(processname);
+                foreach (Process tproc in tprocs)
+                {
+                    textoutputdebug("Killing " + processname);
+                    tproc.Kill();
+                }             
+            }
+            else
+            {
+
+                Process proc = new Process();
+                ProcessStartInfo startinfo = new ProcessStartInfo();
+                startinfo.FileName = "cmd.exe";
+                startinfo.WorkingDirectory = "";
+                startinfo.Arguments = @"/c net stop MP2-Server";
+                startinfo.UseShellExecute = false;
+                startinfo.CreateNoWindow = true;
+                startinfo.RedirectStandardError = true;
+                startinfo.RedirectStandardInput = true;
+                startinfo.RedirectStandardOutput = true;
+                proc.StartInfo = startinfo;
+                proc.EnableRaisingEvents = false;
+
+                try
+                {
+                    proc.Start();
+                }
+                catch (Exception exc)
+                {
+                    textoutputdebug("<RED>Could not execute command \n" + startinfo.FileName + " " + startinfo.Arguments);
+                    textoutputdebug("<RED>Exception message was:\n" + exc.Message + "\n");
+                    MessageBox.Show("Tv service could not be stopped - please stop it manually before continuing", "Error");
+                    return false;
+                }
+                proc.WaitForExit(1000 * 60); //wait 1 minutes maximum
+                if (proc.HasExited == true)
+                {
+                    if (proc.ExitCode != 0)
+                    {
+                        textoutputdebug("<RED>Tv Service error: Stopping Tv service caused an error code " + proc.ExitCode);
+
+                        textoutputdebug("<RED>Reboot and repeat installation\n");
+
+                        /* too risky
+                        if (checkBoxKillTvServer.Checked)
+                        {
+                            //kill tv service
+                            Process[] tprocs = null;
+                            tprocs = Process.GetProcessesByName("MP2-Server");
+                            foreach (Process tproc in tprocs)
+                            {
+                                tproc.Kill();
+                            }
+                        }*/
+                        MessageBox.Show("MP2-Server service could not be stopped - please stop it manually before continuing", "Error");
+                        return false;
+                    }
+                }
+                else
+                {
+                    textoutputdebug("<RED>Tv Service timeout error: Could not stop Tv service within time limit");
+                    textoutputdebug("<RED>Reboot and repeat installation\n");
+                    MessageBox.Show("MP2-Server service could not be stopped - please stop it manually before continuing", "Error");
+                    return false;
+
+                }
+                
+            }
+            textoutputdebug("Native TV Service Stopped");
+            System.Threading.Thread.Sleep(2000);
+            return true;
+        }
+        
+        private bool StopTvService()
+        {
+            textoutputdebug("Stopping TV Service");
+
+            if (checkBoxKillTvServer.Checked)
+            {
+                string processname = "TvService";
+                textoutputdebug("Trying to kill " + processname);
+                Process[] tprocs = null;
+                tprocs = Process.GetProcessesByName(processname);
+                foreach (Process tproc in tprocs)
+                {
+                    textoutputdebug("Killing " + processname);
+                    tproc.Kill();
+                }
+            }
+            else
+            {
+                Process proc = new Process();
+                ProcessStartInfo startinfo = new ProcessStartInfo();
+                startinfo.FileName = "cmd.exe";
+                startinfo.WorkingDirectory = "";
+                startinfo.Arguments = @"/c net stop TvService";
+                startinfo.UseShellExecute = false;
+                startinfo.CreateNoWindow = true;
+                startinfo.RedirectStandardError = true;
+                startinfo.RedirectStandardInput = true;
+                startinfo.RedirectStandardOutput = true;
+                proc.StartInfo = startinfo;
+                proc.EnableRaisingEvents = false;
+
+                try
+                {
+                    proc.Start();
+                }
+                catch (Exception exc)
+                {
+                    textoutputdebug("Error: Could not execute command \n" + startinfo.FileName + " " + startinfo.Arguments);
+                    textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                    return false;
+                }
+                proc.WaitForExit(1000 * 60); //wait 1 minutes maximum
+                if (proc.HasExited == true)
+                {
+                    if (proc.ExitCode != 0)
+                    {
+                        textoutputdebug("Tv Service error: Stopping Tv service caused an error code " + proc.ExitCode);
+                        MessageBox.Show("Tv service could not be stopped - please stop it manually before continuing", "Error");
+                        return false;                      
+                    }                   
+                }
+                else
+                {
+                    textoutputdebug("Tv Service timeout error: Could not stop Tv service within time limit");
+                    MessageBox.Show("Tv service could not be stopped - please stop it manually before continuing", "Error");
+                    return false;
+                    //textoutputdebug("Reboot and repeat installation\n");
+                    //return;
+                }
+            }
+            textoutputdebug("TV Service has been Stopped" + "\n");
+            System.Threading.Thread.Sleep(2000);
+            return true;
+        }
+
+        private bool StartTvService()
         {
             textoutputdebug("Starting TV Service");
             Process proc2 = new Process();
             ProcessStartInfo startinfo2 = new ProcessStartInfo();
             startinfo2.FileName = "cmd.exe";
             startinfo2.WorkingDirectory = "";
-            startinfo2.Arguments = @"/c net start tvservice";
+            startinfo2.Arguments = @"/c net start TvService";
             startinfo2.WindowStyle = ProcessWindowStyle.Hidden;
             startinfo2.UseShellExecute = false;
             startinfo2.CreateNoWindow = true;
@@ -978,7 +1443,7 @@ namespace TvWishListInstall
             {
                 textoutputdebug("Error: Could not execute command \n" + startinfo2.FileName + " " + startinfo2.Arguments);
                 textoutputdebug("Exception message was:\n" + exc.Message + "\n");
-                return;
+                return false;
             }
             proc2.WaitForExit(1000 * 60 * 3); //wait 3 minutes maximum
             if (proc2.HasExited == true)
@@ -988,18 +1453,19 @@ namespace TvWishListInstall
                     textoutputdebug("Tv Service error: Starting Tv service caused an error code " + proc2.ExitCode);
 
                     textoutputdebug("Reboot and check the TV service status from the TV server configuration tool\n");
-                    return;
+                    return false;
                 }
             }
             else
             {
                 textoutputdebug("Tv Service timeout error: Could not stop Tv service within time limit\n");
                 textoutputdebug("Reboot and check the TV service status from the TV server configuration tool\n");
-                return;
+                return false;
             }
             textoutputdebug("TV Service Started" + "\n");
+            return true;
         }
-        */
+        
 
 
 
@@ -1351,8 +1817,6 @@ namespace TvWishListInstall
 
         }
 
-
-
         private void textoutputdebug(string textlines)
         {
             
@@ -1393,6 +1857,7 @@ namespace TvWishListInstall
             }
         }
 
+
         private void buttonuninstall_Click(object sender, EventArgs e)
         {
             uninstall();
@@ -1426,8 +1891,6 @@ namespace TvWishListInstall
 
                     }
                 }
-
-
 
                 //check for setupTv.exe
                 Process[] sprocs = Process.GetProcessesByName("SetupTv");
@@ -1567,7 +2030,67 @@ namespace TvWishListInstall
 
 
             }//end MP2 Client deinstallation
-            
+
+            if ((checkBoxMP2S.Checked) && (Directory.Exists(SV2_PROGRAM_FOLDER) == true) && (Directory.Exists(SV2_USER_FOLDER) == true) && (SV2_PROGRAM_FOLDER != "") && (SV2_USER_FOLDER != ""))
+            {
+                if (UNINSTALL == false)
+                {
+                    switch (MessageBox.Show("Do you want to uninstall the TvWishList MediaPortal2 Native TvServer Plugin? ", "MediaPortal2 Server TvWishList Plugin Deinstallation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                    {
+                        case DialogResult.Yes:
+                            {
+                                // "Yes" processing
+
+
+                                break;
+                            }
+                        case DialogResult.No:
+                            {
+                                // "No" processing
+                                textoutputdebug("Uninstall aborted by user\n");
+                                return;
+                            }
+                    }
+                }
+
+                //check for setupTv.exe
+                Process[] sprocs = Process.GetProcessesByName("SetupTv");
+                foreach (Process sproc in sprocs) // loop is only executed if Media portal is running
+                {
+                    textoutputdebug("You need to close Tv Server Configuration before you uninstall the plugin\n");
+                    MessageBox.Show("You need to close Tv Server Configuration before you uninstall the plugin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+                Process[] tprocs = null;
+                tprocs = Process.GetProcessesByName("TVService");
+                bool TvserviceRunning = false;
+                foreach (Process tproc in tprocs)
+                {
+                    TvserviceRunning = true;
+                }
+
+                //Stopping tv service
+                if (TvserviceRunning == true)
+                {
+                    //Stopping MP2 tv service
+                    StopTvServiceMP2();
+                }
+                else
+                {
+                    textoutputdebug("TV Service is not running" + "\n");
+                }
+
+                MP2TvServerUninstall();
+
+                //Starting tv service
+                if (TvserviceRunning == true)
+                {
+                    //Start MP2 tv service
+                    StartTvServiceMP2();
+                }
+            }//end MP2 Client deinstallation
         }
 
         private void TvServerUninstall()
@@ -1905,24 +2428,47 @@ namespace TvWishListInstall
                 return;
             }
 
+
             //Delete MP2 TvWishListProvider plugin folder
-            string TvWishListMP2ProviderFolder = instpaths.DIR_MP2_Plugins + @"\TvWishListMPExtendedProvider0.5";
-            string TvWishListMP2ProviderName = "TvWishListMPExtendedProvider0.5";
-            textoutputdebug("Uninstalling MediaPortal2 Plugin " + TvWishListMP2ProviderName + " in \n" + TvWishListMP2ProviderFolder + "\n");
+            string TvWishListMP2ProviderFolder = instpaths.DIR_MP2_Plugins + @"\TvWishListMPExtendedProvider";
+            string TvWishListMP2ProviderName = "TvWishListMPExtendedProvider";
+            if (Directory.Exists(TvWishListMP2ProviderFolder))
+            {  
+                textoutputdebug("Uninstalling MediaPortal2 Plugin " + TvWishListMP2ProviderName + " in \n" + TvWishListMP2ProviderFolder + "\n");
+                try
+                {
+                    if (Directory.Exists(TvWishListMP2ProviderFolder))
+                    {//Delete old files
+                        DirectoryDelete(TvWishListMP2ProviderFolder);
+                    }
 
-            try
-            {
-                if (Directory.Exists(TvWishListMP2ProviderFolder))
-                {//Delete old files
-                    DirectoryDelete(TvWishListMP2ProviderFolder);
                 }
-
+                catch (Exception exc)
+                {
+                    textoutputdebug("Error: Could not delete folder " + TvWishListMP2ProviderName + " \n");
+                    textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                    return;
+                }
             }
-            catch (Exception exc)
+
+            TvWishListMP2ProviderFolder = instpaths.DIR_MP2_Plugins + @"\TvWishListMP2NativeTvProvider";
+            TvWishListMP2ProviderName = "TvWishListMP2NativeTvProvider";
+            if (Directory.Exists(TvWishListMP2ProviderFolder))
             {
-                textoutputdebug("Error: Could not delete folder " + TvWishListMP2ProviderName + " \n");
-                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
-                return;
+                textoutputdebug("Uninstalling MediaPortal2 Plugin " + TvWishListMP2ProviderName + " in \n" + TvWishListMP2ProviderFolder + "\n");
+                try
+                {
+                    if (Directory.Exists(TvWishListMP2ProviderFolder))
+                    {//Delete old files
+                        DirectoryDelete(TvWishListMP2ProviderFolder);
+                    }
+                }
+                catch (Exception exc)
+                {
+                    textoutputdebug("Error: Could not delete folder " + TvWishListMP2ProviderName + " \n");
+                    textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                    return;
+                }
             }
 
             //Delete setting file in user folders
@@ -1960,13 +2506,91 @@ namespace TvWishListInstall
                         textoutputdebug("Exception message was:\n" + exc.Message + "\n");
                         return;
                     }
-                }
-
-                
+                }               
             }
 
             textoutputdebug("MediaPortal2 Plugin deinstallation succeeded\n");
         }
+
+        private void MP2TvServerUninstall()
+        {
+            string pluginPath = string.Empty;
+            try  //delete TvWishList.dll
+            {
+                textoutputdebug("Uninstalling Native Tvserver Plugin version");
+                pluginPath = instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins";
+                
+                // first delete old dll files
+                if (File.Exists(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll") == true)
+                {
+                    try
+                    {
+                        File.Delete(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+                        textoutputdebug(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll deleted" + "\n");
+                    }
+                    catch
+                    {
+                        textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll\n");
+                        return;
+                    }
+                }
+                
+                pluginPath = instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\SetupTv\plugins";
+                if (File.Exists(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll") == true)
+                {
+                    try
+                    {
+                        File.Delete(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+                        textoutputdebug(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll deleted" + "\n");
+                    }
+                    catch
+                    {
+                        textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll\n");
+                        return;
+                    }
+                }
+                
+            }
+            catch (Exception exc)
+            {
+                textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll \n");
+                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                return;
+            }
+
+            string TvWishListUser = instpaths.DIR_SV2_Data + @"\SlimTVCore\TvWishList";
+
+            try  //delete TvWishList.pdf
+            {               
+                File.Delete(TvWishListUser + @"\TvWishList.pdf");
+                textoutputdebug(TvWishListUser + @"\TvWishList.pdf deleted" + "\n");
+            }
+            catch (Exception exc)
+            {
+                textoutputdebug("Error: Could not delete " + TvWishListUser + @"\TvWishList.pdf");
+                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                return;
+            }
+
+            string destination = string.Empty;
+            try //delete language
+            {
+                destination = TvWishListUser + @"\Languages";
+                //DirectoryCopy(source, destination,filepattern,overwrite,verbose,recursive) 
+                DirectoryDelete(destination);                            
+                textoutputdebug("Deleted directory " + destination + "\n");
+            }
+            catch (Exception exc)
+            {
+                textoutputdebug("Error: Could not delete language directory\n"+destination+"\n");
+                textoutputdebug("Exception message was:\n" + exc.Message + "\n");
+                return;
+            }
+
+            textoutputdebug("MediaPortal2 Native TvServer Plugin deinstallation succeeded\n");
+            
+        }
+
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -2028,6 +2652,29 @@ namespace TvWishListInstall
             }
         }
 
+        private void buttonSV2P_Click(object sender, EventArgs e)
+        {
+            instpaths.LOG = string.Empty;
+            textBoxSV2P.Text = instpaths.ask_SV2_PROGRAM_ALWAYS();
+            if (instpaths.LOG != string.Empty)
+            {
+                MessageBox.Show(instpaths.LOG);
+                instpaths.LOG = string.Empty;
+            }
+        }
+
+        private void buttonSV2U_Click(object sender, EventArgs e)
+        {
+            instpaths.LOG = string.Empty;
+            textBoxSV2U.Text = instpaths.ask_SV2_USER_ALWAYS();
+            if (instpaths.LOG != string.Empty)
+            {
+                MessageBox.Show(instpaths.LOG);
+                instpaths.LOG = string.Empty;
+            }
+        }
+
+
         private void buttonMP2U_Click(object sender, EventArgs e)
         {
             instpaths.LOG = string.Empty;
@@ -2059,7 +2706,7 @@ namespace TvWishListInstall
         }
 
         private void buttonReadme_Click_1(object sender, EventArgs e)
-        {
+        {               
             Process proc = new Process();
             ProcessStartInfo procstartinfo = new ProcessStartInfo();
             procstartinfo.FileName = "TvWishList.pdf";
@@ -2075,6 +2722,7 @@ namespace TvWishListInstall
             }
         }
 
+        
         
 
         

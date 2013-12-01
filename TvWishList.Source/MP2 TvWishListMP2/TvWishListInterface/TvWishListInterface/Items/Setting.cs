@@ -23,12 +23,10 @@
 
 
 
-namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
+namespace MediaPortal.Plugins.TvWishList.Items
 {
   public interface ISetting 
   {
-      //ILogger Log = ServiceRegistration.Get<ILogger>();
-
       #region Setting Member
 
       string Tag { get; set; }
@@ -36,14 +34,6 @@ namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
       string Value { get; set; }
 
       #endregion
-
-      
-
-      //void Persist();
-            
-      //void Remove();
-
-      //ISetting GetNew();
 
   }
 }

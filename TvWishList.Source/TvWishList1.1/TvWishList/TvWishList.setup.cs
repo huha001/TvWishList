@@ -42,19 +42,41 @@ using System.Windows.Forms;
 using System.Xml;
 //using similaritymetrics;
 
-using TvLibrary.Log.huha; 
-using TvControl;
-using SetupTv;
+using Log = TvLibrary.Log.huha.Log;
+//using TvLibrary.Log.huha;
 using TvEngine;
-using TvEngine.Events;
 using TvLibrary.Interfaces;
-using TvLibrary.Implementations;
-using TvDatabase;
 using MediaPortal.Plugins;
 using TvEngine.PowerScheduler.Interfaces;
 
-using MyTVMail;
-using TvWishList;
+using MediaPortal.Plugins.TvWishList;
+
+
+#if (MPTV2)
+// native TV3.5 for MP2
+using Mediaportal.TV.Server.Plugins.Base.Interfaces;
+using Mediaportal.TV.Server.SetupControls;
+using Mediaportal.TV.Server.TVControl.Events;
+using Mediaportal.TV.Server.TVControl.Interfaces.Events;
+using Mediaportal.TV.Server.TVControl.Interfaces.Services;
+using Mediaportal.Common.Utils;
+using Mediaportal.TV.Server.TVControl;
+using Mediaportal.TV.Server.TVControl.ServiceAgents;
+using Mediaportal.TV.Server.TVDatabase;
+
+
+
+using MediaPortal.Plugins.TvWishList.Items;
+
+using Mediaportal.TV.Server;
+
+#else 
+using TvControl;
+using TvEngine.Events;
+using TvLibrary.Implementations;
+using TvDatabase;
+using SetupTv;
+#endif
 
 /*
 Automatic
@@ -77,12 +99,29 @@ Descr.+Part+Name+Number
  */
 
 
-namespace SetupTv.Sections
+namespace MediaPortal.Plugins.TvWishList.Setup
 {
     
     [CLSCompliant(false)]
-    public partial class TvWishListSetup : SetupTv.SectionSettings
+    public partial class TvWishListSetup : SectionSettings
     {
+
+        public static TvWishListSetup _instance = null;
+
+        public static TvWishListSetup Instance
+        {
+            get { return (TvWishListSetup)_instance; }
+        }
+
+        //TvSetup
+        public static bool _setup = false;
+
+        public static bool Setup
+        {
+            get { return (bool)_setup; }
+        }
+ 
+
         int ProviderLength = 200;  //max number of provider settings
         string[] providers = new string[20];
         string[] array_Eventformats ;
@@ -96,7 +135,7 @@ namespace SetupTv.Sections
         string PRERECORD = "5";
         string POSTRECORD = "5";
 
-        bool LoadSettingError = false;
+        public bool LoadSettingError = false;
 
         
 
@@ -105,6 +144,10 @@ namespace SetupTv.Sections
         XmlMessages mymessage;
         TvWishProcessing myTvWishes;
         LanguageTranslation lng = new LanguageTranslation();
+#if (MPTV2)
+        PipeClient tvSetupPipeClient;
+#endif        
+
         string[] ReverseLanguageFileTranslator_File;
         string[] ReverseLanguageFileTranslator_Language;
 
@@ -122,6 +165,9 @@ namespace SetupTv.Sections
 
         InstallPaths instpaths = new InstallPaths();  //define new instance for folder detection
         EpgParser epgwatchclass = new EpgParser();
+
+        
+        
         
         #region Constructor
 
@@ -131,7 +177,12 @@ namespace SetupTv.Sections
             InitializeComponent();
             mymessage = new XmlMessages("", "",true);
             myTvWishes = new TvWishProcessing();
+            myTvWishes.TvSetup = true;
+#if (MPTV2)
+            tvSetupPipeClient = new PipeClient(myTvWishes, lng, "localhost", "MP2TvWishListPipe");
+#endif
             dataGridView1.DataError += DataGridView_DataError;
+            _instance = this;
             Log.Debug("TvWishListSetup()");
         }
         #endregion Constructor
@@ -159,22 +210,29 @@ namespace SetupTv.Sections
         public override void OnSectionActivated()
         {
             //set Debug flag first
+            
             TvBusinessLayer layer = new TvBusinessLayer();
             Setting setting;
             setting = layer.GetSetting("TvWishList_Debug", "false");
-            if (Convert.ToBoolean(setting.Value) == true)
-                checkBoxDebug.Checked = true;
-            else
-                checkBoxDebug.Checked = false;
-
-            DEBUG = checkBoxDebug.Checked;
+            DEBUG = false;
+            Boolean.TryParse(setting.Value, out DEBUG);
+            checkBoxDebug.Checked = DEBUG;
             Log.DebugValue = DEBUG;
+
+            //turn on setup flag
+            _setup = true;
 
             LogDebug("TvWishList: Configuration activated", (int)LogSetting.DEBUG);
             if (epgwatchclass != null)
             {
                 epgwatchclass.newlabelmessage += new setuplabelmessage(labelupdate);
             }
+#if (MPTV2)
+            if (tvSetupPipeClient != null)
+            {
+                tvSetupPipeClient.newlabelmessage += new setupPipeLabelMessage(labelupdate);
+            }
+#endif
             //dataGridView1.RowsAdded += new DataGridViewRowsAddedEventHandler(dataGridView1_RowsAdded);
             
             
@@ -364,11 +422,21 @@ namespace SetupTv.Sections
 
         public override void OnSectionDeActivated()
         {
+            //turn off setup flag
+            _setup = false;
+
             LogDebug("TvWishList: Configuration deactivated", (int)LogSetting.DEBUG);
             if (epgwatchclass != null)
             {
                 epgwatchclass.newlabelmessage -= new setuplabelmessage(labelupdate);
             }
+#if (MPTV2)
+            if (tvSetupPipeClient != null)
+            {
+                tvSetupPipeClient.newlabelmessage -= new setupPipeLabelMessage(labelupdate);
+            }
+#endif
+            
             //dataGridView1.RowsAdded -= new DataGridViewRowsAddedEventHandler(dataGridView1_RowsAdded);
             try
             {
@@ -408,11 +476,18 @@ namespace SetupTv.Sections
             //check for installation folders first
             setting = layer.GetSetting("TvWishList_TV_USER_FOLDER", "NOT_FOUND");
             TV_USER_FOLDER = setting.Value;
+            Log.Debug("a) TV_USER_FOLDER=" + TV_USER_FOLDER);
             if ((File.Exists(TV_USER_FOLDER + @"\TvService.exe") == true) || (Directory.Exists(TV_USER_FOLDER) == false))
             {
                 //autodetect paths
+#if (MPTV2) //Native MP2 Tv server
+                instpaths.GetInstallPathsMP2();
+                TV_USER_FOLDER = instpaths.ask_TV2_USER();
+#else
                 instpaths.GetInstallPaths();
                 TV_USER_FOLDER = instpaths.ask_TV_USER();
+#endif
+
                 LogDebug("TV server user folder detected at " + TV_USER_FOLDER, (int)LogSetting.DEBUG);
 
                 if ((File.Exists(TV_USER_FOLDER + @"\TvService.exe") == true) || (Directory.Exists(TV_USER_FOLDER) == false))
@@ -423,15 +498,15 @@ namespace SetupTv.Sections
                         Directory.CreateDirectory(TV_USER_FOLDER + @"\TvWishList");
                 }
             }
+            setting.Value = TV_USER_FOLDER;
+            setting.Persist();//write setting during initialization
+            Log.Debug("TV_USER_FOLDER=" + TV_USER_FOLDER); 
 
             //checkboxes
             setting = layer.GetSetting("TvWishList_Debug", "false");
-            if (Convert.ToBoolean(setting.Value) == true)
-                checkBoxDebug.Checked = true;
-            else
-                checkBoxDebug.Checked = false;
-
-            DEBUG = checkBoxDebug.Checked;
+            DEBUG = false;
+            Boolean.TryParse(setting.Value, out DEBUG);
+            checkBoxDebug.Checked = DEBUG;
             Log.DebugValue = DEBUG;
 
             LogDebug("Loadsettings Debug set", (int)LogSetting.DEBUG);
@@ -669,9 +744,16 @@ namespace SetupTv.Sections
             if (substring.Length < 1)
                 return substring;
 
-            if (Convert.ToInt16(substring[substring.Length - 1]) == 13)
+            try
             {
-                substring = substring.Substring(0, substring.Length - 1);
+                if (Convert.ToInt16(substring[substring.Length - 1]) == 13)
+                {
+                    substring = substring.Substring(0, substring.Length - 1);
+                }
+            }
+            catch 
+            {
+                return substring;
             }
 
             //remove leading spaces and tabs
@@ -843,8 +925,9 @@ namespace SetupTv.Sections
             labelstatus.Update();
             labelmainstatus.Text = lng.TranslateString("Sending email to {0}", 7, testreceiver); //Sending email to {0}
             labelmainstatus.Update();
-
-            SendTvServerEmail sendobject = new SendTvServerEmail(TextBoxSmtpServer.Text, Convert.ToInt32(numericUpDownSmtpPort.Value), checkBoxSSL.Checked, TextBoxUserName.Text, TextBoxPassword.Text, textBoxSmtpEmailAdress.Text);
+            int smtpPort = -1;
+            int.TryParse(numericUpDownSmtpPort.Value.ToString(), out smtpPort);
+            SendTvServerEmail sendobject = new SendTvServerEmail(TextBoxSmtpServer.Text, smtpPort, checkBoxSSL.Checked, TextBoxUserName.Text, TextBoxPassword.Text, textBoxSmtpEmailAdress.Text);
             sendobject.Debug = DEBUG;
             
 
@@ -876,6 +959,7 @@ namespace SetupTv.Sections
         
         public  void MySaveSettings()
         {
+            Log.Debug("MySaveSettings()");
             TvBusinessLayer layer = new TvBusinessLayer();
             Setting setting;
 
@@ -1036,7 +1120,6 @@ namespace SetupTv.Sections
 	        setting = layer.GetSetting("TvWishList_TestReceiver", "");
             setting.Value = trimstring(TextBoxTestReceiver.Text);
 		    setting.Persist();
-
             //arrays        	
             try
             {
@@ -1100,9 +1183,6 @@ namespace SetupTv.Sections
             {
                 xmlmessage onemessage = mymessage.GetTvMessageAtIndex(i);
                 //Log.Debug("onemessage.tvwishid="+onemessage.tvwishid);
-
-
-
 
                 TvWish mywish = myTvWishes.RetrieveById(onemessage.tvwishid);
                 if ((mywish == null)&&(onemessage.tvwishid!="-1"))  //allow -1 for general conflicts
@@ -1782,7 +1862,10 @@ namespace SetupTv.Sections
                 checkcombotextbox(ref comboBoxmaxfound, "", 1, 1000000000, "Max Found");
 
                 setting = layer.GetSetting("TvWishList_MaxTvWishId", "0");
-                myTvWishes.MaxTvWishId = Convert.ToInt32(setting.Value);               
+                int maxTvWishId = 0;
+                int.TryParse(setting.Value, out maxTvWishId);
+
+                myTvWishes.MaxTvWishId = maxTvWishId;
                 LogDebug("LoadSettings: MaxTvWishId=" + myTvWishes.MaxTvWishId.ToString(), (int)LogSetting.DEBUG);
 
                 setting = layer.GetSetting("TvWishList_DeleteExpiration", "12");
@@ -1972,7 +2055,8 @@ namespace SetupTv.Sections
                 
                 //integer values
                 setting = layer.GetSetting("TvWishList_ProviderSelected", "0");
-                int j = Convert.ToInt32(setting.Value);
+                int j = 0;
+                int.TryParse(setting.Value, out j);
                 if ((j < 0) || (j > listBoxProvider2.Items.Count))
                 {
                     j = 0;
@@ -2268,7 +2352,8 @@ namespace SetupTv.Sections
 
                     try
                     {
-                        item_number = Convert.ToInt32(item);
+                        item_number = 0;
+                        int.TryParse(item, out item_number);
                         if (item_number == number)
                         {
                             //LogDebug("Exact Combobox item found -done", (int)LogSetting.DEBUG);
@@ -2337,9 +2422,15 @@ namespace SetupTv.Sections
       
             TextBoxSmtpServer.Text = array[1].ToString();
             TextBoxSmtpServer.Update();
-            numericUpDownSmtpPort.Value = Convert.ToInt32(array[2].ToString());
+
+            int smtpPort = -1;
+            int.TryParse(array[2].ToString(), out smtpPort);
+            numericUpDownSmtpPort.Value = smtpPort;
             numericUpDownSmtpPort.Update();
-            checkBoxSSL.Checked = Convert.ToBoolean(array[3].ToString());
+            bool sSL = false;
+            Boolean.TryParse(array[3].ToString(), out sSL);
+
+            checkBoxSSL.Checked = sSL;
             checkBoxSSL.Update();
         }
 
@@ -2444,104 +2535,9 @@ namespace SetupTv.Sections
         }
 
 
-        private void buttontest_Click(object sender, EventArgs e)
-        {
-            
-            
-            if (BUSY == true)
-            {
-                MessageBox.Show(lng.TranslateString("Processing ongoing - please wait for completion",252), lng.TranslateString("Warning",4401));
-                return;
-            }
-            BUSY = true;
-            System.Threading.Thread th = new System.Threading.Thread(TestTvWishList);
-            th.Start();
-            
-        }
-
-
-        private void TestTvWishList()
-        {
-            LogDebug("EPG watching started", (int)LogSetting.DEBUG);
-            try
-            {
-                MySaveSettings();
-            }
-            catch (Exception ex)
-            {
-                LogDebug("Fatal Error: Failed to save settings - exception message is\n" + ex.Message, (int)LogSetting.ERROR);
-            }
-            try
-            {
-                //*****************************************************
-                //unlock TvWishList
-                myTvWishes.UnLockTvWishList();
-
-                //*****************************************************
-                //run processing
-                epgwatchclass.SearchEPG(false); //Email & Record
-
-                
-
-            }
-            catch (Exception exc)
-            {
-                LogDebug("Parsing EPG data failed with exception message:", (int)LogSetting.ERROR);
-                LogDebug(exc.Message, (int)LogSetting.ERROR);
-                // Reset BUSY Flag
-                TvBusinessLayer layer = new TvBusinessLayer();
-                Setting setting = null;
-                //set BUSY = false
-                setting = layer.GetSetting("TvWishList_BUSY", "false");
-                setting.Value = "false";
-                setting.Persist();
-                labelupdate("Parsing EPG data failed - Check the log file", PipeCommands.Error);
-            }
-            try
-            {
-                //*****************************************************
-                //Lock TvWishList with timeout error
-                bool success = false;
-                int seconds = 60;
-                for (int i = 0; i < seconds / 10; i++)
-                {
-                    success = myTvWishes.LockTvWishList("TvWishList Setup");
-                    if (success)
-                        break;
-                    System.Threading.Thread.Sleep(10000); //sleep 10s to wait for BUSY=false
-                    LogDebug("Waiting for old jobs " + (seconds - i * 10).ToString() + "s to finish", (int)LogSetting.DEBUG);
-
-                }
-                if (success == false)
-                {
-                    LogDebug("Timeout Error: TvWishList did not finish old jobs - reboot your computer ", (int)LogSetting.DEBUG);
-                    MessageBox.Show(lng.TranslateString("Timeout Error: TvWishList did not finish old jobs - try to close the plugin again or reboot ",002));
-                    LoadSettingError = true;
-                }
-                else
-                {
-                    MyLoadSettings();
-                }
-            }
-            catch (Exception ex)
-            {
-                LogDebug("Fatal Error: Failed to load settings - exception message is\n" + ex.Message, (int)LogSetting.ERROR);
-                LogDebug("Trying to resave settings to data base", (int)LogSetting.ERROR);
-                try
-                {
-                    MySaveSettings();
-                    LogDebug("Saving settings succeeded", (int)LogSetting.ERROR);
-                }
-                catch
-                {
-                    LogDebug("Fatal Error: Faileed to save settings", (int)LogSetting.ERROR);
-                }
-            }
-            BUSY = false;
-        }
-
         
-        
+
+
 
         
 
@@ -2559,7 +2555,10 @@ namespace SetupTv.Sections
                     {
                         if ((i == (int)TvWishEntries.active) || (i == (int)TvWishEntries.skip) || (i == (int)TvWishEntries.includerecordings))
                         {
-                            dataGridView1[i, SELECTED_ROW].Value = Convert.ToBoolean(myTvWishes.DefaultValues[i]);
+                            Boolean defaultValue = false;
+                            Boolean.TryParse(myTvWishes.DefaultValues[i], out defaultValue);
+
+                            dataGridView1[i, SELECTED_ROW].Value = defaultValue;
                         }
                         else if (i == (int)TvWishEntries.tvwishid)
                         {
@@ -2859,11 +2858,6 @@ namespace SetupTv.Sections
                     }
 
                     
-                    //LogDebug("channelname.length =" + channelname.Length.ToString(), (int)LogSetting.DEBUG);
-                    /*if (channelname.Length > 0)
-                    {
-                        LogDebug("char =" + Convert.ToInt32(channelname[0]).ToString(), (int)LogSetting.DEBUG);
-                    }*/
 
                     
                     
@@ -2887,6 +2881,47 @@ namespace SetupTv.Sections
 
                 //LogDebug("updatechannelnames: removing channels completed", (int)LogSetting.DEBUG);
                 //LogDebug("updatechannelnames: length =" + channelfilter.Items.Count.ToString(), (int)LogSetting.DEBUG);
+
+#if (MPTV2)
+// native TVE3.5 for MP2
+                //build new channel list based on new group filter (use radio and tv channels)
+                //Log.Debug("Update channels in data gridview");
+                IList<Mediaportal.TV.Server.TVDatabase.Entities.ChannelGroup> rawchannelgroups = ServiceAgents.Instance.ChannelGroupServiceAgent.ListAllChannelGroups();
+                //Log.Debug("rawchannelgroups.Count=" + rawchannelgroups.Count.ToString());
+                foreach (Mediaportal.TV.Server.TVDatabase.Entities.ChannelGroup mychannelgroup in rawchannelgroups)
+                {
+                    //Log.Debug("mychannelgroup.GroupName="+mychannelgroup.GroupName);
+                    if (mychannelgroup.GroupName == newgroupname)
+                    {
+                        //Log.Debug("match found");
+                        IList<Mediaportal.TV.Server.TVDatabase.Entities.Channel> rawchannels = ServiceAgents.Instance.ChannelServiceAgent.GetAllChannelsByGroupId(mychannelgroup.IdGroup);
+
+                        //Log.Debug("rawchannels.Count=" + rawchannels.Count.ToString());
+
+                        foreach (Mediaportal.TV.Server.TVDatabase.Entities.Channel rawchannel in rawchannels)
+                        {
+
+                            string channelname = rawchannel.DisplayName;
+                            //Log.Debug("channelname=" + channelname);
+                            if (channelname == "")
+                            {
+                                channelname = "Any";
+                            }
+                            if (addnames.Contains(";" + channelname + ";") == false)//add new channel names
+                            {
+                                channelfilter.Items.Add(channelname);
+                                addnames += channelname + ";";
+                                //
+                                //Log.Debug("TV addnames: " + addnames, (int)LogSetting.DEBUG);
+                            }
+                        }
+                    }
+                }
+                //Log.Debug("channelupdate finished");
+
+#else
+
+
 
                 //build new channel list based on new group filter
                 foreach (ChannelGroup channelgroup in ChannelGroup.ListAll())
@@ -2962,6 +2997,7 @@ namespace SetupTv.Sections
 
                     }
                 }
+#endif
             }
             catch (Exception Exc)
             {
@@ -3225,6 +3261,7 @@ namespace SetupTv.Sections
             }
         }
 
+        
         private void buttonSearchNow_Click(object sender, EventArgs e)
         {
             if (BUSY == true)
@@ -3233,24 +3270,118 @@ namespace SetupTv.Sections
                 return;
             }
             BUSY = true;
+
+#if (MPTV2)
+            tvSetupPipeClient.Debug = DEBUG;
+            tvSetupPipeClient.OnButtonRun();
+#else
             System.Threading.Thread th = new System.Threading.Thread(TestTvWishList);
             th.Start();
+#endif
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buttontest_Click(object sender, EventArgs e)
         {
 
+
+            if (BUSY == true)
+            {
+                MessageBox.Show(lng.TranslateString("Processing ongoing - please wait for completion", 252), lng.TranslateString("Warning", 4401));
+                return;
+            }
+            BUSY = true;
+
+#if (MPTV2)
+            tvSetupPipeClient.Debug = DEBUG;
+            tvSetupPipeClient.OnButtonRun();
+#else
+            System.Threading.Thread th = new System.Threading.Thread(TestTvWishList);
+            th.Start();
+#endif
         }
 
-        
-        
 
-        
-        
 
-        
+        private void TestTvWishList()
+        {
+            LogDebug("EPG watching started", (int)LogSetting.DEBUG);
+            try
+            {
+                MySaveSettings();
+            }
+            catch (Exception ex)
+            {
+                LogDebug("Fatal Error: Failed to save settings - exception message is\n" + ex.Message, (int)LogSetting.ERROR);
+            }
+            try
+            {
+                //*****************************************************
+                //unlock TvWishList
+                myTvWishes.UnLockTvWishList();
 
-        
+                //*****************************************************
+                //run processing
+                epgwatchclass.SearchEPG(false); //Email & Record
+
+
+
+            }
+            catch (Exception exc)
+            {
+                LogDebug("Parsing EPG data failed with exception message:", (int)LogSetting.ERROR);
+                LogDebug(exc.Message, (int)LogSetting.ERROR);
+                // Reset BUSY Flag
+                TvBusinessLayer layer = new TvBusinessLayer();
+                Setting setting = null;
+                //set BUSY = false
+                setting = layer.GetSetting("TvWishList_BUSY", "false");
+                setting.Value = "false";
+                setting.Persist();
+                labelupdate("Parsing EPG data failed - Check the log file", PipeCommands.Error);
+            }
+            try
+            {
+                //*****************************************************
+                //Lock TvWishList with timeout error
+                bool success = false;
+                int seconds = 60;
+                for (int i = 0; i < seconds / 10; i++)
+                {
+                    success = myTvWishes.LockTvWishList("TvWishList Setup");
+                    if (success)
+                        break;
+                    System.Threading.Thread.Sleep(10000); //sleep 10s to wait for BUSY=false
+                    LogDebug("Waiting for old jobs " + (seconds - i * 10).ToString() + "s to finish", (int)LogSetting.DEBUG);
+
+                }
+                if (success == false)
+                {
+                    LogDebug("Timeout Error: TvWishList did not finish old jobs - reboot your computer ", (int)LogSetting.DEBUG);
+                    MessageBox.Show(lng.TranslateString("Timeout Error: TvWishList did not finish old jobs - try to close the plugin again or reboot ", 002));
+                    LoadSettingError = true;
+                }
+                else
+                {
+                    MyLoadSettings();
+                }
+            }
+            catch (Exception ex)
+            {
+                LogDebug("Fatal Error: Failed to load settings - exception message is\n" + ex.Message, (int)LogSetting.ERROR);
+                LogDebug("Trying to resave settings to data base", (int)LogSetting.ERROR);
+                try
+                {
+                    MySaveSettings();
+                    LogDebug("Saving settings succeeded", (int)LogSetting.ERROR);
+                }
+                catch
+                {
+                    LogDebug("Fatal Error: Faileed to save settings", (int)LogSetting.ERROR);
+                }
+            }
+            BUSY = false;
+        }
+
 
         
         

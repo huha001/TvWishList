@@ -22,7 +22,7 @@
 #endregion Copyright (C)
 
 //*****************
-//Version 1.0.0.2
+//Version 1.0.2.0
 //*****************
 
 using System;
@@ -60,6 +60,9 @@ namespace MediaPortal.Plugins
         string _MP_USER_FOLDER = "NOT_DEFINED";
         string _TV_PROGRAM_FOLDER = "NOT_DEFINED";
         string _TV_USER_FOLDER = "NOT_DEFINED";
+
+        string _TV2_PROGRAM_FOLDER = "NOT_DEFINED";
+        string _TV2_USER_FOLDER = "NOT_DEFINED";
 
         string _MP2_PROGRAM_FOLDER = "NOT_DEFINED";
         string _MP2_USER_FOLDER = "NOT_DEFINED";
@@ -120,6 +123,18 @@ namespace MediaPortal.Plugins
         {
             get { return _TV_USER_FOLDER; }
             set { _TV_USER_FOLDER = value; }
+        }
+
+        public string TV2_PROGRAM_FOLDER
+        {
+            get { return _TV2_PROGRAM_FOLDER; }
+            set { _TV2_PROGRAM_FOLDER = value; }
+        }
+
+        public string TV2_USER_FOLDER
+        {
+            get { return _TV2_USER_FOLDER; }
+            set { _TV2_USER_FOLDER = value; }
         }
 
         public string MP_PROGRAM_FOLDER
@@ -376,7 +391,7 @@ namespace MediaPortal.Plugins
 
 
             //************************************
-            //try autodetect MediaPortal.exe
+            //try autodetect Mediaportal.exe
             //************************************
             try
             {
@@ -390,10 +405,10 @@ namespace MediaPortal.Plugins
                 int pos = 0;
                 if (thisdir.Contains(@"\Team MediaPortal\")==true)
                 {
-                    //try to find "MediaPortal\MediaPortal.exe" - get _MP_PROGRAM_FOLDER
+                    //try to find "MediaPortal\Mediaportal.exe" - get _MP_PROGRAM_FOLDER
                     pos = thisdir.IndexOf(@"\Team MediaPortal\");
                     testpath = thisdir.Substring(0,pos)+@"\Team MediaPortal\MediaPortal";
-                    testfile = thisdir.Substring(0, pos) + @"\Team MediaPortal\MediaPortal\MediaPortal.exe";
+                    testfile = thisdir.Substring(0, pos) + @"\Team MediaPortal\MediaPortal\Mediaportal.exe";
                 }
                  
                 if (File.Exists(testfile)==true)
@@ -408,7 +423,7 @@ namespace MediaPortal.Plugins
                     }
                 }    
                 //try to find "%PROGRAMFILES%" - get _MP_PROGRAM_FOLDER
-                else if (File.Exists(Environment.GetEnvironmentVariable("PROGRAMFILES") + @"\Team MediaPortal\MediaPortal\MediaPortal.exe") == true)
+                else if (File.Exists(Environment.GetEnvironmentVariable("PROGRAMFILES") + @"\Team MediaPortal\MediaPortal\Mediaportal.exe") == true)
                 {
                     string path = Environment.GetEnvironmentVariable("PROGRAMFILES") + @"\Team MediaPortal\MediaPortal";
                     if (path.StartsWith(_STARTSWITH) == true)
@@ -421,7 +436,7 @@ namespace MediaPortal.Plugins
                     }                    
                 }
                 //try to find "%PROGRAMFILES% (x86)" - get _MP_PROGRAM_FOLDER
-                else if (File.Exists(Environment.GetEnvironmentVariable("PROGRAMFILES") + @" (x86)\Team MediaPortal\MediaPortal\MediaPortal.exe") == true)
+                else if (File.Exists(Environment.GetEnvironmentVariable("PROGRAMFILES") + @" (x86)\Team MediaPortal\MediaPortal\Mediaportal.exe") == true)
                 {
                     string path = Environment.GetEnvironmentVariable("PROGRAMFILES") + @" (x86)\Team MediaPortal\MediaPortal";
                     if (path.StartsWith(_STARTSWITH) == true)
@@ -434,7 +449,7 @@ namespace MediaPortal.Plugins
                     }
                 }
                 //try to find "C:\Program Files" - get _MP_PROGRAM_FOLDER
-                else if (File.Exists(@"C:\Program Files\Team MediaPortal\MediaPortal\MediaPortal.exe") == true)
+                else if (File.Exists(@"C:\Program Files\Team MediaPortal\MediaPortal\Mediaportal.exe") == true)
                 {
                     string path = @"C:\Program Files\Team MediaPortal\MediaPortal";
                     if (path.StartsWith(_STARTSWITH) == true)
@@ -447,7 +462,7 @@ namespace MediaPortal.Plugins
                     }
                 }
                 //try to find "C:\Program Files (x86)" - get _MP_PROGRAM_FOLDER
-                else if (File.Exists(@"C:\Program Files (x86)\Team MediaPortal\MediaPortal\MediaPortal.exe") == true)
+                else if (File.Exists(@"C:\Program Files (x86)\Team MediaPortal\MediaPortal\Mediaportal.exe") == true)
                 {
                     string path = @"C:\Program Files (x86)\Team MediaPortal\MediaPortal";
                     if (path.StartsWith(_STARTSWITH) == true)
@@ -460,7 +475,7 @@ namespace MediaPortal.Plugins
                     }
                 }
                 //try to find "C:\Programme" - get _MP_PROGRAM_FOLDER
-                else if (File.Exists(@"C:\Programme\Team MediaPortal\MediaPortal\MediaPortal.exe") == true)
+                else if (File.Exists(@"C:\Programme\Team MediaPortal\MediaPortal\Mediaportal.exe") == true)
                 {
                     string path = @"C:\Programme\Team MediaPortal\MediaPortal";
                     if (path.StartsWith(_STARTSWITH) == true)
@@ -667,7 +682,7 @@ namespace MediaPortal.Plugins
                 //try to find "%ALLUSERSPROFILE%" for VISTA - get _MP_USER_FOLDER
                 if (Directory.Exists(ALLUSERSPROFILE + @"\Team MediaPortal\MediaPortal") == true)
                 {
-                    if (File.Exists(ALLUSERSPROFILE + @"\Team MediaPortal\MediaPortal\MediaPortal.exe") == false)
+                    if (File.Exists(ALLUSERSPROFILE + @"\Team MediaPortal\MediaPortal\Mediaportal.exe") == false)
                     {
                         string path = ALLUSERSPROFILE + @"\Team MediaPortal\MediaPortal";
                         if (path.StartsWith(_STARTSWITH) == true)
@@ -683,7 +698,7 @@ namespace MediaPortal.Plugins
                 //try to find "%ALLUSERSPROFILE%\Anwendungsdaten" for XP German - get _MP_USER_FOLDER
                 else if (Directory.Exists(ALLUSERSPROFILE + @"\Anwendungsdaten\Team MediaPortal\MediaPortal") == true)
                 {
-                    if (File.Exists(ALLUSERSPROFILE + @"\Anwendungsdaten\Team MediaPortal\MediaPortal\MediaPortal.exe") == false)
+                    if (File.Exists(ALLUSERSPROFILE + @"\Anwendungsdaten\Team MediaPortal\MediaPortal\Mediaportal.exe") == false)
                     {
                         string path = ALLUSERSPROFILE + @"\Anwendungsdaten\Team MediaPortal\MediaPortal";
                         if (path.StartsWith(_STARTSWITH) == true)
@@ -699,7 +714,7 @@ namespace MediaPortal.Plugins
                 //try to find "%ALLUSERSPROFILE%\Application Data" for XP English - get _MP_USER_FOLDER
                 else if (Directory.Exists(ALLUSERSPROFILE + @"\Application Data\Team MediaPortal\MediaPortal") == true)
                 {
-                    if (File.Exists(ALLUSERSPROFILE + @"\Application Data\Team MediaPortal\MediaPortal\MediaPortal.exe") == false)
+                    if (File.Exists(ALLUSERSPROFILE + @"\Application Data\Team MediaPortal\MediaPortal\Mediaportal.exe") == false)
                     {
                         string path = ALLUSERSPROFILE + @"\Application Data\Team MediaPortal\MediaPortal";
                         if (path.StartsWith(_STARTSWITH) == true)
@@ -715,7 +730,7 @@ namespace MediaPortal.Plugins
                 //try to find "%APPDATA%" for XP - get _MP_USER_FOLDER
                 else if (Directory.Exists(APPDATA + @"\Team MediaPortal\MediaPortal") == true)
                 {
-                    if (File.Exists(APPDATA + @"\Team MediaPortal\MediaPortal\MediaPortal.exe") == false)
+                    if (File.Exists(APPDATA + @"\Team MediaPortal\MediaPortal\Mediaportal.exe") == false)
                     {
                         string path = APPDATA + @"\Team MediaPortal\MediaPortal";
                         if (path.StartsWith(_STARTSWITH) == true)
@@ -731,7 +746,7 @@ namespace MediaPortal.Plugins
                 //try to find "%XP_PROGRAMDATA%" for XP - get _MP_USER_FOLDER
                 else if (Directory.Exists(XP_PROGRAMDATA + @"\Team MediaPortal\MediaPortal") == true)
                 {
-                    if (File.Exists(XP_PROGRAMDATA + @"\Team MediaPortal\MediaPortal\MediaPortal.exe") == false)
+                    if (File.Exists(XP_PROGRAMDATA + @"\Team MediaPortal\MediaPortal\Mediaportal.exe") == false)
                     {
                         string path = XP_PROGRAMDATA + @"\Team MediaPortal\MediaPortal";
                         if (path.StartsWith(_STARTSWITH) == true)
@@ -747,7 +762,7 @@ namespace MediaPortal.Plugins
                 //try to find "%PROGRAMDATA%" for VISTA - get _MP_USER_FOLDER
                 else if (Directory.Exists(PROGRAMDATA + @"\Team MediaPortal\MediaPortal") == true)
                 {
-                    if (File.Exists(PROGRAMDATA + @"\Team MediaPortal\MediaPortal\MediaPortal.exe") == false)
+                    if (File.Exists(PROGRAMDATA + @"\Team MediaPortal\MediaPortal\Mediaportal.exe") == false)
                     {
                         string path = PROGRAMDATA + @"\Team MediaPortal\MediaPortal";
                         if (path.StartsWith(_STARTSWITH) == true)
@@ -993,7 +1008,7 @@ namespace MediaPortal.Plugins
                 int pos = 0;
                 if (thisdir.Contains(@"\Team MediaPortal\") == true)
                 {
-                    //try to find "MediaPortal\MediaPortal.exe" - get _MP_PROGRAM_FOLDER
+                    //try to find "MediaPortal\Mediaportal.exe" - get _MP_PROGRAM_FOLDER
                     pos = thisdir.IndexOf(@"\Team MediaPortal\");
                     testpath = thisdir.Substring(0, pos) + @"\Team MediaPortal\MP2-Client";
                     testfile = thisdir.Substring(0, pos) + @"\Team MediaPortal\MP2-Client\MP2-Client.exe";
@@ -1251,7 +1266,7 @@ namespace MediaPortal.Plugins
             }
             catch (Exception ee)
             {
-                textoutput("Failed to autodetect _TV_PROGRAM_FOLDER - Exception message is \n" + ee.Message + "\n");
+                textoutput("Failed to autodetect _SV2_PROGRAM_FOLDER - Exception message is \n" + ee.Message + "\n");
             }
 
 
@@ -1574,16 +1589,52 @@ namespace MediaPortal.Plugins
                 textoutput("Failed to autodetect SV2_USER_FOLDER - Exception message is \n" + ee.Message + "\n");
             }
 
+
+            
+
+            //************************************
+            //try autodetect MP2-Native TV Server
+            //************************************
+            try
+            {
+                GetMediaPortalDirsMP2();
+                
+                if (Directory.Exists(DIR_SV2_Plugins + @"\SlimTv.Service"))
+                {
+                    TV2_PROGRAM_FOLDER = DIR_SV2_Plugins + @"\SlimTv.Service";
+                }
+            }
+            catch (Exception ee)
+            {
+                textoutput("Failed to autodetect TV2_PROGRAM_FOLDER - Exception message is \n" + ee.Message + "\n");
+            }
+            
+            //*****************************************************
+            //try autodetect MP2 Native TV Server Application data
+            //*****************************************************
+
+            try
+            {
+                if (Directory.Exists(SV2_USER_FOLDER + @"\SlimTVCore"))
+                {
+                    TV2_USER_FOLDER = SV2_USER_FOLDER + @"\SlimTVCore";
+                }
+            }
+            catch (Exception ee)
+            {
+                textoutput("Failed to autodetect TV2_USER_FOLDER - Exception message is \n" + ee.Message + "\n");
+            }
+
         }        
 
 
         public string ask_MP_PROGRAM()
         {
 
-            if (File.Exists(_MP_PROGRAM_FOLDER + @"\MediaPortal.exe") == false)
+            if (File.Exists(_MP_PROGRAM_FOLDER + @"\Mediaportal.exe") == false)
                 GetInstallPaths();
 
-            if (File.Exists(_MP_PROGRAM_FOLDER + @"\MediaPortal.exe") == false)
+            if (File.Exists(_MP_PROGRAM_FOLDER + @"\Mediaportal.exe") == false)
             {
                 ask_MP_PROGRAM_ALWAYS();              
             }
@@ -1596,9 +1647,9 @@ namespace MediaPortal.Plugins
             string foldertype = "_MP_PROGRAM_FOLDER";
             // let user select file
             OpenFileDialog openFileDialogMPPathProgram = new OpenFileDialog();
-            openFileDialogMPPathProgram.Filter = "MediaPortal.exe |MediaPortal.exe";
+            openFileDialogMPPathProgram.Filter = "Mediaportal.exe |Mediaportal.exe";
             //openFileDialogMPPathProgram.InitialDirectory = "C:\\";
-            openFileDialogMPPathProgram.Title = @"Select the File MediaPortal.exe in ..\Team MediaPortal\MediaPortal";
+            openFileDialogMPPathProgram.Title = @"Select the File Mediaportal.exe in ..\Team MediaPortal\MediaPortal";
             if (openFileDialogMPPathProgram.ShowDialog() == DialogResult.OK)
                 path = openFileDialogMPPathProgram.FileName;
 
@@ -2077,6 +2128,69 @@ namespace MediaPortal.Plugins
             return SV2_USER_FOLDER;
         }
 
+
+        public string ask_TV2_USER()
+        {
+            if (_TV2_USER_FOLDER == "NOT_DEFINED")
+                GetInstallPathsMP2();
+
+            if (_TV2_USER_FOLDER == "NOT_DEFINED")
+            {
+                ask_TV2_USER_ALWAYS();
+
+            }
+            return _TV2_USER_FOLDER;
+        }
+
+        public string ask_TV2_USER_ALWAYS()
+        {
+
+            string path = "";
+            string foldertype = "_TV2_USER_FOLDER";
+            // let user select file
+            OpenFileDialog openFileDialogPathUser = new OpenFileDialog();
+            openFileDialogPathUser.Filter = "*.* |*.*";
+            //openFileDialogPathUser.InitialDirectory = "C:\\";
+            openFileDialogPathUser.Title = @"Select any file in the Tv user folder ..\Team MediaPortal\MP2-Server\Plugins\SlimTv.Service";
+            if (openFileDialogPathUser.ShowDialog() == DialogResult.OK)
+                path = openFileDialogPathUser.FileName;
+
+            if ((File.Exists(path) == true) && (path.Length > 21))
+            {
+                // extract user folder ..\\Team MediaPortal\\MediaPortal TV Server
+
+                try
+                {
+                    FileInfo myfileinfo = new FileInfo(path);
+                    path = myfileinfo.DirectoryName;
+                }
+                catch (Exception exc)
+                {
+                    textoutput("Error: \n" + exc.Message);
+                }
+
+                if (path.StartsWith(_STARTSWITH) == false)
+                {
+                    textoutput("Error: Selected folder\n" + path + "  \n does not start with" + _STARTSWITH + "\n");
+                    path = "NOT_DEFINED";
+                }
+                else
+                {
+                    _TV2_USER_FOLDER = path;
+                }
+            }
+            else
+            {
+                textoutput("Error: File Path Folder for " + foldertype + "  was not found in the file dialog");
+                path = "NOT_DEFINED";
+            }
+
+            if (_DEBUG == true)
+            {
+                textoutput("New path " + path + " found for " + foldertype);
+            }
+            return _TV2_USER_FOLDER;
+        }
 
 
 

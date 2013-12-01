@@ -1,5 +1,0 @@
-C:\Users\Hubert\AppData\Local\Temporary Projects\ClassLibrary1\bin\Release\ClassLibrary1.dll
-C:\Users\Hubert\AppData\Local\Temporary Projects\ClassLibrary1\bin\Release\ClassLibrary1.pdb
-C:\Users\Hubert\AppData\Local\Temporary Projects\ClassLibrary1\obj\Release\ResolveAssemblyReference.cache
-C:\Users\Hubert\AppData\Local\Temporary Projects\ClassLibrary1\obj\Release\ClassLibrary1.dll
-C:\Users\Hubert\AppData\Local\Temporary Projects\ClassLibrary1\obj\Release\ClassLibrary1.pdb

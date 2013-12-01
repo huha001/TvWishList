@@ -1,7 +1,6 @@
-#region Copyright (C) 2005-2007 Team MediaPortal
-
+#region Copyright (C)
 /* 
- *	Copyright (C) 2005-2007 Team MediaPortal
+ *	Copyright (C) 2005-2012 Team MediaPortal
  *	http://www.team-mediaportal.com
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -20,8 +19,7 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
-#endregion
+#endregion Copyright (C)
 
 using System;
 using System.Collections;
@@ -33,7 +31,7 @@ using MediaPortal.Localisation;
 using Log = TvLibrary.Log.huha.Log;
 
 //code reused from Chemelli´s TVWishListMP plugin
-namespace TvWishList
+namespace MediaPortal.Plugins.TvWishList
 {
   /// <summary>
   /// This class will hold all text used in the application
@@ -81,7 +79,7 @@ namespace TvWishList
     public static bool LoadMPlanguage()
     {
         Log.Info("[TVWishListMP Localice Strings]:  MP Language=" + GUILocalizeStrings.CurrentLanguage().ToString());
-        Load(GUILocalizeStrings.CurrentLanguage().ToString());       
+        Load(GUILocalizeStrings.CurrentLanguage().ToString());
         return true;
     }
 
@@ -99,13 +97,47 @@ namespace TvWishList
       string cultureName = null;
       if (language != null) cultureName = GetCultureName(language);
 
-      Log.Info("[TVWishListMP Localice Strings]: Loading localised Strings - Path: {0} Culture: {1}  Language: {2} Prefix: {3}", directory,
+      Log.Info("[aTVWishListMP Localice Strings]: Loading localised Strings - Path: {0} Culture: {1}  Language: {2} Prefix: {3}", directory,
                cultureName, language, isPrefixEnabled);
 
       _stringProvider = new LocalisationProvider(directory, cultureName, isPrefixEnabled);
 
-      //GUIGraphicsContext.CharsInCharacterSet = _stringProvider.Characters;
 
+
+      CultureInfo MPculture = CultureInfo.CreateSpecificCulture(cultureName);
+      Log.Debug("MPculture.EnglishName=" + MPculture.EnglishName);
+      Log.Debug("MPculture.Parent.EnglishName=" + MPculture.Parent.EnglishName);
+
+
+      
+      CultureInfo[] availableCultures = _stringProvider.AvailableLanguages();
+      foreach (CultureInfo myculture in availableCultures)
+      {
+          if (myculture.EnglishName == language)
+          {
+
+              Log.Info("[bTVWishListMP Localice Strings]: Loading localised Strings - Path: {0} Culture: {1}  Language: {2} Prefix: {3}", directory,
+               cultureName, language, isPrefixEnabled);
+              _stringProvider = new LocalisationProvider(directory, cultureName, isPrefixEnabled);
+              return true;
+          }
+      }
+
+      foreach (CultureInfo myculture in availableCultures)
+      {
+          if (myculture.EnglishName == MPculture.Parent.EnglishName)
+          {
+              Log.Info("[cTVWishListMP Localice Strings]: Loading localised Strings - Path: {0} Culture: {1}  Language: {2} Prefix: {3}", directory,
+               MPculture.Parent.TwoLetterISOLanguageName, MPculture.Parent.EnglishName, isPrefixEnabled);
+              _stringProvider = new LocalisationProvider(directory, MPculture.Parent.TwoLetterISOLanguageName, isPrefixEnabled);
+              return true;
+          }
+      }
+
+      CultureInfo bestculture = _stringProvider.GetBestLanguage();
+      Log.Info("[dTVWishListMP Localice Strings]: Loading localised Strings - Path: {0} Culture: {1}  Language: {2} Prefix: {3}", directory,
+             bestculture.TwoLetterISOLanguageName, bestculture.EnglishName, isPrefixEnabled);
+      _stringProvider = new LocalisationProvider(directory, bestculture.TwoLetterISOLanguageName, isPrefixEnabled);
       return true;
     }
 
@@ -251,6 +283,32 @@ namespace TvWishList
       return _languages;
     }
 
+
+    public static string GetCultureName(string language)
+    {
+        if (_cultures == null)
+        {
+            _cultures = new Dictionary<string, string>();
+
+            CultureInfo[] cultureList = CultureInfo.GetCultures(CultureTypes.AllCultures);
+
+            for (int i = 0; i < cultureList.Length; i++)
+            {
+                if (!_cultures.ContainsKey(cultureList[i].EnglishName))
+                {
+                    _cultures.Add(cultureList[i].EnglishName, cultureList[i].Name);
+                }
+            }
+        }
+
+        if (_cultures.ContainsKey(language))
+            return _cultures[language];
+
+        return null;
+    }
+
+
+      /*
     public static string GetCultureName(string language)
     {
       if (_cultures == null)
@@ -269,7 +327,7 @@ namespace TvWishList
         return _cultures[language];
 
       return null;
-    }
+    }*/
 
     #endregion
   }

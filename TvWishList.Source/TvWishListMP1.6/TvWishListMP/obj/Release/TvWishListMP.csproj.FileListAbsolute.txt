@@ -787,7 +787,7 @@ H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\T
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.6\TvWishListMP\bin\Release\TvWishListMP.dll
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.6\TvWishListMP\bin\Release\TvWishListMP.pdb
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.6\TvWishListMP\obj\Release\TvWishListMP.csprojResolveAssemblyReference.cache
-H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.6\TvWishListMP\obj\Release\TvWishList.TvWishListSetup.resources
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.6\TvWishListMP\obj\Release\TvWishListMP.csproj.GenerateResource.Cache
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.6\TvWishListMP\obj\Release\TvWishListMP.dll
 H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.6\TvWishListMP\obj\Release\TvWishListMP.pdb
+H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\TvWishListMP1.6\TvWishListMP\obj\Release\MediaPortal.Plugins.TvWishList.TvWishListSetup.resources

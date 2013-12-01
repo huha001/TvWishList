@@ -46,7 +46,7 @@ using TvWishList;
 using Log = TvLibrary.Log.huha.Log;
 
 
-namespace TvWishList
+namespace MediaPortal.Plugins.TvWishList
 {
     public partial class TvWishListSetup : Form
     {

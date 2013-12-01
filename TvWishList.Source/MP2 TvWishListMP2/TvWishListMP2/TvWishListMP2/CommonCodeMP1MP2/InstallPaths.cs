@@ -22,7 +22,7 @@
 #endregion Copyright (C)
 
 //*****************
-//Version 1.0.0.2
+//Version 1.0.2.0
 //*****************
 
 using System;
@@ -45,7 +45,6 @@ using Microsoft.Win32;
 
 
 
-
 namespace MediaPortal.Plugins
 {
     //[CLSCompliant(false)]
@@ -61,6 +60,9 @@ namespace MediaPortal.Plugins
         string _MP_USER_FOLDER = "NOT_DEFINED";
         string _TV_PROGRAM_FOLDER = "NOT_DEFINED";
         string _TV_USER_FOLDER = "NOT_DEFINED";
+
+        string _TV2_PROGRAM_FOLDER = "NOT_DEFINED";
+        string _TV2_USER_FOLDER = "NOT_DEFINED";
 
         string _MP2_PROGRAM_FOLDER = "NOT_DEFINED";
         string _MP2_USER_FOLDER = "NOT_DEFINED";
@@ -121,6 +123,18 @@ namespace MediaPortal.Plugins
         {
             get { return _TV_USER_FOLDER; }
             set { _TV_USER_FOLDER = value; }
+        }
+
+        public string TV2_PROGRAM_FOLDER
+        {
+            get { return _TV2_PROGRAM_FOLDER; }
+            set { _TV2_PROGRAM_FOLDER = value; }
+        }
+
+        public string TV2_USER_FOLDER
+        {
+            get { return _TV2_USER_FOLDER; }
+            set { _TV2_USER_FOLDER = value; }
         }
 
         public string MP_PROGRAM_FOLDER
@@ -1252,7 +1266,7 @@ namespace MediaPortal.Plugins
             }
             catch (Exception ee)
             {
-                textoutput("Failed to autodetect _TV_PROGRAM_FOLDER - Exception message is \n" + ee.Message + "\n");
+                textoutput("Failed to autodetect _SV2_PROGRAM_FOLDER - Exception message is \n" + ee.Message + "\n");
             }
 
 
@@ -1573,6 +1587,42 @@ namespace MediaPortal.Plugins
             catch (Exception ee)
             {
                 textoutput("Failed to autodetect SV2_USER_FOLDER - Exception message is \n" + ee.Message + "\n");
+            }
+
+
+            
+
+            //************************************
+            //try autodetect MP2-Native TV Server
+            //************************************
+            try
+            {
+                GetMediaPortalDirsMP2();
+                
+                if (Directory.Exists(DIR_SV2_Plugins + @"\SlimTv.Service"))
+                {
+                    TV2_PROGRAM_FOLDER = DIR_SV2_Plugins + @"\SlimTv.Service";
+                }
+            }
+            catch (Exception ee)
+            {
+                textoutput("Failed to autodetect TV2_PROGRAM_FOLDER - Exception message is \n" + ee.Message + "\n");
+            }
+            
+            //*****************************************************
+            //try autodetect MP2 Native TV Server Application data
+            //*****************************************************
+
+            try
+            {
+                if (Directory.Exists(SV2_USER_FOLDER + @"\SlimTVCore"))
+                {
+                    TV2_USER_FOLDER = SV2_USER_FOLDER + @"\SlimTVCore";
+                }
+            }
+            catch (Exception ee)
+            {
+                textoutput("Failed to autodetect TV2_USER_FOLDER - Exception message is \n" + ee.Message + "\n");
             }
 
         }        
@@ -2078,6 +2128,69 @@ namespace MediaPortal.Plugins
             return SV2_USER_FOLDER;
         }
 
+
+        public string ask_TV2_USER()
+        {
+            if (_TV2_USER_FOLDER == "NOT_DEFINED")
+                GetInstallPathsMP2();
+
+            if (_TV2_USER_FOLDER == "NOT_DEFINED")
+            {
+                ask_TV2_USER_ALWAYS();
+
+            }
+            return _TV2_USER_FOLDER;
+        }
+
+        public string ask_TV2_USER_ALWAYS()
+        {
+
+            string path = "";
+            string foldertype = "_TV2_USER_FOLDER";
+            // let user select file
+            OpenFileDialog openFileDialogPathUser = new OpenFileDialog();
+            openFileDialogPathUser.Filter = "*.* |*.*";
+            //openFileDialogPathUser.InitialDirectory = "C:\\";
+            openFileDialogPathUser.Title = @"Select any file in the Tv user folder ..\Team MediaPortal\MP2-Server\Plugins\SlimTv.Service";
+            if (openFileDialogPathUser.ShowDialog() == DialogResult.OK)
+                path = openFileDialogPathUser.FileName;
+
+            if ((File.Exists(path) == true) && (path.Length > 21))
+            {
+                // extract user folder ..\\Team MediaPortal\\MediaPortal TV Server
+
+                try
+                {
+                    FileInfo myfileinfo = new FileInfo(path);
+                    path = myfileinfo.DirectoryName;
+                }
+                catch (Exception exc)
+                {
+                    textoutput("Error: \n" + exc.Message);
+                }
+
+                if (path.StartsWith(_STARTSWITH) == false)
+                {
+                    textoutput("Error: Selected folder\n" + path + "  \n does not start with" + _STARTSWITH + "\n");
+                    path = "NOT_DEFINED";
+                }
+                else
+                {
+                    _TV2_USER_FOLDER = path;
+                }
+            }
+            else
+            {
+                textoutput("Error: File Path Folder for " + foldertype + "  was not found in the file dialog");
+                path = "NOT_DEFINED";
+            }
+
+            if (_DEBUG == true)
+            {
+                textoutput("New path " + path + " found for " + foldertype);
+            }
+            return _TV2_USER_FOLDER;
+        }
 
 
 

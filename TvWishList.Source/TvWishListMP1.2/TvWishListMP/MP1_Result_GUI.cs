@@ -43,8 +43,8 @@ using TvDatabase;
 using Gentle.Framework;
  
 //using GUIKeyboard = MediaPortal.GUI.Library.huha.GUIKeyboard;
- 
-namespace TvWishList
+
+namespace MediaPortal.Plugins.TvWishList
 {
     public partial class Result_GUI : GUIWindow 
     {

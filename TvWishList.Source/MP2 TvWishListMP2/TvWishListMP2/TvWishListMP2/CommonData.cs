@@ -38,7 +38,7 @@ using MediaPortal.UI.Presentation.Screens;
 using MediaPortal.UI.Presentation.Workflow;
 using MediaPortal.UI.Presentation.Models;
 
-namespace TvWishList
+namespace MediaPortal.Plugins.TvWishList
 {
     // generate MP2 localized strings with MP1 code and a converted language file with MP2LanguageConverter
     public class PluginGuiLocalizeStrings

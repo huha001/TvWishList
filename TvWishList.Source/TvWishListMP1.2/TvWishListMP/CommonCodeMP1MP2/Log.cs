@@ -245,7 +245,7 @@ namespace TvLibrary.Log.huha
             {
                 case LogType.Debug:
                 case LogType.Info:
-#if (MP11 || MP12)
+#if (MP11 || MP12 || MP16)
                     string Path1 = String.Format(@"{0}\Team MediaPortal\MediaPortal", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
                     return String.Format(@"{0}\log\TvWishListMP.log", Path1);
 #elif (MP2)
@@ -258,7 +258,7 @@ namespace TvLibrary.Log.huha
 #endif
 
                 case LogType.Error:
-#if (MP11 || MP12)
+#if (MP11 || MP12 || MP16)
                     string Path2 = String.Format(@"{0}\Team MediaPortal\MediaPortal", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
                     return String.Format(@"{0}\log\error.log", Path2);
 #elif (MP2)
@@ -272,7 +272,7 @@ namespace TvLibrary.Log.huha
 
 
                 default:
-#if (MP11 || MP12)
+#if (MP11 || MP12 || MP16)
                     string Path3 = String.Format(@"{0}\Team MediaPortal\MediaPortal", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
                     return String.Format(@"{0}\log\TvWishListMP.log", Path3);
 #elif (MP2)

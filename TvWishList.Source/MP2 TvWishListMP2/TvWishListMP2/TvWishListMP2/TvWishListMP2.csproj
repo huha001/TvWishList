@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TvWishListMessaging.cs" />
     <Compile Include="CommonCodeMP1MP2\Common_Edit_GUI.cs" />
     <Compile Include="CommonCodeMP1MP2\Common_Main_GUI.cs" />
     <Compile Include="CommonCodeMP1MP2\Common_Result_GUI.cs" />
@@ -83,21 +84,24 @@
     </Compile>
     <Compile Include="ExtensionButtons\SlimTvTvWishListQuickMenu.cs" />
     <Compile Include="Models\Common_Edit_AND_ConfigDefaults.cs" />
-    <Compile Include="MpExtended\Items\ChannelGroup.cs" />
-    <Compile Include="MpExtended\Items\Channel.cs" />
-    <Compile Include="MpExtended\Items\Card.cs" />
-    <Compile Include="MpExtended\Items\Recording.cs" />
-    <Compile Include="MpExtended\Items\RadioChannelGroup.cs" />
-    <Compile Include="MpExtended\Items\RadioChannel.cs" />
-    <Compile Include="MpExtended\Items\Schedule.cs">
+    <Compile Include="Items\ChannelGroup.cs" />
+    <Compile Include="Items\Channel.cs" />
+    <Compile Include="Items\Card.cs" />
+    <Compile Include="Items\Recording.cs" />
+    <Compile Include="Items\RadioChannelGroup.cs" />
+    <Compile Include="Items\RadioChannel.cs" />
+    <Compile Include="Items\Schedule.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MpExtended\Items\TvBusinessLayer.cs" />
-    <Compile Include="MpExtended\Items\ServerName.cs" />
-    <Compile Include="MpExtended\Items\Setting.cs" />
+    <Compile Include="Items\TvBusinessLayer.cs" />
+    <Compile Include="Items\ServerName.cs" />
+    <Compile Include="Items\Setting.cs" />
     <Compile Include="Models\ConfigFilter_GUI.cs" />
     <Compile Include="Models\ConfigFormats_GUI.cs" />
     <Compile Include="Models\ConfigMain_GUI.cs" />
+    <Compile Include="CommonCodeMP1MP2\PipeClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Settings\Configuration\SetupFormats_GUI.cs" />
     <Compile Include="Settings\Configuration\SetupFilter_GUI.cs" />
     <Compile Include="Settings\Configuration\SetupMain_GUI.cs" />

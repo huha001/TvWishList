@@ -33,20 +33,50 @@ using System.Net;
 using System.Net.Mail;
 using System.Globalization;
 using System.Xml;
-
-using TvLibrary.Log.huha;
-using TvControl;
-using SetupTv;
-using TvEngine;
-using TvEngine.Events;
+using Log = TvLibrary.Log.huha.Log;
+//using TvLibrary.Log.huha;
 using TvLibrary.Interfaces;
+using MediaPortal.Plugins.TvWishList.Setup;
+using TvEngine;
+
+#if (MPTV2)
+// native TV3.5 for MP2
+using Mediaportal.TV.Server.Plugins.Base.Interfaces;
+using Mediaportal.TV.Server.SetupControls;
+using MediaPortal.Common.Utils;
+
+using Mediaportal.TV.Server.TVControl;
+using Mediaportal.TV.Server.TVControl.ServiceAgents;
+using Mediaportal.TV.Server.TVControl.Events;
+using Mediaportal.TV.Server.TVControl.Interfaces.Events;
+using Mediaportal.TV.Server.TVControl.Interfaces.Services;
+
+/*
+using Mediaportal.TV.Server.TVDatabase.Entities;
+using Mediaportal.TV.Server.TVDatabase.Entities.Enums;
+using Mediaportal.TV.Server.TVDatabase.EntityModel.Interfaces;
+using Mediaportal.TV.Server.TVDatabase.EntityModel.ObjContext;
+using Mediaportal.TV.Server.TVDatabase.EntityModel.Repositories;
+using Mediaportal.TV.Server.TVDatabase.TVBusinessLayer.Entities;
+using Mediaportal.TV.Server.TVDatabase.TVBusinessLayer.Entities.Cache;*/
+ 
+using MediaPortal.Plugins.TvWishList.Items;
+
+using Mediaportal.TV.Server.Plugins.PowerScheduler.Interfaces.Interfaces;
+
+
+#else 
+using TvControl;
+using TvEngine.Events;
 using TvLibrary.Implementations;
 using TvDatabase;
+using SetupTv;
+#endif
+
 using TvEngine.PowerScheduler.Interfaces;
 
-using MyTVMail;
 using MediaPortal.Plugins;
-using TvWishList;
+//using TvWishList;
 
 
 using Microsoft.Win32;
@@ -55,128 +85,15 @@ using System.IO.Pipes;
 using System.Security.Principal;
 using System.Threading;
 
-namespace TvEngine
+
+
+namespace MediaPortal.Plugins.TvWishList
 {
     /// <summary>
     /// base class for tv-server plugins
     /// </summary>
     ///
 
-    /* Version 1.2.0. 12
-     * added VIEW_ONLY_MODE
-     * no email in VIEW_ONLY_MODE
-     * hits++ for email or view mode
-     * not skipping already recorded data in VIEW_ONLY_MODE 
- 
-
-    /* Version 1.2.0. 11
-     * added userdefined email format
-     * added user defined email messages
-     * added TvWishList Filewatcher processing
-
-    /*Version 1.2.0. 10
-     * bugfix on exception message EPG scanning  (do not use empty strings for string replacement)
-     * installer fix on license file not found (check %Installer% folder)
-
-    /*Version 1.2.0. 8
-     * new user options for improved recognition of episodes
-     * filter added for episode name, part and number
-     * plugin compatibility check for 1.2 included
-     * added new .dll version for 1.2
-     * updated structures for compatibility to 1.2
-     * bugfix on email only for repeated runs from mcl
-     * bugfix on found counter from mcl
-     * uninstall deletes now messages.xml
-     * added try in every subroutine of tvwishlist.cs
-     * bugfixes on conditional version compile options
-     * 
-     * Version 1.2.0. 6
-     * fixed bug in search function
-     * added expression for SQL queries
-     * no more support for MediaPortal version 1.0.0. final
-     * fixed bug for email messages (new message system)
-     * 
-     * 1.2.0. 2
-     * fixed bug on filter functions "before/after day" and "before /after time"
-     * output of program description
-     * reset all founds will reset all found counters to 0
-     * 
-     * Version 1.2.0 .1
-     * bugfix on skip none gui button
-     * the channel filter has is now a dropdown list based on the group selection in Channelfilters
-     * 
-     * Version 1.2.0 .0
-     * bugfix on tvwishlist number
-     * changed active to true/false instead of yes/no
-     * added checkbox for skip repeated episodes - datagrid columns item must have correct type for default element (true and not "true")
-     * 
-     * Version 1.1.0. 1
-     * delete scheduled recordings if mismatch with found program, because old and new epg data do not match
-     * word match
-     * filter option "after time" and "before time" (default any)
-     * filter option "after day" and "before day" (default any)
-     * filter option single channel name
-     * small GUI layout changes
-     * moved important messages from DEBUG to INFO
-     * 
-     * Version 1.0.7. 0
-     * faster epg data processing by presorting
-     * user option for skip repeated schedules
-     * next epg time can use weekdays
-     * comparison between old and new epg checking date
-     * standby or logoff/shutdown error handling and resetting to last epg check time
-     * handling new integer values for comboboxes, which are not in the drop down list
-     * set all active 7 inactive buttons added
-     * handshake between tvservice and setupTv for resetting nextepgtime in tvservice
-     * 
-     * Version 0.0.0. 8
-     * fixed bug for different username and email address getting data from emailserverplugin instead of tvwishlist
-     * added name of search entry and number in reply mail
-     * 
-     * Version 0.0.0. 7
-     * added support for MP1.1RC2
-     * 
-     * Version 0.0.0. 5
-     * fixed issue of Exception message when running EPG search for some users (thanks to joit for debugging)
-     * fixed issue with "Keep Until" Option not working
-     * 
-     * Version 0.0.0. 4
-     * added advanced settings and additional filter options for episode and series
-     * fixed bug with invalid (empty) first row in table
-     * modified installer for install/uninstall argument in order to prepare for the new MPEI2 installer
-     * fixed bug if advanced schedule options (weekly, daily, ..) was used before
-     * changed GUI to data grid view to enable easier editing
-     * 
-     * Version 0.0.0. 3
-     * fixed conflict management by including the Tv server conflict management
-     * added user settings for Schedule Conflicts and Email Conflicts
-     * added back episodes (one or all) and recordings will be flagged as episodes and recorded in a folder. This allows to use episode management later from the recordings.
-     * 
-     * Version 0.0.0. 2
-     * record each series of an episode by unique title and description
-     * exclude filer
-     * 
-     * 
-     * Version 0.0.0. 1
-     * initial release
-    */
-
-    public enum PipeCommands
-    {
-        RequestTvVersion = 1,
-        StartEpg,
-        ImportTvWishes,
-        ExportTvWishes,
-        RemoveSetting,
-        RemoveRecording,
-        RemoveLongSetting,
-        Ready,
-        Error,
-        Error_TimeOut,
-        UnknownCommand,
-    }
-    
-    
     public class TvWishList : ITvServerPlugin
     {
    
@@ -250,7 +167,7 @@ namespace TvEngine
         /// <summary>
         /// returns the version of the plugin
         /// </summary>
-        public string Version { get { return "1.3.0.13"; } }
+        public string Version { get { return "1.4.0.0"; } }
 
         /// <summary>
         /// returns the author of the plugin
@@ -271,12 +188,18 @@ namespace TvEngine
         /// Starts the plugin
         /// </summary>
         [CLSCompliant(false)]
+
+#if (MPTV2)
+        public void Start(IInternalControllerService controller)
+#else
         public void Start(IController controller)
+#endif
+        
         {            
             try
             {
                 Log.Info("TvWishList started");
-                
+
                 SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
                 SystemEvents.SessionEnded += new SessionEndedEventHandler(SystemEvents_SessionEnded);
 
@@ -284,23 +207,23 @@ namespace TvEngine
                 events.OnTvServerEvent += new TvServerEventHandler(events_OnTvServerEvent);
 
                 TvBusinessLayer layer = new TvBusinessLayer();
-                Setting setting = null;
+                Setting setting = null; 
                 //set BUSY = false
                 setting = layer.GetSetting("TvWishList_BUSY", "false");
                 setting.Value = "false";
                 setting.Persist();
 
-                setting = layer.GetSetting("TvWishList_Debug", "false");
+                
 
-                if (Convert.ToBoolean(setting.Value) == true)
-                {
-                    DEBUG = true;
-                }
-                else
-                {
-                    DEBUG = false;
-                }
+                setting = layer.GetSetting("TvWishList_Debug", "false");
+                Log.Info("setting DEBUG MODE = " + setting.Value);
+                
+
+                DEBUG = false;
+                Boolean.TryParse(setting.Value, out DEBUG);
                 Log.DebugValue = DEBUG;
+
+                Log.Info("DEBUG MODE = " + DEBUG.ToString());
 
                 //unlock pluginversion
                 setting = layer.GetSetting("TvWishList_LockingPluginname", "NONE");
@@ -324,15 +247,30 @@ namespace TvEngine
                     Log.Debug("Overwriting TvServer Machine Name To " + setting.Value);
                 }
 
+                //save pipename for Tvserver2
+                setting = layer.GetSetting("TvWishList_PipeName", "NONE");
+                Log.Debug("TvWishList_PipeName=" + setting.Value);
+#if (MPTV2)
+                setting.Value = "MP2TvWishListPipe";
+#else
+                setting.Value = "TvWishListPipe";
+#endif
+                setting.Persist();
+                
 
                 TV_USER_FOLDER = layer.GetSetting("TvWishList_TV_USER_FOLDER", "NOT_FOUND").Value;
                 if ((File.Exists(TV_USER_FOLDER + @"\TvService.exe") == true) || (Directory.Exists(TV_USER_FOLDER) == false))
                 {
                     //autodetect paths
                     InstallPaths instpaths = new InstallPaths();  //define new instance for folder detection
+#if (MPTV2) //Native MP2 Tv server
+                    instpaths.GetInstallPathsMP2();
+                    TV_USER_FOLDER = instpaths.TV2_USER_FOLDER;
+#else
                     instpaths.GetInstallPaths();
                     TV_USER_FOLDER = instpaths.TV_USER_FOLDER;
-                    Logdebug("TV server user folder detected at " + TV_USER_FOLDER);
+#endif
+                    Logdebug("TV server user folder detected at " + TV_USER_FOLDER); 
 
                     if ((File.Exists(TV_USER_FOLDER + @"\TvService.exe") == true) || (Directory.Exists(TV_USER_FOLDER) == false))
                     {
@@ -350,7 +288,7 @@ namespace TvEngine
                     }
                 }
 
-
+                
 
 
                 _RecordingFlagTime = DateTime.Now.AddHours(1.0); //add 1 hour to give time for setup
@@ -365,6 +303,10 @@ namespace TvEngine
                     Log.Error("NextEpgDate reading failed with exception: " + exc.Message);
                 }
                 Log.Debug("Start(IController controller):  _NextEpgTime=" + _NextEpgTime.ToString());
+
+
+
+                
 
                 /*
                 // lock next time for receive mail for upcoming startups if Tvserver is being restarted after each standby
@@ -385,15 +327,14 @@ namespace TvEngine
                     epgwatchclass.newlabelmessage += new setuplabelmessage(SendServerPipeMessage);
                     Logdebug("EpgParser initiated");
                 }
-
-
-
+                
                 //start pollingthread
                 runpolling = true;
                 System.Threading.Thread th = new System.Threading.Thread(startpolling);
                 th.IsBackground = true;
                 th.Start();
                 Logdebug("Polling thread starting");
+                
 
                 /*
                 // activate filewatcher for active command
@@ -472,32 +413,9 @@ namespace TvEngine
 
                 }
                 
-
-
                 //startpipeserver and listen for commands
                 StartServer();
 
-                
-                /*
-                // write version number
-                try
-                {
-                    string versionfile = TV_USER_FOLDER + @"\TvWishList\Version.txt";
-                    if (File.Exists(versionfile) == true)
-                    {
-                        File.Delete(versionfile);
-                    }
-
-                    File.WriteAllText(versionfile, "Version "+this.Version.ToString());
-                    Log.Debug("Version file written");
-                }
-                catch (Exception ex)
-                {
-                    Log.Debug("Error in starting StartEPGsearch File watcher: Exception message was " + ex.Message);
-                    return;
-
-                }*/
-                
             }
             catch (Exception ex)
             {
@@ -559,10 +477,11 @@ namespace TvEngine
         /// returns the setup sections for display in SetupTv
         /// </summary>
         [CLSCompliant(false)]
-        public SetupTv.SectionSettings Setup
+        public SectionSettings Setup
         {
-            get { return new SetupTv.Sections.TvWishListSetup(); }
+            get { return new TvWishListSetup(); }
         }
+ 
         #endregion
 
 
@@ -602,6 +521,34 @@ namespace TvEngine
             Logdebug("SetupTvStartedFilewatcher");
             //disable filewatcher
             SetupTvStarted.EnableRaisingEvents = false;
+
+
+            /*
+            //debug only
+            foreach (Mediaportal.TV.Server.TVDatabase.Entities.Schedule allschedule in Mediaportal.TV.Server.TVDatabase.TVBusinessLayer.ScheduleManagement.ListAllSchedules())
+            {
+                List<Mediaportal.TV.Server.TVDatabase.Entities.Schedule> notViewableSchedules = new List<Mediaportal.TV.Server.TVDatabase.Entities.Schedule>();
+                IList<Mediaportal.TV.Server.TVDatabase.Entities.Schedule> mylist = Mediaportal.TV.Server.TVDatabase.TVBusinessLayer.ScheduleManagementhuha.GetConflictingSchedules(allschedule, out notViewableSchedules);
+
+                Log.Debug("*****************************************************************");
+                Log.Debug("***********************allschedule=" + allschedule.ProgramName + "  s=" + allschedule.StartTime.ToString() + " ch=" + allschedule.IdChannel.ToString()); 
+                Log.Debug("mylist.Count="+mylist.Count.ToString());
+                foreach (Mediaportal.TV.Server.TVDatabase.Entities.Schedule test in mylist)
+                {
+                    Log.Debug("mylistSchedules = " + test.ProgramName + " id=" + test.IdSchedule.ToString() + " start=" + test.StartTime.ToString() + " end=" + test.EndTime.ToString() + " channel=" + test.IdChannel);
+                }
+                
+                Log.Debug("notViewableSchedules.Count="+notViewableSchedules.Count.ToString());
+                Log.Debug("*****************************************************************");
+                foreach (Mediaportal.TV.Server.TVDatabase.Entities.Schedule test in notViewableSchedules)
+                {
+                    Log.Debug("notViewableSchedules = " + test.ProgramName + " id=" + test.IdSchedule.ToString() + " start=" + test.StartTime.ToString() + " end=" + test.EndTime.ToString() + " channel=" + test.IdChannel);
+                }
+                Log.Debug("");
+            }
+
+            //end debug
+            */
 
             //Thread.Sleep(2000); //wait for storing data
 
@@ -877,7 +824,7 @@ namespace TvEngine
 
                 _NextEpgTime = EPGUpdateBeforeSchedule(_NextEpgTime);
 
-                setting = layer.GetSetting("TvWishList_NextEpgDate");
+                setting = layer.GetSetting("TvWishList_NextEpgDate","2999-01-01");
                 setting.Value = _NextEpgTime.ToString("yyyy-MM-dd_HH:mm", System.Globalization.CultureInfo.InvariantCulture);
                 Logdebug("Next epg checking date set to " + setting.Value);                
                 setting.Persist();
@@ -896,11 +843,13 @@ namespace TvEngine
             TvBusinessLayer layer = new TvBusinessLayer();
             Setting setting = null;
 
-            setting = layer.GetSetting("TvWishList_CheckEPGScheduleMinutes");
-            bool EPGBeforeSchedule = Convert.ToBoolean(setting.Value);
-
-            setting = layer.GetSetting("TvWishList_SlowCPU");
-            _useRecordingFlag = Convert.ToBoolean(setting.Value);
+            setting = layer.GetSetting("TvWishList_CheckEPGScheduleMinutes","00");
+            bool EPGBeforeSchedule = false;
+            Boolean.TryParse(setting.Value, out EPGBeforeSchedule);
+            
+            setting = layer.GetSetting("TvWishList_SlowCPU","true");
+            _useRecordingFlag = false;
+            Boolean.TryParse(setting.Value, out _useRecordingFlag);
 
             if (EPGBeforeSchedule)
             {
@@ -945,7 +894,7 @@ namespace TvEngine
                     Logdebug("updating with new schedule start time nextEPGtime=" + _nextEpgTime.ToString());
 
                     //store data, because check needs to be done after each recording
-                    setting = layer.GetSetting("TvWishList_NextEpgDate");
+                    setting = layer.GetSetting("TvWishList_NextEpgDate", "2999-01-01");
                     setting.Value = _NextEpgTime.ToString("yyyy-MM-dd_HH:mm", System.Globalization.CultureInfo.InvariantCulture);
                     Logdebug("Next epg checking date set to " + setting.Value);
                     setting.Persist();
@@ -965,6 +914,7 @@ namespace TvEngine
                 Logdebug("Polling thread started");
                 while (runpolling == true)
                 {
+                    
                     System.Threading.Thread.Sleep(60000); //sleep 60s
                     Logdebug("Polling Thread Sleeping");
                     //Logdebug("Polling Thread: _NextEpgTime=" + _NextEpgTime.ToString());
@@ -1024,7 +974,7 @@ namespace TvEngine
                                 _runEPGScript = false;
                             }// end: need to run scriptfile
 
-
+                            //_NextEpgTime is updated in the epgwatch thread
                             receivethread = new System.Threading.Thread(epgwatch);
                             receivethread.IsBackground = true;
                             receivethread.Priority = ThreadPriority.BelowNormal;
@@ -1230,7 +1180,10 @@ namespace TvEngine
                     Logdebug("startTime =" + startTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture));
                     DateTime endTime = DateTime.ParseExact(nodejob.Attributes["End"].Value, "yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture);
                     Logdebug("endTime =" + endTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture));
-                    int channelid = Convert.ToInt32(nodejob.Attributes["idChannel"].Value);
+                    
+
+                    int channelid = -1;
+                    int.TryParse(nodejob.Attributes["idChannel"].Value, out channelid);
                     Logdebug("channelid =" + channelid.ToString());
                     bool nodeExists = true;
                     
@@ -1375,14 +1328,8 @@ namespace TvEngine
 
                 // get DEBUG
                 setting = layer.GetSetting("TvWishList_Debug", "false");
-                if (Convert.ToBoolean(setting.Value) == true)
-                {
-                    DEBUG = true;
-                }
-                else
-                {
-                    DEBUG = false;
-                }
+                DEBUG = false;
+                Boolean.TryParse(setting.Value, out DEBUG);
                 Log.DebugValue = DEBUG;
                 _NextEpgTime = NextEpgTime();
                 Log.Debug("epgwatch(): _NextEpgTime=" + _NextEpgTime.ToString());
@@ -1433,6 +1380,8 @@ namespace TvEngine
                 {
                     GlobalServiceProvider.Instance.Get<IEpgHandler>().SetStandbyAllowed(this, allowed, 1800);//30 minutes timeout           
                     Logdebug("Telling PowerScheduler standby is: "+allowed.ToString()+", timeout is 30 minutes");
+
+                    
                 }
             }
             catch (Exception exc)
@@ -1639,12 +1588,18 @@ namespace TvEngine
                     var sec = new PipeSecurity();
                     sec.AddAccessRule(rule);
 
-                    pipeServer = new NamedPipeServerStream("TvWishListPipe", PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.None, 0, 0, sec);  //only 1 thread for pipe
+#if (MPTV2)
+                    string pipeName = "MP2TvWishListPipe";
+#else
+                    string pipeName = "TvWishListPipe";
+#endif
+
+                    pipeServer = new NamedPipeServerStream(pipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.None, 0, 0, sec);  //only 1 thread for pipe
 
                     int threadId = Thread.CurrentThread.ManagedThreadId;
 
                     // Wait for a client to connect
-                    Logdebug("Waiting for client to connect");
+                    Logdebug("TvServer: Waiting for client to connect");
                     PipeServerBusy = false;
 
                     pipeServer.WaitForConnection();
@@ -1682,9 +1637,9 @@ namespace TvEngine
                         if (tokens.Length > 1)
                         {
                             TimeOutValuestring = tokens[1];
-                            Log.Debug("Changed TimeOutValuestring=" + TimeOutValuestring);
+                            Logdebug("Changed TimeOutValuestring=" + TimeOutValuestring);
                         }
-
+                        Logdebug("Starting EPG Search from pipe command");
                         Thread StartEPGsearchThread = new Thread(StartEPGsearchCommand);
                         StartEPGsearchThread.Start();
                         
@@ -1743,7 +1698,7 @@ namespace TvEngine
                         if (tokens.Length > 1)
                         {
                             TimeOutValuestring = tokens[1];
-                            Log.Debug("Changed TimeOutValuestring=" + TimeOutValuestring);
+                            Logdebug("Changed TimeOutValuestring=" + TimeOutValuestring);
                         }
 
                         if (MessageFromClient.Contains("VIEWONLY=TRUE") == true)
@@ -1767,24 +1722,24 @@ namespace TvEngine
                         if (tokens.Length > 1)
                         {
                             TimeOutValuestring = tokens[1];
-                            Log.Debug("Changed TimeOutValuestring=" + TimeOutValuestring);
+                            Logdebug("Changed TimeOutValuestring=" + TimeOutValuestring);
                         }
 
                         string tag = tokens[0].Replace(PipeCommands.RemoveSetting.ToString(), string.Empty);
 
                         
-                        setting = layer.GetSetting(tag);
+                        setting = layer.GetSetting(tag, string.Empty);
                         if (setting != null)
                         {
                             setting.Remove();
                             ServerMessage = "Setting " + tag + " removed";
-                            Log.Debug("Setting " + tag + " removed");
+                            Logdebug("Setting " + tag + " removed");
                         }
                         else
                         {
                             ServerMessage = "Setting " + tag + " could not be removed";
-                            Log.Debug("Eror: Setting " + tag + " could not be removed");
-                            Log.Error("Eror: Setting " + tag + " could not be removed");
+                            Logdebug("Eror: Setting " + tag + " could not be removed");
+                 
                         }
 
                         ss.WriteString(ServerMessage);
@@ -1798,26 +1753,25 @@ namespace TvEngine
                         if (tokens.Length > 1)
                         {
                             TimeOutValuestring = tokens[1];
-                            Log.Debug("Changed TimeOutValuestring=" + TimeOutValuestring);
+                            Logdebug("Changed TimeOutValuestring=" + TimeOutValuestring);
                         }
 
                         string idRecordingString = tokens[0].Replace(PipeCommands.RemoveRecording.ToString(), string.Empty);
                         try
                         {
-                            int idRecording = Convert.ToInt32(idRecordingString);
-                            Log.Debug("idRecording=" + idRecording.ToString());
+                            int idRecording = -1;
+                            int.TryParse(idRecordingString, out idRecording);
+                            Logdebug("idRecording=" + idRecording.ToString());
                             Recording myrecording = Recording.Retrieve(idRecording);
-                            Log.Debug("idRecording=" + myrecording.Title.ToString());
+                            Logdebug("idRecording=" + myrecording.Title.ToString());
                             myrecording.Delete();
-                            Log.Debug("Recording deleted");
+                            Logdebug("Recording deleted");
                             ServerMessage = "Recording deleted"; 
                         }
                         catch (Exception exc)
                         {
-                            Log.Debug("no recording found for idRecordingString = " + idRecordingString);
-                            Log.Error("no recording found for idRecordingString = " + idRecordingString);
-                            Log.Debug("exception is " + exc.Message);
-                            Log.Error("exception is " + exc.Message);
+                            Logdebug("no recording found for idRecordingString = " + idRecordingString);
+                            Logdebug("exception is " + exc.Message);
                             ServerMessage = "Error: Recording could not be deleted check the tvserver log file"; 
                         }
 
@@ -1833,7 +1787,7 @@ namespace TvEngine
                         if (tokens.Length > 1)
                         {
                             TimeOutValuestring = tokens[1];
-                            Log.Debug("Changed TimeOutValuestring=" + TimeOutValuestring);
+                            Logdebug("Changed TimeOutValuestring=" + TimeOutValuestring);
                         }
 
                         //processing
@@ -1863,22 +1817,194 @@ namespace TvEngine
                         }
                         catch (Exception exc)
                         {
-                            Log.Debug("Longsetting could not be removed for mysetting= " + mysetting);
-                            Log.Error("Longsetting could not be removed for mysetting= " + mysetting);
-                            Log.Debug("exception is " + exc.Message);
-                            Log.Error("exception is " + exc.Message);
+                            Logdebug("Longsetting could not be removed for mysetting= " + mysetting);
+                            Logdebug("exception is " + exc.Message);
                             ServerMessage = "Error: Long setting could not be removed - check the tvserver log file";
                         }
 
                         ss.WriteString(ServerMessage);
                         TimeOutValuestring = defaultTimeOutValuestring;
                     }
+#if (MPTV2)
+                    else if (MessageFromClient.StartsWith(PipeCommands.WriteSetting.ToString()) == true)
+                    {
+                        string tag = MessageFromClient.Replace(PipeCommands.WriteSetting.ToString(), string.Empty);
+                        string[] tags = tag.Split('\n');
+                        ServiceAgents.Instance.SettingServiceAgent.SaveValue(tags[0], tags[1]);
+
+                        ServerMessage = "SUCCESS";
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadSetting.ToString()) == true)
+                    {
+                        string tag = MessageFromClient.Replace(PipeCommands.ReadSetting.ToString(), string.Empty);
+                        Log.Debug("tag="+tag);
+                        string value = ServiceAgents.Instance.SettingServiceAgent.GetValue(tag, string.Empty);
+                        Log.Debug("value=" + value);
+                        ServerMessage = value;
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllCards.ToString()) == true)
+                    {
+                        defaultTimeOutValuestring = TimeOutValuestring;
+
+                        string[] tokens = MessageFromClient.Split(':');
+                        if (tokens.Length > 1)
+                        {
+                            TimeOutValuestring = tokens[1];
+                            Logdebug("Changed TimeOutValuestring=" + TimeOutValuestring);
+                        }
+
+                        ServerMessage = string.Empty;
+                        foreach (Card mycard in Card.ListAll())
+                        {
+                            ServerMessage += mycard.IdCard.ToString() + "\n" + mycard.Name + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }                  
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllChannelsByGroup.ToString()) == true)
+                    {
+                        string groupIdString = MessageFromClient.Replace(PipeCommands.ReadAllChannelsByGroup.ToString(), string.Empty);
+                        Log.Debug("groupIdString="+groupIdString);
+                        int groupId = -1;
+                        int.TryParse(groupIdString, out groupId);
+                        Log.Debug("groupId=" + groupId.ToString());
+
+                        ServerMessage = string.Empty;
+                        foreach (Channel mychannel in Channel.ListAllByGroup(groupId))
+                        {
+                            ServerMessage += mychannel.IdChannel.ToString() + "\n" + mychannel.DisplayName + "\n";
+                        }
+                        Log.Debug("Groupchannels=" + ServerMessage);
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllChannels.ToString()) == true)//must be after ReadAllChannelsByGroup
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (Channel mychannel in Channel.ListAll())
+                        {
+                            ServerMessage += mychannel.IdChannel.ToString() + "\n" + mychannel.DisplayName + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllRadioChannelsByGroup.ToString()) == true)
+                    {
+                        string groupIdString = MessageFromClient.Replace(PipeCommands.ReadAllRadioChannelsByGroup.ToString(), string.Empty);
+                        Log.Debug("radiogroupIdString=" + groupIdString);
+                        int groupId = -1;
+                        int.TryParse(groupIdString, out groupId);
+                        Log.Debug("radiogroupId=" + groupId.ToString());
+
+                        ServerMessage = string.Empty;
+                        foreach (RadioChannel myradiochannel in RadioChannel.ListAllByGroup(groupId))
+                        {
+                            ServerMessage += myradiochannel.Id.ToString() + "\n" + myradiochannel.Name + "\n";
+                        }
+                        Log.Debug("radioGroupchannels=" + ServerMessage);
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllRadioChannels.ToString()) == true)//must be after ReadAllRadioChannelsByGroup
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (RadioChannel myradiochannel in RadioChannel.ListAll())
+                        {
+                            ServerMessage += myradiochannel.Id.ToString() + "\n" + myradiochannel.Name + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllChannelGroups.ToString()) == true)
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (ChannelGroup mygroup in ChannelGroup.ListAll())
+                        {
+                            ServerMessage += mygroup.Id.ToString() + "\n" + mygroup.GroupName + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllRadioChannelGroups.ToString()) == true)
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (RadioChannelGroup myradiogroup in RadioChannelGroup.ListAll())
+                        {
+                            ServerMessage += myradiogroup.Id.ToString() + "\n" + myradiogroup.GroupName + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllRecordings.ToString()) == true)
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (Recording myrecording in Recording.ListAll())
+                        {
+                            ServerMessage += myrecording.IdRecording.ToString() + "\n" + myrecording.Title + "\n"+myrecording.FileName + "\n" +
+                                             myrecording.IdChannel.ToString() + "\n" + myrecording.StartTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) +
+                                             "\n" + myrecording.EndTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllSchedules.ToString()) == true)
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (Schedule myschedule in Schedule.ListAll())
+                        {
+                            ServerMessage += myschedule.IdSchedule.ToString() + "\n" + myschedule.ProgramName + "\n" + 
+                                             myschedule.IdChannel.ToString() + "\n" + myschedule.StartTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) +
+                                             "\n" + myschedule.EndTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) + "\n" +
+                                             myschedule.ScheduleType.ToString() + "\n" + myschedule.PreRecordInterval.ToString() + "\n" +
+                                             myschedule.PostRecordInterval.ToString() + "\n" + myschedule.MaxAirings.ToString() + "\n" +
+                                             myschedule.KeepDate.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) + "\n" +
+                                             myschedule.KeepMethod.ToString() + "\n" + myschedule.Priority.ToString() + "\n" +
+                                             myschedule.PreRecordInterval.ToString() + "\n" + myschedule.Series.ToString() + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ScheduleDelete.ToString()) == true)
+                    {
+                        string scheduleIdString = MessageFromClient.Replace(PipeCommands.ScheduleDelete.ToString(), string.Empty);
+                        Log.Debug("scheduleIdString=" + scheduleIdString);
+                        int scheduleId = -1;
+                        int.TryParse(scheduleIdString, out scheduleId);
+                        Log.Debug("scheduleId=" + scheduleId.ToString());
+                        Schedule.Delete(scheduleId);
+                        
+                        //65000 max chars                        
+                        ss.WriteString("Deleted");
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ScheduleNew.ToString()) == true)
+                    {
+                        string schedule = MessageFromClient.Replace(PipeCommands.ScheduleNew.ToString(), string.Empty);
+                        string[] scheduletags = schedule.Split('\n');
+
+                        int idChannel = -1;
+                        int.TryParse(scheduletags[1], out idChannel);
+                        DateTime start = DateTime.ParseExact(scheduletags[2], "yyyy-MM-dd_HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+                        DateTime end = DateTime.ParseExact(scheduletags[3], "yyyy-MM-dd_HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+
+                        Schedule myschedule = new Schedule(idChannel, scheduletags[0], start, end);
+                        myschedule.Persist();
+                        
+
+                        ServerMessage = "SUCCESS";
+                        ss.WriteString(ServerMessage);
+                    }
+
+#endif
+
                     else //Unknown command
                     {
                         Logdebug("sending response " + PipeCommands.UnknownCommand.ToString());
                         ss.WriteString(PipeCommands.UnknownCommand.ToString());
                     }
-                    Log.Debug("8");
+                    
                 }
                 // Catch the IOException that is raised if the pipe is broken
                 // or disconnected.
@@ -1961,14 +2087,8 @@ namespace TvEngine
 
                 // get DEBUG
                 setting = layer.GetSetting("TvWishList_Debug", "false");
-                if (Convert.ToBoolean(setting.Value) == true)
-                {
-                    DEBUG = true;
-                }
-                else
-                {
-                    DEBUG = false;
-                }
+                DEBUG = false;
+                Boolean.TryParse(setting.Value, out DEBUG);
                 Log.DebugValue = DEBUG;
 
 
@@ -2184,12 +2304,12 @@ namespace TvEngine
         #endregion
     }
 
-
+    /*
     // Defines the data protocol for reading and writing strings on our stream
     public class StreamString
     {
         private Stream ioStream;
-        private UnicodeEncoding streamEncoding; 
+        private UnicodeEncoding streamEncoding;
 
         public StreamString(Stream ioStream)
         {
@@ -2215,6 +2335,7 @@ namespace TvEngine
             int len = outBuffer.Length;
             if (len > UInt16.MaxValue)
             {
+                Log.Error("******ERROR: Write string too large - cutting value");
                 len = (int)UInt16.MaxValue;
             }
             ioStream.WriteByte((byte)(len / 256));
@@ -2224,6 +2345,6 @@ namespace TvEngine
 
             return outBuffer.Length + 2;
         }
-    }
+    }*/
 
 }

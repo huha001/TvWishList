@@ -21,7 +21,7 @@
 #endregion
 
 
-namespace MediaPortal.Plugins.TvWishListMP2.MPExtended
+namespace MediaPortal.Plugins.TvWishList.Items
 {
     public interface IServerName 
     {

@@ -88,6 +88,7 @@
     <Compile Include="CommonCodeMP1MP2\Common_Result_GUI.cs" />
     <Compile Include="CommonCodeMP1MP2\Common_Edit_GUI.cs" />
     <Compile Include="CommonCodeMP1MP2\Common_Main_GUI.cs" />
+    <Compile Include="CommonCodeMP1MP2\PipeClient.cs" />
     <Compile Include="MP1_Edit_GUI.cs" />
     <Compile Include="CommonCodeMP1MP2\Log.cs" />
     <Compile Include="Setup.cs">
@@ -97,7 +98,7 @@
       <DependentUpon>Setup.cs</DependentUpon>
     </Compile>
     <Compile Include="MP1_Result_GUI.cs" />
-    <Compile Include="LocalizeStrings.cs" />
+    <Compile Include="CommonCodeMP1MP2\LocalizeStrings.cs" />
     <Compile Include="CommonCodeMP1MP2\Messages.cs" />
     <Compile Include="CommonCodeMP1MP2\TvWish.cs" />
     <Compile Include="MP1_Main_GUI.cs" />

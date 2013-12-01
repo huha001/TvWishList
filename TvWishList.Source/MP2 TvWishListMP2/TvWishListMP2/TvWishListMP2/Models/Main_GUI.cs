@@ -31,6 +31,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 //using System.Data;
 //using System.Drawing;
+using System.Net;
 
 using System.IO;
 //using System.Linq;
@@ -43,13 +44,14 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading;
 
-using TvWishList;
+//using TvWishList;
 
 using MediaPortal.Common;
 using MediaPortal.Common.Commands;
 using MediaPortal.Common.General;
 using MediaPortal.Common.Logging;
 using MediaPortal.Common.Messaging;
+using MediaPortal.Common.ResourceAccess;
 using MediaPortal.Common.Runtime;
 using MediaPortal.Common.Settings;
 using MediaPortal.Common.Localization;
@@ -59,11 +61,12 @@ using MediaPortal.UI.Presentation.Workflow;
 using MediaPortal.UI.Presentation.Screens;
 using MediaPortal.UI.Control.InputManager;
 using MediaPortal.UI.Presentation.UiNotifications;
-
+using MediaPortal.UI.ServerCommunication;
 using MediaPortal.UI.SkinEngine.ScreenManagement;
 using MediaPortal.UI.SkinEngine.Controls.Visuals;
 
-using MediaPortal.Plugins.TvWishListMP2.MPExtended;
+using MediaPortal.Plugins.TvWishList;
+using MediaPortal.Plugins.TvWishList.Items;
 
 using MediaPortal.Plugins.TvWishListMP2.Settings;
 
@@ -298,7 +301,6 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             //initialize MP1 plugin translation
             PluginGuiLocalizeStrings.MP2Section = "TvWishListMP2";
 
-
             
 
 
@@ -308,7 +310,18 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             //Log.Debug("[TVWishListMP GUI_List]:Init  mymessages.filename=" + mymessages.filename);
 
             //TvWishes Initialization
-            myTvWishes = new TvWishProcessing();           
+            myTvWishes = new TvWishProcessing();
+
+            // get pipename from Tvserver as MPExtended uses TV1 and NativeTvserver TV2
+            // get hostname from tvserver for multiseat installation
+            TvBusinessLayer layer = new TvBusinessLayer();
+            Setting setting;
+            setting = layer.GetSetting("TvWishList_PipeName", "MP2TvWishListPipe");
+            string pipename = setting.Value;
+            setting = layer.GetSetting("TvWishList_MachineName", "localhost");
+            string hostname = setting.Value;
+
+            myPipeClient = new PipeClient(myTvWishes,hostname,pipename);
 
             //Format Initialization
             _TextBoxFormat_16to9_EmailFormat_Org = PluginGuiLocalizeStrings.Get(1900);
@@ -346,7 +359,11 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             }
             Log.Debug("TvWishList_Mp2Version =" + MpVersion);
             Log.Debug("TvWishList_TvServerVersion =" + TvVersion);
-            
+
+            //send servername to native tvserver
+            string mymessage = GetServerIp();
+            Log.Debug("ServerIpaddress=" + mymessage);
+            //TvWishListMessaging.SendTvWishListMessage(TvWishListMessaging.MessageType.Initialization, mymessage);           
         }
 
         public void Dispose()
@@ -373,12 +390,59 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         #endregion Constructor and Dispose
 
+        
+        protected string GetServerIp() //thanks to morpheus_xxx
+        {
+            IServerConnectionManager scm = ServiceRegistration.Get<IServerConnectionManager>();
+            try
+            {
+                Log.Debug("HomeServerSystemId=" + scm.HomeServerSystemId);
+                Log.Debug("LastHomeServerName=" + scm.LastHomeServerName);
+                Log.Debug("LastHomeServerSystem.HostName=" + scm.LastHomeServerSystem.HostName);
+                Log.Debug("LastHomeServerSystem.HostName=" + scm.LastHomeServerSystem.Address);
+            }
+            catch { }
+            
+            // In case we lost the connection clear the url so it can be looked up later again
+            if (!scm.IsHomeServerConnected)
+            {
+
+                Log.Debug("No Server connected");
+                return "False:" + scm.LastHomeServerSystem.HostName;
+            }
+            
+
+            // We need to know the base url of the server's remote access service, so we can use the IP and port number.
+            IRemoteResourceInformationService rris = ServiceRegistration.Get<IRemoteResourceInformationService>();
+            string resourceUrl;
+            IPAddress localIpAddress;
+            if (!rris.GetFileHttpUrl(scm.HomeServerSystemId, ResourcePath.BuildBaseProviderPath(Guid.Empty, string.Empty), out resourceUrl, out localIpAddress))
+                return "False:" + scm.LastHomeServerSystem.HostName;
+
+            Log.Debug("localIpAddress="+localIpAddress.ToString());
+            Log.Debug("localIpAddressFamily=" + localIpAddress.AddressFamily.ToString());
+            
+            Log.Debug("resourceUrl="+resourceUrl);
+            return "True:"+scm.LastHomeServerSystem.HostName;
+        }
+
         #region OnPage
         private void OnPageLoad(NavigationContext oldContext, NavigationContext newContext)
         {
             Log.Debug("Main_GUI():OnPageLoad  VIEWONLY=" + myTvWishes.ViewOnlyMode.ToString());
             Log.Debug("newModelId=" + newContext.WorkflowModelId.ToString());
             Log.Debug("oldModelId=" + oldContext.WorkflowModelId.ToString());
+
+            //send servername to native tvserver
+            string mymessage = GetServerIp();
+            Log.Debug("ServerIpaddress=" + mymessage);
+            TvWishListMessaging.SendTvWishListMessage(TvWishListMessaging.MessageType.OnPageLoad, mymessage);
+
+            //update hostname for pipes if different server was chose
+            TvBusinessLayer layer = new TvBusinessLayer();
+            Setting setting;
+            setting = layer.GetSetting("TvWishList_MachineName", "localhost");
+            myPipeClient.HostName = setting.Value;
 
             //define header
             _active = true;

@@ -37,6 +37,8 @@ namespace TvWishListInstall
             this.checkBoxSkinMods = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.checkBoxKillTvServer = new System.Windows.Forms.CheckBox();
+            this.checkBoxMP2S = new System.Windows.Forms.CheckBox();
             this.checkBoxMP2C = new System.Windows.Forms.CheckBox();
             this.checkBoxMP = new System.Windows.Forms.CheckBox();
             this.checkBoxTV = new System.Windows.Forms.CheckBox();
@@ -58,6 +60,12 @@ namespace TvWishListInstall
             this.textBoxMP1U = new System.Windows.Forms.TextBox();
             this.textBoxMP1P = new System.Windows.Forms.TextBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.buttonSV2U = new System.Windows.Forms.Button();
+            this.textBoxSV2U = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.buttonSV2P = new System.Windows.Forms.Button();
+            this.textBoxSV2P = new System.Windows.Forms.TextBox();
             this.buttonMP2P = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.buttonMP2U = new System.Windows.Forms.Button();
@@ -78,7 +86,7 @@ namespace TvWishListInstall
             // buttonExit
             // 
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonExit.Location = new System.Drawing.Point(285, 410);
+            this.buttonExit.Location = new System.Drawing.Point(285, 451);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(56, 22);
             this.buttonExit.TabIndex = 0;
@@ -89,7 +97,7 @@ namespace TvWishListInstall
             // buttoninstall
             // 
             this.buttoninstall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttoninstall.Location = new System.Drawing.Point(105, 410);
+            this.buttoninstall.Location = new System.Drawing.Point(105, 451);
             this.buttoninstall.Name = "buttoninstall";
             this.buttoninstall.Size = new System.Drawing.Size(56, 22);
             this.buttoninstall.TabIndex = 1;
@@ -100,7 +108,7 @@ namespace TvWishListInstall
             // buttonReadme
             // 
             this.buttonReadme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonReadme.Location = new System.Drawing.Point(27, 410);
+            this.buttonReadme.Location = new System.Drawing.Point(27, 451);
             this.buttonReadme.Name = "buttonReadme";
             this.buttonReadme.Size = new System.Drawing.Size(56, 22);
             this.buttonReadme.TabIndex = 15;
@@ -111,7 +119,7 @@ namespace TvWishListInstall
             // buttonuninstall
             // 
             this.buttonuninstall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonuninstall.Location = new System.Drawing.Point(194, 410);
+            this.buttonuninstall.Location = new System.Drawing.Point(194, 451);
             this.buttonuninstall.Name = "buttonuninstall";
             this.buttonuninstall.Size = new System.Drawing.Size(56, 22);
             this.buttonuninstall.TabIndex = 16;
@@ -123,7 +131,7 @@ namespace TvWishListInstall
             // 
             this.checkBoxInstallSkins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxInstallSkins.AutoSize = true;
-            this.checkBoxInstallSkins.Location = new System.Drawing.Point(168, 221);
+            this.checkBoxInstallSkins.Location = new System.Drawing.Point(17, 317);
             this.checkBoxInstallSkins.Name = "checkBoxInstallSkins";
             this.checkBoxInstallSkins.Size = new System.Drawing.Size(163, 17);
             this.checkBoxInstallSkins.TabIndex = 23;
@@ -134,7 +142,7 @@ namespace TvWishListInstall
             // 
             this.checkBoxSkinMods.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxSkinMods.AutoSize = true;
-            this.checkBoxSkinMods.Location = new System.Drawing.Point(168, 244);
+            this.checkBoxSkinMods.Location = new System.Drawing.Point(17, 340);
             this.checkBoxSkinMods.Name = "checkBoxSkinMods";
             this.checkBoxSkinMods.Size = new System.Drawing.Size(223, 17);
             this.checkBoxSkinMods.TabIndex = 24;
@@ -148,12 +156,14 @@ namespace TvWishListInstall
             this.tabControl1.Location = new System.Drawing.Point(0, 33);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(405, 321);
+            this.tabControl1.Size = new System.Drawing.Size(405, 387);
             this.tabControl1.TabIndex = 25;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage1.Controls.Add(this.checkBoxKillTvServer);
+            this.tabPage1.Controls.Add(this.checkBoxMP2S);
             this.tabPage1.Controls.Add(this.checkBoxMP2C);
             this.tabPage1.Controls.Add(this.checkBoxInstallSkins);
             this.tabPage1.Controls.Add(this.checkBoxMP);
@@ -163,41 +173,63 @@ namespace TvWishListInstall
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(397, 295);
+            this.tabPage1.Size = new System.Drawing.Size(397, 361);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
+            // 
+            // checkBoxKillTvServer
+            // 
+            this.checkBoxKillTvServer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxKillTvServer.AutoSize = true;
+            this.checkBoxKillTvServer.Location = new System.Drawing.Point(17, 222);
+            this.checkBoxKillTvServer.Name = "checkBoxKillTvServer";
+            this.checkBoxKillTvServer.Size = new System.Drawing.Size(302, 17);
+            this.checkBoxKillTvServer.TabIndex = 34;
+            this.checkBoxKillTvServer.Text = "Kill Tv Server before install/uninstall (Use on your own risk)";
+            this.checkBoxKillTvServer.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMP2S
+            // 
+            this.checkBoxMP2S.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxMP2S.AutoSize = true;
+            this.checkBoxMP2S.Location = new System.Drawing.Point(210, 294);
+            this.checkBoxMP2S.Name = "checkBoxMP2S";
+            this.checkBoxMP2S.Size = new System.Drawing.Size(139, 17);
+            this.checkBoxMP2S.TabIndex = 33;
+            this.checkBoxMP2S.Text = "TV Server MediaPortal2";
+            this.checkBoxMP2S.UseVisualStyleBackColor = true;
             // 
             // checkBoxMP2C
             // 
             this.checkBoxMP2C.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxMP2C.AutoSize = true;
-            this.checkBoxMP2C.Location = new System.Drawing.Point(17, 265);
+            this.checkBoxMP2C.Location = new System.Drawing.Point(210, 271);
             this.checkBoxMP2C.Name = "checkBoxMP2C";
-            this.checkBoxMP2C.Size = new System.Drawing.Size(120, 17);
+            this.checkBoxMP2C.Size = new System.Drawing.Size(117, 17);
             this.checkBoxMP2C.TabIndex = 31;
-            this.checkBoxMP2C.Text = "Media Portal2 Client";
+            this.checkBoxMP2C.Text = "Client MediaPortal2";
             this.checkBoxMP2C.UseVisualStyleBackColor = true;
             // 
             // checkBoxMP
             // 
             this.checkBoxMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxMP.AutoSize = true;
-            this.checkBoxMP.Location = new System.Drawing.Point(17, 242);
+            this.checkBoxMP.Location = new System.Drawing.Point(17, 271);
             this.checkBoxMP.Name = "checkBoxMP";
-            this.checkBoxMP.Size = new System.Drawing.Size(91, 17);
+            this.checkBoxMP.Size = new System.Drawing.Size(117, 17);
             this.checkBoxMP.TabIndex = 30;
-            this.checkBoxMP.Text = "Media Portal1";
+            this.checkBoxMP.Text = "Client MediaPortal1";
             this.checkBoxMP.UseVisualStyleBackColor = true;
             // 
             // checkBoxTV
             // 
             this.checkBoxTV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxTV.AutoSize = true;
-            this.checkBoxTV.Location = new System.Drawing.Point(17, 221);
+            this.checkBoxTV.Location = new System.Drawing.Point(17, 294);
             this.checkBoxTV.Name = "checkBoxTV";
-            this.checkBoxTV.Size = new System.Drawing.Size(74, 17);
+            this.checkBoxTV.Size = new System.Drawing.Size(139, 17);
             this.checkBoxTV.TabIndex = 29;
-            this.checkBoxTV.Text = "TV Server";
+            this.checkBoxTV.Text = "TV Server MediaPortal1";
             this.checkBoxTV.UseVisualStyleBackColor = true;
             // 
             // listBox
@@ -216,14 +248,14 @@ namespace TvWishListInstall
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(397, 295);
+            this.tabPage2.Size = new System.Drawing.Size(397, 361);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Paths";
             // 
             // buttonDetect
             // 
             this.buttonDetect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDetect.Location = new System.Drawing.Point(90, 261);
+            this.buttonDetect.Location = new System.Drawing.Point(96, 295);
             this.buttonDetect.Name = "buttonDetect";
             this.buttonDetect.Size = new System.Drawing.Size(61, 26);
             this.buttonDetect.TabIndex = 24;
@@ -382,6 +414,12 @@ namespace TvWishListInstall
             // tabPage9
             // 
             this.tabPage9.BackColor = System.Drawing.Color.Bisque;
+            this.tabPage9.Controls.Add(this.label12);
+            this.tabPage9.Controls.Add(this.buttonSV2U);
+            this.tabPage9.Controls.Add(this.textBoxSV2U);
+            this.tabPage9.Controls.Add(this.label14);
+            this.tabPage9.Controls.Add(this.buttonSV2P);
+            this.tabPage9.Controls.Add(this.textBoxSV2P);
             this.tabPage9.Controls.Add(this.buttonMP2P);
             this.tabPage9.Controls.Add(this.label13);
             this.tabPage9.Controls.Add(this.buttonMP2U);
@@ -394,6 +432,64 @@ namespace TvWishListInstall
             this.tabPage9.Size = new System.Drawing.Size(368, 221);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "MediaPortal2";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(17, 167);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(135, 13);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "MP2 Server Users (Config):";
+            // 
+            // buttonSV2U
+            // 
+            this.buttonSV2U.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSV2U.Location = new System.Drawing.Point(336, 177);
+            this.buttonSV2U.Name = "buttonSV2U";
+            this.buttonSV2U.Size = new System.Drawing.Size(26, 26);
+            this.buttonSV2U.TabIndex = 42;
+            this.buttonSV2U.Text = "...";
+            this.buttonSV2U.UseVisualStyleBackColor = true;
+            this.buttonSV2U.Click += new System.EventHandler(this.buttonSV2U_Click);
+            // 
+            // textBoxSV2U
+            // 
+            this.textBoxSV2U.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSV2U.Location = new System.Drawing.Point(20, 183);
+            this.textBoxSV2U.Name = "textBoxSV2U";
+            this.textBoxSV2U.Size = new System.Drawing.Size(310, 20);
+            this.textBoxSV2U.TabIndex = 41;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(17, 112);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(146, 13);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "MP2 Server Programs (Base):";
+            // 
+            // buttonSV2P
+            // 
+            this.buttonSV2P.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSV2P.Location = new System.Drawing.Point(336, 122);
+            this.buttonSV2P.Name = "buttonSV2P";
+            this.buttonSV2P.Size = new System.Drawing.Size(26, 26);
+            this.buttonSV2P.TabIndex = 39;
+            this.buttonSV2P.Text = "...";
+            this.buttonSV2P.UseVisualStyleBackColor = true;
+            this.buttonSV2P.Click += new System.EventHandler(this.buttonSV2P_Click);
+            // 
+            // textBoxSV2P
+            // 
+            this.textBoxSV2P.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSV2P.Location = new System.Drawing.Point(20, 128);
+            this.textBoxSV2P.Name = "textBoxSV2P";
+            this.textBoxSV2P.Size = new System.Drawing.Size(310, 20);
+            this.textBoxSV2P.TabIndex = 38;
             // 
             // buttonMP2P
             // 
@@ -456,7 +552,7 @@ namespace TvWishListInstall
             // buttonSave
             // 
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave.Location = new System.Drawing.Point(218, 261);
+            this.buttonSave.Location = new System.Drawing.Point(214, 295);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(61, 26);
             this.buttonSave.TabIndex = 22;
@@ -469,7 +565,7 @@ namespace TvWishListInstall
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(349, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(363, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(55, 55);
             this.pictureBox1.TabIndex = 26;
@@ -480,7 +576,7 @@ namespace TvWishListInstall
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(404, 444);
+            this.ClientSize = new System.Drawing.Size(418, 485);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.buttonuninstall);
@@ -488,7 +584,7 @@ namespace TvWishListInstall
             this.Controls.Add(this.buttoninstall);
             this.Controls.Add(this.buttonExit);
             this.Name = "InstallSetup";
-            this.Text = "TvWishList Installer V1.3.0.13";
+            this.Text = "TvWishList Installer V1.4.0.0";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -544,6 +640,14 @@ namespace TvWishListInstall
         private System.Windows.Forms.TextBox textBoxMP2P;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkBoxMP2S;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button buttonSV2U;
+        private System.Windows.Forms.TextBox textBoxSV2U;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button buttonSV2P;
+        private System.Windows.Forms.TextBox textBoxSV2P;
+        private System.Windows.Forms.CheckBox checkBoxKillTvServer;
     }
 }
 

@@ -675,6 +675,13 @@
               <ZipFileName>Installer{CopyFile}\{6928a926-5481-407f-abdd-8119002a5f65}-TvWishListMPExtendedProvider.dll</ZipFileName>
               <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMPExtendedProvider\TvWishListMPExtendedProvider.dll</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\images\Thumbs.db</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{bcd0095f-bbed-46c3-85f8-8145d7db2c45}-Thumbs.db</ZipFileName>
+              <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMP2\Skin\default\images\Thumbs.db</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -836,11 +843,11 @@ Now you can access to TvWishlist directly from MediaPortal with the client plugi
  If have .dll extension used like MP plugin configuration</Description>
         </SectionParam>
         <SectionParam Name="Online Screenshots">
-          <Value>http://www.team-mediaportal.com/components/com_mtree/img/listings/m/897.png;	
-http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1727.jpg;
+          <Value>http://www.team-mediaportal.com/components/com_mtree/img/listings/m/2252.png;
+http://www.team-mediaportal.com/components/com_mtree/img/listings/m/2253.jpg;
 http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1728.jpg;
 http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1729.jpg;
-http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1730.jpg;
+http://www.team-mediaportal.com/components/com_mtree/img/listings/m/2254.jpg;
 http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1731.jpg;
 http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1732.jpg;
 http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1733.jpg;
@@ -1533,6 +1540,13 @@ http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1744.jpg
         <LocalFileName>..\..\TvWishList.Release\TvWishListMPExtendedProvider\TvWishListMPExtendedProvider.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{6928a926-5481-407f-abdd-8119002a5f65}-TvWishListMPExtendedProvider.dll</ZipFileName>
         <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMPExtendedProvider\TvWishListMPExtendedProvider.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\images\Thumbs.db</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{bcd0095f-bbed-46c3-85f8-8145d7db2c45}-Thumbs.db</ZipFileName>
+        <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMP2\Skin\default\images\Thumbs.db</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />

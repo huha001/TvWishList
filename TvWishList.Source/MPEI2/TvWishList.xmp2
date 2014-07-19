@@ -822,7 +822,7 @@ Now you can access to TvWishlist directly from MediaPortal with the client plugi
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=71&amp;cf_id=24</OnlineLocation>
     <ReleaseDate>2013-12-01T18:27:26</ReleaseDate>
     <Tags>automation,tv server plugins,tvwishlist,tvwishlistmp,mediaportal plugins</Tags>
-    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.4.0.0.mpe1</Location>
+    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.4.0.1.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -1565,7 +1565,7 @@ http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1744.jpg
         <LocalFileName />
         <ZipFileName>Installer{CopyFile}\{eab9f214-56e1-4e02-8f91-efff5fa07a25}-</ZipFileName>
         <DestinationFilename>%Config%\Installer\TvWishList</DestinationFilename>
-        <Folder>..\..\TvWishListV1.4.0.0.Release</Folder>
+        <Folder>..\..\TvWishListV1.4.0.1.Release</Folder>
         <Group>Default</Group>
         <Recursive>true</Recursive>
       </FolderGroup>

@@ -3561,7 +3561,7 @@ namespace MediaPortal.Plugins.TvWishList
 
         public string TvWishVersion()
         {
-            return ("1.4.0.0");
+            return ("1.4.0.1");
         }
 
 

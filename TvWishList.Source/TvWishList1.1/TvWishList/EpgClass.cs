@@ -1458,7 +1458,7 @@ namespace MediaPortal.Plugins.TvWishList
                   string Exclude = mywish.exclude.ToUpper();
                   String Exclude1 = "";
                   String Exclude2 = "";
-                  Exclude = Exclude.Replace("&&", "\n");
+                  Exclude = Exclude.Replace("||", "\n");//bug fix: was && before
                   String[] Tokens = Exclude.Split('\n');
                   if (Tokens.Length >= 2)
                   {
@@ -1904,7 +1904,7 @@ namespace MediaPortal.Plugins.TvWishList
                   string Exclude = mywish.exclude.ToUpper();
                   String Exclude1 = "";
                   String Exclude2 = "";
-                  Exclude = Exclude.Replace("&&", "\n");
+                  Exclude = Exclude.Replace("||", "\n");//bug fix: was && before
                   String[] Tokens = Exclude.Split('\n');
                   if (Tokens.Length >= 2)
                   {

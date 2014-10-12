@@ -45,7 +45,6 @@ using System.Xml;
 using Log = TvLibrary.Log.huha.Log;
 //using TvLibrary.Log.huha;
 using TvEngine;
-using TvLibrary.Interfaces;
 using MediaPortal.Plugins;
 using TvEngine.PowerScheduler.Interfaces;
 
@@ -69,6 +68,7 @@ using Mediaportal.TV.Server.TVDatabase;
 using MediaPortal.Plugins.TvWishList.Items;
 
 using Mediaportal.TV.Server;
+using Mediaportal.TV.Server.TVLibrary.Interfaces;
 
 #else 
 using TvControl;
@@ -76,6 +76,8 @@ using TvEngine.Events;
 using TvLibrary.Implementations;
 using TvDatabase;
 using SetupTv;
+
+using TvLibrary.Interfaces;
 #endif
 
 /*

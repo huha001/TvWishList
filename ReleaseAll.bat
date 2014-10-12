@@ -3,8 +3,8 @@ REM DEFINE VARIABLES
 REM *************************************************************************
 REM 
 
-SET OLDVERSION=1.4.0.0
-SET NEWVERSION=1.4.0.1
+SET OLDVERSION=1.4.1.0
+SET NEWVERSION=1.4.0.2
 
 
 SET MSFRAMEPATH="C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe"
@@ -74,9 +74,6 @@ REM MP2
 %FILE_REPLACE% "TvWishList.Source\MP2 TvWishListMP2\TvWishListInterface\TvWishListInterface\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
 %FILE_REPLACE% "TvWishList.Source\MP2 TvWishListMP2\TvWishListMPExtendedProvider\TvWishListMPExtendedProvider\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
 %FILE_REPLACE% "TvWishList.Source\MP2 TvWishListMP2\TvWishListMP2NativeTvProvider\TvWishListMP2NativeTvProvider\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
-
-REM %FILE_REPLACE% MP.release.r2d2.bat %OLDVERSION% %NEWVERSION%
-REM %FILE_REPLACE% MP2.release.r2d2.bat %OLDVERSION% %NEWVERSION%
 
 REM ******************** END VERSION UPDATE ********************
 
@@ -153,7 +150,6 @@ COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\PipeClient.cs" "TvWishLis
 COPY /Y "TvWishListMP1.2\TvWishListMP\TvDatabaseConnect.cs" "TvWishListMP1.1\TvWishListMP\TvDatabaseConnect.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\TvWish.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\TvWish.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Log.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\Log.cs"
-REM installpaths was commented out - version number?
 COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\InstallPaths.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\InstallPaths.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\LocalizeStrings.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\LocalizeStrings.cs"
 COPY /Y "TvWishListMP1.2\TvWishListMP\CommonCodeMP1MP2\Messages.cs" "TvWishListMP1.1\TvWishListMP\CommonCodeMP1MP2\Messages.cs"

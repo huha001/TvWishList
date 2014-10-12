@@ -61,6 +61,9 @@ using Mediaportal.TV.Server.TVControl.Interfaces.Events;
 using Mediaportal.TV.Server.TVControl.Interfaces.Services;
 using Mediaportal.TV.Server.TVDatabase;
 using MediaPortal.Plugins.TvWishList.Items;
+
+using Mediaportal.TV.Server.TVLibrary.Interfaces;
+
 #else
 // MP1 TV server
 using TvControl;
@@ -70,6 +73,8 @@ using Gentle.Framework;
 using TvLibrary.Implementations;
 using MySql.Data.MySqlClient;
 using StatementType = Gentle.Framework.StatementType;
+
+using TvLibrary.Interfaces;
 #endif
 
 
@@ -83,7 +88,7 @@ using TvLibrary.Log.huha;
 //using SetupTv;
 using MediaPortal.Plugins.TvWishList.Setup;
 using TvEngine;
-using TvLibrary.Interfaces;
+
 
 
 using MediaPortal.Plugins;
@@ -846,12 +851,20 @@ namespace MediaPortal.Plugins.TvWishList
                   labelmessage(languagetext, PipeCommands.StartEpg);
 
                   //search for recordings and add messages only in email mode
+                  DateTime start = DateTime.Now; //DEBUG PERFORMANCE
+
                   if (VIEW_ONLY_MODE == false) //recording first to identify existing recordings
                       SqlQueryRecordings(mywish, i);
 
+                  DateTime end = DateTime.Now; //DEBUG PERFORMANCE
+                  Log.Debug("SQL query recordings time=" + end.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
 
                   //search for schedules
+
+                  start = DateTime.Now; //DEBUG PERFORMANCE
                   SqlQueryPrograms(ref mywish, i);
+                  end = DateTime.Now; //DEBUG PERFORMANCE
+                  Log.Debug("SQL query programs time=" + end.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
 
                   myTvWishes.ReplaceAtIndex(i, mywish);
 
@@ -1606,7 +1619,13 @@ namespace MediaPortal.Plugins.TvWishList
                       return true;
                   }
 
+                  DateTime start = DateTime.Now; //DEBUG PERFORMANCE
+                  
+
                   bool ok = addsingleschedule(oneprogram, ref mywish, counter);
+
+                  DateTime end = DateTime.Now; //DEBUG PERFORMANCE
+                  Log.Debug("addsingleschedule time=" + end.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
 
                   //post processing and updating of Tv wish data by locking to existing found schedule
                   if (ok == true)

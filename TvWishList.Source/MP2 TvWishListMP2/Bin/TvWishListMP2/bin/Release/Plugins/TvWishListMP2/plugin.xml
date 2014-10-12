@@ -5,7 +5,7 @@
     Author="huha"
     Copyright="GPL"
     Description="TvWishList plugin for MediaPortal2"
-    PluginVersion="1.4.0.1">
+    PluginVersion="1.4.0.2">
 
   <Runtime>
     <Assembly FileName="TvWishListMP2.dll"/>

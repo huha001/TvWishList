@@ -1,0 +1,737 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Language>
+  <Section name="unmapped">
+  <!--DO NOT CHANGE ENGLISH COMMENTS INTO ANOTHER LANGUAGE-->
+  <!--Owner: huha-->
+  <!--Version 1.2.1.0
+- initial release
+
+
+Version 1.2.1.5
+- added preferred group and episode criteria
+
+Version 1.2.3.0
+- added TvWishListMP2 strings - new strings are 100-102, 1108-1109, 1206, 3001, 3104, 3506-3508, 3652-3653, 5000 and up
+
+Version 1.2.3.6
+-added string 1110, 4312, 5051-5052, 5204-5216,6203, 7002, 8110-8111, 10000 and up
+
+Version 1.2.3.10
+- added 200-201
+
+Version 1.2.3.11
+-added 10192-10193,10262
+
+Version 1.2.3.13
+-added 2853,1059-1062,3509-->
+  <!--TVSERVER VECTORSIZE=5000-->
+  <!--MP2 Display in main menu-->
+  <String id="100">Lista de deseos de TV</String>
+  <String id="101">Deseos de TV</String>
+  <String id="102">Nuevo Deseo de TV - Buscar por:</String>
+  <!--SlimTv Buttons in MP2-->
+  <!-- MP2STR:CreateTvWish -->
+  <String id="200">Crear Deseo de TV</String>
+  <!-- MP2STR:AlternatePrograms -->
+  <String id="201">Alternar Programas</String>
+  <!--************************************************************-->
+  <!--TV WishList - Main-->
+  <!--************************************************************-->
+  <String id="1000">Deseos de TV - Principal</String>
+  <!--Quick Menu from Skins-->
+  <String id="1050">Menú rápido de Lista de deseos de TV</String>
+  <String id="1051">Crear Deseo de TV con el Título</String>
+  <String id="1052">Crear Deseo de TV con todo</String>
+  <String id="1053">Crear Deseo de TV con Título en Modo Email</String>
+  <String id="1054">Crear Deseo de TV con Título en Modo Visualización</String>
+  <String id="1055">Crear Deseo de TV con Todo en Modo Email</String>
+  <String id="1056">Crear Deseo de TV con Todo en Modo Visualización</String>
+  <String id="1057">Ir a Inicio de Lista de Deseos de TV</String>
+  <String id="1058">Ir a Resultados de la Lista de Deseos de TV</String>
+  <String id="1059">Crear Deseo de TV y Búsqueda EPG</String>
+  <String id="1060">Crear Deseo de TV</String>
+  <String id="1061">Usando Modo Visualización</String>
+  <String id="1062">Usando Modo Email y Guardar</String>
+  <!--Buttons-->
+  <String id="1100">Modo de sólo visualización</String>
+  <String id="1101">Modo Email y Guardar</String>
+  <String id="1102">Ejecutar búsqueda EPG</String>
+  <String id="1103">Ver resultados</String>
+  <String id="1104">Nuevo</String>
+  <String id="1105">Guardar</String>
+  <String id="1106">Cancelar</String>
+  <String id="1107">Más</String>
+  <String id="1108">Resultados</String>
+  <String id="1109">Modo</String>
+  <String id="1110">Editar</String>
+  <!--Run EPG Search-->
+  <String id="1200">Esperando proceso previo para terminar</String>
+  <String id="1201">Búsqueda previa en proceso\nPor favor, espere</String>
+  <String id="1202">Búsqueda EPG en marcha - Por favor espere</String>
+  <String id="1203">Tema actual no completado\na tiempo - abortando</String>
+  <String id="1204">Búsqueda EPG completada</String>
+  <String id="1205">Tema anterior no\ncompletado a tiempo - abortando</String>
+  <String id="1206">Conexión al servidor fallida - reinicia el servidor de TV</String>
+  <!--Save-->
+  <String id="1300">Los datos de Deseo de TV han sido guardados</String>
+  <String id="1301">Los datos de Deseo de TV no se han podido guardar</String>
+  <!--Cancel-->
+  <String id="1400">Los datos de Deseo de TV han sido cargados</String>
+  <String id="1401">Los datos de Deseo de TV no han sido cargados</String>
+  <!--More  Menu-->
+  <String id="1500">Todo activo</String>
+  <String id="1501">Nada activo</String>
+  <String id="1502">Omitir todo</String>
+  <String id="1503">No omitir nada</String>
+  <String id="1504">Copiar Deseos de TV de Visualización a Email</String>
+  <String id="1505">Copiar Deseos de TV de Email a Visualización</String>
+  <String id="1506">Mover Programaciones a Lista de Deseos de TV</String>
+  <String id="1507">Exportar</String>
+  <String id="1508">Importar</String>
+  <!--More  Status-->
+  <String id="1550">{0} Deseo(s) Copiados del\nModo Visualización al Modo Email</String>
+  <String id="1551">Ha fallado el Copiado de Deseos de TV\nde Visualización a Email</String>
+  <String id="1552">{0} Deseo(s) Copiados del\nModo Email al Modo Visualización</String>
+  <String id="1553">Ha fallado el Copiado de Deseos de TV\nde Email a Visualización</String>
+  <String id="1554">{0} Programación(es) Trasladadas a la Lista de Deseos de TV</String>
+  <String id="1555">Ha fallado el traslado de Programaciones a la Lista de Deseos de TV</String>
+  <String id="1556">Exportación de {0} deseo(s) completada</String>
+  <String id="1557">Exportación fallida</String>
+  <String id="1558">Importación de {0} deseo(s) completada</String>
+  <String id="1559">Importación fallida</String>
+  <!--++++++++++++++-->
+  <!--Formats   Main-->
+  <!--++++++++++++++-->
+  <!--TvWish Format Data 1900 - 1905:
+        //  {0}   active
+        //  {1}   searchfor
+        //  {2}   matchtype
+        //  {3}   group
+        //  {4}   recordtype
+        //  {5}   action
+        //  {6}   exclude
+        //  {7}   viewed counter
+        //  {8}   prerecord
+        //  {9}   postrecord
+        //  {10}  episodename
+        //  {11}  episodepart
+        //  {12}  episodenumber
+        //  {13}  seriesnumber
+        //  {14}  keepepisodes
+        //  {15}  keepuntil
+        //  {16}  recommendedcard
+        //  {17}  priority
+        //  {18}  aftertime
+        //  {19}  beforetime
+        //  {20}  afterdays
+        //  {21}  beforedays
+        //  {22}  channel
+        //  {23}  skip
+        //  {24}  name
+        //  {25}  useNameFolders
+        //  {26}  within next hours
+        //  {27}  scheduled counter
+        //  {28}  tvwish id
+        //  {29}  recorded counter
+        //  {30}  deleted counter
+        //  {31}  emailed counter
+        //  {32}  conflicts counter
+        //  {33}  episodecriteria
+        //  {34}  preferredgroup
+        //  {35}  includerecordings
+        //  <br>     new line
+        //  |      item selector for not displaying user disabled items-->
+  <!--Main Menu Format for 16:9 skins Email Mode-->
+  <String id="1900">Activo: {0}\n|Nombre: {24}\n|Buscar: {1}\n|Coincidir: {2}\n|Excluir: {6}\n|Tipo: {4}\n|Acción: {5}\n|Saltar Repetido: {23}\n|Grupo Preferido: {34}\n|E Incluir Grabaciones: {35}\n|Contadores:\nProgramado={27}\nGrabado={29}\nBorrado={30}\nEnviado={31}\nConflictos={32}\n|\nÚnico Grupo: {3} y Único Canal: {22}\n|En o Desde el Día: {20} Pero en o Hasta el Día: {21}\n|Hora Entre: {18} y {19}\n\n|Criterio Episodio: {33}\n|Nombre Episodio: {10}\n|Parte Episodio: {11}\n|Número Episodio: {12}\n|Saltar Episodios: {14}\n|Mantener Hasta: {15}\n|Prioridad: {17}\n|Antes de Grabación: {8}\n|Después de Grabación: {9}\n|Tarjeta Recomendada: {16}\n|Mover Grabaciones a la Carpeta: {25}\n|ID={28}\n</String>
+  <!--Main Menu Format for 4:3 skins Email Mode-->
+  <String id="1902">Activo: {0}     |Nombre: {24}     Buscar: {1}     |Coincidir: {2}     |Excluir: {6}     |Tipo: {4}     |Acción: {5}     |Saltar Repetido: {23}     |Grupo Preferido: {34}     |e Incluir Grabaciones: {35}\n|Contadores:  Programado={27}  Grabado={29}  Borrado={30}  Enviado={31}  Conflictos={32}\n|Único Grupo: {3} y Único Canal: {22} |En o Desde el Día: {20} Pero en o Hasta el Día: {21} |Hora Entre: {18} y {19}\n|Criterio Episodio: {33}     |Nombre Episodio: {10}     |Parte Episodio: {11}     |Número Episodio: {12}     |Saltar Episodios: {14}     |Mantener Hasta: {15}      |Prioridad: {17}\n|Antes de Grabación: {8}      |Después de Grabación: {9}     |Tarjeta Recomendada: {16}     |Mover Grabaciones a la Carpeta: {25}\n|ID={28}\n</String>
+  <!--Main Menu Format for 16:9 skins View Only Mode-->
+  <String id="1901">Activo: {0}\n|Nombre: {24}\n|Buscar: {1}\n|Coincidir: {2}\n|Excluir: {6}\n|Tipo: {4}\n|Éxitos: {7}\n|\nÚnico Grupo: {3} y Único Canal: {22}\n|En o Desde el Día: {20} Pero En o Hasta el Día: {21}\n|Hora Entre: {18} y {19}\n|Mostrar Sólo las siguientes {26} Horas\n|Nombre Episodio: {10}\n|Parte Episodio: {11}\n|Número Episodio: {12}\n|ID={28}\n</String>
+  <!--Main Menu Format for 4:3 skins View Only Mode-->
+  <String id="1903">Activo: {0}     |Nombre: {24}    |Buscar: {1}     |Coincidir: {2}     |Excluir: {6}     |Tipo: {4}     |Éxitos: {7}\n|Único Grupo: {3} y Único Canal: {22} |En o Desde el Día: {20} Pero En o Hasta El Día: {21} |Hora Entre: {18} y {19}     |Mostrar sólo las siguientes {26} Horas\n|Nombre Episodio: {10}     |Parte Episodio: {11}     |Número Episodio: {12}\n|ID={28}\n</String>
+  <!--List Item Format Email Mode -  use "||" to change alignment between left and right border-->
+  <String id="1904">{24} || {27}/{29}</String>
+  <!--List Item Format ViewOnly Mode-->
+  <String id="1905">{24} || {7}</String>
+  <!--************************************************************-->
+  <!--TV WishList - Edit-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=2000 TO=4900 OFFSET_FROM=2000 OFFSET_TO=4900-->
+  <String id="2000">Lista de Deseo de TV - Entrada</String>
+  <!--Buttons-->
+  <String id="2100">Menú principal</String>
+  <String id="2101">Anterior</String>
+  <String id="2102">Siguiente</String>
+  <String id="2103">Nuevo</String>
+  <String id="2104">Borrar</String>
+  <String id="2105">Guardar</String>
+  <String id="2106">Cancelar todo</String>
+  <String id="2107">Más</String>
+  <!--Delete-->
+  <String id="2200">La Lista de Deseos de TV ha sido borrada</String>
+  <String id="2201">Error: Los datos de la Lista de Deseo de TV no pueden ser borrados</String>
+  <!--Save-->
+  <String id="2300">Los datos de Deseo de TV han sido guardados</String>
+  <String id="2301">Error: Los datos de Deseo de TV no se han podido guardar</String>
+  <!--Cancel-->
+  <String id="2400">Los datos de Deseo de TV se han cargado</String>
+  <String id="2401">Los datos de Deseo de TV no se han podido cargar</String>
+  <!--More  Menu-->
+  <String id="2450">Todos los elementos</String>
+  <String id="2451">Elementos definidos por el usuario</String>
+  <String id="2452">Ver resultado único</String>
+  <String id="2453">Copiando Actual Deseo de TV a Otro Modo</String>
+  <String id="2454">{0} Deseo(s) Copiados a Otro Modo</String>
+  <String id="2455">Falló el Copiado de Deseo de TV a Otro Modo</String>
+  <String id="2456">Clonar Deseo de TV</String>
+  <String id="2457">Deseo de TV clonado</String>
+  <String id="2458">Falló el clonado de Deseo de TV</String>
+  <!--Edit List Items-->
+  <String id="2500">Activo: {0}</String>
+  <String id="2501">Buscar: {0}</String>
+  <String id="2502">Coincidencias Como: {0}</String>
+  <String id="2503">Usar Sólo el Grupo: {0}</String>
+  <String id="2504">Grabar Como: {0}</String>
+  <String id="2505">Y hacer la Acción: {0}</String>
+  <String id="2506">Pero Excluir: {0}</String>
+  <String id="2507">Coincidencias: {0} (Resetear Coincidencias)</String>
+  <String id="2508">Grabar antes: {0} Minutos</String>
+  <String id="2509">Y Grabar después: {0} Minutos</String>
+  <String id="2510">Filtrar por Episodio: {0}</String>
+  <String id="2511">Filtrar por: {0}</String>
+  <String id="2512">Filtrar por Número: {0}</String>
+  <String id="2513">Filtrar por Número de Serie: {0}</String>
+  <String id="2514">Conservar: {0} Grabaciones</String>
+  <String id="2515">Hasta: {0} </String>
+  <String id="2516">La tarjeta recomendada es: {0}</String>
+  <String id="2517">Establecer Prioridad: {0} (Min 0, Max 9)</String>
+  <String id="2518">Después de la Hora: {0}</String>
+  <String id="2519">Y Antes de la Hora: {0}</String>
+  <String id="2520">Después y el día: {0}</String>
+  <String id="2521">Antes y el día: {0}</String>
+  <String id="2522">Y sólo el Canal: {0}</String>
+  <String id="2523">Saltar Episodios Repetido es: {0}</String>
+  <String id="2524">Nombre: {0}</String>
+  <String id="2525">Mover Grabaciones a la carpeta: {0}</String>
+  <String id="2526">Mostrar sólo en las siguientes: {0} Hora(s)</String>
+  <String id="2533">Usar Criterio de coincidencia por Episodio: {0}</String>
+  <String id="2534">Grupo de Canales Preferido: {0}</String>
+  <String id="2535">Incluyendo Grabaciones: {0}</String>
+  <!--MatchType-->
+  <String id="2600">Título Parcial</String>
+  <String id="2601">Título Exacto</String>
+  <String id="2602">Texto Parcial</String>
+  <String id="2603">Palabra en el Título</String>
+  <String id="2604">Palabra en el Texto</String>
+  <String id="2605">Palabra en Texto/Título</String>
+  <String id="2606">Expresión</String>
+  <!--RecordType-->
+  <String id="2650">Sólo una vez</String>
+  <String id="2651">Todo</String>
+  <String id="2652">Todo en el Mismo Canal</String>
+  <String id="2653">Todo en el Mismo Canal y el Mismo Día</String>
+  <String id="2654">Todo en el Mismo Canal y a la Misma Hora</String>
+  <String id="2655">Todo en el Mismo Canal, el Mismo Día y a la Misma Hora</String>
+  <!--Action-->
+  <String id="2700">Grabar</String>
+  <String id="2701">Email</String>
+  <String id="2702">Email y Grabar</String>
+  <String id="2703">Ver</String>
+  <!--Days-->
+  <String id="2750">ÇLunes</String>
+  <String id="2751">MArtes</String>
+  <String id="2752">Miércoles</String>
+  <String id="2753">Jueves</String>
+  <String id="2754">Viernes</String>
+  <String id="2755">Sábado</String>
+  <String id="2756">Domingo</String>
+  <!--Dialog Headers for Edit Items-->
+  <String id="2800">Activo</String>
+  <String id="2801">Buscar por</String>
+  <String id="2802">Tipo de Coincidencia</String>
+  <String id="2803">Grupo</String>
+  <String id="2804">Tipo de Guardado</String>
+  <String id="2805">Acción</String>
+  <String id="2806">Excluir</String>
+  <String id="2807">Pulsaciones</String>
+  <String id="2808">Hora de Pre Grabación</String>
+  <String id="2809">Hora de Post Grabación</String>
+  <String id="2810">Nombre del Episodio</String>
+  <String id="2811">Parte del Episodio</String>
+  <String id="2812">Número del Episodio</String>
+  <String id="2813">Número de Serie</String>
+  <String id="2814">Mantener Episodios</String>
+  <String id="2815">Mantener hasta</String>
+  <String id="2816">Tarjeta Recomendada</String>
+  <String id="2817">Prioridad</String>
+  <String id="2818">Después de la Hora</String>
+  <String id="2819">Antes de la Hora</String>
+  <String id="2820">El Día Después</String>
+  <String id="2821">El Día Antes</String>
+  <String id="2822">Canal</String>
+  <String id="2823">Omitir</String>
+  <String id="2824">Nombre</String>
+  <String id="2825">Mover Grabaciones a la Carpeta</String>
+  <String id="2826">Mostrar sólo dentro de siguiente(s) horas</String>
+  <String id="2833">Cambiar Criterio de Coincidencia por Episodio</String>
+  <String id="2834">Grupo de Canal Preferido</String>
+  <String id="2835">Incluyendo Grabaciones</String>
+  <!--Use Name Folder-->
+  <String id="2850">Episodio</String>
+  <String id="2851">Nombre de Deseo de TV</String>
+  <String id="2852">Nada</String>
+  <String id="2853">Automático</String>
+  <!--Keep Until-->
+  <String id="2900">Siempre</String>
+  <String id="2901">Días después de la Grabación</String>
+  <String id="2902">Semanas Después de la Grabación</String>
+  <String id="2903">Meses después de la Grabación</String>
+  <String id="2904">Fecha</String>
+  <String id="2905">Visto</String>
+  <String id="2906">Espacio Necesario</String>
+  <String id="2920">{0} Días después de la Grabación</String>
+  <String id="2921">{0} Semanas después de la Grabación</String>
+  <String id="2922">{0} Meses después de la Grabación</String>
+  <!--DO NOT CHANGE FORMAT in 2923-->
+  <String id="2923">YYYY-MM-DD</String>
+  <!--Change episode matching criteria-->
+  <String id="2950">¿Saltar Descripciones EPG Encontradas? (Sí)</String>
+  <String id="2951">¿Saltar Descripciones EPG Encontradas? (No)</String>
+  <String id="2952">¿Saltar Nombres y Partes de Episodios Encontrados? (Sí)</String>
+  <String id="2953">¿Saltar Nombres y Partes de Episodios Encontrados? (No)</String>
+  <String id="2954">¿Saltar Series y Números de Episodios Encontrados? (Sí)</String>
+  <String id="2955">¿Saltar Series y Números de Episodios Encontrados? (No)</String>
+  <String id="2960">Descr.</String>
+  <String id="2961">Nombre</String>
+  <String id="2962">Número</String>
+  <String id="2970">Seleccionar todos los criterios</String>
+  <String id="2971">Quitar todos los criterios</String>
+  <!--************************************************************-->
+  <!--TV WishList - View Results-->
+  <!--************************************************************-->
+  <String id="3000">Lista de Deseo de TV - Resultados</String>
+  <String id="3001">Programa</String>
+  <!--Buttons-->
+  <String id="3100">Menú Principal</String>
+  <String id="3101">Actualizar</String>
+  <String id="3102">Ordenar</String>
+  <String id="3103">Filtrar</String>
+  <String id="3104">Ordenar por</String>
+  <!--Sort Menu-->
+  <String id="3200">Menú de ordenación</String>
+  <String id="3201">Título</String>
+  <String id="3202">Comenzar</String>
+  <String id="3203">Creado</String>
+  <String id="3204">Género</String>
+  <String id="3205">Clasificación</String>
+  <String id="3206">Clasificación por Edades</String>
+  <String id="3207">Puntuación</String>
+  <String id="3208">Tipo</String>
+  <String id="3209">Mensaje</String>
+  <String id="3210">Buscar Cadena</String>
+  <String id="3211">Nombre del Episodio</String>
+  <String id="3212">Número del Episodio</String>
+  <String id="3213">Parte del Episodio</String>
+  <!--Filter Menu-->
+  <String id="3250">Menú de filtros</String>
+  <String id="3251">Ver</String>
+  <String id="3252">No ver</String>
+  <String id="3253">Enviado por Email</String>
+  <String id="3254">No enviado por Email</String>
+  <String id="3255">En la agenda</String>
+  <String id="3256">No en la agenda</String>
+  <String id="3257">Grabado</String>
+  <String id="3258">No grabado</String>
+  <String id="3259">Borrado</String>
+  <String id="3260">No borrado</String>
+  <String id="3261">Conflictos</String>
+  <String id="3262">Sin conflictos</String>
+  <String id="3263">Todo</String>
+  <String id="3264">Nada</String>
+  <!--Item Menu-->
+  <String id="3500">Ir a TV</String>
+  <String id="3501">Borrar agenda</String>
+  <String id="3502">Agenda</String>
+  <String id="3503">Borrar mensage</String>
+  <String id="3504">Borrar Grabación y Película</String>
+  <String id="3505">Ir a Grabaciones</String>
+  <String id="3506">Ir a Videos</String>
+  <String id="3507">Ir a Series</String>
+  <String id="3508">Ir a EPG</String>
+  <String id="3509">Reproducir</String>
+  <!--Item Status-->
+  <String id="3600">Programación añadida</String>
+  <String id="3601">Error al añadir Programación</String>
+  <String id="3602">La Programación ha sido borrada</String>
+  <String id="3603">Error al borrar programación</String>
+  <String id="3604">El Mensaje ha sido borrado</String>
+  <String id="3605">Ha fallado el borrado del mensaje</String>
+  <String id="3606">¡La grabación ha sido borrada!</String>
+  <String id="3607">Borrado de grabación fallido</String>
+  <String id="3608">Está seguro de querer borrar el archivo</String>
+  <!--Message Changes-->
+  <String id="3650">El Archivo {0} tiene {1} GB</String>
+  <String id="3651">El archivo ha sido borrado</String>
+  <String id="3652">Criterio de ordenación ascendente</String>
+  <String id="3653">Criterio de ordenación descendente</String>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Message Format Data 3900-3905:
+        //  {0}  Title
+        //  {1}  Description
+        //  {2}  Channel
+        //  {3}  Start
+        //  {4}  End
+        //  {5}  EpisodeName
+        //  {6}  EpisodeNum
+        //  {7}  EpisodeNumber
+        //  {8}  EpisodePart
+        //  {9}  Genre
+        //  {10} Classification
+        //  {11} OriginalAirDate
+        //  {12} ParentalRating
+        //  {13} SeriesNum
+        //  {14} StarRating
+        //  {15} type
+        //  {16} channel_id
+        //  {17} created
+        //  {18} searchstring
+        //  {19} tvwish_id
+        //  {20} recording_id
+        //  {21} Message   
+        //  <br>   new line-->
+  <!--Found Format for 16:9 skins Email Mode-->
+  <String id="3900">{21}\nTítulo: {0}\nCanal: {2}\nInicio: {3}\nFin: {4}\nTipo: {15}\nDescripción: {1}\n\nGénero: {9}\nClasificación: {10}\nClasificación por edades: {12}\nPuntuación: {14}\nParte del Episodio: {8}\nNombre del Episodio: {5}\nNúmero del Episodio: {6}\nBuscado por: {18} y {17}\n\n</String>
+  <!--Found Format for 4:3 skins Email Mode-->
+  <String id="3902">{21}     Título: {0}     Canal: {2}     Inicio: {3}     Fin: {4}     Tipo: {15}\nDescripción: {1}\nGénero: {9}     Clasificación: {10}     Clasificación por Edades: {12}     Puntuación: {14}     Parte del Episodio: {8}     Nombre del Episodio: {5}     Número del Episodio: {6}     Buscado por: {18} y {17}\n</String>
+  <!--Found Format for 16:9 skins View Only Mode-->
+  <String id="3901">{21}\nTítulo: {0}\nCanal: {2}\nInicio: {3}\nFin: {4}\nTipo: {15}\nDescripción: {1}\n\nGénero: {9}\nClasificación: {10}\nClasificación por edades: {12}\nPuntuación: {14}\nParte del Episodio: {8}\nNombre del Episodio: {5}\nNúmero del Episodio: {6}\nBuscado por: {18} y {17}\n\n</String>
+  <!--Found Format for 4:3 skins View Only Mode-->
+  <String id="3903">{21}     Título: {0}     Canal: {2}     Inicio: {3}     Fin: {4}    Tipo: {15}\nDescripción: {1}\nGénero: {9}     Clasificación: {10}     Clasificación por Edad: {12}     Puntuación: {14}     Parte del Episodio: {8}     Nombre del Episodio: {5}     Número del Episodio: {6}     Buscado por: {18} y {17}\n</String>
+  <!--List Item Format Email Mode - use "||" to change alignment between left and right border-->
+  <String id="3904">{0} || {3}</String>
+  <!--List Item Format ViewOnly Mode-->
+  <String id="3905">{0} || {3}</String>
+  <!--************************************************************-->
+  <!--General-->
+  <!--************************************************************-->
+  <!--Bool-->
+  <String id="4000">Verdadero</String>
+  <String id="4001">Falso</String>
+  <!--Default Data TvWish-->
+  <String id="4100">Cualquiera</String>
+  <String id="4101">Siempre</String>
+  <String id="4102">Por Defecto</String>
+  <String id="4103">Nada</String>
+  <String id="4104">Todos los Canales</String>
+  <String id="4105">Todo</String>
+  <!--Mode Header-->
+  <String id="4200">Modo Email y Guardar</String>
+  <String id="4201">Modo de solo visualización</String>
+  <!--Errors-->
+  <String id="4300">Comprueba el archivo Log de MediaPortal</String>
+  <String id="4301">No se encontraron elementos</String>
+  <String id="4302">Error creando la lista de elementos</String>
+  <String id="4303">Sin número</String>
+  <String id="4304">Formato inválido</String>
+  <String id="4305">Error</String>
+  <String id="4306">El Plugin de MediaPortal Lista de Deseos de TV no\ncoincide con el Plugin del servidor de TV Lista de Deseos</String>
+  <String id="4307">La Carpeta Grabación tiene que cambiar a\nla Carpeta Episodio</String>
+  <String id="4308">El Tipo de Grabación tiene que cambiar a Todo</String>
+  <String id="4309">Mantener Número de Episodios tuvo que cambiar a Todos</String>
+  <String id="4310">Mover Horarios funciona sólo para el modo E-mail</String>
+  <String id="4311">Lista Tv se está procesando\npor otro proceso\nInténtelo más tarde\nSi el otro proceso no puede completarse\npor favor reinicia el sistema\no detén el servidor de tv manualmente</String>
+  <String id="4312">Se agotó el tiempo de espera: Intenta reiniciar el servidor. \nSi vuelve a ocurrir trata de aumentar el valor del tiempo de espera en opciones avanzadas</String>
+  <!--Others-->
+  <String id="4400">Información</String>
+  <String id="4401">Advertencia</String>
+  <String id="4402">Si</String>
+  <String id="4403">No</String>
+  <String id="4404">Todos mis Deseos de TV</String>
+  <String id="4405">Deseo Tv: {0}</String>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Date Time Format for all modules
+        //   {0:0000} year
+        //   {1:00}   month
+        //   {2:00}   day
+        //   {3:00}   hour
+        //   {4:00}   minute
+        //   {5:00}   second
+        //   {6}      timeofday
+        //   {7}      date-->
+  <String id="4900">{1:00}/{2:00} a {3:00}:{4:00}</String>
+  <!--************************************************************-->
+  <!--Config Main MP2-->
+  <!--************************************************************-->
+  <!-- MP2STR:ConfigMain_GUI -->
+  <String id="5000">Configuración principal</String>
+  <!-- MP2STR:ConfigMain_GUI_Help -->
+  <String id="5001">Configurar opciones principales</String>
+  <!-- MP2STR:ConfigTvserver -->
+  <String id="5050">Antes de usar el plugin de MediaPortal, debes haber configurado y probado el plugin del TvServer Lista de Deseos Tv</String>
+  <String id="5051">Antes de usar el plugin de MediaPortal, debes haber</String>
+  <String id="5052">configurado y probado el plugin del TvServer Lista de Deseos Tv</String>
+  <!-- MP2STR:CancelButtonText -->
+  <String id="5100">Cancelar</String>
+  <!-- MP2STR:SaveButtonText -->
+  <String id="5101">Grabar</String>
+  <!-- MP2STR:HelpButtonText -->
+  <String id="5102">Ayuda</String>
+  <!-- MP2STR:Verbose -->
+  <String id="5200">Debug</String>
+  <!-- MP2STR:DisableQuickMenu -->
+  <String id="5201">Deshabilitar Menú Rápido DeseoTv</String>
+  <!-- MP2STR:TimeOut -->
+  <String id="5202">Tiempo Agotado</String>
+  <!-- MP2STR:TimeOutDescription -->
+  <String id="5203">Cambiar el Tiempo Agotado de 60 sólo si experimentas demasiados errores</String>
+  <!-- MP2STR:SaveToTvServer -->
+  <String id="5204">Esto grabará tu configuración de cliente en el servidor de tv</String>
+  <!-- MP2STR:LoadFromTvServer -->
+  <String id="5205">Esto cargará tu configuración de cliente del servidor de tv</String>
+  <!-- MP2STR:DisableInfoWindows -->
+  <String id="5206">Deshabilitar Mensajes de Información</String>
+  <!-- MP2STR:Load -->
+  <String id="5207">Cargar</String>
+  <!-- MP2STR:SaveLoad -->
+  <String id="5208">Grabar/Cargar Configuración de Cliente en/del Servidor de Tv</String>
+  <!-- MP2STR:SaveQuestion -->
+  <String id="5209">¿Quieres grabar la configuración de cliente en el Servidor Tv y sobrescribir la configuración previa?</String>
+  <!-- MP2STR:LoadQuestion -->
+  <String id="5210">¿Quieres Cargar la configuración de cliente del Servidor Tv y sobrescribir la actual configuración?</String>
+  <!-- MP2STR:SaveToTV -->
+  <String id="5211">Grabar al Sevidor Tv</String>
+  <!-- MP2STR:LoadFromTV -->
+  <String id="5212">Cargar del Servidor Tv</String>
+  <!-- MP2STR:LoadComplete -->
+  <String id="5213">La configuración de Cliente ha sido cargada del Servidor Tv</String>
+  <!-- MP2STR:LoadError -->
+  <String id="5214">La configuración de Cliente no pudo cargarse del Servidor Tv</String>
+  <!-- MP2STR:SaveComplete -->
+  <String id="5215">La configuración de Cliente ha sido guardada en el Servidor Tv</String>
+  <!-- MP2STR:SaveError -->
+  <String id="5216">La configuración de Cliente no pudo guardarse en el Servidor Tv</String>
+  <!--************************************************************-->
+  <!--Config Filter MP2-->
+  <!--************************************************************-->
+  <!-- MP2STR:ConfigFilter_GUI -->
+  <String id="6000">Configuración del Filtro</String>
+  <!-- MP2STR:ConfigFilter_GUI_Help -->
+  <String id="6001">Configura las opciones de filtro. Todos los elementos seleccionados se habilitarán para editar un deseo tv. Los elementos desactivados usarán los valores predeterminados.</String>
+  <!-- MP2STR:SelectItemLabel -->
+  <String id="6100">Selecciona los elementos del filtro que quieres editar</String>
+  <!-- MP2STR:UnSelectItemLabel -->
+  <String id="6101">Los elementos no seleccionados no pueden editarse para un deseo Tv y se utilizará el valor por defecto</String>
+  <!-- MP2STR:AllButtonText -->
+  <String id="6200">Todo</String>
+  <!-- MP2STR:NoneButtonText -->
+  <String id="6201">Nada</String>
+  <!-- MP2STR:DefaultsButtonText -->
+  <String id="6202">Por defecto</String>
+  <!-- MP2STR:DefaultsQuestion -->
+  <String id="6203">Resetear a los valores por defecto sobrescribirá todos los campos en todas las pestañas y también los valores definidos personalmente - ¿de verdad quieres continuar?</String>
+  <!--************************************************************-->
+  <!--Config Defaults MP2-->
+  <!--************************************************************-->
+  <!-- MP2STR:ConfigDefaults_GUI -->
+  <String id="7000">Configuración por Defecto</String>
+  <!-- MP2STR:ConfigDefaults_GUI_Help -->
+  <String id="7001">Configura los valores por defecto. Esto utilizará para cada nuevo deseo tv los valores predeterminados seleccionados. Los elementos desactivados obtendrán los valores predeterminados asignados.</String>
+  <String id="7002">Comprobación por Defecto</String>
+  <!--************************************************************-->
+  <!--Config Formats MP2-->
+  <!--************************************************************-->
+  <!-- MP2STR:ConfigFormats_GUI -->
+  <String id="8000">Configuración de Formatos</String>
+  <!-- MP2STR:ConfigFormats_GUI_Help -->
+  <String id="8001">Configurar los ajustes de formato. Formatos vacíos utilizarán los formatos definidos en los archivos de idioma</String>
+  <!-- MP2STR:DateAndTimeFormat -->
+  <String id="8100">Formatos de Fecha y Hora</String>
+  <!-- MP2STR:MainItemFormat -->
+  <String id="8101">Formato Elementos Menú Principal</String>
+  <!-- MP2STR:ResultItemFormat -->
+  <String id="8102">Formato  Elementos Menú Resultados</String>
+  <!-- MP2STR:MainTextBoxFormat -->
+  <String id="8103">Formato Cuadro de texto Menú Principal</String>
+  <!-- MP2STR:ResultTextBoxFormat -->
+  <String id="8104">Formato Cuadro de texto Menú Resultados</String>
+  <!-- MP2STR:GroupboxGeneral -->
+  <String id="8105">Formatos Generales</String>
+  <!-- MP2STR:GroupboxListItemFormats -->
+  <String id="8106">Formatos Listado Elementos</String>
+  <!-- MP2STR:GroupboxEmailAndRecordModus -->
+  <String id="8107">Modo Email y Grabación</String>
+  <!-- MP2STR:GroupboxViewOnlyModus -->
+  <String id="8108">Modo de Sólo Vista</String>
+  <!-- MP2STR:FormatExpertLabel -->
+  <String id="8109">Los formatos sólo deben cambiarse por expertos. Los campos vacíos usan datos por defecto del archivo de idioma</String>
+  <String id="8110">Los formatos sólo deben cambiarse por expertos.</String>
+  <String id="8111">Los campos vacíos usan datos por defecto del archivo de idioma.</String>
+  <!--************************************************************-->
+  <!--TV Server Run EPG Messages-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=10000 TO=10300 OFFSET_FROM=0 OFFSET_TO=300-->
+  <String id="10001">Esperando a que los antiguos trabajos {0}s acaben</String>
+  <String id="10002">Error: Lista de deseos no acabó los antiguos trabajos -  reinicia el ordenador</String>
+  <String id="10003">Leyendo datos de configuración</String>
+  <String id="10004">Cargando Mensajes</String>
+  <String id="10005">Cargando Deseos de Tv</String>
+  <String id="10006">Buscando {0}</String>
+  <String id="10007">Enviando email a {0}</String>
+  <String id="10008">Error: Servidor SMTP no definido</String>
+  <String id="10009">Error: Usuario no definido</String>
+  <String id="10010">Error: Contraseña no definida</String>
+  <String id="10011">Error: Dirección email receptora no definida</String>
+  <String id="10012">Error: Configuración de proveedor inválida</String>
+  <String id="10013">Error: Dirección del servidor no especificada</String>
+  <String id="10014">Error: Fallo al conectar con el servidor POP3</String>
+  <String id="10015">Error: Puerto SMTP no definido</String>
+  <String id="10016">Envío de emails completado</String>
+  <String id="10017">Error: Falló el envío de emails - comprueba el nombre de usuario</String>
+  <String id="10018">Error: Falló el envío de emails - comprueba la contraseña</String>
+  <String id="10019">Error: Falló el envío de emails</String>
+  <String id="10020">Listo</String>
+  <String id="10021">Procesando datos EPG {0} el {1} a {2}</String>
+  <String id="10022">Procesando Grabación {0} a {1}</String>
+  <String id="10023">Error: Tu contraseña no coincide y se pone elimina - por favor introduce la contraseña otra vez</String>
+  <String id="10024">Error Fatal: Comprueba el archivo log</String>
+  <String id="10025">Erro en query SQL - comprueba la expresión {0}</String>
+  <!--************************************************************-->
+  <!--TV Server Message  Creation-->
+  <!--************************************************************-->
+  <String id="10050">La Programación {0} no tiene datos válidos de EPG pero puede ser corregida</String>
+  <String id="10051">La Programación {0} no tiene datos válidos de EPG - comprueba tus programaciones para conflictos</String>
+  <String id="10052">La Programación {0} no tiene datos válidos de EPG - comprueba tus programaciones para conflictos</String>
+  <String id="10053">Datos de EPG se modificaron para el Episodio/Descripción o cambiada Hora EPG- borrando la programación actual y tratando de reprogramar</String>
+  <String id="10054">El conflicto en programación debe resolverse manualmente</String>
+  <String id="10055">Excluyendo programa {0} debido a condición de exclusión {1}</String>
+  <String id="10056">Excluyendo programa {0} debido a filtro de palabra</String>
+  <String id="10057">Excluyendo programa {0} debido a filtro de palabra</String>
+  <String id="10058">Máximo número ({0}) de programas encontrados - se ignorarán las siguientes coincidencias</String>
+  <String id="10059">{0} con {1} GB</String>
+  <String id="10060">Fallo al añadir programa {0}</String>
+  <String id="10061">Fallo al crear programación para el programa {0}</String>
+  <String id="10062">El programa {0} ya estaba programado</String>
+  <String id="10063">Saltándose programa {0} porque no está entre {1} y {2}</String>
+  <String id="10064">Saltándose programa {0} porque no está entre {1} y {2}</String>
+  <String id="10065">Saltándose programa {0} porque no está entre las siguientes {1} horas</String>
+  <String id="10066">Saltándose programa {0} porque no coincide con el filtro de canal requerido {1}</String>
+  <String id="10067">Saltándose programa {0} porque no coincide con la parte de episodio requerida {1}</String>
+  <String id="10068">Saltándose programa {0} porque no coincide con el nombre de episodio requerido {1}</String>
+  <String id="10069">Saltándose programa {0} porque no coincide con el número de serie requerido {1}</String>
+  <String id="10070">Saltándose programa {0} porque no coincide con el número de episodio requerido {1}</String>
+  <String id="10071">El Programa {0} ya está grabado</String>
+  <String id="10072">El Programa {0} ya ha sido borrado y saltado</String>
+  <String id="10073">La hora de inicio del programa {0} ya ha pasado - la programación se saltará</String>
+  <String id="10074">Encontrada Programación repetida {0} - saltando</String>
+  <String id="10075">El Programa {0} tiene conflictos y no será programado</String>
+  <String id="10076">Borrando programación {0} por tener prioridad baja</String>
+  <String id="10077">La programación {0} no tiene suficiente prioridad para borrar conflictos - saltando</String>
+  <String id="10078">Mejor Programación Encontrada en Grupo Preferido</String>
+  <String id="10079">Lista de Deseos encontró programa de Deseo Tv [{0}]: {1}\nLista de Deseos programó el programa</String>
+  <String id="10080">Lista de Deseos encontró programa de Deseo Tv [{0}]: {1}\nLista de Deseos no hizo programación pero te lo recordará</String>
+  <!--Email Format Default - will be sent with each email for a found program (use format entries from message format at 3900)-->
+  <String id="10090">NUEVA ENTRADA\nTítulo={0}\nDescripción={1}\nCanal={2}\nInicio={3}\nFin={4}\nTipo={15}\nCreado={17}\n\n\n</String>
+  <String id="10091">{1:00}/{2:00} a {3:00}:{4:00}</String>
+  <!--************************************************************-->
+  <!--TV Server Configuration-->
+  <!--************************************************************-->
+  <String id="10100">Principal</String>
+  <String id="10101">Fácil</String>
+  <String id="10102">Experto</String>
+  <String id="10103">Arriba</String>
+  <String id="10104">Abajo</String>
+  <String id="10105">Borrar</String>
+  <String id="10106">Cancelar</String>
+  <String id="10107">Por defecto</String>
+  <String id="10108">Ayuda</String>
+  <String id="10109">Modo Debug</String>
+  <String id="10110">Página de Inicio Lista de Deseos Tv</String>
+  <String id="10111">Todo activo</String>
+  <String id="10112">Todo Inactivo</String>
+  <String id="10113">Omitir todo</String>
+  <String id="10114">No Saltar Nada</String>
+  <String id="10115">Filtro Canal</String>
+  <String id="10130">Email</String>
+  <String id="10131">Cuenta</String>
+  <String id="10132">Nombre de usuario</String>
+  <String id="10133">Contraseña</String>
+  <String id="10134">Repetir contraseña</String>
+  <String id="10135">Dirección de Email</String>
+  <String id="10136">sólo si es distinto al nombre de usuario</String>
+  <String id="10137">Buscar ahora</String>
+  <String id="10138">Dirección</String>
+  <String id="10139">Entrada Email</String>
+  <String id="10140">Test Envío Email</String>
+  <String id="10141">SMTP</String>
+  <String id="10142">Proveedor</String>
+  <String id="10143">Puerto</String>
+  <String id="10144">Servidor SMTP</String>
+  <String id="10145">SSL</String>
+  <String id="10146">Activar Respuesta Email</String>
+  <String id="10147">Email Sólo Nuevo</String>
+  <String id="10160">Configuraciones</String>
+  <String id="10161">Prueba EPG</String>
+  <String id="10162">ÇLunes</String>
+  <String id="10163">MArtes</String>
+  <String id="10164">Miércoles</String>
+  <String id="10165">Jueves</String>
+  <String id="10166">Viernes</String>
+  <String id="10167">Sábado</String>
+  <String id="10168">Domingo</String>
+  <String id="10169">Cada</String>
+  <String id="10170">Dias</String>
+  <String id="10171">Horas</String>
+  <String id="10172">Minutos</String>
+  <String id="10173">En</String>
+  <String id="10174">Prueba EPG</String>
+  <String id="10175">antes de cada programación</String>
+  <String id="10176">Próxima prueba al Servidor Tv:</String>
+  <String id="10177">Criterio para Coincidencias en Películas y Episodios Repetidos</String>
+  <String id="10178">Marca de Repetidos en EPG de Títulos o Descripción</String>
+  <String id="10179">Otras Opciones</String>
+  <String id="10180">Grabación Automática</String>
+  <String id="10181">Programaciones con Conflictos</String>
+  <String id="10182">Borrar EPG Cambiada</String>
+  <String id="10183">Restaurar Valores por Defecto</String>
+  <String id="10184">CPU Lenta</String>
+  <String id="10185">Saltar Borrados</String>
+  <String id="10186">Vencimiento Borrados:</String>
+  <String id="10187">Meses</String>
+  <String id="10188">Máximas Programaciones por Deseo</String>
+  <!--Date Time Format with 10189-10191 combined-->
+  <String id="10189">MM/dd/yyyy</String>
+  <String id="10190">HH:mm</String>
+  <String id="10191">{0} a {1}</String>
+  <String id="10192">Espere al Proceso ComSkip</String>
+  <String id="10193">EPG</String>
+  <String id="10200">Formatos</String>
+  <String id="10201">Formato de Fecha y Hora para Emails</String>
+  <String id="10202">Formato Email</String>
+  <String id="10203">Idioma del Archivo</String>
+  <String id="10204">Criterio de Clasificación</String>
+  <String id="10205">Usuarios expertos pueden personalizar formatos para enviar emails</String>
+  <String id="10206">Clasificación Descendente</String>
+  <String id="10207">Criterio del Filtro</String>
+  <String id="10208">Email</String>
+  <String id="10209">Grabar</String>
+  <String id="10210">Conflictos</String>
+  <String id="10211">Borrar Todos los Mensajes</String>
+  <String id="10250">Esperando a que los trabajos antiguos terminen desde {0}. Inténtalo de nuevo más tarde. Si los trabajos no terminan, debes reiniciar o detener manualmente el servidor Tv</String>
+  <String id="10251">Cerrando Configuración TV</String>
+  <String id="10252">Proceso en curso - por favor espera a que acabe</String>
+  <String id="10253">Éxito</String>
+  <String id="10254">Fallo al enviar email</String>
+  <String id="10255">Mínimo {0} es {1}</String>
+  <String id="10256">Máximo {0} es {1}</String>
+  <String id="10257">No pudo se abrir {0}</String>
+  <String id="10258">¿Quieres borrar todos tus mensajes? CUIDADO: Esto borrará tu historial de mensajes incluidos los mensajes borrados. ¡Asegúrate que el plugin TvWishListMP está cerrado!</String>
+  <String id="10259">Mensaje borrado</String>
+  <String id="10260">Operación cancelada</String>
+  <String id="10261">¿Quiere restaurar todos los formatos a los valores por defecto? Esto sobrescribirá todas las configuraciones y todos los formatos</String>
+  <String id="10262">Comprueba tu usuario y contraseña\nEl error del servidor es:\n{0}</String>
+  </Section>
+</Language>

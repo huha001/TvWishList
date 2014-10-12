@@ -1732,10 +1732,10 @@ namespace TvWishListInstall
             // -1 version1 is older than version2
             //  0 version1 is same as version2
             // 99 error occured
-
+            
             //errorchecking version1
             string[] tokenarray1 = version1.Split('.');
-            if (tokenarray1.Length != 4)
+            if ((tokenarray1.Length != 4)&&(tokenarray1.Length != 3))
             {
                 return (int)CompareFileVersion.Version1Error;
             }
@@ -1753,7 +1753,7 @@ namespace TvWishListInstall
 
             //errorchecking version2
             string[] tokenarray2 = version2.Split('.');
-            if (tokenarray2.Length != 4)
+            if ((tokenarray2.Length != 4) && (tokenarray2.Length != 3))
             {
                 return (int)CompareFileVersion.Version2Error;
             }
@@ -1799,6 +1799,11 @@ namespace TvWishListInstall
                     }
                     else //same
                     {
+                        if (tokenarray1.Length == 3)
+                        {
+                             return (int)CompareFileVersion.Equal;
+                        }
+
                         if (Convert.ToInt32(tokenarray1[3]) > Convert.ToInt32(tokenarray2[3]))
                         {
                             return (int)CompareFileVersion.Newer;

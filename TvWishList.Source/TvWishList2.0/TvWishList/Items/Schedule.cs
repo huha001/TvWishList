@@ -125,7 +125,10 @@ namespace MediaPortal.Plugins.TvWishList.Items
         #region public methods
         public static IList<Schedule> ListAll()
         {
+            DateTime start = DateTime.Now; //DEBUG PERFORMANCE
             IList<Mediaportal.TV.Server.TVDatabase.Entities.Schedule> rawschedules = ServiceAgents.Instance.ScheduleServiceAgent.ListAllSchedules();
+            DateTime end = DateTime.Now; //DEBUG PERFORMANCE
+            Log.Debug("IList<Schedule> ListAll() time=" + end.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
 
             IList<Schedule> allschedules = new List<Schedule>();
             foreach (Mediaportal.TV.Server.TVDatabase.Entities.Schedule myschedule in rawschedules)
@@ -157,6 +160,8 @@ namespace MediaPortal.Plugins.TvWishList.Items
                 //Log.Debug("schedule = " + newschedule.ProgramName);
                 allschedules.Add(newschedule);
             }
+            DateTime end2 = DateTime.Now; //DEBUG PERFORMANCE
+            Log.Debug("IList<Schedule> ListAll() total time=" + end2.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
             return allschedules;   
         }
 
@@ -237,6 +242,8 @@ namespace MediaPortal.Plugins.TvWishList.Items
 
         public void Persist()
         {
+            DateTime start = DateTime.Now; //DEBUG PERFORMANCE
+            
             Log.Debug("Persist Schedule");
             Mediaportal.TV.Server.TVDatabase.Entities.Schedule myschedule = new Mediaportal.TV.Server.TVDatabase.Entities.Schedule();
             myschedule.Canceled = DateTime.ParseExact("2000-01-01_00:00", "yyyy-MM-dd_HH:mm", System.Globalization.CultureInfo.InvariantCulture);
@@ -265,7 +272,7 @@ namespace MediaPortal.Plugins.TvWishList.Items
             myschedule.Series = Series;
             myschedule.StartTime = StartTime;
             
-            Log.Debug("before myschedule.IdSchedule=" + myschedule.IdSchedule.ToString());
+            //Log.Debug("before myschedule.IdSchedule=" + myschedule.IdSchedule.ToString());
             
             if (TvWishListSetup.Setup)
             {
@@ -276,7 +283,10 @@ namespace MediaPortal.Plugins.TvWishList.Items
             {
                 try
                 {
+                    DateTime start2 = DateTime.Now; //DEBUG PERFORMANCE
                     ScheduleManagement.SaveSchedule(myschedule);
+                    DateTime end2 = DateTime.Now; //DEBUG PERFORMANCE
+                    Log.Debug("IList<Schedule> Persist() time=" + end2.Subtract(start2).TotalSeconds.ToString()); //DEBUG PERFORMANCE
                     //ServiceAgents.Instance.ScheduleServiceAgent.SaveSchedule(myschedule);
 
                 }
@@ -285,23 +295,30 @@ namespace MediaPortal.Plugins.TvWishList.Items
                     Log.Debug("Exception=" + exc.Message);
                     return;
                 }
-                Log.Debug("Added schedule by Server: " + myschedule.ProgramName);
+                //Log.Debug("Added schedule by Server: " + myschedule.ProgramName);
             }
             IdSchedule = myschedule.IdSchedule;
-            Log.Debug("after myschedule.IdSchedule=" + myschedule.IdSchedule.ToString());
-            
+            //Log.Debug("after myschedule.IdSchedule=" + myschedule.IdSchedule.ToString());
+            DateTime end = DateTime.Now; //DEBUG PERFORMANCE
+            Log.Debug("IList<Schedule> Persist() total time=" + end.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
         }
 
         public void Delete()
         {
+            DateTime start = DateTime.Now; //DEBUG PERFORMANCE
             ServiceAgents.Instance.ScheduleServiceAgent.DeleteSchedule(this.IdSchedule);
+            DateTime end = DateTime.Now; //DEBUG PERFORMANCE
+            Log.Debug("IList<Schedule> delete total time=" + end.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
             Log.Debug("Deleted schedule " + this.ProgramName);
 
         }
 
         public static void Delete(int idSchedule)
         {
+            DateTime start = DateTime.Now; //DEBUG PERFORMANCE
             ServiceAgents.Instance.ScheduleServiceAgent.DeleteSchedule(idSchedule);
+            DateTime end = DateTime.Now; //DEBUG PERFORMANCE
+            Log.Debug("IList<Schedule> delete total time=" + end.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
             Log.Debug("Deleted schedule with id=" + idSchedule.ToString());
 
         }

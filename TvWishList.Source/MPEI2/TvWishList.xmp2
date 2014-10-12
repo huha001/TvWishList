@@ -682,6 +682,20 @@
               <ZipFileName>Installer{CopyFile}\{bcd0095f-bbed-46c3-85f8-8145d7db2c45}-Thumbs.db</ZipFileName>
               <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMP2\Skin\default\images\Thumbs.db</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_es.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0913dc00-c1fc-43ad-940e-57b4890d1bb8}-strings_es.xml</ZipFileName>
+              <DestinationFilename>%Config%\Installer\TvWishList\language\TvWishListMP\strings_es.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_es.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b61149b8-39c8-4045-b3b0-1e4c087ff6a3}-strings_es.xml</ZipFileName>
+              <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMP2\Language\strings_es.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -802,27 +816,20 @@
       <Major>1</Major>
       <Minor>4</Minor>
       <Build>0</Build>
-      <Revision>0</Revision>
+      <Revision>2</Revision>
     </Version>
     <ExtensionDescription>Never again miss your favourite movie when it is showing up on TV. Create a list of movies or episodes you want to record or get a reminder and TvWishList will search your Epg data and compare to your search list. If the plugin finds a match it will record and/or send you an email. TvWishlist will help you to avoid duplicate episodes for schedules and recordings.
 
 
 
 Now you can access to TvWishlist directly from MediaPortal with the client plugin and use it as your personal TV guide or for creating your wish lists.</ExtensionDescription>
-    <VersionDescription>V1.4.0. 0:
-
-- new TvWishList Logo from Pog used for MP1, MP2 skins and installer
-
-- save parsing of integers and dates
-
-- new: native Tvserver plugin for MP2
-
-- installer updates</VersionDescription>
+    <VersionDescription>V1.4.0.2:
+- installer fix for MP1.9</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=71&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2013-12-01T18:27:26</ReleaseDate>
+    <ReleaseDate>2014-10-12T18:27:26</ReleaseDate>
     <Tags>automation,tv server plugins,tvwishlist,tvwishlistmp,mediaportal plugins</Tags>
-    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.4.0.1.mpe1</Location>
+    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.4.0.2.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -1548,11 +1555,25 @@ http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1744.jpg
         <ZipFileName>Installer{CopyFile}\{bcd0095f-bbed-46c3-85f8-8145d7db2c45}-Thumbs.db</ZipFileName>
         <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMP2\Skin\default\images\Thumbs.db</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_es.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0913dc00-c1fc-43ad-940e-57b4890d1bb8}-strings_es.xml</ZipFileName>
+        <DestinationFilename>%Config%\Installer\TvWishList\language\TvWishListMP\strings_es.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_es.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b61149b8-39c8-4045-b3b0-1e4c087ff6a3}-strings_es.xml</ZipFileName>
+        <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMP2\Language\strings_es.xml</DestinationFilename>
+      </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\..\..\TvWishList.Icon2.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{010304de-05c3-48c7-9b31-4659b0d9d197}-TvWishList.Icon2.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{e5b70ff7-48d7-46b7-820b-6d5dc26406ae}-TvWishList.Icon2.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
@@ -1565,7 +1586,7 @@ http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1744.jpg
         <LocalFileName />
         <ZipFileName>Installer{CopyFile}\{eab9f214-56e1-4e02-8f91-efff5fa07a25}-</ZipFileName>
         <DestinationFilename>%Config%\Installer\TvWishList</DestinationFilename>
-        <Folder>..\..\TvWishListV1.4.0.1.Release</Folder>
+        <Folder>..\..\TvWishListV1.4.0.2.Release</Folder>
         <Group>Default</Group>
         <Recursive>true</Recursive>
       </FolderGroup>

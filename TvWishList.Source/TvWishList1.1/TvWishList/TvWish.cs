@@ -88,7 +88,8 @@ using Mediaportal.TV.Server.TVControl.Interfaces.Events;
 using Mediaportal.TV.Server.TVControl.Interfaces.Services;
 using Mediaportal.Common.Utils;
 using MediaPortal.Plugins.TvWishList.Items;
-//using SetupTv.Sections;
+
+using Mediaportal.TV.Server.TVLibrary.Interfaces;
 
 
 #else
@@ -97,6 +98,8 @@ using TvDatabase;
 using TvControl;
 using TvEngine.Events;
 using TvLibrary.Implementations;
+
+using TvLibrary.Interfaces;
 #endif
 
 
@@ -107,7 +110,7 @@ using TvLibrary.Implementations;
 using MediaPortal.Plugins.TvWishList.Setup;
 using TvEngine;
 
-using TvLibrary.Interfaces;
+
 
 using MediaPortal.Plugins;
 using TvEngine.PowerScheduler.Interfaces; 
@@ -3561,7 +3564,7 @@ namespace MediaPortal.Plugins.TvWishList
 
         public string TvWishVersion()
         {
-            return ("1.4.0.1");
+            return ("1.4.0.2");
         }
 
 

@@ -55,7 +55,7 @@ namespace MediaPortal.Plugins.TvWishList.Items
             mysetting.Value = ServiceAgents.Instance.SettingServiceAgent.GetValue(tagName, defaultValue);           
             //Log.Debug("TvBusinessLayer:  GetSetting(string tagName=" + mysetting.Tag + ", string Value=" + mysetting.Value + ", string default ="+defaultValue );
             return mysetting;
-             
+            
         }
 
         

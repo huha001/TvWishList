@@ -35,7 +35,7 @@ using System.Globalization;
 using System.Xml;
 using Log = TvLibrary.Log.huha.Log;
 //using TvLibrary.Log.huha;
-using TvLibrary.Interfaces;
+
 using MediaPortal.Plugins.TvWishList.Setup;
 using TvEngine;
 
@@ -50,6 +50,8 @@ using Mediaportal.TV.Server.TVControl.ServiceAgents;
 using Mediaportal.TV.Server.TVControl.Events;
 using Mediaportal.TV.Server.TVControl.Interfaces.Events;
 using Mediaportal.TV.Server.TVControl.Interfaces.Services;
+
+using Mediaportal.TV.Server.TVLibrary.Interfaces;
 
 /*
 using Mediaportal.TV.Server.TVDatabase.Entities;
@@ -71,6 +73,9 @@ using TvEngine.Events;
 using TvLibrary.Implementations;
 using TvDatabase;
 using SetupTv;
+
+using TvLibrary.Interfaces;
+
 #endif
 
 using TvEngine.PowerScheduler.Interfaces;
@@ -167,7 +172,7 @@ namespace MediaPortal.Plugins.TvWishList
         /// <summary>
         /// returns the version of the plugin
         /// </summary>
-        public string Version { get { return "1.4.0.1"; } }
+        public string Version { get { return "1.4.0.2"; } }
 
         /// <summary>
         /// returns the author of the plugin

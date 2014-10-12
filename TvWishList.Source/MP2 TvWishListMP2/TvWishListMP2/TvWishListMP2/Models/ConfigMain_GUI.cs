@@ -27,7 +27,7 @@ using System.Diagnostics;
 using System.IO;
 
 using MediaPortal.Plugins;
-
+using MediaPortal;
 using MediaPortal.Common;
 using MediaPortal.Common.Commands;
 using MediaPortal.Common.General;

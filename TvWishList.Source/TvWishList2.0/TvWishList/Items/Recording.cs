@@ -78,7 +78,11 @@ namespace MediaPortal.Plugins.TvWishList.Items
         #region public methods
         public static IList<Recording> ListAll()
         {
+            DateTime start = DateTime.Now; //DEBUG PERFORMANCE
+            
             IList<Mediaportal.TV.Server.TVDatabase.Entities.Recording> rawrecordingstv = ServiceAgents.Instance.RecordingServiceAgent.ListAllActiveRecordingsByMediaType(Mediaportal.TV.Server.TVDatabase.Entities.Enums.MediaTypeEnum.TV);
+            DateTime end = DateTime.Now; //DEBUG PERFORMANCE
+            Log.Debug("IList<Recording> ListAll() time=" + end.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
             IList<Recording> allrecordings = new List<Recording>();
             foreach (Mediaportal.TV.Server.TVDatabase.Entities.Recording myrecording in rawrecordingstv)
             {
@@ -130,7 +134,11 @@ namespace MediaPortal.Plugins.TvWishList.Items
                 allrecordings.Add(newrecording);
                 
             }
+            DateTime start3 = DateTime.Now; //DEBUG PERFORMANCE
             IList<Mediaportal.TV.Server.TVDatabase.Entities.Recording> rawrecordingsradio = ServiceAgents.Instance.RecordingServiceAgent.ListAllActiveRecordingsByMediaType(Mediaportal.TV.Server.TVDatabase.Entities.Enums.MediaTypeEnum.Radio);
+            DateTime end3 = DateTime.Now; //DEBUG PERFORMANCE
+            Log.Debug("IList<Recording> ListAll() time=" + end3.Subtract(start3).TotalSeconds.ToString()); //DEBUG PERFORMANCE
+            
             foreach (Mediaportal.TV.Server.TVDatabase.Entities.Recording myrecording in rawrecordingsradio)
             {
                 Recording newrecording = new Recording();
@@ -182,7 +190,8 @@ namespace MediaPortal.Plugins.TvWishList.Items
                 Log.Debug("myrecording keepuntildate== " + newrecording.KeepUntilDate.ToString());
                 allrecordings.Add(newrecording);
             }
-
+            DateTime end2 = DateTime.Now; //DEBUG PERFORMANCE
+            Log.Debug("IList<Recording> ListAll() total time=" + end2.Subtract(start).TotalSeconds.ToString()); //DEBUG PERFORMANCE
             return allrecordings;
         }
 

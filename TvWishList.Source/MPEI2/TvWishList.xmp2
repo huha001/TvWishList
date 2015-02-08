@@ -696,6 +696,706 @@
               <ZipFileName>Installer{CopyFile}\{b61149b8-39c8-4045-b3b0-1e4c087ff6a3}-strings_es.xml</ZipFileName>
               <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMP2\Language\strings_es.xml</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishList1.10\TvWishList.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d1402e7c-607f-47bb-8f4d-0af0a12ac04d}-TvWishList.dll</ZipFileName>
+              <DestinationFilename>%Config%\Installer\TvWishList\TvWishList1.10\TvWishList.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\Install.exe</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{103b1dc5-dcd3-49c7-9da4-6bab175fde09}-Install.exe</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\Install.exe</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\License.txt</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{bd3f5f24-ff2f-4ca0-a4a2-d986dd6b6e8f}-License.txt</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\License.txt</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishList.pdf</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a81f4076-5a7e-4199-90da-ef876a59035a}-TvWishList.pdf</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishList.pdf</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_ca.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{7f5b17ae-8fac-4b8d-8b2b-6404cafb73cd}-strings_ca.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_ca.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_de.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b40586b6-b320-4ee0-bd1c-5a0bcb724f85}-strings_de.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_de.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_en.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b73047a6-636e-4ac8-8fc4-bf62c17fea72}-strings_en.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_en.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_es.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{3cda57d9-2f94-4536-beec-ee7183baf7f0}-strings_es.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_es.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_fr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{ca14a2ef-3f11-4b83-aff8-996f5a25587b}-strings_fr.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_fr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_id.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c8cea4cc-d2e3-46a3-95fd-3afc8533ce01}-strings_id.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_id.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_lt.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{5f8b780c-ecca-451b-bdfa-81eda361acc7}-strings_lt.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_lt.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_nl.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8c11344b-cbb6-4ce5-bc85-f558b9afb9d1}-strings_nl.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_nl.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_sk.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cdef954c-1d5e-49de-9ac4-e37064b7dd8a}-strings_sk.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_sk.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\language\TvWishListMP\strings_sv.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cfaa1f5a-c5a9-4cb6-b5dc-a428ecdb22cc}-strings_sv.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\language\TvWishListMP\strings_sv.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Thumbs.db</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{937f9f92-bd0f-41ec-aef4-2f8a32dfac46}-Thumbs.db</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Thumbs.db</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3\TvWishListMP.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e7a7d44f-31ed-42e6-b456-837deec27f06}-TvWishListMP.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3\TvWishListMP.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3\TvWishListMP_2.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{61193127-44bc-4b86-b91e-904f42abe1ee}-TvWishListMP_2.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3\TvWishListMP_2.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3\TvWishListMP_3.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{9ad41933-e774-4e40-88f0-23bcc1fb69ff}-TvWishListMP_3.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3\TvWishListMP_3.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3\Media\hover_TvWishList.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{9e2aee25-32b6-4cc3-a088-871bd7a83831}-hover_TvWishList.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3\Media\hover_TvWishList.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3\Media\Thumbs.db</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{22c8df8e-1bf0-4662-9560-55deffdd5e2a}-Thumbs.db</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3\Media\Thumbs.db</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3\Media\TvWishList.Icon.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{7343596b-54b5-45dd-bb0b-f136d1cfb1dd}-TvWishList.Icon.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3\Media\TvWishList.Icon.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3wide\TvWishListMP.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{7acec788-2052-4079-a1e2-4b254afb8cae}-TvWishListMP.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3wide\TvWishListMP.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3wide\TvWishListMP_2.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b35fb7ae-dbd8-409c-a7d4-3a025b34afbd}-TvWishListMP_2.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3wide\TvWishListMP_2.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3wide\TvWishListMP_3.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{53052279-a3e0-4388-82c8-6ec3c014807c}-TvWishListMP_3.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3wide\TvWishListMP_3.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3wide\Media\hover_TvWishList.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6cf79e1e-5248-434b-8e8a-3bd971973c93}-hover_TvWishList.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3wide\Media\hover_TvWishList.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3wide\Media\Thumbs.db</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{eb94cac6-5bae-4aca-9cfb-6ff2fefdb939}-Thumbs.db</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3wide\Media\Thumbs.db</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Blue3wide\Media\TvWishList.Icon.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0aeac175-7e41-4ca2-967e-26234ffd4717}-TvWishList.Icon.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Blue3wide\Media\TvWishList.Icon.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Default\TvWishListMP.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{756aa825-ebd4-4d39-ab7c-f27218bc2965}-TvWishListMP.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Default\TvWishListMP.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Default\TvWishListMP_2.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0b0bf14f-e0bc-4ce0-a599-67fe32818c5c}-TvWishListMP_2.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Default\TvWishListMP_2.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Default\TvWishListMP_3.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{09178e61-f01c-4f3d-9552-15191a268f8e}-TvWishListMP_3.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Default\TvWishListMP_3.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Default\Media\hover_TvWishList.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4acb5485-3e30-44ab-a114-41408a0f25cf}-hover_TvWishList.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Default\Media\hover_TvWishList.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Default\Media\Thumbs.db</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{eeae78bd-72ad-4a3e-9694-f4fc6b71d8ef}-Thumbs.db</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Default\Media\Thumbs.db</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\Default\Media\TvWishList.Icon.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8e35eea5-501c-4cb5-8815-a3bf117695e1}-TvWishList.Icon.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\Default\Media\TvWishList.Icon.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\DefaultWide\TvWishListMP.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b5b31eca-17a6-40a6-a0c3-31fd9d0e8105}-TvWishListMP.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\DefaultWide\TvWishListMP.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\DefaultWide\TvWishListMP_2.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e4b932ca-e153-43fe-83a2-b38b663f3883}-TvWishListMP_2.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\DefaultWide\TvWishListMP_2.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\DefaultWide\TvWishListMP_3.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{f59442bb-f8c7-46e8-9afa-6c25351b0c38}-TvWishListMP_3.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\DefaultWide\TvWishListMP_3.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\DefaultWide\Media\hover_TvWishList.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a5b90cc8-3e86-473f-804e-1baa433c3a82}-hover_TvWishList.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\DefaultWide\Media\hover_TvWishList.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\DefaultWide\Media\Thumbs.db</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4c77d2e5-2ce6-4a2b-b9ed-dd048161848a}-Thumbs.db</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\DefaultWide\Media\Thumbs.db</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skin\DefaultWide\Media\TvWishList.Icon.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{742fe027-9df6-4f75-85ae-5c7b5861ede7}-TvWishList.Icon.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skin\DefaultWide\Media\TvWishList.Icon.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skinmods\Default\DialogMenu.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6cccaaff-2e57-482c-850b-7803682848e7}-DialogMenu.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skinmods\Default\DialogMenu.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\skinmods\DefaultWide\DialogMenu.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{7f56dbf1-bd40-4c20-9a76-e68aab71c56b}-DialogMenu.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\skinmods\DefaultWide\DialogMenu.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishList1.0.1\TvWishList.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{1c359bac-a6c8-4698-8f95-cd646caf95aa}-TvWishList.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishList1.0.1\TvWishList.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishList1.1\TvWishList.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4ec770e6-c5c5-4320-8644-5199022b0a69}-TvWishList.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishList1.1\TvWishList.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishList1.10\TvWishList.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{47f100d3-15e3-48d1-bb24-625cf716a54a}-TvWishList.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishList1.10\TvWishList.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishList1.2\TvWishList.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d04a30bf-4daa-457b-b252-81bd1da24b5c}-TvWishList.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishList1.2\TvWishList.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{168e0231-cde9-4f21-b5fd-cd4e3f476971}-Mediaportal.TV.Server.Plugins.TvWishList.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP1.1\TvWishListMP.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6fe43861-ed30-4c81-9240-20c18f95a320}-TvWishListMP.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP1.1\TvWishListMP.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP1.2\TvWishListMP.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{9f1b0f49-1ac3-4ff2-a988-6bfa2ddbd42a}-TvWishListMP.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP1.2\TvWishListMP.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP1.6\TvWishListMP.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{aa28fd30-e8e0-4300-8cf0-86769b2e5eef}-TvWishListMP.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP1.6\TvWishListMP.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\plugin.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8c693d57-438d-4ffa-bd96-bbc7eea1c267}-plugin.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\plugin.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\SlimTv.Interfaces.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{13bfbc7e-74f3-4b02-8a62-fe1e704927c5}-SlimTv.Interfaces.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\SlimTv.Interfaces.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\TvWishListInterface.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{ef398d2b-1dfa-4a16-b4f8-d4fa15730fe6}-TvWishListInterface.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\TvWishListInterface.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\TvWishListMP2.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8b350cab-04ca-46aa-a2dd-221f0adac388}-TvWishListMP2.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\TvWishListMP2.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_ca.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{2ee7b832-9985-4707-ba41-a2967b2fd91e}-strings_ca.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_ca.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_de.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{99fb6f90-72e8-4b7a-ac6e-1d791b99612b}-strings_de.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_de.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_en.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8049d6e8-6879-427a-9d80-2844de42cf93}-strings_en.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_en.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_es.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{bb104dcf-4959-4e28-96b6-43f355c53bb1}-strings_es.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_es.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_fr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{71cf4040-42b1-43eb-b4ff-74b5dae4d874}-strings_fr.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_fr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_id.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{53f69b10-2be6-45dd-8d5a-fbcd9c920907}-strings_id.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_id.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_lt.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{3b020152-2e8d-4ee0-8965-8a9d0e3052d8}-strings_lt.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_lt.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_nl.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{9992235a-7792-4abf-869e-4b0e4832550f}-strings_nl.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_nl.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_sk.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{595f4c99-328f-4577-bcd3-fc49b33de3d9}-strings_sk.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_sk.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Language\strings_sv.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{88604126-2f75-4c87-8389-72f3d2593b66}-strings_sv.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Language\strings_sv.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\images\55b7087f-58c4-419a-bdc7-119753aa8bfc.jpg</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{ffb7f483-3b04-4aaa-926a-cfb7f9ac0cb6}-55b7087f-58c4-419a-bdc7-119753aa8bfc.jpg</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\images\55b7087f-58c4-419a-bdc7-119753aa8bfc.jpg</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\images\55b7087f-58c4-419a-bdc7-119753aa8bfc.jpg.bak</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b138f2d9-923d-4185-ac7f-1f7f48d84c6e}-55b7087f-58c4-419a-bdc7-119753aa8bfc.jpg.bak</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\images\55b7087f-58c4-419a-bdc7-119753aa8bfc.jpg.bak</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\images\55b7087f-58c4-419a-bdc7-119753aa8bfc.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6300d8bb-aca2-4a2d-9c9a-f219f8f1aebe}-55b7087f-58c4-419a-bdc7-119753aa8bfc.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\images\55b7087f-58c4-419a-bdc7-119753aa8bfc.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\images\55b7087f-58c4-419a-bdc7-119753aa8bfc.png.bak</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6cf5f8be-a99a-4dce-ad44-f73863db1d97}-55b7087f-58c4-419a-bdc7-119753aa8bfc.png.bak</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\images\55b7087f-58c4-419a-bdc7-119753aa8bfc.png.bak</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\images\Thumbs.db</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6e92ac13-552a-4f51-8abd-0ddac76b2e0c}-Thumbs.db</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\images\Thumbs.db</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\images\TvWishList.Icon.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{79421eb4-cb4a-490f-af12-ba28794ce807}-TvWishList.Icon.png</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\images\TvWishList.Icon.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListConfigDefaultsDialogMenu.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cb6db98d-423a-4c91-bb65-a2ae2d7505c8}-TvWishListConfigDefaultsDialogMenu.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListConfigDefaultsDialogMenu.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListConfigDefaultsDialogMenu2.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{61ba3c32-2d36-4212-b570-a11c805d0789}-TvWishListConfigDefaultsDialogMenu2.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListConfigDefaultsDialogMenu2.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListConfigDefaultsInputTextBox.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{893b3a66-5657-4ce2-b880-ffb44b0eec3e}-TvWishListConfigDefaultsInputTextBox.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListConfigDefaultsInputTextBox.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListConfigDefaults_GUI.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c3272721-e6a4-40b8-a7ac-ac39c1362e47}-TvWishListConfigDefaults_GUI.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListConfigDefaults_GUI.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListConfigFilter_GUI.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{abe23757-4914-42fd-a136-9b86f48c369f}-TvWishListConfigFilter_GUI.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListConfigFilter_GUI.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListConfigFormats_GUI.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a8902c82-0478-4664-bcc0-3283fc1664b6}-TvWishListConfigFormats_GUI.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListConfigFormats_GUI.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListConfigMain_GUI.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d3c7522a-b3ad-47ff-aae7-fa96fa50d123}-TvWishListConfigMain_GUI.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListConfigMain_GUI.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListEditDialogMenu.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a00c8596-e928-4490-944b-96c30fd0ff56}-TvWishListEditDialogMenu.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListEditDialogMenu.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListEditDialogMenu2.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{60eb9e5f-783b-4eba-a3fb-0bc5288a4935}-TvWishListEditDialogMenu2.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListEditDialogMenu2.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListEditInputTextBox.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{3a696ab9-6f18-4e4e-8bc6-7946efe9b6c8}-TvWishListEditInputTextBox.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListEditInputTextBox.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListEdit_GUI.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e1c5413e-28a5-46fd-ba7f-43e8afe9efdf}-TvWishListEdit_GUI.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListEdit_GUI.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListMainDialogMenu.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0d429873-b3ac-4ec1-aea6-d4c1916ea080}-TvWishListMainDialogMenu.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListMainDialogMenu.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListMainInputTextBox.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a6a1c9e7-28d4-495c-90c5-ccf3f1f9000e}-TvWishListMainInputTextBox.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListMainInputTextBox.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListMain_GUI.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{5a66c80b-c58a-40c8-b569-2c6388cf8c83}-TvWishListMain_GUI.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListMain_GUI.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListResultDialogMenu.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{9b919d7b-6f54-418a-81e7-c5245d301e25}-TvWishListResultDialogMenu.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListResultDialogMenu.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListResultDialogMenu2.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{984c55f4-12c6-4c56-8429-9412fb81458f}-TvWishListResultDialogMenu2.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListResultDialogMenu2.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListResultDialogMenu3.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{048ab995-8ca6-4c47-99b1-a83b12d1dbbd}-TvWishListResultDialogMenu3.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListResultDialogMenu3.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListResultInputTextBox.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{39434eb1-a886-4b9c-b442-e2ef6d1d299b}-TvWishListResultInputTextBox.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListResultInputTextBox.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListResult_GUI.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e68f4c5b-0b97-4646-bb03-1b55862d2946}-TvWishListResult_GUI.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListResult_GUI.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\themes\default\styles\TvWishListResults.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c1911b72-7647-4ba5-93fe-6d46c9f33f5a}-TvWishListResults.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\themes\default\styles\TvWishListResults.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\themes\default\styles\TvWishUpDownCancelControl.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a10198bc-11a2-4d7f-b8b1-035111bc2cd8}-TvWishUpDownCancelControl.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\themes\default\styles\TvWishUpDownCancelControl.xaml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\workflow\TvWishListMP2.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{9505519b-a8c9-4a01-997b-6b6e551184b8}-TvWishListMP2.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\workflow\TvWishListMP2.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2NativeTvProvider\plugin.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{38f31eb7-4f7c-4d9d-9b48-447faba538d2}-plugin.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2NativeTvProvider\plugin.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2NativeTvProvider\TvWishListInterface.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e9f1d8a1-45c3-4777-8d96-428afdae77c4}-TvWishListInterface.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2NativeTvProvider\TvWishListInterface.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2NativeTvProvider\TvWishListMP2NativeTvProvider.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{add0cd31-f2b1-4b7a-9d2b-51fd9dc12b31}-TvWishListMP2NativeTvProvider.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2NativeTvProvider\TvWishListMP2NativeTvProvider.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2NativeTvProvider\Language\strings_en.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{52006598-406a-4da3-8641-3f64c900c943}-strings_en.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2NativeTvProvider\Language\strings_en.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMPExtendedProvider\MPExtended.Services.Common.Interfaces.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{f3f5bb8c-ee35-4439-891a-66ed35a9bc9f}-MPExtended.Services.Common.Interfaces.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMPExtendedProvider\MPExtended.Services.Common.Interfaces.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMPExtendedProvider\MPExtended.Services.TVAccessService.Interfaces.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{460f119f-e8bb-4843-8837-afa04261a7a5}-MPExtended.Services.TVAccessService.Interfaces.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMPExtendedProvider\MPExtended.Services.TVAccessService.Interfaces.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMPExtendedProvider\plugin.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{9c140c71-f941-49cb-b93f-ac10e49f3b10}-plugin.xml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMPExtendedProvider\plugin.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMPExtendedProvider\TvWishListInterface.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4397244f-539a-4de0-b05a-a6566386ae6e}-TvWishListInterface.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMPExtendedProvider\TvWishListInterface.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMPExtendedProvider\TvWishListMPExtendedProvider.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e592cbd4-ad34-41db-b36d-751a328853cc}-TvWishListMPExtendedProvider.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMPExtendedProvider\TvWishListMPExtendedProvider.dll</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -815,21 +1515,23 @@
     <Version>
       <Major>1</Major>
       <Minor>4</Minor>
-      <Build>0</Build>
-      <Revision>2</Revision>
+      <Build>1</Build>
+      <Revision>0</Revision>
     </Version>
     <ExtensionDescription>Never again miss your favourite movie when it is showing up on TV. Create a list of movies or episodes you want to record or get a reminder and TvWishList will search your Epg data and compare to your search list. If the plugin finds a match it will record and/or send you an email. TvWishlist will help you to avoid duplicate episodes for schedules and recordings.
 
 
 
 Now you can access to TvWishlist directly from MediaPortal with the client plugin and use it as your personal TV guide or for creating your wish lists.</ExtensionDescription>
-    <VersionDescription>V1.4.0.2:
-- installer fix for MP1.9</VersionDescription>
+    <VersionDescription>V1.4.1.0:
+- bug fix for MP channel filter if group is “All Channels”
+- using MP conflict schedule mangement
+</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=71&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2014-10-12T18:27:26</ReleaseDate>
+    <ReleaseDate>2015-02-08T18:27:26</ReleaseDate>
     <Tags>automation,tv server plugins,tvwishlist,tvwishlistmp,mediaportal plugins</Tags>
-    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.4.0.2.mpe1</Location>
+    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.4.1.0.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -1569,11 +2271,18 @@ http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1744.jpg
         <ZipFileName>Installer{CopyFile}\{b61149b8-39c8-4045-b3b0-1e4c087ff6a3}-strings_es.xml</ZipFileName>
         <DestinationFilename>%Config%\Installer\TvWishList\TvWishListMP2\Language\strings_es.xml</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\..\TvWishList.Release\TvWishList1.10\TvWishList.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d1402e7c-607f-47bb-8f4d-0af0a12ac04d}-TvWishList.dll</ZipFileName>
+        <DestinationFilename>%Config%\Installer\TvWishList\TvWishList1.10\TvWishList.dll</DestinationFilename>
+      </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\..\..\TvWishList.Icon2.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{e5b70ff7-48d7-46b7-820b-6d5dc26406ae}-TvWishList.Icon2.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{1c240179-23b5-4c9d-a91d-b817786a5042}-TvWishList.Icon2.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
@@ -1584,18 +2293,8 @@ http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1744.jpg
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName />
-        <ZipFileName>Installer{CopyFile}\{eab9f214-56e1-4e02-8f91-efff5fa07a25}-</ZipFileName>
-        <DestinationFilename>%Config%\Installer\TvWishList</DestinationFilename>
-        <Folder>..\..\TvWishListV1.4.0.2.Release</Folder>
-        <Group>Default</Group>
-        <Recursive>true</Recursive>
-      </FolderGroup>
-      <FolderGroup InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName />
-        <ZipFileName>Installer{CopyFile}\{56dd51b8-2091-47dd-bbea-953f6d0dac2f}-</ZipFileName>
-        <DestinationFilename>%Config%\Installer\TvWishList</DestinationFilename>
+        <ZipFileName>Installer{CopyFile}\{aacdf6ad-98bf-4a46-ad5f-66fe83333a13}-</ZipFileName>
+        <DestinationFilename>%Config\Installer\TvWishList</DestinationFilename>
         <Folder>..\..\TvWishList.Release</Folder>
         <Group>Default</Group>
         <Recursive>true</Recursive>

@@ -172,7 +172,7 @@ namespace MediaPortal.Plugins.TvWishList
         /// <summary>
         /// returns the version of the plugin
         /// </summary>
-        public string Version { get { return "1.4.0.2"; } }
+        public string Version { get { return "1.4.1.0"; } }
 
         /// <summary>
         /// returns the author of the plugin

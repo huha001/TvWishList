@@ -1,0 +1,3 @@
+D:\Installation\C#Projects\EmailScheduler\EmailSchedulerV0.0.0.3\EmailSchedulerV0.0.0.3.Source\EmailSchedulerSVN\EmailScheduler\obj\Debug\ResolveAssemblyReference.cache
+D:\Installation\C#Projects\EmailScheduler\EmailSchedulerV0.0.0.3\EmailSchedulerV0.0.0.3.Source\EmailSchedulerSVN\EmailScheduler\obj\Debug\SetupTv.Sections.EmailSchedulerSetup.resources
+D:\Installation\C#Projects\EmailScheduler\EmailSchedulerV0.0.0.3\EmailSchedulerV0.0.0.3.Source\EmailSchedulerSVN\EmailScheduler\obj\Debug\EmailScheduler.csproj.GenerateResource.Cache

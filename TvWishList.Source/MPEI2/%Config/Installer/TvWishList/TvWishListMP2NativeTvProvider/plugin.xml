@@ -1,0 +1,52 @@
+<Plugin
+    DescriptorVersion="1.0" 
+    Name="TvWishListMP2NativeTvProvider"
+    PluginId="{ac9bb4ed-5301-2cf8-835a-2c656e9785ba}"
+    Author="huha"
+    Copyright="GPL"
+    Description="The TvWishListMP2NativeTvprovider provides basic TV capabilities for TvWishList."
+    PluginVersion="1.0">
+
+  <Runtime>
+    <Assembly FileName="TvWishListInterface.dll"/>
+    <Assembly FileName="TvWishListMP2NativeTvProvider.dll"/>
+  </Runtime>
+
+  <DependsOn>
+    <!-- Configuration Manager Plugin -->
+    <PluginReference PluginId="{1AFF4467-64B0-4ca1-AF28-9AEDF3525BCE}"/>
+  </DependsOn>
+
+  <Register Location="/Resources/Language">
+    <Resource Id="TvWishListMP2NativeTvProviderLanguage" Directory="Language" Type="Language"/>
+  </Register>
+
+  <!-- Root configuration sections -->
+  <Register Location="/Configuration/Settings">
+    <ConfigSection
+        Id="Plugins"
+        Redundant="true"
+        Text="[Settings.Plugins]"/>
+  </Register>
+  <!-- Contents of '/Plugins' section -->
+  <Register Location="/Configuration/Settings/Plugins">
+    <ConfigSection
+        Id="TvWishListMP2NativeTvProvider"
+        Redundant="true"
+        Text="[TvWishListMP2NativeTvProvider.Title]"/>
+  </Register>
+  <Register Location="/Configuration/Settings/Plugins/TvWishListMP2NativeTvProvider">
+    <ConfigSetting
+        Id="TvWishListMP2NativeTvProviderAddress"
+        Text="[TvWishListMP2NativeTvProvider.ServerAddress]"
+        HelpText="[TvWishListMP2NativeTvProvider.ServerAddress.Help]"
+        ClassName="MediaPortal.Plugins.TvWishListMP2NativeTvProvider.Settings.Configuration.TvWishListMP2NativeTvProviderServerAddress"/>
+  </Register>
+
+  <Register Location="/Services">
+    <Service Id="TvWishListMp2NativeTvProviderService" RegistrationClassName="MediaPortal.Plugins.TvWishList.ITvWishListTVProvider"        
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2NativeTvProvider.TvWishListMP2NativeTvProvider"/>
+  </Register>
+  
+  
+</Plugin>

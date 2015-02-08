@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language >
+  <Section name="unmapped">
+
+<!--       DO NOT CHANGE ENGLISH COMMENTS INTO ANOTHER LANGUAGE      -->
+
+<!--                            Owner: huha                          -->
+
+
+<!-- Version 1.2.1.0
+- initial release
+
+
+Version 1.2.1.5
+- added preferred group and episode criteria
+
+Version 1.2.3.0
+- added TvWishListMP2 strings - new strings are 100-102, 1108-1109, 1206, 3001, 3104, 3506-3508, 3652-3653, 5000 and up
+
+Version 1.2.3.6
+-added string 1110, 4312, 5051-5052, 5204-5216,6203, 7002, 8110-8111, 10000 and up
+
+Version 1.2.3.10
+- added 200-201
+
+Version 1.2.3.11
+-added 10192-10193,10262
+
+Version 1.2.3.13
+-added 2853,1059-1062,3509
+-->
+ 
+<!-- TVSERVER VECTORSIZE=5000 -->
+
+<!-- MP2 Display in main menu -->
+       <String id="100">TVWishList</String>
+       <String id="101">TV Wish</String>
+       <String id="102">New TV Wish - Search For:</String>
+    
+    
+<!-- SlimTv Buttons in MP2 -->
+       <!-- MP2STR:CreateTvWish -->
+       <String id="200">Create Tv Wish</String>
+       <!-- MP2STR:AlternatePrograms -->
+       <String id="201">Alternate Programs</String>
+
+
+<!--    ************************************************************ -->
+<!--                   TV WishList - Main                            -->
+<!--    ************************************************************ -->
+
+
+        <String id="1000">TV WishList - Main</String>
+
+        
+
+		<!-- Quick Menu from Skins -->
+		<String id="1050">TvWishList Quick Menu</String>
+		<String id="1051">Create Tv Wish with Title</String>
+		<String id="1052">Create Tv Wish with All</String>
+		<String id="1053">Create Tv Wish with Title in Email Mode</String>
+		<String id="1054">Create Tv Wish with Title in ViewOnly Mode</String>
+		<String id="1055">Create Tv Wish with All in Email Mode</String>
+		<String id="1056">Create Tv Wish with All in ViewOnly Mode</String>
+		<String id="1057">Goto TvWishList Main</String>
+		<String id="1058">Goto TvWishList Results</String>
+    <String id="1059">Create Tv Wish and Search EPG</String>
+    <String id="1060">Create Tv Wish</String>
+    <String id="1061">Using View Only Mode</String>
+    <String id="1062">Using Email And Record Mode</String>
+    
+
+
+    <!-- Buttons -->
+        <String id="1100">View Only Mode</String>
+        <String id="1101">Email And Record Mode</String>
+        <String id="1102">Run EPG Search</String>
+        <String id="1103">View Results</String>
+        <String id="1104">New</String>
+        <String id="1105">Save</String>
+        <String id="1106">Cancel</String>
+        <String id="1107">More</String>
+        <String id="1108">Results</String>
+        <String id="1109">Mode</String>
+        <String id="1110">Edit</String>
+              
+        <!-- Run EPG Search -->
+        <String id="1200">Waiting for old process to finish</String>
+        <String id="1201">Previous search is still running - \nplease wait</String>
+        <String id="1202">Epg search running - please wait</String>
+        <String id="1203">Actual Run Thread did not \ncomplete in time - aborting</String>
+        <String id="1204">Epg Search Completed</String>
+        <String id="1205">Old Run Thread did not \ncomplete in time - aborting</String>
+        <String id="1206">Pipe connection to server failed - reboot the Tv server</String>
+
+        <!-- Save -->
+        <String id="1300">TvWish data have been saved</String>
+        <String id="1301">TvWish data could not be saved</String>       
+
+        <!-- Cancel -->
+        <String id="1400">TvWish data have been reloaded</String>
+        <String id="1401">TvWish data could not be loaded</String>
+
+        <!-- More  Menu   -->
+        <String id="1500">All Active</String>
+        <String id="1501">None Active</String>
+        <String id="1502">Skip All</String>
+        <String id="1503">Skip Nonel</String>
+        <String id="1504">Copy TvWishes from View Only to Email</String>
+        <String id="1505">Copy TvWishes from Email to View Only</String>
+        <String id="1506">Move Schedules to TvWishList</String>
+        <String id="1507">Export</String>
+        <String id="1508">Import</String>
+
+        <!-- More  Status   -->
+        <String id="1550">{0} Wish(es) Copied from \nView Only to Email Mode</String>
+        <String id="1551">Copying TvWishes from \nView Only to Email failed</String>
+        <String id="1552">{0} Wish(es) Copied from from \nEmail to View Only Mode</String>
+        <String id="1553">Copying TvWishes from \nEmail to View Only failed</String>
+        <String id="1554">{0} Schedule(s) Moved to TvWishList</String>
+        <String id="1555">Moving Schedules to TvWishList failed</String>
+        <String id="1556">Export of {0} wish(es) completed</String>
+        <String id="1557">Export failed</String>
+        <String id="1558">Import of {0} wish(es) completed</String>
+        <String id="1559">Import failed</String>
+
+
+
+        <!-- ++++++++++++++  -->
+        <!-- Formats   Main  -->
+        <!-- ++++++++++++++  -->
+
+<!--       TvWish Format Data 1900 - 1905:
+        //  {0}   active
+        //  {1}   searchfor
+        //  {2}   matchtype
+        //  {3}   group
+        //  {4}   recordtype
+        //  {5}   action
+        //  {6}   exclude
+        //  {7}   viewed counter
+        //  {8}   prerecord
+        //  {9}   postrecord
+        //  {10}  episodename
+        //  {11}  episodepart
+        //  {12}  episodenumber
+        //  {13}  seriesnumber
+        //  {14}  keepepisodes
+        //  {15}  keepuntil
+        //  {16}  recommendedcard
+        //  {17}  priority
+        //  {18}  aftertime
+        //  {19}  beforetime
+        //  {20}  afterdays
+        //  {21}  beforedays
+        //  {22}  channel
+        //  {23}  skip
+        //  {24}  name
+        //  {25}  useNameFolders
+		//  {26}  within next hours
+        //  {27}  scheduled counter
+		//  {28}  tvwish id
+		//  {29}  recorded counter
+		//  {30}  deleted counter
+		//  {31}  emailed counter
+		//  {32}  conflicts counter
+		//  {33}  episodecriteria
+		//  {34}  preferredgroup
+		//  {35}  includerecordings
+        //  <br>     new line
+        //  |      item selector for not displaying user disabled items
+-->
+
+        <!-- Main Menu Format for 16:9 skins Email Mode-->
+        <String id="1900">Active: {0}\n|Name: {24}\n|Search For: {1}\n|Match: {2}\n|Exclude: {6}\n|Type: {4}\n|Action: {5}\n|Skip Repeated: {23}\n|Preferred Group: {34}\n|and Include Recordings: {35}\n|Counters:\nScheduled={27}\nRecorded={29}\nDeleted={30}\nEmailed={31}\nConflicts={32}\n|\nOnly Group: {3} And Only Channel: {22}\n|After Or At Day: {20} But Before Or On Day: {21}\n|Between Time: {18} And {19}\n\n|Episode Criteria: {33}\n|Episode Name: {10}\n|Episode Part: {11}\n|Episode Number: {12}\n|Keep Episodes: {14}\n|Keep Until: {15}\n|Priority: {17}\n|Prerecord: {8}\n|Postrecord: {9}\n|Recommended Card: {16}\n|Move Recordings to Name Folder: {25}\n|ID={28}\n</String>
+
+        <!-- Main Menu Format for 4:3 skins Email Mode-->
+        <String id="1902">Active: {0}     |Name: {24}     Search For: {1}     |Match: {2}     |Exclude: {6}     |Type: {4}     |Action: {5}     |Skip Repeated: {23}     |Preferrred Group: {34}     |and Include Recordings: {35}\n|Counters:  Scheduled={27}  Recorded={29}  Deleted={30}  Emailed={31}  Conflicts={32}\n|Only Group: {3} And Only Channel: {22} |After Or At Day: {20} But Before Or On Day: {21} |Between Time: {18} And {19}\n|Episode Criteria: {33}     |Episode Name: {10}     |Episode Part: {11}     |Episode Number: {12}     |Keep Episodes: {14}     |Keep Until: {15}      |Priority: {17}\n|Prerecord: {8}      |Postrecord: {9}     |Recommended Card: {16}     |Move Recordings to Name Folder: {25}\n|ID={28}\n</String>
+
+        <!-- Main Menu Format for 16:9 skins View Only Mode-->
+        <String id="1901">Active: {0}\n|Name: {24}\n|Search For: {1}\n|Match: {2}\n|Exclude: {6}\n|Type: {4}\n|Hits: {7}\n|\nOnly Group: {3} And Only Channel: {22}\n|After Or At Day: {20} But Before Or On Day: {21}\n|Between Time: {18} And {19}\n|Show Only within The Next {26} Hours\n|Episode Name: {10}\n|Episode Part: {11}\n|Episode Number: {12}\n|ID={28}\n</String>
+
+        <!-- Main Menu Format for 4:3 skins View Only Mode-->
+        <String id="1903">Active: {0}     |Name: {24}    |Search For: {1}     |Match: {2}     |Exclude: {6}     |Type: {4}     |Hits: {7}\n|Only Group: {3} And Only Channel: {22} |After Or At Day: {20} But Before Or On Day: {21} |Between Time: {18} And {19}     |Show Only within The Next {26} Hours\n|Episode Name: {10}     |Episode Part: {11}     |Episode Number: {12}\n|ID={28}\n</String>
+
+        <!--  List Item Format Email Mode -  use "||" to change alignment between left and right border-->
+        <String id="1904">{24} || {27}/{29}</String>
+
+        <!--  List Item Format ViewOnly Mode -->
+        <String id="1905">{24} || {7}</String>
+
+
+
+<!--    ************************************************************ -->
+<!--                   TV WishList - Edit                            -->
+<!--    ************************************************************ -->
+
+    <!-- TVSERVER USE FROM=2000 TO=4900 OFFSET_FROM=2000 OFFSET_TO=4900-->
+    
+        <String id="2000">TV WishList - Input</String>
+
+        <!-- Buttons -->
+        <String id="2100">Main Menu</String>
+        <String id="2101">Previous</String>
+        <String id="2102">Next</String>
+        <String id="2103">New</String>
+        <String id="2104">Delete</String>
+        <String id="2105">Save</String>
+        <String id="2106">Cancel All</String>
+        <String id="2107">More</String>
+
+        <!-- Delete -->
+        <String id="2200">TvWish has been deleted</String>
+        <String id="2201">Error: TvWish data could not be deleted</String>
+        
+        <!-- Save -->
+        <String id="2300">TvWish data have been saved</String>
+        <String id="2301">Error: TvWish data could not be saved</String>
+        
+        <!-- Cancel -->
+        <String id="2400">TvWish data have been reloaded</String>
+        <String id="2401">TvWish data could not be reloaded</String>
+
+        <!-- More  Menu   -->
+        <String id="2450">All Items</String>
+        <String id="2451">User Defined Items</String>
+        <String id="2452">View Single Result</String>
+		<String id="2453">Copying Current Tv Wish to Other Mode</String>
+        <String id="2454">{0} Wish(es) Copied to Other Mode</String>
+		<String id="2455">Failed to Copy Tv Wish to Other Mode</String>
+		<String id="2456">Clone Tv wish</String>
+		<String id="2457">Tv wish cloned</String>
+		<String id="2458">Failed to clone Tv wish</String>
+        
+        <!-- Edit List Items -->
+        <String id="2500">Active: {0}</String>
+        <String id="2501">Search For: {0}</String>
+        <String id="2502">Matching As: {0}</String>
+        <String id="2503">Use Only Group: {0}</String>      
+        <String id="2504">Record As: {0}</String>
+        <String id="2505">And Do Action: {0}</String> 
+        <String id="2506">But Exclude: {0}</String>     
+        <String id="2507">Hits: {0} (Reset Hits)</String>
+        <String id="2508">Prerecord: {0} Minutes</String>
+        <String id="2509">and Postrecord: {0} Minutes</String>        
+        <String id="2510">Filter For Episode: {0}</String>
+        <String id="2511">Filter For Part: {0}</String>
+        <String id="2512">Filter For Number: {0}</String>
+        <String id="2513">Filter For Seriesnumber: {0}</String>       
+        <String id="2514">Keep: {0} Recordings</String>
+        <String id="2515">Until: {0} </String>
+        <String id="2516">Recommended card is: {0}</String>
+        <String id="2517">Set Priority to: {0} (Min 0, Max 9)</String>
+        <String id="2518">After Time: {0}</String>
+        <String id="2519">And Before Time: {0}</String>
+        <String id="2520">After And At Weekday: {0}</String>
+        <String id="2521">Before And At Weekday: {0}</String>        
+        <String id="2522">And Only Channel: {0}</String>        
+        <String id="2523">Skip Repeated Episodes is: {0}</String>
+        <String id="2524">Name: {0}</String>
+        <String id="2525">Move Recordings to: {0} Folder</String>
+        <String id="2526">Show Only Within The Next: {0} Hour(s)</String>
+		<String id="2533">Use Episode Match Criteria: {0} </String>
+		<String id="2534">Preferred Channel Group: {0} </String>
+		<String id="2535">Including Recordings: {0} </String>
+
+    
+        <!--       MatchType        -->
+        <String id="2600">Partial Title</String>
+        <String id="2601">Exact Title</String>
+        <String id="2602">Partial Text</String>
+        <String id="2603">Word in Title</String>
+        <String id="2604">Word in Text</String>
+        <String id="2605">Word in Text/Title</String>
+        <String id="2606">Expression</String>
+
+    
+        <!--       RecordType        -->
+        <String id="2650">Only Once</String>
+        <String id="2651">All</String>
+        <String id="2652">All On Same Channel</String>
+        <String id="2653">All On Same Channel At Same Day</String>
+		<String id="2654">All On Same Channel At Same Time</String>
+		<String id="2655">All On Same Channel At Same Day And Time</String>
+
+    
+        <!--       Action        -->
+        <String id="2700">Record</String>
+        <String id="2701">Email</String>
+        <String id="2702">Email And Record</String>
+        <String id="2703">View</String>
+
+        <!--       Days        -->
+        <String id="2750">Monday</String>
+        <String id="2751">Tuesday</String>
+        <String id="2752">Wednesday</String>
+        <String id="2753">Thursday</String>
+        <String id="2754">Friday</String>
+        <String id="2755">Saturday</String>
+        <String id="2756">Sunday</String>
+
+
+    
+        <!-- Dialog Headers for Edit Items -->
+        <String id="2800">Active</String>
+        <String id="2801">Search For</String>
+        <String id="2802">Match Type</String>
+        <String id="2803">Group</String>
+        <String id="2804">Record Type</String>
+        <String id="2805">Action</String>       
+        <String id="2806">Exclude</String>
+        <String id="2807">Hits</String>
+        <String id="2808">Pre Recording Time</String>
+        <String id="2809">Post Recording Time</String> 
+        <String id="2810">Episode Name</String>
+        <String id="2811">Episode Part</String>
+        <String id="2812">Episode Number</String>
+        <String id="2813">Series Number</String>
+        <String id="2814">Keep Episodes</String>
+        <String id="2815">Keep Until</String>       
+        <String id="2816">Recommended Card</String>
+        <String id="2817">Priority</String>        
+        <String id="2818">After Time</String>
+        <String id="2819">Before Time</String>
+        <String id="2820">After Day</String>
+        <String id="2821">Before Day</String>
+        <String id="2822">Channel</String>        
+        <String id="2823">Skip</String>
+        <String id="2824">Name</String>
+        <String id="2825">Move Recordings to Folder</String>
+        <String id="2826">Show Only Within The Next Hour(s)</String>
+		<String id="2833">Change Episode Match Criteria</String>
+		<String id="2834">Preferred Channel Group</String>
+		<String id="2835">Including Recordings</String>
+ 
+        <!--       Use Name Folder        -->
+        <String id="2850">Episode</String>
+        <String id="2851">Tv Wish Name</String>
+        <String id="2852">None</String>
+    <String id="2853">Automatic</String>
+		
+		<!--       Keep Until        -->
+        <String id="2900"> Always</String>
+        <String id="2901"> Days After Recording</String>
+		<String id="2902"> Weeks After Recording</String>
+		<String id="2903"> Months After Recording</String>
+		<String id="2904"> Date</String>
+		<String id="2905"> Watched</String>
+		<String id="2906"> Space Needed</String>
+		
+		<String id="2920">{0} Days After Recording</String>
+		<String id="2921">{0} Weeks After Recording</String>
+		<String id="2922">{0} Months After Recording</String>
+        <!--  DO NOT CHANGE FORMAT in 2923 -->
+		<String id="2923">YYYY-MM-DD</String>
+		
+		<!--       Change episode matching criteria        -->
+		<String id="2950">Skip Matching EPG Descriptions? (Yes)</String>
+		<String id="2951">Skip Matching EPG Descriptions? (No)</String>
+		<String id="2952">Skip Matching Episode Names and Parts? (Yes)</String>
+		<String id="2953">Skip Matching Episode Names and Parts? (No)</String>
+		<String id="2954">Skip Matching Series and Episode Numbers? (Yes)</String>
+	    <String id="2955">Skip Matching Series and Episode Numbers? (No)</String>
+		
+		<String id="2960">Descr.</String>
+        <String id="2961">Name</String>
+	      <String id="2962">Number</String>
+		
+		<String id="2970">Turn on all criteria</String>
+		<String id="2971">Turn off all criteria</String>
+
+<!--    ************************************************************ -->
+<!--                   TV WishList - View Results                    -->
+<!--    ************************************************************ -->
+        
+      
+        <String id="3000">TVWishList - Results</String>
+        <String id="3001">Program</String>
+
+        <!-- Buttons -->
+        <String id="3100">Main Menu</String>
+        <String id="3101">Update</String>
+        <String id="3102">Sort</String>
+        <String id="3103">Filter</String>
+        <String id="3104">Sort Order</String>
+        
+
+        <!-- Sort Menu -->
+        <String id="3200">Sort Menu</String>
+        <String id="3201">Title</String>
+        <String id="3202">Start</String>
+        <String id="3203">Created</String>
+        <String id="3204">Genre</String>
+        <String id="3205">Classification</String>
+        <String id="3206">ParentalRating</String>
+        <String id="3207">Star Rating</String>
+        <String id="3208">Type</String>
+        <String id="3209">Message</String>
+        <String id="3210">Search String</String>
+        <String id="3211">Episode Name</String>
+        <String id="3212">Episode Number</String>
+        <String id="3213">Episode Part</String>
+
+
+        <!-- Filter Menu -->
+        <String id="3250">Filter Menu</String>
+		<String id="3251">View</String>
+        <String id="3252">No View</String>
+		<String id="3253">Emailed</String>
+        <String id="3254">No Emailed</String>
+		<String id="3255">Scheduled</String>
+        <String id="3256">No Scheduled</String>
+	    <String id="3257">Recorded</String>
+        <String id="3258">No Recorded</String>
+	    <String id="3259">Deleted</String>
+        <String id="3260">No Deleted</String>
+        <String id="3261">Conflicts</String>
+        <String id="3262">No Conflicts</String>
+		<String id="3263">All</String>
+        <String id="3264">None</String>
+        
+        <!-- Item Menu -->        
+        <String id="3500">Goto TV</String>       
+        <String id="3501">Delete Schedule</String>
+        <String id="3502">Schedule</String>
+		<String id="3503">Delete Message</String>
+		<String id="3504">Delete Recording and Movie</String>
+		<String id="3505">Goto Recordings</String>
+        <String id="3506">Goto Videos</String>
+        <String id="3507">Goto Series</String>
+        <String id="3508">Goto EPG</String>
+        <String id="3509">Play</String>
+        
+        
+        <!-- Item Status -->
+        <String id="3600">Schedule has been added</String>
+        <String id="3601">Adding Schedule failed</String>
+        <String id="3602">Schedule has been deleted</String>
+        <String id="3603">Deleting schedule failed</String>
+        <String id="3604">Message has been deleted</String>
+        <String id="3605">Deleting message failed</String>
+	    <String id="3606">Recording has been deleted</String>
+        <String id="3607">Deleting recording failed</String>
+		<String id="3608">Do you really want to delete the file</String>
+		
+		<!-- Message Changes -->
+        <String id="3650">File {0} has {1} GB</String>
+        <String id="3651">File has been deleted</String>
+        <String id="3652">Sort order is ascending</String>
+        <String id="3653">Sort order is descending</String>
+
+        <!-- ++++++++++++++  -->
+        <!-- Formats   View  -->
+        <!-- ++++++++++++++  -->
+<!--       Message Format Data 3900-3905:
+        //  {0}  Title
+        //  {1}  Description
+        //  {2}  Channel
+        //  {3}  Start
+        //  {4}  End
+        //  {5}  EpisodeName
+        //  {6}  EpisodeNum
+        //  {7}  EpisodeNumber
+        //  {8}  EpisodePart
+        //  {9}  Genre
+        //  {10} Classification
+        //  {11} OriginalAirDate
+        //  {12} ParentalRating
+        //  {13} SeriesNum
+        //  {14} StarRating
+        //  {15} type
+        //  {16} channel_id
+        //  {17} created
+        //  {18} searchstring
+		//  {19} tvwish_id
+		//  {20} recording_id
+        //  {21} Message   
+        //  <br>   new line
+   -->
+
+
+        <!-- Found Format for 16:9 skins Email Mode-->
+        <String id="3900">{21}\nTitle: {0}\nChannel: {2}\nStart: {3}\nEnd: {4}\nType: {15}\nDescription: {1}\n\nGenre: {9}\nClassification: {10}\nParental Rating: {12}\nStar Rating: {14}\nEpisode Part: {8}\nEpisode Name: {5}\nEpisode Number: {6}\nSearched by: {18} on {17}\n\n</String>
+
+        <!-- Found Format for 4:3 skins Email Mode-->
+        <String id="3902">{21}     Title: {0}     Channel: {2}     Start: {3}     End: {4}     Type: {15}\nDescription: {1}\nGenre: {9}     Classification: {10}     Parental Rating: {12}     Star Rating: {14}     Episode Part: {8}     Episode Name: {5}     Episode Number: {6}     Searched by: {18} on {17}\n</String>
+
+        <!-- Found Format for 16:9 skins View Only Mode-->
+        <String id="3901">{21}\nTitle: {0}\nChannel: {2}\nStart: {3}\nEnd: {4}\nType: {15}\nDescription: {1}\n\nGenre: {9}\nClassification: {10}\nParental Rating: {12}\nStar Rating: {14}\nEpisode Part: {8}\nEpisode Name: {5}\nEpisode Number: {6}\nSearched by: {18} on {17}\n\n</String>
+
+        <!-- Found Format for 4:3 skins View Only Mode-->
+        <String id="3903">{21}     Title: {0}     Channel: {2}     Start: {3}     End: {4}    Type: {15}\nDescription: {1}\nGenre: {9}     Classification: {10}     Parental Rating: {12}     Star Rating: {14}     Episode Part: {8}     Episode Name: {5}     Episode Number: {6}     Searched by: {18} on {17}\n</String>
+
+        <!--  List Item Format Email Mode - use "||" to change alignment between left and right border-->
+        <String id="3904">{0} || {3}</String>
+
+        <!--  List Item Format ViewOnly Mode -->
+        <String id="3905">{0} || {3}</String>
+
+  
+
+<!--    ************************************************************ -->
+<!--                   General                                       -->
+<!--    ************************************************************ -->
+
+    
+        
+        <!--  Bool -->
+        <String id="4000">True</String>
+        <String id="4001">False</String>
+
+        
+        <!-- Default Data TvWish -->
+        <String id="4100">Any</String>
+        <String id="4101">Always</String>
+        <String id="4102">Custom</String>
+        <String id="4103">None</String>
+        <String id="4104">All Channels</String>
+        <String id="4105">All</String>
+
+        <!--  Mode Header -->
+        <String id="4200">Email And Record Mode</String>
+        <String id="4201">View Only Mode</String>
+
+        <!--  Errors -->
+        <String id="4300">Check the MediaPortal Log file</String>
+        <String id="4301">No Items found</String>
+        <String id="4302">Error in creating item list</String>
+        <String id="4303">No Number</String>
+        <String id="4304">Invalid Format</String>
+        <String id="4305">Error</String>
+        <String id="4306">TvWishList MediaPortal Plugin Does Not \nMatch To TvWishList TV Server Plugin</String>
+        <String id="4307">Recording Folder had to be changed to \nEpisode Folder</String>
+		<String id="4308">Record Type had to be changed to All</String>
+		<String id="4309">Keep Episodes number had to be changed to All</String>
+        <String id="4310">Moving Schedules Works only for Email Mode</String>
+		<String id="4311">Tv wish list is being processed \nby another process\nTry again later\nIf the other process cannot complete\n please reboot the system \nor stop the tv server manually</String>
+        <String id="4312">Timeout Error: Try to reboot your server.\nIf it reoccurs try to increase the timeout value in the expert settings</String>
+		
+        <!--  Others -->
+        <String id="4400">Info</String>
+		<String id="4401">Warning</String>
+		<String id="4402">Yes</String>
+		<String id="4403">No</String>
+		<String id="4404">All Tv Wishes</String>
+		<String id="4405">Tv Wish: {0}</String>
+
+        <!-- ++++++++++++++  -->
+        <!-- Formats   View  -->
+        <!-- ++++++++++++++  -->
+
+<!--    Date Time Format for all modules
+		//   {0:0000} year
+		//   {1:00}   month
+		//   {2:00}   day
+		//   {3:00}   hour
+		//   {4:00}   minute
+		//   {5:00}   second
+		//   {6}      timeofday
+		//   {7}      date
+-->
+        <String id="4900">{1:00}/{2:00} at {3:00}:{4:00}</String>
+
+
+<!--    ************************************************************ -->
+<!--                   Config Main MP2                               -->
+<!--    ************************************************************ -->
+        <!-- MP2STR:ConfigMain_GUI -->
+        <String id="5000">Main Configuration</String>
+
+        <!-- MP2STR:ConfigMain_GUI_Help -->
+        <String id="5001">Configure the main settings</String>
+
+        <!-- MP2STR:ConfigTvserver -->
+        <String id="5050">Before you use the MediaPortal plugin you must have configured and tested the TvWishList Tvserver plugin</String>
+        <String id="5051">Before you use the MediaPortal plugin you must have</String>
+        <String id="5052">configured and tested the TvWishList Tvserver plugin</String>
+
+        <!-- MP2STR:CancelButtonText -->
+        <String id="5100">Cancel</String>
+      
+        <!-- MP2STR:SaveButtonText -->
+        <String id="5101">Save</String>
+
+        <!-- MP2STR:HelpButtonText -->
+        <String id="5102">Help</String>
+
+        <!-- MP2STR:Verbose -->
+        <String id="5200">Debug</String>
+
+        <!-- MP2STR:DisableQuickMenu -->
+        <String id="5201">Disable TvWish Quick Menu</String>
+
+        <!-- MP2STR:TimeOut -->
+        <String id="5202">Timeout</String>
+
+        <!-- MP2STR:TimeOutDescription -->
+        <String id="5203">Change Timeout 60 only if you experience time out errors</String>
+
+        <!-- MP2STR:SaveToTvServer -->
+        <String id="5204">This will save your client setting to the tv server</String>
+
+        <!-- MP2STR:LoadFromTvServer -->
+        <String id="5205">This will load your client setting from the tv server</String>
+
+        <!-- MP2STR:DisableInfoWindows -->
+        <String id="5206">Disable Info Message Windows</String>
+
+        <!-- MP2STR:Load -->
+        <String id="5207">Load</String>
+        
+        <!-- MP2STR:SaveLoad -->
+        <String id="5208">Save/Load Client Settings on/from Tv Server</String>
+    
+        <!-- MP2STR:SaveQuestion -->
+        <String id="5209">Do you want to save the client setting on the Tv server and overwrite the previous settings?</String>
+
+        <!-- MP2STR:LoadQuestion -->
+        <String id="5210">Do you want to Load the client setting from the Tv server and overwrite the current client settings?</String>
+
+        <!-- MP2STR:SaveToTV -->
+        <String id="5211">Save To Tv Server</String>
+
+        <!-- MP2STR:LoadFromTV -->
+        <String id="5212">Load From Tv Server</String>
+
+        <!-- MP2STR:LoadComplete -->
+        <String id="5213">Client settings have been loaded from Tv server</String>
+
+        <!-- MP2STR:LoadError -->
+        <String id="5214">Client settings could not be loaded from Tv server</String>
+
+        <!-- MP2STR:SaveComplete -->
+        <String id="5215">Client settings have been saved to Tv server</String>
+
+        <!-- MP2STR:SaveError -->
+        <String id="5216">Client settings could not be saved to Tv server</String>
+
+<!--    ************************************************************ -->
+<!--                   Config Filter MP2                             -->
+<!--    ************************************************************ -->
+        <!-- MP2STR:ConfigFilter_GUI -->
+        <String id="6000">Filter Configuration</String>
+
+        <!-- MP2STR:ConfigFilter_GUI_Help -->
+        <String id="6001">Configure the filter settings. All selected items will be enabled for editing of a tvwish. Disabled items will use the default values.</String>
+
+        <!-- MP2STR:SelectItemLabel -->
+        <String id="6100">Select the filter items you want to edit</String>
+
+        <!-- MP2STR:UnSelectItemLabel -->
+        <String id="6101">Unselected items cannot be edited for a Tv wish and will use the default</String>
+
+        <!-- MP2STR:AllButtonText -->
+        <String id="6200">All</String>
+
+        <!-- MP2STR:NoneButtonText -->
+        <String id="6201">None</String>
+
+        <!-- MP2STR:DefaultsButtonText -->
+        <String id="6202">Defaults</String>
+
+        <!-- MP2STR:DefaultsQuestion -->
+        <String id="6203">Resetting to default values will overwrite all fields on all tabs and also overwrite your personal defined default values - do you wish to continue?</String>
+
+
+
+
+
+<!--    ************************************************************ -->
+<!--                   Config Defaults MP2                           -->
+<!--    ************************************************************ -->
+        <!-- MP2STR:ConfigDefaults_GUI -->
+        <String id="7000">Defaults Configuration</String>
+
+        <!-- MP2STR:ConfigDefaults_GUI_Help -->
+        <String id="7001">Configure the defaults settings. This will use for each new tvwish the selected defaults. Disabled items will get the default values assigned.</String>
+
+        <String id="7002">Default Check</String>
+
+
+<!--    ************************************************************ -->
+<!--                   Config Formats MP2                            -->
+<!--    ************************************************************ -->
+        <!-- MP2STR:ConfigFormats_GUI -->
+        <String id="8000">Formats Configuration</String>
+
+        <!-- MP2STR:ConfigFormats_GUI_Help -->
+        <String id="8001">Configure the format settings. Empty formats will use the formats defined in the language files</String>
+
+        <!-- MP2STR:DateAndTimeFormat -->
+        <String id="8100">Date And Time Formats</String>
+
+        <!-- MP2STR:MainItemFormat -->
+        <String id="8101">Main Menu Item Format</String>
+
+        <!-- MP2STR:ResultItemFormat -->
+        <String id="8102">Results Menu Item Format</String>
+
+        <!-- MP2STR:MainTextBoxFormat -->
+        <String id="8103">Main Menu Textbox Format</String>
+
+        <!-- MP2STR:ResultTextBoxFormat -->
+        <String id="8104">Results Menu Textbox Format</String>
+
+        <!-- MP2STR:GroupboxGeneral -->
+        <String id="8105">General Formats</String>
+      
+        <!-- MP2STR:GroupboxListItemFormats -->
+        <String id="8106">List Item Formats</String>
+
+        <!-- MP2STR:GroupboxEmailAndRecordModus -->
+        <String id="8107">Email And Record Modus</String>
+
+        <!-- MP2STR:GroupboxViewOnlyModus -->
+        <String id="8108">View Only Modus</String>
+
+        <!-- MP2STR:FormatExpertLabel -->
+        <String id="8109">Formats should be changed by experts only. Empty fields will use defaults from the language file</String>
+        <String id="8110">Formats should be changed by experts only.</String>
+        <String id="8111">Empty fields will use defaults from the language file.</String>
+
+
+    <!--    ************************************************************ -->
+    <!--                   TV Server Run EPG Messages                    -->
+    <!--    ************************************************************ -->
+
+    
+    <!-- TVSERVER USE FROM=10000 TO=10300 OFFSET_FROM=0 OFFSET_TO=300 -->
+
+        
+        <String id="10001">Waiting for old jobs {0}s to finish</String>
+        <String id="10002">Error: TvWishList did not finish old jobs - reboot your computer</String>
+        <String id="10003">Reading data settings</String>
+        <String id="10004">Loading Messages</String>
+        <String id="10005">Loading Tv wishes</String>
+        <String id="10006">"Searching for {0}"</String>
+        <String id="10007">Sending email to {0}</String>
+        <String id="10008">Error: No Smtp Server defined</String>
+        <String id="10009">Error: No user name defined</String>
+        <String id="10010">Error: No password defined</String>
+        <String id="10011">Error: No receiver emailaddress defined</String>
+        <String id="10012">Error: Invalid provider settings</String>
+        <String id="10013">Error: Server address not specified</String>
+        <String id="10014">Error: Failed to get internet connection to POP3 server</String>
+        <String id="10015">Error: No smtp port defined</String>
+        <String id="10016">Sending return emails completed</String>
+        <String id="10017">Error: Sending return emails failed - check the username</String>
+        <String id="10018">Error: Sending return emails failed - check the password</String>
+        <String id="10019">Error: Sending return emails failed</String>
+        <String id="10020">Ready</String>
+        <String id="10021">Processing EPG data {0} on {1} at {2}</String>
+        <String id="10022">Processing Recording {0} at {1}</String>
+        <String id="10023">Error: Your password does not match and is reset - please enter password again</String>
+        <String id="10024">Fatal Error: Check the log file</String>
+        <String id="10025">Error in SQL query - check the expression {0}</String>
+    
+
+    
+    <!--    ************************************************************ -->
+    <!--                   TV Server Message  Creation                   -->
+    <!--    ************************************************************ -->
+        <String id="10050">Schedule {0} had no valid EPG data but could be corrected</String>
+        <String id="10051">Schedule {0} has no valid EPG data - check your schedules for conflicts</String>
+        <String id="10052">Schedule {0} has no valid EPG data - check your schedules for conflicts</String>
+        <String id="10053">Epg data did change for Episode/Description or EPG Time changed- deleting current schedule and trying to reschedule</String>
+        <String id="10054">Schedule conflict must be manually resolved</String>
+        <String id="10055">Excluding program {0} due to exclude filter condition {1}</String>
+        <String id="10056">Excluding program {0} due to wordcheck filter condition</String>
+        <String id="10057">Excluding program {0} due to wordcheck filter condition</String>
+        <String id="10058">Maximum number ({0}) of programs found - will ignore additional matches</String>
+        <String id="10059">{0} with {1} GB</String>
+        <String id="10060">Failed to add program {0}</String>
+        <String id="10061">Failed to create schedule for program {0}</String>
+        <String id="10062">Program {0} already scheduled</String>
+        <String id="10063">Skipping program {0} because it is not between {1} and {2}</String>
+        <String id="10064">Skipping program {0} because it is not between {1} and {2}</String>
+        <String id="10065">Skipping program {0} because it is not within the next {1} hours</String>
+        <String id="10066">Skipping program {0} because it does not match the required channel filter {1}</String>
+        <String id="10067">Skipping program {0} because it does not match the required episode part {1}</String>
+        <String id="10068">Skipping program {0} because it does not match the required episode name {1}</String>
+        <String id="10069">Skipping program {0} because it is not matching the required series number {1}</String>
+        <String id="10070">Skipping program {0} because it is not matching the required episode number {1}</String>
+        <String id="10071">Program {0} already recorded</String>
+        <String id="10072">Program {0} has been already deleted and is skipped</String>
+        <String id="10073">Start time of program {0} is in the past - will skip schedule</String>
+        <String id="10074">Repeated Schedule {0} found  - skipping</String>
+        <String id="10075">Program {0} has conflicts and will not be scheduled</String>
+        <String id="10076">Deleting schedule {0} because of lower priority</String>
+        <String id="10077">Schedule {0} has not enough priority to delete conflicts - skipping</String>
+        <String id="10078">Better Schedule Found In Preferred Group</String>
+        <String id="10079">TvWishList found program from Tv Wish [{0}]: {1}\nTvWishList did schedule the program</String>
+        <String id="10080">TvWishList found program from Tv Wish [{0}]: {1}\nTvWishList did not schedule but is reminding you of the program</String>
+        <!-- Email Format Default - will be sent with each email for a found program (use format entries from message format at 3900)-->
+        <String id="10090">NEW ENTRY\nTitle={0}\nDescription={1}\nChannel={2}\nStart={3}\nEnd={4}\nType={15}\nCreated={17}\n\n\n</String>
+        <String id="10091">{1:00}/{2:00} at {3:00}:{4:00}</String>
+    
+
+    <!--    ************************************************************ -->
+    <!--                   TV Server Configuration                       -->
+    <!--    ************************************************************ -->
+        <String id="10100">Main</String>
+        <String id="10101">Easy</String>
+        <String id="10102">Expert</String>
+        <String id="10103">Up</String>
+        <String id="10104">Down</String>
+        <String id="10105">Delete</String>
+        <String id="10106">Cancel</String>
+        <String id="10107">Default</String>
+        <String id="10108">Help</String>
+        <String id="10109">Debugmodus</String>
+        <String id="10110">TvWishList Homepage</String>
+        <String id="10111">All Active</String>
+        <String id="10112">All Inactive</String>
+        <String id="10113">Skip All</String>
+        <String id="10114">Skip None</String>
+        <String id="10115">Channel Filter</String>
+        
+        <String id="10130">Email</String>
+        <String id="10131">Account</String>
+        <String id="10132">User Name</String>
+        <String id="10133">Password</String>
+        <String id="10134">Repeat Password</String>
+        <String id="10135">Email Address</String>
+        <String id="10136">only if different than user name</String>
+        <String id="10137">Search Now</String>
+        <String id="10138">Address</String>
+        <String id="10139">Email Receiver</String>
+        <String id="10140">Test Send Mail</String>
+        <String id="10141">SMTP</String>
+        <String id="10142">Provider</String>
+        <String id="10143">Port</String>
+        <String id="10144">SMTP Server</String>
+        <String id="10145">SSL</String>
+        <String id="10146">Enable Email Reply</String>
+        <String id="10147">Email Only New</String>
+    
+        <String id="10160">Settings</String>
+        <String id="10161">Check EPG</String>
+        <String id="10162">Monday</String>
+        <String id="10163">Tuesday</String>
+        <String id="10164">Wednesday</String>
+        <String id="10165">Thursday</String>
+        <String id="10166">Friday</String>
+        <String id="10167">Saturday</String>
+        <String id="10168">Sunday</String>
+        <String id="10169">Every</String>
+        <String id="10170">Days</String>
+        <String id="10171">Hours</String>
+        <String id="10172">Minutes</String>
+        <String id="10173">At</String>
+        <String id="10174">Check EPG</String>
+        <String id="10175">before each schedule</String>
+        <String id="10176">Next Tv Server Checking Date:</String>
+        <String id="10177">Match Criteria for Repeated Movies and Episodes</String>
+        <String id="10178">EPG Repeater Mark in Title or Description</String>
+        <String id="10179">Other Options</String>
+        <String id="10180">Automatic Recording</String>
+        <String id="10181">Schedule Conflicts</String>
+        <String id="10182">Delete Changed EPG</String>
+        <String id="10183">Restore Default Values</String>
+        <String id="10184">Slow CPU</String>
+        <String id="10185">Skip Deleted</String>
+        <String id="10186">Deleted Expiration:</String>
+        <String id="10187">Months</String>
+        <String id="10188">Max Schedules Per Wish</String>
+        <!--  Date Time Format with 10189-10191 combined-->
+        <String id="10189">MM/dd/yyyy</String>
+        <String id="10190">HH:mm</String>
+        <String id="10191">{0} at {1}</String>
+        <String id="10192">Wait For ComSkip Processes</String>
+        <String id="10193">EPG</String>
+       
+    
+    
+        <String id="10200">Formats</String>
+        <String id="10201">Date and Time Format for Emails</String>
+        <String id="10202">Email Format</String>
+        <String id="10203">Language File</String>
+        <String id="10204">Sort Criteria</String>
+        <String id="10205">Expert users can define customized formats for sent emails</String>
+        <String id="10206">Descending Sort</String>
+        <String id="10207">Filter Criteria</String>
+        <String id="10208">Email</String>
+        <String id="10209">Record</String>
+        <String id="10210">Conflicts</String>
+        <String id="10211">Delete All Messages</String>
+
+        <String id="10250">Waiting for old jobs to finish from {0}. Try again later. If jobs do not finish you have to reboot or manually stop the Tvserver</String>
+        <String id="10251">Closing Tv Configuration</String>
+        <String id="10252">Processing ongoing - please wait for completion</String>
+        <String id="10253">Success</String>
+        <String id="10254">Email Send Failed</String>
+        <String id="10255">Minimum {0} is {1}</String>
+        <String id="10256">Maximum {0} is {1}</String>
+        <String id="10257">Could not open {0}</String>
+        <String id="10258">Do you want to delete all your messages? WARNING: This will erase your message history including deleted messages. Make sure the TvWishListMP MediaPortal plugin is closed!"</String>
+        <String id="10259">Messages deleted</String>
+        <String id="10260">Operation canceled</String>
+        <String id="10261">Do you want to restore all formats to the default values? This will overwrite all settings and all formats</String>
+        <String id="10262">Check your username and password\n Server Error was:\n{0}</String>
+    
+  </Section>
+</Language>

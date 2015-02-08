@@ -1,0 +1,183 @@
+<Plugin
+    DescriptorVersion="1.0"
+    Name="TvWishListMP2"
+    PluginId="f9e783d1-b878-4bad-8838-28c898152093"
+    Author="huha"
+    Copyright="GPL"
+    Description="TvWishList plugin for MediaPortal2"
+    PluginVersion="1.4.1.0">
+
+  <Runtime>
+    <Assembly FileName="TvWishListMP2.dll"/>
+    <Assembly FileName="SlimTv.Interfaces.dll"/>
+    <Assembly FileName="TvWishListInterface.dll"/>
+  </Runtime>
+
+  <DependsOn>
+    <!-- Configuration Manager Plugin -->
+    <PluginReference PluginId="{1AFF4467-64B0-4ca1-AF28-9AEDF3525BCE}"/>
+    <!-- TvWishListTvProvider -->
+    <PluginReference PluginId="{ac9bb4ed-5301-2cf8-835a-2c656e9785ba}"/>  
+    <!-- SlimTvClient -->
+    <!--<PluginReference PluginId="{63040BB4-4638-49b7-A82F-F4530D4D43B9}"/>  -->  
+    <!-- SlimTVMPExtendedProvider -->
+    <!--<PluginReference PluginId="{FD70FD97-CB53-4500-8632-0ADCEF359489}"/> -->
+  </DependsOn>
+  
+  <Register Location="/Models">
+    <Model Id="2be92395-da83-4702-a0f7-eb9b13110fff" Name="ConfigDefaults_GUI" ClassName="MediaPortal.Plugins.TvWishListMP2.Models.ConfigDefaults_GUI"/>
+    <Model Id="cc50b5a4-f6e1-4c14-97d1-59c27714ac2f" Name="ConfigFilter_GUI" ClassName="MediaPortal.Plugins.TvWishListMP2.Models.ConfigFilter_GUI"/>
+    <Model Id="227cad91-e7ab-4458-b15a-54cbd657b8fb" Name="ConfigFormats_GUI" ClassName="MediaPortal.Plugins.TvWishListMP2.Models.ConfigFormats_GUI"/>
+    <Model Id="85295da2-829b-4e38-bdf0-e76f819fd6f5" Name="ConfigMain_GUI" ClassName="MediaPortal.Plugins.TvWishListMP2.Models.ConfigMain_GUI"/>   -->
+    <Model Id="093c13ed-413e-4fc2-8db0-3eca69c09ad0" Name="Edit_GUI" ClassName="MediaPortal.Plugins.TvWishListMP2.Models.Edit_GUI"/>
+    <Model Id="46199691-8dc6-443d-9022-1315cee6152b" Name="Main_GUI" ClassName="MediaPortal.Plugins.TvWishListMP2.Models.Main_GUI"/>
+    <Model Id="6e96da05-1c6a-4fed-8fed-b14ad114c4a2" Name="Result_GUI" ClassName="MediaPortal.Plugins.TvWishListMP2.Models.Result_GUI"/>
+  </Register>
+
+  <!--
+  <Register Location="/Services">
+    
+    <Service Id="TvWishListICardService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.ICard"
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Card"/>
+    <Service Id="TvWishListIChannelService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.IChannel"
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Channel"/>
+    <Service Id="TvWishListIChannelGroupService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.IChannelGroup"
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.ChannelGroup"/>
+    <Service Id="TvWishListIRadioChannelService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.IRadioChannel"
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.RadioChannel"/>
+    <Service Id="TvWishListIRadioChannelGroupService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.IRadioChannelGroup"
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.RadioChannelGroup"/>
+    <Service Id="TvWishListIRecordingService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.IRecording"
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Recording"/>
+    <Service Id="TvWishListIScheduleService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.ISchedule"
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Schedule"/>      
+    <Service Id="TvWishListISettingService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.ISetting"
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.Setting"/>
+    <Service Id="TvWishListIServerNameService" RegistrationClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.IServerName"
+        ServiceClassName="MediaPortal.Plugins.TvWishListMP2.MPExtended.ServerName"/>
+  </Register>
+  -->
+  
+  
+  <Register Location="/Workflow/States">
+    <!-- This is the workflow state which corresponds to the mytestplugin screen. Each workflow state corresponds to
+         a certain UI state. The id is needed to be able to reference the state, for example in the action which
+         navigates to this state, see in file hello-world-actions.xml.
+
+         The Id uniquely identifies the state among all workflow states. Use a GUID generator to create
+         a new state id. The id is referenced from workflow actions which lead to this state as well as from
+         code which tells the WorkflowManager to push a workflow state onto the workflow navigation stack.
+
+         The name of the state is only needed for debug reasons and will not be shown to the user.
+
+         The MainScreen will automatically be shown by the workflow manager when switching to the state.
+         It is also possible to set the screen programmatically when using a workflow model.
+
+         The DisplayLabel is the string which is shown in the Navigation bar for this state. -->
+    
+
+    <DialogState Id="97a3ba9b-f13d-4e5e-8a8d-1f29fc008850"
+        Name="TvWishListMP2_ConfigDefaults_GUI" DialogScreen="TvWishListConfigDefaults_GUI" DisplayLabel="[TvWishListMP2.ConfigDefaults_GUI]" WorkflowModel="2be92395-da83-4702-a0f7-eb9b13110fff"/>
+
+    <DialogState Id="bca26996-7b80-4681-baf7-d436cb90909d"
+        Name="TvWishListMP2_ConfigFilter_GUI" DialogScreen="TvWishListConfigFilter_GUI" DisplayLabel="[TvWishListMP2.StateDisplayLabelConfigFilter_GUI]" WorkflowModel="cc50b5a4-f6e1-4c14-97d1-59c27714ac2f"/>
+
+    <DialogState Id="3cfb6fc0-cabe-4ab5-8cdb-9fd301bcbe84"
+        Name="TvWishListMP2_ConfigFormats_GUI" DialogScreen="TvWishListConfigFormats_GUI" DisplayLabel="[TvWishListMP2.StateDisplayLabelConfigFormats_GUI]" WorkflowModel="227cad91-e7ab-4458-b15a-54cbd657b8fb"/>
+
+    <DialogState Id="d0e2087d-56db-4ddc-8cf3-99185964e723"
+        Name="TvWishListMP2_ConfigMain_GUI" DialogScreen="TvWishListConfigMain_GUI" DisplayLabel="[TvWishListMP2.StateDisplayLabelConfigMain_GUI]" WorkflowModel="85295da2-829b-4e38-bdf0-e76f819fd6f5"/>
+
+    
+    <WorkflowState Id="eb91dc39-9735-48f6-9f31-39558ce2e861"
+        Name="TvWishListMP2_Main_GUI" MainScreen="TvWishListMain_GUI" DisplayLabel="[TvWishListMP2.100]" WorkflowModel="46199691-8dc6-443d-9022-1315cee6152b"/>
+    
+    <WorkflowState Id="100e9845-54de-4e9b-9cf1-6101509b7c6d"
+            Name="TvWishListMP2_Edit_GUI" MainScreen="TvWishListEdit_GUI" DisplayLabel="[TvWishListMP2.1110]" WorkflowModel="093c13ed-413e-4fc2-8db0-3eca69c09ad0"/>
+
+    <WorkflowState Id="eff5097b-a4a7-4934-a2e3-d8047d92cec7"
+        Name="TvWishListMP2_Result_GUI" MainScreen="TvWishListResult_GUI" DisplayLabel="[TvWishListMP2.1108]" WorkflowModel="6e96da05-1c6a-4fed-8fed-b14ad114c4a2"/>
+  
+  </Register>
+
+
+  
+
+  <Register Location="/Resources/Skin">
+    <Resource Id="TvWishListMP2Skin" Directory="Skin" Type="Skin"/>
+  </Register>
+
+  <Register Location="/Resources/Language">
+    <Resource Id="TvWishListMP2Language" Directory="Language" Type="Language"/>
+  </Register>
+
+
+  
+  <Builder Name="TvWishListMP2TvExtensionBuilder1" ClassName="MediaPortal.Plugins.SlimTv.Interfaces.Extensions.SlimTvExtensionBuilder"/>
+  <Register Location="/SlimTv/Extensions">
+    <TvWishListMP2TvExtensionBuilder1 Id="{eb81047e-f3c5-4fae-8000-a67e306dfd8c}" Caption="[TvWishListMP2.CreateTvWish]" ClassName="MediaPortal.Plugins.TvWishListMP2.ExtensionButtons.SlimTvCreateTvWish"/>
+  </Register>
+
+  <Builder Name="TvWishListMP2TvExtensionBuilder2" ClassName="MediaPortal.Plugins.SlimTv.Interfaces.Extensions.SlimTvExtensionBuilder"/>
+  <Register Location="/SlimTv/Extensions">
+    <TvWishListMP2TvExtensionBuilder2 Id="{eb81047e-f3c5-4fae-8000-a67e306dfd8d}" Caption="[TvWishListMP2.AlternatePrograms]" ClassName="MediaPortal.Plugins.TvWishListMP2.ExtensionButtons.SlimTvRunSingleEPG"/>
+  </Register>
+
+  
+  <Builder Name="TvWishListMP2TvExtensionBuilder3" ClassName="MediaPortal.Plugins.SlimTv.Interfaces.Extensions.SlimTvExtensionBuilder"/>
+  <Register Location="/SlimTv/Extensions">
+    <TvWishListMP2TvExtensionBuilder3 Id="{eb81047e-f3c5-4fae-8000-a67e306dfd8e}" Caption="[TvWishListMP2.1050]" ClassName="MediaPortal.Plugins.TvWishListMP2.ExtensionButtons.SlimTvTvWishListQuickMenu"/>
+  </Register>
+
+  <!-- Root configuration sections -->
+  
+  <Register Location="/Configuration/Settings">
+    <ConfigSection
+        Id="Plugins"
+        Redundant="true"
+        Text="[Settings.Plugins]"/>
+  </Register>
+ 
+
+  <!-- Contents of '/Plugins' section -->
+  
+  
+  <Register Location="/Configuration/Settings/Plugins">
+    <ConfigSection
+        Id="TvWishListMP2"
+        Redundant="true"
+        Text="[TvWishListMP2.100]"/>
+  </Register>
+
+  <!-- Contents of '/Plugins/TvWishListMP2' section -->
+
+  
+  <Register Location="/Configuration/Settings/Plugins/TvWishListMP2">
+    <CustomConfigSetting
+       Id="TvWishListMP2Configuration4"
+       Text="[TvWishListMP2.ConfigMain_GUI]"
+       HelpText="[TvWishListMP2.ConfigMain_GUI_Help]"
+       ClassName="MediaPortal.Plugins.TvWishListMP2.Settings.Configuration.CustomConfigMain_GUI"
+       AdditionalData="WorkflowState=d0e2087d-56db-4ddc-8cf3-99185964e723,ConfAppPanel=..."/>
+    <CustomConfigSetting
+        Id="TvWishListMP2ConfigFilter_GUI"
+        Text="[TvWishListMP2.ConfigFilter_GUI]"
+        HelpText="[TvWishListMP2.ConfigFilter_GUI_Help]"
+        ClassName="MediaPortal.Plugins.TvWishListMP2.Settings.Configuration.CustomConfigFilter_GUI"
+        AdditionalData="WorkflowState=bca26996-7b80-4681-baf7-d436cb90909d,ConfAppPanel=..."/>
+    <CustomConfigSetting
+        Id="TvWishListMP2ConfigDefaults_GUI"
+        Text="[TvWishListMP2.ConfigDefaults_GUI]"
+        HelpText="[TvWishListMP2.ConfigDefaults_GUI_Help]"
+        ClassName="MediaPortal.Plugins.TvWishListMP2.Settings.Configuration.CustomConfigDefaults_GUI"
+        AdditionalData="WorkflowState=97a3ba9b-f13d-4e5e-8a8d-1f29fc008850,ConfAppPanel=..."/>   
+    <CustomConfigSetting
+       Id="TvWishListMP2Configuration3"
+       Text="[TvWishListMP2.ConfigFormats_GUI]"
+       HelpText="[TvWishListMP2.ConfigFormats_GUI_Help]"
+       ClassName="MediaPortal.Plugins.TvWishListMP2.Settings.Configuration.CustomConfigFormats_GUI"
+       AdditionalData="WorkflowState=3cfb6fc0-cabe-4ab5-8cdb-9fd301bcbe84,ConfAppPanel=..."/>
+    
+  </Register>
+  <!-- class name needs to be defined in Setting\Configuration\TvWishListMP2ConfigSettings.cs-->
+</Plugin>

@@ -185,7 +185,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         public string Version()
         {
-            return "1.4.0.2";
+            return "1.4.1.0";
         }
 
         public enum PipeCommands

@@ -1257,10 +1257,14 @@ namespace MediaPortal.Plugins.TvWishList
 
                          //build new channel list based on new group filter
                          mywish = myTvWishes.GetAtIndex(myTvWishes.FocusedWishIndex);
+                         Log.Debug("CHANNELBUG: mywish.group="+mywish.group);
+                         bool found = false;
                          foreach (ChannelGroup channelgroup in ChannelGroup.ListAll())
                          {
+                             Log.Debug("channelgroup.GroupName="+channelgroup.GroupName);
                              if (channelgroup.GroupName == mywish.group)  //groupname must match
                              {
+                                 found = true;
                                  IList<GroupMap> allgroupmaps = channelgroup.ReferringGroupMap();
 
                                  foreach (GroupMap onegroupmap in allgroupmaps)
@@ -1271,6 +1275,15 @@ namespace MediaPortal.Plugins.TvWishList
 
                                  }
                              }
+                         }
+                         if (!found) //All channels
+                         {
+                             foreach (Channel channel in Channel.ListAll())
+                             {
+                                 dlg.Add(channel.DisplayName);
+                                 menulist.Add(channel.DisplayName);
+                             }
+                             found = false;
                          }
                          dlg.DoModal(GUIWindowManager.ActiveWindow);
                          if (dlg.SelectedId >= 0)

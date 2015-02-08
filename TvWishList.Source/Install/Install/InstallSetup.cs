@@ -665,11 +665,17 @@ namespace TvWishListInstall
                     File.Copy(@"TvWishList1.1\TvWishList.dll", TV_PROGRAM_FOLDER + @"\Plugins\TvWishList.dll", true);
                     textoutputdebug(@"TvWishList1.1\TvWishList.dll  copied to " + "\n" + TV_PROGRAM_FOLDER + @"\Plugins\TvWishList.dll" + "\n");
                 }
-                else //latest 1.2 if newer than 1.1.6.0
+                else if (FileVersionComparison(tvserviceFileVersionInfo.FileVersion.ToString(), "1.9.100.0") == (int)CompareFileVersion.Older)//1.2 version if older than 1.9.100.0
                 {
                     textoutputdebug("Installing 1.2 Plugin version");
                     File.Copy(@"TvWishList1.2\TvWishList.dll", TV_PROGRAM_FOLDER + @"\Plugins\TvWishList.dll", true);
-                    textoutputdebug(@"TvWishList1.2\TvWishList.dll  copied to " + "\n" + TV_PROGRAM_FOLDER + @"\Plugins\TvWishList.dll" + "\n");
+                    textoutputdebug(@"TvWishList1.2\TvWishList.dll  copied to " + "\n" + TV_PROGRAM_FOLDER + @"\Plugins\TvWishList.dll" + "\n");//
+                }
+                else //latest 1.10 if newer than 1.9.100.0
+                {
+                    textoutputdebug("Installing 1.10 Plugin version");
+                    File.Copy(@"TvWishList1.10\TvWishList.dll", TV_PROGRAM_FOLDER + @"\Plugins\TvWishList.dll", true);
+                    textoutputdebug(@"TvWishList1.10\TvWishList.dll  copied to " + "\n" + TV_PROGRAM_FOLDER + @"\Plugins\TvWishList.dll" + "\n");
                 }
                 success = true;
 

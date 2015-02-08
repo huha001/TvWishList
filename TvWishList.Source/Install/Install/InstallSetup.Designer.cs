@@ -584,7 +584,7 @@ namespace TvWishListInstall
             this.Controls.Add(this.buttoninstall);
             this.Controls.Add(this.buttonExit);
             this.Name = "InstallSetup";
-            this.Text = "TvWishList Installer V1.4.0.2";
+            this.Text = "TvWishList Installer V1.4.1.0";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

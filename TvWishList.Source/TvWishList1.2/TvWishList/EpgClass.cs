@@ -942,7 +942,20 @@ namespace MediaPortal.Plugins.TvWishList
                       {
                           ok = false;
                       }*/
-
+#elif(TV110)
+                      //mylayer.GetConflictingSchedules(schedule, out conflictingSchedules, out notViewableSchedules);
+                      IList<Schedule> local_conflicts = GetConflictingSchedules(oneschedule);
+                      try
+                      {
+                          if (local_conflicts.Count > 0)
+                              ok = false;
+                          else
+                              ok = true;
+                      }
+                      catch
+                      {
+                          ok = false;
+                      }
 #else
 
                       ok = AssignSchedulesToCard(oneschedule, cardSchedules, out overlappingSchedule, DEBUG); //overlappingSchedule not used
@@ -4169,7 +4182,52 @@ namespace MediaPortal.Plugins.TvWishList
       {
           return Schedule.GetConflictingSchedules(schedule);
       }
-#else
+#elif(TV110)
+      //-------------------------------------------------------------------------------------------------------------        
+      // collects all conflicts in LIST <Schedule> conflicts and returns the list for the existing schedule
+      //------------------------------------------------------------------------------------------------------------- 
+      [CLSCompliant(false)]
+      public IList<Schedule> GetConflictingSchedules(Schedule schedule)
+      {
+          TvBusinessLayer mylayer = new TvBusinessLayer();
+          List<Schedule> conflictingSchedules = new List<Schedule>();
+          List<Schedule> notViewableSchedules = new List<Schedule>();
+          
+          mylayer.GetConflictingSchedules(schedule, out conflictingSchedules, out notViewableSchedules);
+
+          Log.Debug("**********DEBUG GetConflictingSchedules ****************");
+          Log.Debug("Schedule:");
+          Log.Debug(schedule.ProgramName);
+          Log.Debug(schedule.StartTime.ToString());
+          Log.Debug(schedule.EndTime.ToString());
+          Log.Debug(schedule.IdChannel.ToString());
+          Log.Debug("");
+
+          Log.Debug("Conflicting Schedules:");
+          foreach (Schedule myschedule in conflictingSchedules)
+          {
+              Log.Debug(myschedule.ProgramName);
+              Log.Debug(myschedule.StartTime.ToString());
+              Log.Debug(myschedule.EndTime.ToString());
+              Log.Debug(myschedule.IdChannel.ToString());
+              Log.Debug("");
+          }
+
+          Log.Debug("notViewable Schedules:");
+          foreach (Schedule myschedule in notViewableSchedules)
+          {
+              Log.Debug(myschedule.ProgramName);
+              Log.Debug(myschedule.StartTime.ToString());
+              Log.Debug(myschedule.EndTime.ToString());
+              Log.Debug(myschedule.IdChannel.ToString());
+              Log.Debug("");
+          }
+
+          return conflictingSchedules;
+      }
+
+
+#else //older version with own conflict management
       
       
 

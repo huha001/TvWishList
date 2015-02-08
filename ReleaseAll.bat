@@ -3,8 +3,8 @@ REM DEFINE VARIABLES
 REM *************************************************************************
 REM 
 
-SET OLDVERSION=1.4.1.0
-SET NEWVERSION=1.4.0.2
+SET OLDVERSION=1.4.0.3
+SET NEWVERSION=1.4.1.0
 
 
 SET MSFRAMEPATH="C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe"
@@ -37,6 +37,10 @@ REM **************************************************************************
 %FILE_REPLACE% "TvWishList.Source\TvWishList2.0\TvWishList\TvWishList.cs" %OLDVERSION% %NEWVERSION%
 %FILE_REPLACE% "TvWishList.Source\TvWishList2.0\TvWishList\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
 %FILE_REPLACE% "TvWishList.Source\TvWishList2.0\TvWishList\TvWish.cs" %OLDVERSION% %NEWVERSION%
+
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.10\TvWishList\TvWishList.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.10\TvWishList\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
+%FILE_REPLACE% "TvWishList.Source\TvWishList1.10\TvWishList\TvWish.cs" %OLDVERSION% %NEWVERSION%
 
 %FILE_REPLACE% "TvWishList.Source\TvWishList1.2\TvWishList\TvWishList.cs" %OLDVERSION% %NEWVERSION%
 %FILE_REPLACE% "TvWishList.Source\TvWishList1.2\TvWishList\Properties\AssemblyInfo.cs" %OLDVERSION% %NEWVERSION%
@@ -95,6 +99,17 @@ COPY /Y "TvWishList2.0\TvWishList\Messages.cs" "TvWishList1.2\TvWishList\Message
 COPY /Y "TvWishList2.0\TvWishList\TvWish.cs" "TvWishList1.2\TvWishList\TvWish.cs"
 REM Log.cs must not be copied from 2.0
 COPY /Y "TvWishList2.0\TvWishList\LanguageTranslation.cs" "TvWishList1.2\TvWishList\LanguageTranslation.cs"
+
+COPY /Y "TvWishList2.0\TvWishList\TvWishList.cs" "TvWishList1.10\TvWishList\TvWishList.cs"
+COPY /Y "TvWishList2.0\TvWishList\TvWishList.setup.cs" "TvWishList1.10\TvWishList\TvWishList.setup.cs"
+COPY /Y "TvWishList2.0\TvWishList\TvWishList.setup.resx" "TvWishList1.10\TvWishList\TvWishList.setup.resx"
+COPY /Y "TvWishList2.0\TvWishList\TvWishList.setup.Designer.cs" "TvWishList1.10\TvWishList\TvWishList.setup.Designer.cs"
+COPY /Y "TvWishList2.0\TvWishList\EpgClass.cs" "TvWishList1.10\TvWishList\EpgClass.cs"
+COPY /Y "TvWishList2.0\TvWishList\InstallPaths.cs" "TvWishList1.10\TvWishList\InstallPaths.cs"
+COPY /Y "TvWishList2.0\TvWishList\Messages.cs" "TvWishList1.10\TvWishList\Messages.cs"
+COPY /Y "TvWishList2.0\TvWishList\TvWish.cs" "TvWishList1.10\TvWishList\TvWish.cs"
+REM Log.cs must not be copied from 2.0
+COPY /Y "TvWishList2.0\TvWishList\LanguageTranslation.cs" "TvWishList1.10\TvWishList\LanguageTranslation.cs"
 
 COPY /Y "TvWishList1.2\TvWishList\TvWishList.cs" "TvWishList1.0.1\TvWishList\TvWishList.cs"
 COPY /Y "TvWishList1.2\TvWishList\TvWishList.setup.cs" "TvWishList1.0.1\TvWishList\TvWishList.setup.cs"
@@ -162,6 +177,7 @@ REM Compile ALL
 REM *************************************************************************
 
 %MSFRAMEPATH_MP2% TvWishList2.0\TvWishList.sln /p:Configuration=Release
+%MSFRAMEPATH_MP2% TvWishList1.10\TvWishList.sln /p:Configuration=Release
 %MSFRAMEPATH% TvWishList1.2\TvWishList.sln /p:Configuration=Release
 %MSFRAMEPATH% TvWishList1.1\TvWishList.sln /p:Configuration=Release
 %MSFRAMEPATH% TvWishList1.0.1\TvWishList.sln /p:Configuration=Release
@@ -194,6 +210,7 @@ COPY /Y "Install\Install\bin\Release\Install.exe" "..\TvWishList.Release\Install
 COPY /Y "TvWishList1.0.1\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Release\TvWishList1.0.1\TvWishList.dll"
 COPY /Y "TvWishList1.1\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Release\TvWishList1.1\TvWishList.dll"
 COPY /Y "TvWishList1.2\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Release\TvWishList1.2\TvWishList.dll"
+COPY /Y "TvWishList1.10\TvWishList\bin\Release\TvWishList.dll" "..\TvWishList.Release\TvWishList1.10\TvWishList.dll"
 COPY /Y "TvWishList2.0\TvWishList\bin\Release\Mediaportal.TV.Server.Plugins.TvWishList.dll" "..\TvWishList.Release\TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll"
 COPY /Y "TvWishListMP1.1\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishList.Release\TvWishListMP1.1\TvWishListMP.dll"
 COPY /Y "TvWishListMP1.2\TvWishListMP\bin\Release\TvWishListMP.dll" "..\TvWishList.Release\TvWishListMP1.2\TvWishListMP.dll"

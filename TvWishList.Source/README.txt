@@ -15,7 +15,10 @@ TvWishList1.1:
 MP1 Tv server for MP1.1
 
 TvWishList1.2:
-MP1 Tv server for MP 1.2 and newer (actual version for MP1)
+MP1 Tv server for MP 1.2 
+
+TvWishList1.10:
+MP1 Tv server for MP 1.10 and newer (actual version for MP1)
 
 TvWishListMP1.1:
 MP1 client for MP1.1 and older

@@ -1,0 +1,737 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Language>
+  <Section name="unmapped">
+  <!--DO NOT CHANGE ENGLISH COMMENTS INTO ANOTHER LANGUAGE-->
+  <!--Owner: huha-->
+  <!--Version 1.2.1.0
+- initial release
+
+
+Version 1.2.1.5
+- added preferred group and episode criteria
+
+Version 1.2.3.0
+- added TvWishListMP2 strings - new strings are 100-102, 1108-1109, 1206, 3001, 3104, 3506-3508, 3652-3653, 5000 and up
+
+Version 1.2.3.6
+-added string 1110, 4312, 5051-5052, 5204-5216,6203, 7002, 8110-8111, 10000 and up
+
+Version 1.2.3.10
+- added 200-201
+
+Version 1.2.3.11
+-added 10192-10193,10262
+
+Version 1.2.3.13
+-added 2853,1059-1062,3509-->
+  <!--TVSERVER VECTORSIZE=5000-->
+  <!--MP2 Display in main menu-->
+  <String id="100">TVWishList</String>
+  <String id="101">TV Wish</String>
+  <String id="102">New TV Wish - Cerca per:</String>
+  <!--SlimTv Buttons in MP2-->
+  <!-- MP2STR:CreateTvWish -->
+  <String id="200">Crea un Tv Wsih</String>
+  <!-- MP2STR:AlternatePrograms -->
+  <String id="201">Alterna Programes</String>
+  <!--************************************************************-->
+  <!--TV WishList - Main-->
+  <!--************************************************************-->
+  <String id="1000">TV WishList - Principal</String>
+  <!--Quick Menu from Skins-->
+  <String id="1050">TvWishList Menú ràpid</String>
+  <String id="1051">Crea un Tv Wish amb Títol</String>
+  <String id="1052">Crea un Tv Wish amb Tot</String>
+  <String id="1053">Crea un Tv Wish amb Títol en Mode Email</String>
+  <String id="1054">Crea un Tv Wish amb Títol en Mode NomésVisualitza</String>
+  <String id="1055">Crea un Tv Wish amb Tot en Mode Email</String>
+  <String id="1056">Crea un Tv Wish amb Tot en Mode NomésVisualitza</String>
+  <String id="1057">Vés a TvWishList Principal</String>
+  <String id="1058">Vés a TvWishList Resultats</String>
+  <String id="1059">Crea un Tv Wsih i Cerca l'EPG</String>
+  <String id="1060">Crea un Tv Wsih</String>
+  <String id="1061">S'està utilitzant el Mode Només Visualitza</String>
+  <String id="1062">S'està utilitzant el Mode Email i Enregistra</String>
+  <!--Buttons-->
+  <String id="1100">Mode Només Visualitza</String>
+  <String id="1101">Mode Email i Enregistra</String>
+  <String id="1102">Realitza una cerca de l'EPG</String>
+  <String id="1103">Visualitza els resultats</String>
+  <String id="1104">Nou</String>
+  <String id="1105">Desa</String>
+  <String id="1106">Cancel·la</String>
+  <String id="1107">Més</String>
+  <String id="1108">Resultats</String>
+  <String id="1109">Mode</String>
+  <String id="1110">Edita</String>
+  <!--Run EPG Search-->
+  <String id="1200">S'està esperant la finalització del procès antic</String>
+  <String id="1201">La cerca anterior enacara dura - \nespereu</String>
+  <String id="1202">La cerca de l'EPG encara dura - espereu</String>
+  <String id="1203">El Fil en actiu no s'ha acabat\na temps - s'està interrompent</String>
+  <String id="1204">S'ha completat la cerca de l'EPG</String>
+  <String id="1205">El Fil antic no s'ha acabat\na temps - s'està interrompent</String>
+  <String id="1206">La connexió dirigida al servidor ha fallat - engegueu de nou el TV Server</String>
+  <!--Save-->
+  <String id="1300">S'han desat les dades del TvWish</String>
+  <String id="1301">No s'han desat les dades del TvWish</String>
+  <!--Cancel-->
+  <String id="1400">S'han carregat de nou les dades del TvWish</String>
+  <String id="1401">No s'han carregat les dades del TvWish</String>
+  <!--More  Menu-->
+  <String id="1500">Tots en actiu</String>
+  <String id="1501">Cap en actiu</String>
+  <String id="1502">Omet-los tots</String>
+  <String id="1503">No n'ometis cap</String>
+  <String id="1504">Copia TvWishes de Només Visualitza a Email</String>
+  <String id="1505">Copia TvWishes de Email a Només Visualitza</String>
+  <String id="1506">Desplaça Planificacions a TvWishList</String>
+  <String id="1507">Exporta</String>
+  <String id="1508">Importa</String>
+  <!--More  Status-->
+  <String id="1550">S'han copiat {0} Wish(es) del\nNomés Visualitza al Mode Email</String>
+  <String id="1551">La còpia de TvWishes del Només\nVisualitza al Mode Email ha fallat</String>
+  <String id="1552">S'han copiat {0} Wish(es) de\nl'Email al Mode Només Visualitza</String>
+  <String id="1553">La còpia de TvWishes de l'Email\nal Mode Només Visualitza ha fallat</String>
+  <String id="1554">S'ha desplaçat {0} Planificació(ons) al TvWishList</String>
+  <String id="1555">El desplaçament de les Planificacions al TvWishList ha fallat</String>
+  <String id="1556">S'ha completat l'exportació {0} wish(es)</String>
+  <String id="1557">L'exportació ha fallat</String>
+  <String id="1558">S'ha completat l'importació {0} wish(es)</String>
+  <String id="1559">L'importació ha fallat</String>
+  <!--++++++++++++++-->
+  <!--Formats   Main-->
+  <!--++++++++++++++-->
+  <!--TvWish Format Data 1900 - 1905:
+        //  {0}   active
+        //  {1}   searchfor
+        //  {2}   matchtype
+        //  {3}   group
+        //  {4}   recordtype
+        //  {5}   action
+        //  {6}   exclude
+        //  {7}   viewed counter
+        //  {8}   prerecord
+        //  {9}   postrecord
+        //  {10}  episodename
+        //  {11}  episodepart
+        //  {12}  episodenumber
+        //  {13}  seriesnumber
+        //  {14}  keepepisodes
+        //  {15}  keepuntil
+        //  {16}  recommendedcard
+        //  {17}  priority
+        //  {18}  aftertime
+        //  {19}  beforetime
+        //  {20}  afterdays
+        //  {21}  beforedays
+        //  {22}  channel
+        //  {23}  skip
+        //  {24}  name
+        //  {25}  useNameFolders
+        //  {26}  within next hours
+        //  {27}  scheduled counter
+        //  {28}  tvwish id
+        //  {29}  recorded counter
+        //  {30}  deleted counter
+        //  {31}  emailed counter
+        //  {32}  conflicts counter
+        //  {33}  episodecriteria
+        //  {34}  preferredgroup
+        //  {35}  includerecordings
+        //  <br>     new line
+        //  |      item selector for not displaying user disabled items-->
+  <!--Main Menu Format for 16:9 skins Email Mode-->
+  <String id="1900">En actiu: {0}\n|Nom: {24}\n|Cerca: {1}\n|Coincidències: {2}\n|Exclou: {6}\n|Tipus: {4}\n|Acció: {5}\n|Omet els Repetits: {23}\n|Grup Preferit: {34}\n|i Inclou Enregistraments: {35}\n|Comptadors:\nPlanificat={27}\nEnregistrat={29}\nSuprimit={30}\nPer Email={31}\nConflictes={32}\n|\nNomés Grup: {3} I Només Canal: {22}\n|Després O En Dia: {20} Excepte Abans O El Dia: {21}\n|Entre les: {18} i les {19}\n\n|Criteri d'Episodi: {33}\n|Nom d'Episodi: {10}\n|Part d'Episodi: {11}\n|Número d'Episodi: {12}\n|Guarda els Episodis: {14}\n|Guarda Fins: {15}\n|Prioritat: {17}\n|Preenregistrament: {8}\n|Postenregistrament: {9}\n|Targeta Recomanada: {16}\n|Desplaça Enregistraments a la Carpeta: {25}\n|ID={28}\n</String>
+  <!--Main Menu Format for 4:3 skins Email Mode-->
+  <String id="1902">En actiu: {0}     |Nom: {24}     Cerca: {1}     |Coincidències: {2}     |Exclou: {6}     |Tipus: {4}     |Acció: {5}     |Omet els Repetits: {23}     |Grup Preferit: {34}     |i Inclou Enregistraments: {35}\n|Comptadors:  Planificat={27}  Enregistrat={29}  Suprimit={30}  Per Email={31}  Conflicets={32}\n|Només Grup: {3} I Només Canal: {22} |Després O En Dia: {20} Excepte Abans O El Dia: {21} |Entre les: {18} i les {19}\n|Criteri d'Episodi: {33}     |Nom d'Episodi: {10}     |Part d'Episodi: {11}     |Número d'Episodi: {12}     |Guarda els Episodis: {14}     |Guarda Fins: {15}      |Prioritat: {17}\n|Preenregistrament: {8}      |Postenregistrament: {9}     |Targeta Recomanada: {16}     |Desplaça Enregistraments a la Carpeta: {25}\n|ID={28}\n</String>
+  <!--Main Menu Format for 16:9 skins View Only Mode-->
+  <String id="1901">En actiu: {0}\n|Nom: {24}\n|Cerca: {1}\n|Coincidències: {2}\n|Exclou: {6}\n|Tipus: {4}\n|Troballes: {7}\n|\nNomés Grup: {3} I Només Canal: {22}\n|Després O En Dia: {20} Excepte Abans O El Dia: {21}\n|Entre les: {18} i les {19}\n|Mostra'l durant Les Properes {26} Hores\n|Nom d'Episodi: {10}\n|Part d'Episodi: {11}\n|Número d'Episodi: {12}\n|ID={28}\n</String>
+  <!--Main Menu Format for 4:3 skins View Only Mode-->
+  <String id="1903">En actiu: {0}     |Nom: {24}    |Cerca: {1}     |Coincidències: {2}     |Exclou: {6}     |Tipus: {4}     |Troballes: {7}\n|Només Grup: {3} I Només Canal: {22} |Després O En Dia: {20} Excepte Abans O El Dia: {21} |Entre les: {18} i les {19}     |Mostra'l durant Les Properes {26} Hores\n|Nom d'Episodi: {10}     |Part d'Episodi: {11}     |Número d'Episodi: {12}\n|ID={28}\n</String>
+  <!--List Item Format Email Mode -  use "||" to change alignment between left and right border-->
+  <String id="1904">{24} || {27}/{29}</String>
+  <!--List Item Format ViewOnly Mode-->
+  <String id="1905">{24} || {7}</String>
+  <!--************************************************************-->
+  <!--TV WishList - Edit-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=2000 TO=4900 OFFSET_FROM=2000 OFFSET_TO=4900-->
+  <String id="2000">TV WishList - Entrada</String>
+  <!--Buttons-->
+  <String id="2100">Menú Principal</String>
+  <String id="2101">Anterior</String>
+  <String id="2102">Següent</String>
+  <String id="2103">Nou</String>
+  <String id="2104">Suprimeix</String>
+  <String id="2105">Desa</String>
+  <String id="2106">Cancel·la'ls tots</String>
+  <String id="2107">Més</String>
+  <!--Delete-->
+  <String id="2200">S'ha suprimit el TvWish</String>
+  <String id="2201">Error: no s'han suprimit dades del TvWish</String>
+  <!--Save-->
+  <String id="2300">S'han desat les dades del TvWish</String>
+  <String id="2301">Error: no s'han desat dades del TvWish</String>
+  <!--Cancel-->
+  <String id="2400">S'han carregat de nou dades del TvWish</String>
+  <String id="2401">No s'han carregat de nou dades del TvWish</String>
+  <!--More  Menu-->
+  <String id="2450">Tots els Elements</String>
+  <String id="2451">Elements Definits per l'Usuari</String>
+  <String id="2452">Visualitza el Resultat Individual</String>
+  <String id="2453">S'està copiant el Tv Wish actual al Mode Altres</String>
+  <String id="2454">S'han copiat {0} Wish(es) al Mode Altres</String>
+  <String id="2455">La còpia del Tv Wish al Mode Altres ha fallat</String>
+  <String id="2456">Duplica el Tv wish</String>
+  <String id="2457">S'ha duplicat el Tv wish</String>
+  <String id="2458">La duplicació del Tv wish ha fallat</String>
+  <!--Edit List Items-->
+  <String id="2500">En actiu: {0}</String>
+  <String id="2501">Cerca: {0}</String>
+  <String id="2502">Coincideix Amb: {0}</String>
+  <String id="2503">Utilitza Unicament el Grup: {0}</String>
+  <String id="2504">Enregistra com a: {0}</String>
+  <String id="2505">I Realitza l'Acció: {0}</String>
+  <String id="2506">Exclou: {0}</String>
+  <String id="2507">Troballes: {0} (Reinicia les Troballes)</String>
+  <String id="2508">Preenregistrament: {0} Minuts</String>
+  <String id="2509">i Postenregistrament: {0} Minuts</String>
+  <String id="2510">Filtra Per Episodi: {0}</String>
+  <String id="2511">Filtra Per Part: {0}</String>
+  <String id="2512">Filtra Per Número: {0}</String>
+  <String id="2513">Filtra Per Númerodesèrie: {0}</String>
+  <String id="2514">Guarda: {0} Enregistraments</String>
+  <String id="2515">Fins: {0} </String>
+  <String id="2516">La targeta recomanada és: {0}</String>
+  <String id="2517">Estableix la Prioritat en: {0} (Min 0, Max 9)</String>
+  <String id="2518">Després de les: {0}</String>
+  <String id="2519">I Abans de les: {0}</String>
+  <String id="2520">Després i Durant Laborable: {0}</String>
+  <String id="2521">Abans i Durant Laborable: {0}</String>
+  <String id="2522">I Només Canal: {0}</String>
+  <String id="2523">Omet Episodis Repetits és: {0}</String>
+  <String id="2524">Nom: {0}</String>
+  <String id="2525">Mou Enregistraments a: Carpeta {0}</String>
+  <String id="2526">Mostra Només les Properes: {0} Hora(es)</String>
+  <String id="2533">Utilitza Criteris de Coincidència d'Episodi: {0}</String>
+  <String id="2534">Grup de Canal Preferit: {0}</String>
+  <String id="2535">S'inlouen Enregistraments: {0} </String>
+  <!--MatchType-->
+  <String id="2600">Títol Parcial</String>
+  <String id="2601">Títol Exacte</String>
+  <String id="2602">Text Parcial</String>
+  <String id="2603">Mot al Títol</String>
+  <String id="2604">Mot al Text</String>
+  <String id="2605">Mot al Text/Títol</String>
+  <String id="2606">Expressió</String>
+  <!--RecordType-->
+  <String id="2650">Només un Cop</String>
+  <String id="2651">Tot</String>
+  <String id="2652">Tots al Mateix Canal</String>
+  <String id="2653">Tots al Mateix Canal el Mateix Dia</String>
+  <String id="2654">Tots al Mateix Canal a la Mateixa Hora</String>
+  <String id="2655">Tots al Mateix Canal el Mateix Dia i Hora</String>
+  <!--Action-->
+  <String id="2700">Enregistra</String>
+  <String id="2701">Email</String>
+  <String id="2702">Email i Enregistra</String>
+  <String id="2703">Visualitza</String>
+  <!--Days-->
+  <String id="2750">Dilluns</String>
+  <String id="2751">Dimarts</String>
+  <String id="2752">Dimecres</String>
+  <String id="2753">Dijous</String>
+  <String id="2754">Divendres</String>
+  <String id="2755">Dissabte</String>
+  <String id="2756">Diumenge</String>
+  <!--Dialog Headers for Edit Items-->
+  <String id="2800">En actiu</String>
+  <String id="2801">Cerca</String>
+  <String id="2802">Tipus de Coincidència</String>
+  <String id="2803">Grup</String>
+  <String id="2804">Tipus d'Enregistrament</String>
+  <String id="2805">Acció</String>
+  <String id="2806">Exclou</String>
+  <String id="2807">Troballes</String>
+  <String id="2808">Temps de Preenregistrament</String>
+  <String id="2809">Temps de Postenregistrament</String>
+  <String id="2810">Nom d'Episodi</String>
+  <String id="2811">Part d'Episodi</String>
+  <String id="2812">Número d'Episodi</String>
+  <String id="2813">Número de Sèrie</String>
+  <String id="2814">Guarda Episodis</String>
+  <String id="2815">Guarda fins</String>
+  <String id="2816">Targeta Recomanada</String>
+  <String id="2817">Prioritat</String>
+  <String id="2818">Després del</String>
+  <String id="2819">Abans del</String>
+  <String id="2820">Després del Dia</String>
+  <String id="2821">Abans del Dia</String>
+  <String id="2822">Canal</String>
+  <String id="2823">Omet</String>
+  <String id="2824">Nom</String>
+  <String id="2825">Desplaça Enregistraments a la Carpeta</String>
+  <String id="2826">Mostra durant La/Les Propera/es Hora/es</String>
+  <String id="2833">Canvia el Criteri de Coincidència d'Episodi</String>
+  <String id="2834">Grup de Canals Preferits</String>
+  <String id="2835">S'estan incloent els Enregistraments</String>
+  <!--Use Name Folder-->
+  <String id="2850">Episodi</String>
+  <String id="2851">Nom del Tv Wish</String>
+  <String id="2852">Cap</String>
+  <String id="2853">Automàtic</String>
+  <!--Keep Until-->
+  <String id="2900">Sempre</String>
+  <String id="2901">Dies Des de l'Enregistrament</String>
+  <String id="2902">Setmanes Des de l'Enregistrament</String>
+  <String id="2903">Mesos Dse de l'Enregistrament</String>
+  <String id="2904">Data</String>
+  <String id="2905">Vist</String>
+  <String id="2906">Espai Necessari</String>
+  <String id="2920">{0} Dies Des de l'Enregistrament</String>
+  <String id="2921">{0} Setmanes Des de l'Enregistrament</String>
+  <String id="2922">{0} Mesos Des de l'Enregistrament</String>
+  <!--DO NOT CHANGE FORMAT in 2923-->
+  <String id="2923">AAAA-MM-DD</String>
+  <!--Change episode matching criteria-->
+  <String id="2950">Voleu Ometre les Descripcions d'EPG Coincidents? (Sí)</String>
+  <String id="2951">Voleu Ometre les Descripcions d'EPG Coincidents? (No)</String>
+  <String id="2952">Voleu Ometre els Noms i Parts d'Episodis Coincidents? (Sí)</String>
+  <String id="2953">Voleu Ometre els Noms i Parts d'Episodis Coincidents? (No)</String>
+  <String id="2954">Voleu Ometre les Sèries i Números d'Episodis Coincidents? (Sí)</String>
+  <String id="2955">Voleu Ometre les Sèries i Números d'Episodis Coincidents? (No)</String>
+  <String id="2960">Descr.</String>
+  <String id="2961">Nom</String>
+  <String id="2962">Número</String>
+  <String id="2970">Activa tots els criteris</String>
+  <String id="2971">Desactiva tots els criteris</String>
+  <!--************************************************************-->
+  <!--TV WishList - View Results-->
+  <!--************************************************************-->
+  <String id="3000">TVWishList - Resultats</String>
+  <String id="3001">Programa</String>
+  <!--Buttons-->
+  <String id="3100">Menú Priincipal</String>
+  <String id="3101">Actualitza</String>
+  <String id="3102">Ordena</String>
+  <String id="3103">Filtra</String>
+  <String id="3104">Ordena Per</String>
+  <!--Sort Menu-->
+  <String id="3200">Menú Ordena</String>
+  <String id="3201">Títol</String>
+  <String id="3202">Inicia</String>
+  <String id="3203">Creat el</String>
+  <String id="3204">Gènere</String>
+  <String id="3205">Classificació</String>
+  <String id="3206">Valoració Parental</String>
+  <String id="3207">Valoració d'estels</String>
+  <String id="3208">Tipus</String>
+  <String id="3209">Missatge</String>
+  <String id="3210">Cadena de Cerca</String>
+  <String id="3211">Nom d'Episodi</String>
+  <String id="3212">Número d'Episodi</String>
+  <String id="3213">Part d'Episodi</String>
+  <!--Filter Menu-->
+  <String id="3250">Menú Filtre</String>
+  <String id="3251">Visualitza</String>
+  <String id="3252">No hi ha visualització</String>
+  <String id="3253">Enviat per Email</String>
+  <String id="3254">No enviat per Email</String>
+  <String id="3255">Planificat</String>
+  <String id="3256">No Planificat</String>
+  <String id="3257">Enregistrat</String>
+  <String id="3258">No Enregistrat</String>
+  <String id="3259">Suprimit</String>
+  <String id="3260">No Suprimit</String>
+  <String id="3261">Conflictes</String>
+  <String id="3262">No hi han Conflictes</String>
+  <String id="3263">Tot</String>
+  <String id="3264">Cap</String>
+  <!--Item Menu-->
+  <String id="3500">Vés a TV</String>
+  <String id="3501">Suprimeix Planificació</String>
+  <String id="3502">Planificació</String>
+  <String id="3503">Suprimeix Missatge</String>
+  <String id="3504">Suprimeix Enregistrament i Pel·lícula</String>
+  <String id="3505">Vés a Enregistraments</String>
+  <String id="3506">Vés a Vídeos</String>
+  <String id="3507">Vés a Sèries</String>
+  <String id="3508">Vés a EPG</String>
+  <String id="3509">Reprodueix</String>
+  <!--Item Status-->
+  <String id="3600">S'ha afegit Planificació</String>
+  <String id="3601">L'addició de Planificació ha fallat</String>
+  <String id="3602">S'ha suprimit Planificació</String>
+  <String id="3603">La supressió de planificació ha fallat</String>
+  <String id="3604">S'ha suprimit Missatge</String>
+  <String id="3605">La supressió de missatge ha fallat</String>
+  <String id="3606">S'ha suprimit Enregistrament</String>
+  <String id="3607">La supressió d'enregistrament ha fallat</String>
+  <String id="3608">Voleu suprimir el fitxer?</String>
+  <!--Message Changes-->
+  <String id="3650">El fitxer {0} ocupa {1} GB</String>
+  <String id="3651">S'ha suprimit Fitxer</String>
+  <String id="3652">L'ordre és ascendent</String>
+  <String id="3653">L'ordre és descendent</String>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Message Format Data 3900-3905:
+        //  {0}  Title
+        //  {1}  Description
+        //  {2}  Channel
+        //  {3}  Start
+        //  {4}  End
+        //  {5}  EpisodeName
+        //  {6}  EpisodeNum
+        //  {7}  EpisodeNumber
+        //  {8}  EpisodePart
+        //  {9}  Genre
+        //  {10} Classification
+        //  {11} OriginalAirDate
+        //  {12} ParentalRating
+        //  {13} SeriesNum
+        //  {14} StarRating
+        //  {15} type
+        //  {16} channel_id
+        //  {17} created
+        //  {18} searchstring
+        //  {19} tvwish_id
+        //  {20} recording_id
+        //  {21} Message   
+        //  <br>   new line-->
+  <!--Found Format for 16:9 skins Email Mode-->
+  <String id="3900">{21}\nTítol: {0}\nCanal: {2}\nInici: {3}\nFinalització: {4}\nTipus: {15}\nDescripció: {1}\n\nGènere: {9}\nClassificació: {10}\nValoració Parental: {12}\nValoració d'estels: {14}\nPart d'Episodi: {8}\nNom d'Episodi: {5}\nNúmero d'Episodi: {6}\nTrobat per: {18} a {17}\n\n</String>
+  <!--Found Format for 4:3 skins Email Mode-->
+  <String id="3902">{21}     Títol: {0}     Canal: {2}     Inici: {3}     Finalització: {4}     Tipus: {15}\nDescripció: {1}\nGènere: {9}     Classificació: {10}     Valoració Parental: {12}     Valoració d'estels: {14}     Part d'Episodi: {8}     Nom d'Episodi: {5}     Número d'Episodi: {6}     Trobat per: {18} a {17}\n</String>
+  <!--Found Format for 16:9 skins View Only Mode-->
+  <String id="3901">{21}\nTítol: {0}\nCanal: {2}\nInici: {3}\nFinalització: {4}\nTipus: {15}\nDescripció: {1}\n\nGènere: {9}\nClassificació: {10}\nValoració Parental: {12}\nValoració d'estels: {14}\nPart d'Episodi: {8}\nNom d'Episodi: {5}\nNúmero d'Episodi: {6}\nTrobat per: {18} a {17}\n\n</String>
+  <!--Found Format for 4:3 skins View Only Mode-->
+  <String id="3903">{21}     Títol: {0}     Canal: {2}     Inici: {3}     Finalització: {4}    Tipus: {15}\nDescripció: {1}\nGènere: {9}     Classificació: {10}     Valoració Parental: {12}     Valoració d'estels: {14}     Part d'Episodi: {8}     Nom d'Episodi: {5}     Número d'Episodi: {6}     Trobat per: {18} a {17}\n</String>
+  <!--List Item Format Email Mode - use "||" to change alignment between left and right border-->
+  <String id="3904">{0} || {3}</String>
+  <!--List Item Format ViewOnly Mode-->
+  <String id="3905">{0} || {3}</String>
+  <!--************************************************************-->
+  <!--General-->
+  <!--************************************************************-->
+  <!--Bool-->
+  <String id="4000">Cert</String>
+  <String id="4001">Fals</String>
+  <!--Default Data TvWish-->
+  <String id="4100">Qualsevol</String>
+  <String id="4101">Sempre</String>
+  <String id="4102">Personalitzat</String>
+  <String id="4103">Cap</String>
+  <String id="4104">Tots els Canals</String>
+  <String id="4105">Tot</String>
+  <!--Mode Header-->
+  <String id="4200">Mode Email i Enregistra</String>
+  <String id="4201">Mode Només Visualitza</String>
+  <!--Errors-->
+  <String id="4300">Comprova el Registre del MediaPortal</String>
+  <String id="4301">No s'han trobat Elements</String>
+  <String id="4302">S'ha produït un error en crear la llista d'elements</String>
+  <String id="4303">No hi ha Número</String>
+  <String id="4304">Format no vàlid</String>
+  <String id="4305">Error</String>
+  <String id="4306">Els Connectors TvWishList del MediaPortal\ni el del TV Server No Coincideixen</String>
+  <String id="4307">S'ha de canviar la Carpeta d'Enregistrament\na Carpeta d'Episodi</String>
+  <String id="4308">S'ha de canviar el Tipus d'Enregistrament a Tot</String>
+  <String id="4309">S'ha de canviar Guarda el número d'Episodis a Tot</String>
+  <String id="4310">Només es pot Desplaçar Planificacions en Mode Email</String>
+  <String id="4311">Un altre procès està treballant\namb la llista Tv wish\nTorneu-ho a provar més tard\nSi l'altre procès no es ciompleta\n inicieu de nou el sistema o \natureu manualment el tv server</String>
+  <String id="4312">Error de temps excedit: Inicieu de nou el servidor.\nSi passa de nou, a la configuració experta, incrementeu-hi el temps d'espera</String>
+  <!--Others-->
+  <String id="4400">Informació</String>
+  <String id="4401">Avís</String>
+  <String id="4402">Sí</String>
+  <String id="4403">No</String>
+  <String id="4404">Tots els Tv Wishes</String>
+  <String id="4405">Tv Wish: {0}</String>
+  <!--++++++++++++++-->
+  <!--Formats   View-->
+  <!--++++++++++++++-->
+  <!--Date Time Format for all modules
+        //   {0:0000} year
+        //   {1:00}   month
+        //   {2:00}   day
+        //   {3:00}   hour
+        //   {4:00}   minute
+        //   {5:00}   second
+        //   {6}      timeofday
+        //   {7}      date-->
+  <String id="4900">{1:00}/{2:00} a {3:00}:{4:00}</String>
+  <!--************************************************************-->
+  <!--Config Main MP2-->
+  <!--************************************************************-->
+  <!-- MP2STR:ConfigMain_GUI -->
+  <String id="5000">Configuració Principal</String>
+  <!-- MP2STR:ConfigMain_GUI_Help -->
+  <String id="5001">Configura els paràmetres principals</String>
+  <!-- MP2STR:ConfigTvserver -->
+  <String id="5050">S'ha de configurar i comprovar el connector Tvserver del TvWishList abans d'utilitzar el del MediaPortal</String>
+  <String id="5051">S'ha de configurar i comprovar el connector Tvserver </String>
+  <String id="5052">del TvWishList abans d'utilitzar el del MediaPortal</String>
+  <!-- MP2STR:CancelButtonText -->
+  <String id="5100">Cancel·la</String>
+  <!-- MP2STR:SaveButtonText -->
+  <String id="5101">Desa</String>
+  <!-- MP2STR:HelpButtonText -->
+  <String id="5102">Ajuda</String>
+  <!-- MP2STR:Verbose -->
+  <String id="5200">Depuració</String>
+  <!-- MP2STR:DisableQuickMenu -->
+  <String id="5201">Desactiva el Menú Ràpid del TvWish</String>
+  <!-- MP2STR:TimeOut -->
+  <String id="5202">Temps d'espera</String>
+  <!-- MP2STR:TimeOutDescription -->
+  <String id="5203">Només canvieu Temps d'espera 60 si es produeixen errors</String>
+  <!-- MP2STR:SaveToTvServer -->
+  <String id="5204">Es desarà la configuració de client al tv server</String>
+  <!-- MP2STR:LoadFromTvServer -->
+  <String id="5205">Es carregarà la configuració de client del tv server</String>
+  <!-- MP2STR:DisableInfoWindows -->
+  <String id="5206">Desactiva les Finestres de Missatges d'Informació</String>
+  <!-- MP2STR:Load -->
+  <String id="5207">Carrega</String>
+  <!-- MP2STR:SaveLoad -->
+  <String id="5208">Desa/Carrega la Configuració de Client al/del Tv Server</String>
+  <!-- MP2STR:SaveQuestion -->
+  <String id="5209">Voleu desar la configuració de client al Tv server i sobreescriure'n així les anteriors?</String>
+  <!-- MP2STR:LoadQuestion -->
+  <String id="5210">Voleu carregar la configuració de client del Tv server i sobreescriure'n així les actuals?</String>
+  <!-- MP2STR:SaveToTV -->
+  <String id="5211">Desa al Tv Server</String>
+  <!-- MP2STR:LoadFromTV -->
+  <String id="5212">Carrega del Tv Server</String>
+  <!-- MP2STR:LoadComplete -->
+  <String id="5213">S'ha carregat configuració de client del Tv server</String>
+  <!-- MP2STR:LoadError -->
+  <String id="5214">No s'ha carregat configuració de client del Tv server</String>
+  <!-- MP2STR:SaveComplete -->
+  <String id="5215">S'ha desat la configuració de client al Tv server</String>
+  <!-- MP2STR:SaveError -->
+  <String id="5216">No s'ha desat la configuració de client al Tv server</String>
+  <!--************************************************************-->
+  <!--Config Filter MP2-->
+  <!--************************************************************-->
+  <!-- MP2STR:ConfigFilter_GUI -->
+  <String id="6000">Configuració de Filtre</String>
+  <!-- MP2STR:ConfigFilter_GUI_Help -->
+  <String id="6001">Configureu el filtre. Els elements seleccionats es podran editar pel tvwish. Els elements deshabilitats utilitzaran valors per defecte.</String>
+  <!-- MP2STR:SelectItemLabel -->
+  <String id="6100">Seleccioneu quins elements de filtre voleu editar</String>
+  <!-- MP2STR:UnSelectItemLabel -->
+  <String id="6101">Els elements deseleccionats no es podran editar pel Tv wish i utilitzaran valors per defecte.</String>
+  <!-- MP2STR:AllButtonText -->
+  <String id="6200">Tot</String>
+  <!-- MP2STR:NoneButtonText -->
+  <String id="6201">Cap</String>
+  <!-- MP2STR:DefaultsButtonText -->
+  <String id="6202">Per defecte</String>
+  <!-- MP2STR:DefaultsQuestion -->
+  <String id="6203">En recuperar els valors per defecte se sobreescriuran tots els camps a totes les pestanyes, així com els personalitzats - voleu continuar?</String>
+  <!--************************************************************-->
+  <!--Config Defaults MP2-->
+  <!--************************************************************-->
+  <!-- MP2STR:ConfigDefaults_GUI -->
+  <String id="7000">Configuració Per defecte</String>
+  <!-- MP2STR:ConfigDefaults_GUI_Help -->
+  <String id="7001">Configura paràmetres per defecte. Els valors seleccionats s'utilitzaran per als nous tvwish. Els elements deshabilitats utilitzaran valors assignats per defecte.</String>
+  <String id="7002">Verificació Per defecte</String>
+  <!--************************************************************-->
+  <!--Config Formats MP2-->
+  <!--************************************************************-->
+  <!-- MP2STR:ConfigFormats_GUI -->
+  <String id="8000">Configuració de Formats</String>
+  <!-- MP2STR:ConfigFormats_GUI_Help -->
+  <String id="8001">Configura paràmetres de format. Els formats buits utilitzaran els definits als fitxers d'idioma</String>
+  <!-- MP2STR:DateAndTimeFormat -->
+  <String id="8100">Formats de Data i Hora</String>
+  <!-- MP2STR:MainItemFormat -->
+  <String id="8101">Format d'Element de Menú Principal</String>
+  <!-- MP2STR:ResultItemFormat -->
+  <String id="8102">Format d'Element de Menú Resultats</String>
+  <!-- MP2STR:MainTextBoxFormat -->
+  <String id="8103">Format de Quadre de text de Menú Principal</String>
+  <!-- MP2STR:ResultTextBoxFormat -->
+  <String id="8104">Format de Quadre de text de Menú Resultats</String>
+  <!-- MP2STR:GroupboxGeneral -->
+  <String id="8105">Formats Generals</String>
+  <!-- MP2STR:GroupboxListItemFormats -->
+  <String id="8106">Formats d'Element de Llista</String>
+  <!-- MP2STR:GroupboxEmailAndRecordModus -->
+  <String id="8107">Mode Email i Enregistrament</String>
+  <!-- MP2STR:GroupboxViewOnlyModus -->
+  <String id="8108">Mode Només Visualitza</String>
+  <!-- MP2STR:FormatExpertLabel -->
+  <String id="8109">Només usuaris experts haurien de modificar els formats. Els camps buits utilitzaran per defecte el del fitxer d'idioma</String>
+  <String id="8110">Només usuaris experts haurien de modificar els formats.</String>
+  <String id="8111">Els camps buits utilitzaran per defecte el del fitxer d'idioma.</String>
+  <!--************************************************************-->
+  <!--TV Server Run EPG Messages-->
+  <!--************************************************************-->
+  <!--TVSERVER USE FROM=10000 TO=10300 OFFSET_FROM=0 OFFSET_TO=300-->
+  <String id="10001">S'està esperant que finalitzin els treballs {0}</String>
+  <String id="10002">Error: el TvWishList no ha finalitzat els treballs - engega de nou l'ordinador</String>
+  <String id="10003">S'està llegint paràmetres de les dades</String>
+  <String id="10004">S'està carregant Missatges</String>
+  <String id="10005">S'està carregant Tv wishes</String>
+  <String id="10006">S'està cercant {0}</String>
+  <String id="10007">S'està enviant l'email a {0}</String>
+  <String id="10008">Error: No s'ha definit cap Servidor Smtp</String>
+  <String id="10009">Error: No s'ha definit cap nom d'usuari</String>
+  <String id="10010">Error: No s'ha definit cap contrasenya</String>
+  <String id="10011">Error: No s'ha definit cap adreça per a rebre email</String>
+  <String id="10012">Error: la configuració del proveïdor no és vàlida</String>
+  <String id="10013">Error: No s'ha especificat l'adreça del Servidor</String>
+  <String id="10014">Error: La connexió per internet al servidor POP3 ha fallat</String>
+  <String id="10015">Error: No s'ha definit cap port Smtp</String>
+  <String id="10016">S'ha completat l'enviament d'emails</String>
+  <String id="10017">Error: L'enviament d'emails ha fallat - verifiqueu el nom d'usuari</String>
+  <String id="10018">Error: L'enviament d'emails ha fallat - verifiqueu la contrasenya</String>
+  <String id="10019">Error: L'enviament d'emails ha fallat</String>
+  <String id="10020">Preparat</String>
+  <String id="10021">S'estàn processant dades d'EPG {0} a {1} a les {2}</String>
+  <String id="10022">S'està processant l'Enregistrament {0} a les {1}</String>
+  <String id="10023">Error: la contrasenya no coincideix i s'ha reiniciat - introduïu-la de nou</String>
+  <String id="10024">Error Greu: Verifiqueu el Registre</String>
+  <String id="10025">Error a la consulta SQL - verifiqueu l'expressió {0}</String>
+  <!--************************************************************-->
+  <!--TV Server Message  Creation-->
+  <!--************************************************************-->
+  <String id="10050">No hi han dades EPG vàlides de la planificació {0} però es pot corregir</String>
+  <String id="10051">No hi han dades EPG vàlides de la planificació {0} - cerqueu conflictes a les planificacions</String>
+  <String id="10052">No hi han dades EPG vàlides de la planificació {0} - cerqueu conflictes a les planificacions</String>
+  <String id="10053">Les dades d'Episodi/Descripció o l'Hora de l'EPG han canviat - s'està suprimint la planificació actual i s'intena planificar de nou</String>
+  <String id="10054">S'ha de solucionar manualment el conflicte de planificació</String>
+  <String id="10055">S'exclou el programa {0} degut al filtre d'exclusio {1}</String>
+  <String id="10056">S'exclou el programa {0} degut al filtre de comprovació de mots</String>
+  <String id="10057">S'exclou el programa {0} degut al filtre de comprovació de mots</String>
+  <String id="10058">S'han trobat el màxim de programes ({0}) - altres coincidències són descartades</String>
+  <String id="10059">{0} amb {1} GB</String>
+  <String id="10060">L'addició del programa {0} ha fallat</String>
+  <String id="10061">La planificació del programa {0} ha fallat</String>
+  <String id="10062">Ja s'havia planificat el programa {0}</String>
+  <String id="10063">S'omet el programa {0} ja que no és entre {1} i {2}</String>
+  <String id="10064">S'omet el programa {0} ja que no és entre {1} i {2}</String>
+  <String id="10065">S'omet el programa {0} ja que no és abans de {1} hores</String>
+  <String id="10066">S'omet el programa {0} ja que no satisfà el filtre de canal {1}</String>
+  <String id="10067">S'omet el programa {0} ja que no satisfà el filtre d'episodi {1}</String>
+  <String id="10068">S'omet el programa {0} ja que no satisfà el filtre de nom d'episodi {1}</String>
+  <String id="10069">S'omet el programa {0} ja que no satisfà el filtre de número de sèrie {1}</String>
+  <String id="10070">S'omet el programa {0} ja que no satisfà el filtre de número d'episodi {1}</String>
+  <String id="10071">Ja s'havia enregistrat el programa {0}</String>
+  <String id="10072">Ja s'havia suprimit el programa {0} i s'ha omès</String>
+  <String id="10073">Ja ha passat l'hora d'inici del programa {0} - se n'omet la planificació</String>
+  <String id="10074">S'ha trobat la Planificació {0} repetida - s'omet</String>
+  <String id="10075">El programa {0} presenta conflictes i no serà planificat</String>
+  <String id="10076">S'està suprimint la planificació {0} degut a la baixa prioritat</String>
+  <String id="10077">La planificació {0} no disposa de suficient prioritat per a suprimir conflictes - s'omet</String>
+  <String id="10078">S'ha trobet una Planificació més adequada al Grup Preferits</String>
+  <String id="10079">El TvWishList ha trobat un programa del Tv Wish [{0}]: {1}\nEl TvWishList ha planificat el programa</String>
+  <String id="10080">El TvWishList ha trobat un programa del Tv Wish [{0}]: {1}\nEl TvWishList no ha planificat el programa però us n'avisarà</String>
+  <!--Email Format Default - will be sent with each email for a found program (use format entries from message format at 3900)-->
+  <String id="10090">NOVA ENTRADA\nTítol={0}\nDescripció={1}\nCanal={2}\nInici={3}\nFinalització={4}\nTipus={15}\nCreat el={17}\n\n\n</String>
+  <String id="10091">{1:00}/{2:00} a {3:00}:{4:00}</String>
+  <!--************************************************************-->
+  <!--TV Server Configuration-->
+  <!--************************************************************-->
+  <String id="10100">Principal</String>
+  <String id="10101">Fàcil</String>
+  <String id="10102">Experta</String>
+  <String id="10103">Amunt</String>
+  <String id="10104">Avall</String>
+  <String id="10105">Suprimeix</String>
+  <String id="10106">Cancel·la</String>
+  <String id="10107">Per defecte</String>
+  <String id="10108">Ajuda</String>
+  <String id="10109">Mode depuració</String>
+  <String id="10110">Pàgina incial del TvWishList</String>
+  <String id="10111">Tot actiu</String>
+  <String id="10112">Tots els inactius</String>
+  <String id="10113">Omet-los tots</String>
+  <String id="10114">No n'ometis cap</String>
+  <String id="10115">Filtre de Canal</String>
+  <String id="10130">Email</String>
+  <String id="10131">Compte</String>
+  <String id="10132">Nom d'Usuari</String>
+  <String id="10133">Contrasenya</String>
+  <String id="10134">Repetiu la contrasenya</String>
+  <String id="10135">Adreça d'Email</String>
+  <String id="10136">només si difereix del nom d'usuari</String>
+  <String id="10137">Cerca ara</String>
+  <String id="10138">Adreça</String>
+  <String id="10139">Receptor d'Email</String>
+  <String id="10140">Prova d'Enviament de Mail</String>
+  <String id="10141">SMTP</String>
+  <String id="10142">Proveïdor</String>
+  <String id="10143">Port</String>
+  <String id="10144">Servidor SMTP</String>
+  <String id="10145">SSL</String>
+  <String id="10146">Activa la Resposta d'Email</String>
+  <String id="10147">Només envia els nous</String>
+  <String id="10160">Configuració</String>
+  <String id="10161">Verifica l'EPG</String>
+  <String id="10162">Dilluns</String>
+  <String id="10163">Dimarts</String>
+  <String id="10164">Dimecres</String>
+  <String id="10165">Dijous</String>
+  <String id="10166">Divendres</String>
+  <String id="10167">Dissabte</String>
+  <String id="10168">Diumenge</String>
+  <String id="10169">Cada</String>
+  <String id="10170">Dies</String>
+  <String id="10171">Hores</String>
+  <String id="10172">Minuts</String>
+  <String id="10173">A les</String>
+  <String id="10174">Verifica l'EPG</String>
+  <String id="10175">abans de cada planificació</String>
+  <String id="10176">Propera data de verificació del Tv Server</String>
+  <String id="10177">Criteri de coincidència per a Pel·lícules i Episodis Repetits</String>
+  <String id="10178">Marca de Repeticó d'EPG al Títol o la Descripció</String>
+  <String id="10179">Altres Opcions</String>
+  <String id="10180">Enregistrament Automàtic</String>
+  <String id="10181">Conflictes de Planificació</String>
+  <String id="10182">Suprimeix l'EPG Modificat</String>
+  <String id="10183">Restaura Valors Per defecte</String>
+  <String id="10184">CPU lenta</String>
+  <String id="10185">Omet Suprimits</String>
+  <String id="10186">Venciment Suprimit</String>
+  <String id="10187">Mesos</String>
+  <String id="10188">Màxim de Planificacions Per Wish</String>
+  <!--Date Time Format with 10189-10191 combined-->
+  <String id="10189">MM/dd/aaaa</String>
+  <String id="10190">HH:mm</String>
+  <String id="10191">{0} a les {1}</String>
+  <String id="10192">Espera els Processos del ComSkip</String>
+  <String id="10193">EPG</String>
+  <String id="10200">Formats</String>
+  <String id="10201">Formay de Data i Hora per Emails</String>
+  <String id="10202">Format d'Email</String>
+  <String id="10203">Fitxer d'Idioma</String>
+  <String id="10204">Criteri d'Ordenació</String>
+  <String id="10205">Els usuaris experts poden personalitzar els formats per als emails enviats</String>
+  <String id="10206">Ordre descendent</String>
+  <String id="10207">Criteri de Filtre</String>
+  <String id="10208">Email</String>
+  <String id="10209">Enregistra</String>
+  <String id="10210">Conflictes</String>
+  <String id="10211">Suprimeix Tots els Missatges</String>
+  <String id="10250">S'està esperant que finalitzin els treballs de {0}. Torneu-ho a provar. Haureu d'iniciar de nou o aturar manualment el Tvserver, si els treballs no finalitzen.</String>
+  <String id="10251">S'està tancant la Configuració de TV</String>
+  <String id="10252">S'està processant - espereu a que s'acabi</String>
+  <String id="10253">Amb èxit</String>
+  <String id="10254">L'enviament d'Email ha fallat</String>
+  <String id="10255">El mínim {0} és {1}</String>
+  <String id="10256">El màxim {0} és {1}</String>
+  <String id="10257">No s'ha obert {0}</String>
+  <String id="10258">Voleu suprimir tots els missatges? AVÍS: s'esborrarà l'historial de missatges, inclosos els suprimits. Assegureu-vos que el connector MediaPortal del TvWishListMP sigui tancat!\"</String>
+  <String id="10259">S'ha suprimit els missatges</String>
+  <String id="10260">S'ha cancel·lat l'operació</String>
+  <String id="10261">Voleu restablir els valors per defecte a tots els formats? Se sobreescriuran totes les configuracions i formats</String>
+  <String id="10262">Check your username and password\n Server Error was:\n{0}</String>
+  </Section>
+</Language>

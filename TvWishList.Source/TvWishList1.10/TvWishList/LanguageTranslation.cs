@@ -340,6 +340,11 @@ namespace MediaPortal.Plugins.TvWishList
             try
             {
                 value = Language[number];
+                if (value == string.Empty)
+                {
+                    Log.Debug("***ERROR: empty string for string number "+number);
+                    return defaultvalue;
+                }
                 //Log.Debug("translate: value=" + value);
             }
             catch

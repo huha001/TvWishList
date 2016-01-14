@@ -339,6 +339,7 @@ public PipeClient(TvWishProcessing myTvWishesTransfer, string host, string pipe)
 #if (MPTV2)
                 TvWishListSetup.Instance.MyLoadSettings();
 #else
+                Log.Debug("pipeclient: Main_GUI.Instance.TvserverdatabaseLoadSettings()");
                 Main_GUI.Instance.TvserverdatabaseLoadSettings();
                 Main_GUI.Instance.UpdateListItems();
 #endif

@@ -3303,7 +3303,7 @@ namespace MediaPortal.Plugins.TvWishList.Setup
         }
 
 
-
+        
         private void TestTvWishList()
         {
             LogDebug("EPG watching started", (int)LogSetting.DEBUG);
@@ -3384,7 +3384,7 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             BUSY = false;
         }
 
-
+        
         
         
 

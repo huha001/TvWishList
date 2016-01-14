@@ -50,7 +50,7 @@
                     <Label  Grid.Column="0" Grid.Row="0" Wrap="False" Scroll="Auto" Content="{Binding Modus}" Color="{ThemeResource TextColor}" FontSize="22"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
-                    <ListView Name="MainListView" Grid.Column="0" Grid.Row="1"   ItemsSource="{Binding SkinItemList}" SelectionChanged="{CommandStencil Source={StaticResource Main_GUI_Model}, Path=FocusedItemChanged}"  Style="{ThemeResource TvWishUpDownDeleteMenuListViewStyle}">
+                    <ListView Name="MainListView" Grid.Column="0" Grid.Row="1"   ItemsSource="{Binding SkinItemList}" SelectionChanged="{CommandStencil FocusedItemChanged}"  Style="{ThemeResource TvWishUpDownDeleteMenuListViewStyle}">
                     <ListView.Resources>
                             <Command x:Key="MoveUp_Command_TVW" Source="{StaticResource Main_GUI_Model}" Path="MoveItemUp" Parameters="{LateBoundValue BindingValue={Binding}}"/>
                             <Command x:Key="MoveDown_Command_TVW" Source="{StaticResource Main_GUI_Model}" Path="MoveItemDown" Parameters="{LateBoundValue BindingValue={Binding}}"/>

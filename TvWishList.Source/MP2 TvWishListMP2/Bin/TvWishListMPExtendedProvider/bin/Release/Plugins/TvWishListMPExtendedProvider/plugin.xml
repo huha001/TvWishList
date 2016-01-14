@@ -4,8 +4,12 @@
     PluginId="{ac9bb4ed-5301-2cf8-835a-2c656e9785ba}"
     Author="huha"
     Copyright="GPL"
-    Description="The TvWishListMPExtendedProvider uses MPExtended0.5 and MP TvServer to provide basic TV capabilities for TvWishList."
-    PluginVersion="1.0">
+    Description="The TvWishListMPExtendedProvider uses MPExtended0.5 and MP TvServer to provide basic TV capabilities for TvWishList.">
+
+  <Version
+    PluginVersion="1.0"
+    ReleaseDate="2015-07-08 01:00:00 GMT+01:00"
+    CurrentAPI="1"/>
 
   <Runtime>
     <Assembly FileName="TvWishListInterface.dll"/>

@@ -862,6 +862,11 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                 return;
             }
 
+            //delete if focusdeditemchange is working again
+            FocusedItemChanged(selectedListItem);
+
+
+
             if (mymessages.ListAllTvMessagesFiltered().Count == 0)
                 return;
 

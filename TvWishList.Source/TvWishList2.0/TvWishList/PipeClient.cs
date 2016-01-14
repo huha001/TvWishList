@@ -94,7 +94,7 @@ namespace MediaPortal.Plugins.TvWishList
         string ClientMessage = string.Empty;
         string ReceivedMessage = "Error";
         //bool OldConnect = false;
-        string TimeOutValueString = "60";               //60s default, will be read from config settings
+        string TimeOutValueString = "1200";               //600s default, will be read from config settings?
         
 
         //Pipelocking mechanism
@@ -310,7 +310,7 @@ public PipeClient(TvWishProcessing myTvWishesTransfer, string host, string pipe)
             bool success2 = myTvWishes.LockTvWishList("TvWishList:Setup");
             if (!success2)
             {
-                MessageBox.Show(lng.TranslateString("Tv wish list is being processed by another process<br>Try again later<br>If the other process hangs reboot the system or stop the tv server manually",4311).Replace("<br>","\n"));
+                MessageBox.Show(lng.TranslateString("Tv wish list is being processed by another process<br>Try again later<br>If the other process hangs reboot the system or stop the tv server manually",4311).Replace("<br>",Environment.NewLine));
                 //myTvWishes.MyMessageBox(4305, 4311); //Tv wish list is being processed by another process<br>Try again later<br>If the other process hangs reboot the system or stop the tv server manually
                 myTvWishes.ButtonActive = false; //unlock buttons
                 LOCKED = false; //unlock tvwishlist
@@ -475,7 +475,7 @@ public PipeClient(TvWishProcessing myTvWishesTransfer, string host, string pipe)
             if (success == false)
             {
                 //MessageBox.Show(lng.TranslateString("TvWishList MediaPortal Plugin Does Not Match To TvWishList TV Server Plugin", 1206).Replace("<br>", "\n"));   
-                MessageBox.Show(lng.TranslateString("TvWishList MediaPortal Plugin Does Not Match To TvWishList TV Server Plugin", 1206).Replace("<br>", "\n"),"Error"); 
+                MessageBox.Show(lng.TranslateString("TvWishList MediaPortal Plugin Does Not Match To TvWishList TV Server Plugin", 1206).Replace("<br>", Environment.NewLine),"Error"); 
                // myTvWishes.MyMessageBox(4305, 1206); //TvWishList MediaPortal Plugin Does Not Match To TvWishList TV Server Plugin
             }
             Log.Debug("ClientThreadRoutineRunEpg() Thread Completed");

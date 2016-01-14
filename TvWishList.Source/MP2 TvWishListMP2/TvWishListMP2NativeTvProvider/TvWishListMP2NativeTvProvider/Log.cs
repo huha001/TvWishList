@@ -24,12 +24,12 @@ using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-//using System.Windows.Forms; 
+//using System.Windows.Forms;
 
 
 
 
-#if (MP2)
+#if (MP2 || NAT)
 using MediaPortal.Common;
 using MediaPortal.Common.PathManager;
 using MediaPortal.Plugins;
@@ -43,7 +43,7 @@ namespace TvLibrary.Log.huha
     /// </summary>
     public class Log
     {
-        static private bool _Debug = false;
+        static private bool _Debug = true;
         static private  string _LogFile = string.Empty;
 
         private enum LogType
@@ -248,10 +248,13 @@ namespace TvLibrary.Log.huha
 #if (MP11 || MP12)
                     string Path1 = String.Format(@"{0}\Team MediaPortal\MediaPortal", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
                     return String.Format(@"{0}\log\TvWishListMP.log", Path1);
-#elif (MP2)
+#elif (MP2 || NAT)
                     InstallPaths instpaths1 = new InstallPaths();  //define new instance for folder detection
                     instpaths1.GetInstallPathsMP2();
                     return String.Format(@"{0}\TvWishListMP2.log", instpaths1.DIR_MP2_LOG);
+#elif (TV30)
+                    string Path1 = String.Format(@"{0}\Team MediaPortal\MP2-Server", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
+                    return String.Format(@"{0}\Log\TvWishListTV3.log", Path1);
 #else
                     string Path1 = String.Format(@"{0}\Team MediaPortal\MediaPortal TV Server", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
                     return String.Format(@"{0}\log\TvWishList.log", Path1);
@@ -261,10 +264,13 @@ namespace TvLibrary.Log.huha
 #if (MP11 || MP12)
                     string Path2 = String.Format(@"{0}\Team MediaPortal\MediaPortal", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
                     return String.Format(@"{0}\log\error.log", Path2);
-#elif (MP2)
+#elif (MP2 || NAT)
                     InstallPaths instpaths2 = new InstallPaths();  //define new instance for folder detection
                     instpaths2.GetInstallPathsMP2();
                     return String.Format(@"{0}\ClientError.log", instpaths2.DIR_MP2_LOG);
+#elif (TV30)
+                    string Path2 = String.Format(@"{0}\Team MediaPortal\MP2-Server", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
+                    return String.Format(@"{0}\Log\error.log", Path2);
 #else
                     string Path2 = String.Format(@"{0}\Team MediaPortal\MediaPortal TV Server", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
                     return String.Format(@"{0}\log\error.log", Path2);
@@ -275,10 +281,13 @@ namespace TvLibrary.Log.huha
 #if (MP11 || MP12)
                     string Path3 = String.Format(@"{0}\Team MediaPortal\MediaPortal", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
                     return String.Format(@"{0}\log\TvWishListMP.log", Path3);
-#elif (MP2)
+#elif (MP2 || NAT)
                     InstallPaths instpaths3 = new InstallPaths();  //define new instance for folder detection
                     instpaths3.GetInstallPathsMP2();
                     return String.Format(@"{0}\TvWishListMP2.log", instpaths3.DIR_MP2_LOG);
+#elif (TV30)
+                    string Path3 = String.Format(@"{0}\Team MediaPortal\MP2-Server", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
+                    return String.Format(@"{0}\Log\TvWishListTV3.log", Path3);
 #else
                     string Path3 = String.Format(@"{0}\Team MediaPortal\MediaPortal TV Server", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
                     return String.Format(@"{0}\log\TvWishList.log", Path3);

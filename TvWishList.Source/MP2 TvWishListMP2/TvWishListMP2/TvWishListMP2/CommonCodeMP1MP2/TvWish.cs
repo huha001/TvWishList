@@ -3226,6 +3226,9 @@ namespace MediaPortal.Plugins.TvWishList
 
         public bool save_longsetting(string mystring, string mysetting)
         {
+            Log.Debug("mystring=" + mystring);
+            Log.Debug("mysetting=" + mysetting);
+
             TvBusinessLayer layer = new TvBusinessLayer();
             Setting setting;
             int STRINGLIMIT = 4000; //is 4096  string limit for settings - split if larger
@@ -3561,7 +3564,7 @@ namespace MediaPortal.Plugins.TvWishList
 
         public string TvWishVersion()
         {
-            return ("1.4.1.0");
+            return ("1.4.4.0");
         }
 
 

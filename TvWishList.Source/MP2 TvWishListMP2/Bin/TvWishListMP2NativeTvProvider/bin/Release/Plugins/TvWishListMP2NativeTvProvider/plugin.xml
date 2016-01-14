@@ -4,8 +4,12 @@
     PluginId="{ac9bb4ed-5301-2cf8-835a-2c656e9785ba}"
     Author="huha"
     Copyright="GPL"
-    Description="The TvWishListMP2NativeTvprovider provides basic TV capabilities for TvWishList."
-    PluginVersion="1.0">
+    Description="The TvWishListMP2NativeTvprovider provides basic TV capabilities for TvWishList.">
+
+ <Version
+    PluginVersion="1.0"
+    ReleaseDate="2015-07-08 01:00:00 GMT+01:00"
+    CurrentAPI="1"/>
 
   <Runtime>
     <Assembly FileName="TvWishListInterface.dll"/>
@@ -13,8 +17,16 @@
   </Runtime>
 
   <DependsOn>
-    <!-- Configuration Manager Plugin -->
-    <PluginReference PluginId="{1AFF4467-64B0-4ca1-AF28-9AEDF3525BCE}"/>
+    <CoreDependency Name="MediaPortal.Common" CompatibleAPI="1" />
+    <CoreDependency Name="MediaPortal.UI" CompatibleAPI="1" />
+    <CoreDependency Name="MediaPortal.Utilities" CompatibleAPI="1" />
+    <CoreDependency Name="UPnP" CompatibleAPI="1"/>
+    <PluginReference PluginId="{D87D92F0-5E71-470a-A2A4-430F90A28BF3}" CompatibleAPI="1"/>
+    <!-- SkinEngine -->
+    <PluginReference PluginId="{1AFF4467-64B0-4ca1-AF28-9AEDF3525BCE}" CompatibleAPI="1"/>
+    <!-- ConfigurationManager -->
+    <PluginReference PluginId="{B765A4B6-F455-4941-BDAE-2CE45208BFEB}" CompatibleAPI="1"/>
+    <!-- Configuration plugin -->
   </DependsOn>
 
   <Register Location="/Resources/Language">

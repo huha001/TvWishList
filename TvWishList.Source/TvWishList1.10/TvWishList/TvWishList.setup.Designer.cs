@@ -324,8 +324,8 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             // 
             // textBoxSmtpEmailAdress
             // 
-            this.textBoxSmtpEmailAdress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSmtpEmailAdress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSmtpEmailAdress.Location = new System.Drawing.Point(6, 183);
             this.textBoxSmtpEmailAdress.Name = "textBoxSmtpEmailAdress";
             this.textBoxSmtpEmailAdress.Size = new System.Drawing.Size(174, 20);
@@ -333,8 +333,8 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             // 
             // TextBoxUserName
             // 
-            this.TextBoxUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxUserName.Location = new System.Drawing.Point(6, 32);
             this.TextBoxUserName.Name = "TextBoxUserName";
             this.TextBoxUserName.Size = new System.Drawing.Size(171, 20);
@@ -351,8 +351,8 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             // 
             // TextBoxPassword
             // 
-            this.TextBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxPassword.Location = new System.Drawing.Point(6, 82);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
@@ -362,8 +362,8 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             // 
             // TextBoxPassword2
             // 
-            this.TextBoxPassword2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxPassword2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxPassword2.Location = new System.Drawing.Point(6, 134);
             this.TextBoxPassword2.Name = "TextBoxPassword2";
             this.TextBoxPassword2.PasswordChar = '*';
@@ -431,8 +431,8 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             // 
             // TextBoxTestReceiver
             // 
-            this.TextBoxTestReceiver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxTestReceiver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxTestReceiver.Location = new System.Drawing.Point(13, 32);
             this.TextBoxTestReceiver.Name = "TextBoxTestReceiver";
             this.TextBoxTestReceiver.Size = new System.Drawing.Size(173, 20);
@@ -487,8 +487,8 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             // 
             // TextBoxSmtpServer
             // 
-            this.TextBoxSmtpServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxSmtpServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxSmtpServer.Location = new System.Drawing.Point(9, 83);
             this.TextBoxSmtpServer.Name = "TextBoxSmtpServer";
             this.TextBoxSmtpServer.Size = new System.Drawing.Size(179, 20);
@@ -538,9 +538,9 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage5);
@@ -549,7 +549,7 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             this.tabControl1.Location = new System.Drawing.Point(3, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(481, 432);
+            this.tabControl1.Size = new System.Drawing.Size(1097, 432);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage4
@@ -575,7 +575,7 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             this.tabPage4.Controls.Add(this.buttonDelete);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(473, 406);
+            this.tabPage4.Size = new System.Drawing.Size(1089, 406);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Main";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -648,9 +648,9 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersHeight = 25;
@@ -697,7 +697,7 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(467, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(1083, 320);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -1835,8 +1835,8 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             // 
             // textBoxEmailFormat
             // 
-            this.textBoxEmailFormat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEmailFormat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEmailFormat.Location = new System.Drawing.Point(23, 62);
             this.textBoxEmailFormat.Name = "textBoxEmailFormat";
             this.textBoxEmailFormat.Size = new System.Drawing.Size(429, 20);
@@ -1994,7 +1994,7 @@ namespace MediaPortal.Plugins.TvWishList.Setup
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Name = "TvWishListSetup";
-            this.Size = new System.Drawing.Size(487, 438);
+            this.Size = new System.Drawing.Size(1103, 438);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

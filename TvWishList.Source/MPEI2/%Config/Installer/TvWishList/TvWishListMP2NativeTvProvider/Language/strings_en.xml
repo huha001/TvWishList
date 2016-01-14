@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <string name="TvWishListMP2NativeTvProvider.Title">TvWishListTvServer</string>
-  <string name="TvWishListMP2NativeTvProvider.ServerAddress">MP2 server addresses with native Tv server</string>
-  <string name="TvWishListMP2NativeTvProvider.ServerAddress.Help">Enter server name or IP address (defaults to localhost).</string>
-</resources>

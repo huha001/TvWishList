@@ -72,9 +72,5 @@ namespace TvWishList
             return true;
         }
 
-        
-
-
-
     }
 }

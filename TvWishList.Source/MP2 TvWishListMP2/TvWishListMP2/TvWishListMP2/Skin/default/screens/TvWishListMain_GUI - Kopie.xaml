@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Include
+    xmlns="www.team-mediaportal.com/2008/mpf/directx"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Source="screens\master_menu.xaml"
+    >
+
+ <!--   <Include
+    xmlns="www.team-mediaportal.com/2008/mpf/directx"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Source="screens\master_menu.xaml"
+    xmlns:system="clr-namespace:System"
+    xmlns:collections="clr-namespace:MediaPortal.UI.Presentation.DataObjects;assembly=MediaPortal.UI"
+    xmlns:mp_special_controls="clr-namespace:MediaPortal.UI.SkinEngine.SpecialElements.Controls" 
+    >-->
+    
+    <Include.Resources>
+
+        <!-- Main Model Definition-->
+        <Model x:Key="Main_GUI_Model" Id="46199691-8dc6-443d-9022-1315cee6152b"/>
+
+        <!-- HeaderText -->
+        <ResourceWrapper x:Key="Header_Text" EnableBindings="True"  Resource="{Binding Source={StaticResource Main_GUI_Model},Path=Header}"/>
+
+
+        
+
+        <!-- Contents -->
+        <ControlTemplate x:Key="Contents_Template">
+
+
+           <!-- <DockPanel  DataContext="{Binding Source={StaticResource Main_GUI_Model}}" LastChildFill="False">-->
+
+
+                <Grid DataContext="{Binding Source={StaticResource Main_GUI_Model}}" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label  Grid.Column="0" Grid.Row="0" Wrap="False" Scroll="Auto" Content="{Binding Modus}" Color="{ThemeResource TextColor}" FontSize="22"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+
+                    <ListView Name="MainListView" Grid.Column="0" Grid.Row="1"   ItemsSource="{Binding SkinItemList}" SelectionChanged="{CommandStencil Source={StaticResource Main_GUI_Model}, Path=FocusedItemChanged}"  Style="{ThemeResource TvWishUpDownDeleteMenuListViewStyle}">
+                    <ListView.Resources>
+                            <Command x:Key="MoveUp_Command_TVW" Source="{StaticResource Main_GUI_Model}" Path="MoveItemUp" Parameters="{LateBoundValue BindingValue={Binding}}"/>
+                            <Command x:Key="MoveDown_Command_TVW" Source="{StaticResource Main_GUI_Model}" Path="MoveItemDown" Parameters="{LateBoundValue BindingValue={Binding}}"/>
+                            <CommandBridge x:Key="Menu_Command"  Command="{Binding Path=Command,Mode=OneTime}"/>
+                    </ListView.Resources>
+                     
+                    </ListView>
+
+
+
+
+
+
+                    <GroupBox   Header="[TvWishListMP2.101]" Grid.Column="2" Grid.Row="0"  Grid.RowSpan="3" Margin="0,0,0,15" Style="{ThemeResource ContentGroupBoxStyle}" FontSize="{ThemeResource SmallFontSize}">
+
+                        <Label x:Name="MyProgram" Wrap="True" Scroll="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding TextBoxSkin}" Color="{ThemeResource TextColor}" FontSize="{ThemeResource SmallFontSize}"/>
+                         
+
+                        
+
+
+                    </GroupBox>
+
+
+
+
+
+
+
+                    <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Wrap="False" Scroll="Auto" Content="{Binding Status}" Color="{ThemeResource TextColor}" FontSize="22" HorizontalAlignment="Left"/>
+
+          </Grid>
+                
+        <!--</DockPanel>-->
+
+        </ControlTemplate>
+        
+    
+    </Include.Resources>
+</Include>

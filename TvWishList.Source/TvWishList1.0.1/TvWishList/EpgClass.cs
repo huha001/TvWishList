@@ -850,6 +850,25 @@ namespace MediaPortal.Plugins.TvWishList
                   languagetext = lng.TranslateString("Searching for {0}", 6,mywish.name);
                   labelmessage(languagetext, PipeCommands.StartEpg);
 
+                  //remove leading and ending spaces of tv wish
+                  Log.Debug("(before removing spaces: mywish.searchfor="+mywish.searchfor);
+                  if (mywish.searchfor.Length > 0)
+                  {
+                    while (mywish.searchfor[0] == ' ')
+                    {
+                        mywish.searchfor = mywish.searchfor.Substring(1, mywish.searchfor.Length - 1);
+                        if (mywish.searchfor.Length == 0)
+                            break;
+                    }
+                    while (mywish.searchfor[mywish.searchfor.Length - 1] == ' ')
+                    {
+                        mywish.searchfor = mywish.searchfor.Substring(0, mywish.searchfor.Length - 1);
+                        if (mywish.searchfor.Length == 0)
+                            break;
+                    }
+
+                  }
+                  Log.Debug("(after removing spaces: mywish.searchfor=" + mywish.searchfor);
                   //search for recordings and add messages only in email mode
                   DateTime start = DateTime.Now; //DEBUG PERFORMANCE
 
@@ -3330,7 +3349,7 @@ namespace MediaPortal.Plugins.TvWishList
           LogDebug("check for conflicts", (int)LogSetting.DEBUG);
           if ((VIEW_ONLY_MODE == false)&& (_scheduleconflicts == false))  //scheduleconflicts = true will trigger priority processing
           {
-              //BUG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+              
 #if(MPTV2)
               IList<Schedule> conflict_schedules = Schedule.GetConflictingSchedules(schedule);
 #else
@@ -4180,6 +4199,7 @@ namespace MediaPortal.Plugins.TvWishList
       [CLSCompliant(false)]
       public IList<Schedule> GetConflictingSchedules(Schedule schedule)
       {
+          
           return Schedule.GetConflictingSchedules(schedule);
       }
 #elif(TV110)

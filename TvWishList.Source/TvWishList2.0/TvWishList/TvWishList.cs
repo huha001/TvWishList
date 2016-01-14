@@ -21,6 +21,10 @@
  */
 #endregion Copyright (C)
 
+//**************************************
+// TvWishlist 3.0
+//**************************************
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -172,7 +176,7 @@ namespace MediaPortal.Plugins.TvWishList
         /// <summary>
         /// returns the version of the plugin
         /// </summary>
-        public string Version { get { return "1.4.1.0"; } }
+        public string Version { get { return "1.4.4.0"; } }
 
         /// <summary>
         /// returns the author of the plugin
@@ -258,7 +262,7 @@ namespace MediaPortal.Plugins.TvWishList
 #if (MPTV2)
                 setting.Value = "MP2TvWishListPipe";
 #else
-                setting.Value = "TvWishListPipe";
+                setting.Value = "MP2TvWishListPipe";
 #endif
                 setting.Persist();
                 
@@ -1593,7 +1597,7 @@ namespace MediaPortal.Plugins.TvWishList
                     var sec = new PipeSecurity();
                     sec.AddAccessRule(rule);
 
-#if (MPTV2)
+#if (MPTV2 || TV30)
                     string pipeName = "MP2TvWishListPipe";
 #else
                     string pipeName = "TvWishListPipe";
@@ -1830,13 +1834,26 @@ namespace MediaPortal.Plugins.TvWishList
                         ss.WriteString(ServerMessage);
                         TimeOutValuestring = defaultTimeOutValuestring;
                     }
-#if (MPTV2)
+
+
+#if (MPTV2) //process pipe commands for Tv server 3.5
                     else if (MessageFromClient.StartsWith(PipeCommands.WriteSetting.ToString()) == true)
                     {
+                        
                         string tag = MessageFromClient.Replace(PipeCommands.WriteSetting.ToString(), string.Empty);
                         string[] tags = tag.Split('\n');
-                        ServiceAgents.Instance.SettingServiceAgent.SaveValue(tags[0], tags[1]);
-
+                        
+                        
+                        
+                        string fullsetting = string.Empty;
+                        for (int i = 1; i < tags.Length; i++)
+                        { 
+                            fullsetting += tags[i]+"\n";
+                        }
+                        fullsetting = fullsetting.Substring(0, fullsetting.Length - 1);                     
+                        Log.Debug("WriteSettings tag0=" + tags[0] + " tag1=" + fullsetting);
+                        
+                        ServiceAgents.Instance.SettingServiceAgent.SaveValue(tags[0], fullsetting);
                         ServerMessage = "SUCCESS";
                         ss.WriteString(ServerMessage);
                     }
@@ -2002,8 +2019,223 @@ namespace MediaPortal.Plugins.TvWishList
                         ss.WriteString(ServerMessage);
                     }
 
-#endif
 
+#elif (TV30) //process pipe commands for Tv server 3.0
+                    else if (MessageFromClient.StartsWith(PipeCommands.WriteSetting.ToString()) == true)
+                    {
+                        string tag = MessageFromClient.Replace(PipeCommands.WriteSetting.ToString(), string.Empty);
+                        string[] tags = tag.Split('\n');
+                        string dummy = string.Empty;
+                        setting = null;
+                        setting = layer.GetSetting(tags[0], string.Empty);
+                        setting.Value = string.Empty;
+                        for (int i = 1; i < tags.Length; i++)
+                        { 
+                            setting.Value += tags[i]+"\n";
+                        }
+                        setting.Value = setting.Value.Substring(0, setting.Value.Length - 1);                     
+                        Log.Debug("WriteSettings tag0=" + tags[0] + " tag1=" + setting.Value);
+                        setting.Persist();
+                        ServerMessage = "SUCCESS";
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadSetting.ToString()) == true)
+                    {
+                        string tag = MessageFromClient.Replace(PipeCommands.ReadSetting.ToString(), string.Empty);
+                        Log.Debug("Read tag="+tag);
+                        string value = layer.GetSetting(tag, string.Empty).Value;
+                        Log.Debug("Read value=" + value);
+                        ServerMessage = value;
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllCards.ToString()) == true)
+                    {
+                        defaultTimeOutValuestring = TimeOutValuestring;
+
+                        string[] tokens = MessageFromClient.Split(':');
+                        if (tokens.Length > 1)
+                        {
+                            TimeOutValuestring = tokens[1];
+                            Logdebug("Changed TimeOutValuestring=" + TimeOutValuestring);
+                        }
+
+                        ServerMessage = string.Empty;
+                        foreach (Card mycard in Card.ListAll())
+                        {
+                            ServerMessage += mycard.IdCard.ToString() + "\n" + mycard.Name + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }                  
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllChannelsByGroup.ToString()) == true)
+                    {
+                        string groupIdString = MessageFromClient.Replace(PipeCommands.ReadAllChannelsByGroup.ToString(), string.Empty);
+                        Log.Debug("groupIdString="+groupIdString);
+                        int groupId = -1;
+                        int.TryParse(groupIdString, out groupId);
+                        Log.Debug("groupId=" + groupId.ToString());
+
+                        //get groupname for groupid
+                        string groupname = string.Empty;
+                        foreach (ChannelGroup channelgroup in ChannelGroup.ListAll())
+                        {
+                            if (channelgroup.IdGroup == groupId)
+                            {
+                                groupname = channelgroup.GroupName;
+                                break;
+                            }
+                        }
+                        Log.Debug("groupname is " + groupname);
+                        ServerMessage = string.Empty;
+                        foreach (Channel mychannel in Channel.ListAll())
+                        {
+                            if ((mychannel.GroupNames.Contains(groupname)) && (mychannel.IsTv))
+                            {
+                                ServerMessage += mychannel.IdChannel.ToString() + "\n" + mychannel.DisplayName + "\n";
+                            }
+                        }
+                        Log.Debug("Groupchannels=" + ServerMessage);
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllChannels.ToString()) == true)//must be after ReadAllChannelsByGroup
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (Channel mychannel in Channel.ListAll())
+                        {
+                            if (mychannel.IsTv)
+                            {
+                                ServerMessage += mychannel.IdChannel.ToString() + "\n" + mychannel.DisplayName + "\n";
+                            }
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllRadioChannelsByGroup.ToString()) == true)
+                    {
+                        string groupIdString = MessageFromClient.Replace(PipeCommands.ReadAllRadioChannelsByGroup.ToString(), string.Empty);
+                        Log.Debug("radiogroupIdString=" + groupIdString);
+                        int groupId = -1;
+                        int.TryParse(groupIdString, out groupId);
+                        Log.Debug("radiogroupId=" + groupId.ToString());
+                        //get radio groupname for groupid
+                        string radio_groupname = string.Empty;
+                        foreach (RadioChannelGroup radiochannelgroup in RadioChannelGroup.ListAll())
+                        {
+                            if (radiochannelgroup.IdGroup == groupId)
+                            {
+                                radio_groupname = radiochannelgroup.GroupName;
+                                break;
+                            }
+                        }
+                        Log.Debug("groupname is " + radio_groupname);
+                        ServerMessage = string.Empty;
+
+                        foreach (Channel myradiochannel in Channel.ListAll())
+                        {                          
+                            if ((myradiochannel.GroupNames.Contains(radio_groupname)) && (myradiochannel.IsRadio) )
+                            {
+                                ServerMessage += myradiochannel.IdChannel.ToString() + "\n" + myradiochannel.DisplayName + "\n";
+                            }                           
+                        }
+                        Log.Debug("radioGroupchannels=" + ServerMessage);
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllRadioChannels.ToString()) == true)//must be after ReadAllRadioChannelsByGroup
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (Channel myradiochannel in Channel.ListAll())
+                        {
+                            if (myradiochannel.IsRadio)
+                            {
+                                ServerMessage += myradiochannel.IdChannel.ToString() + "\n" + myradiochannel.DisplayName + "\n";
+                            }
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllChannelGroups.ToString()) == true)
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (ChannelGroup mygroup in ChannelGroup.ListAll())
+                        {
+                            ServerMessage += mygroup.IdGroup.ToString() + "\n" + mygroup.GroupName + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllRadioChannelGroups.ToString()) == true)
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (RadioChannelGroup myradiogroup in RadioChannelGroup.ListAll())
+                        {
+                            ServerMessage += myradiogroup.IdGroup.ToString() + "\n" + myradiogroup.GroupName + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllRecordings.ToString()) == true)
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (Recording myrecording in Recording.ListAll())
+                        {
+                            ServerMessage += myrecording.IdRecording.ToString() + "\n" + myrecording.Title + "\n"+myrecording.FileName + "\n" +
+                                             myrecording.IdChannel.ToString() + "\n" + myrecording.StartTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) +
+                                             "\n" + myrecording.EndTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ReadAllSchedules.ToString()) == true)
+                    {
+                        ServerMessage = string.Empty;
+                        foreach (Schedule myschedule in Schedule.ListAll())
+                        {
+                            ServerMessage += myschedule.IdSchedule.ToString() + "\n" + myschedule.ProgramName + "\n" + 
+                                             myschedule.IdChannel.ToString() + "\n" + myschedule.StartTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) +
+                                             "\n" + myschedule.EndTime.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) + "\n" +
+                                             myschedule.ScheduleType.ToString() + "\n" + myschedule.PreRecordInterval.ToString() + "\n" +
+                                             myschedule.PostRecordInterval.ToString() + "\n" + myschedule.MaxAirings.ToString() + "\n" +
+                                             myschedule.KeepDate.ToString("yyyy-MM-dd_HH:mm", CultureInfo.InvariantCulture) + "\n" +
+                                             myschedule.KeepMethod.ToString() + "\n" + myschedule.Priority.ToString() + "\n" +
+                                             myschedule.PreRecordInterval.ToString() + "\n" + myschedule.Series.ToString() + "\n";
+                        }
+                        //65000 max chars                        
+                        ss.WriteString(ServerMessage);
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ScheduleDelete.ToString()) == true)
+                    {
+                        string scheduleIdString = MessageFromClient.Replace(PipeCommands.ScheduleDelete.ToString(), string.Empty);
+                        Log.Debug("scheduleIdString=" + scheduleIdString);
+                        int scheduleId = -1;
+                        int.TryParse(scheduleIdString, out scheduleId);
+                        Log.Debug("scheduleId=" + scheduleId.ToString());
+                        Schedule delete_schedule = Schedule.Retrieve(scheduleId);
+                        delete_schedule.Delete();
+                        //65000 max chars                        
+                        ss.WriteString("Deleted");
+                    }
+                    else if (MessageFromClient.StartsWith(PipeCommands.ScheduleNew.ToString()) == true)
+                    {
+                        string schedule = MessageFromClient.Replace(PipeCommands.ScheduleNew.ToString(), string.Empty);
+                        string[] scheduletags = schedule.Split('\n');
+
+                        int idChannel = -1;
+                        int.TryParse(scheduletags[1], out idChannel);
+                        DateTime start = DateTime.ParseExact(scheduletags[2], "yyyy-MM-dd_HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+                        DateTime end = DateTime.ParseExact(scheduletags[3], "yyyy-MM-dd_HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+
+                        Schedule myschedule = new Schedule(idChannel, scheduletags[0], start, end);
+                        myschedule.Persist();
+                        
+
+                        ServerMessage = "SUCCESS";
+                        ss.WriteString(ServerMessage);
+                    }
+
+#endif
                     else //Unknown command
                     {
                         Logdebug("sending response " + PipeCommands.UnknownCommand.ToString());

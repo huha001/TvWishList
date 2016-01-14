@@ -1396,6 +1396,20 @@
               <ZipFileName>Installer{CopyFile}\{e592cbd4-ad34-41db-b36d-751a328853cc}-TvWishListMPExtendedProvider.dll</ZipFileName>
               <DestinationFilename>%Config\Installer\TvWishList\TvWishListMPExtendedProvider\TvWishListMPExtendedProvider.dll</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishList3.0\TvWishListTV30.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8ad37587-90af-4d5c-b3e1-7832696d7971}-TvWishListTV30.dll</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishList3.0\TvWishListTV30.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListMain_GUI - Kopie.xaml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{f20743ae-612c-4cc2-814c-74ae4dfb8f7f}-TvWishListMain_GUI - Kopie.xaml</ZipFileName>
+              <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListMain_GUI - Kopie.xaml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -1515,23 +1529,28 @@
     <Version>
       <Major>1</Major>
       <Minor>4</Minor>
-      <Build>1</Build>
+      <Build>4</Build>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>Never again miss your favourite movie when it is showing up on TV. Create a list of movies or episodes you want to record or get a reminder and TvWishList will search your Epg data and compare to your search list. If the plugin finds a match it will record and/or send you an email. TvWishlist will help you to avoid duplicate episodes for schedules and recordings.
 
 
 
+
+
+
+
 Now you can access to TvWishlist directly from MediaPortal with the client plugin and use it as your personal TV guide or for creating your wish lists.</ExtensionDescription>
-    <VersionDescription>V1.4.1.0:
-- bug fix for MP channel filter if group is “All Channels”
-- using MP conflict schedule mangement
+    <VersionDescription>V1.4.4.0:
+
+- severe bug fix impactiung tvserver recording function
+
 </VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=71&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2015-02-08T18:27:26</ReleaseDate>
+    <ReleaseDate>2015-05-19T18:27:26</ReleaseDate>
     <Tags>automation,tv server plugins,tvwishlist,tvwishlistmp,mediaportal plugins</Tags>
-    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.4.1.0.mpe1</Location>
+    <Location>H:\User Daten\Visual C# Projects\TvWishList\TvWishListGitRepository\TvWishList\TvWishList.Source\MPEI2\TvWishList.Ver.1.4.4.0.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -2278,11 +2297,25 @@ http://www.team-mediaportal.com/components/com_mtree/img/listings/m/1744.jpg
         <ZipFileName>Installer{CopyFile}\{d1402e7c-607f-47bb-8f4d-0af0a12ac04d}-TvWishList.dll</ZipFileName>
         <DestinationFilename>%Config%\Installer\TvWishList\TvWishList1.10\TvWishList.dll</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\..\TvWishList.Release\TvWishList3.0\TvWishListTV30.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{8ad37587-90af-4d5c-b3e1-7832696d7971}-TvWishListTV30.dll</ZipFileName>
+        <DestinationFilename>%Config\Installer\TvWishList\TvWishList3.0\TvWishListTV30.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\..\TvWishList.Release\TvWishListMP2\Skin\default\screens\TvWishListMain_GUI - Kopie.xaml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{f20743ae-612c-4cc2-814c-74ae4dfb8f7f}-TvWishListMain_GUI - Kopie.xaml</ZipFileName>
+        <DestinationFilename>%Config\Installer\TvWishList\TvWishListMP2\Skin\default\screens\TvWishListMain_GUI - Kopie.xaml</DestinationFilename>
+      </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\..\..\TvWishList.Icon2.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{1c240179-23b5-4c9d-a91d-b817786a5042}-TvWishList.Icon2.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{e162fcdf-8315-4b32-81e5-9a6efae0858a}-TvWishList.Icon2.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>

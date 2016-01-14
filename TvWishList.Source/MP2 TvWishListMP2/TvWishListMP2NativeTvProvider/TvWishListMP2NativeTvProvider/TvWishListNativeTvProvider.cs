@@ -88,6 +88,8 @@ namespace MediaPortal.Plugins.TvWishListMP2NativeTvProvider
             set { _server_index = value; }
         }
 
+        string Host = string.Empty;
+
 
 
         public TvWishListMP2NativeTvProvider()
@@ -97,12 +99,13 @@ namespace MediaPortal.Plugins.TvWishListMP2NativeTvProvider
 
             ISettingsManager settingsManager = ServiceRegistration.Get<ISettingsManager>();
             TvWishListMP2Settings settings = settingsManager.Load<TvWishListMP2Settings>();
+            Log.InitializeLogFile();
             Log.DebugValue = settings.Verbose;
 
-            string host = settingsManager.Load<TvWishListMP2NativeTvProviderSettings>().TvServerHost;
-            Log.Debug("host=" + host);
+            Host = settingsManager.Load<TvWishListMP2NativeTvProviderSettings>().TvServerHost;
+            Log.Debug("host=" + Host);
             
-            PipeClient mypipe = new PipeClient(host,"MP2TvWishListPipe");
+            PipeClient mypipe = new PipeClient(Host,"MP2TvWishListPipe");
             mypipe.Debug = Log.DebugValue;
 
             Log.Debug("TvWishListNativeTvProvider initialized");
@@ -147,7 +150,8 @@ namespace MediaPortal.Plugins.TvWishListMP2NativeTvProvider
         {
             serverNames = new List<IServerName>();
             IServerName connectedServer = new ServerName();
-            connectedServer.Name = System.Environment.MachineName;
+            //connectedServer.Name = System.Environment.MachineName;
+            connectedServer.Name = Host;
             connectedServer.ServerIndex = 0;
             serverNames.Add(connectedServer);
             return true;

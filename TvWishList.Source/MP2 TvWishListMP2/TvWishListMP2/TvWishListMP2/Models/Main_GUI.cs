@@ -361,8 +361,10 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             Log.Debug("TvWishList_TvServerVersion =" + TvVersion);
 
             //send servername to native tvserver
-            string mymessage = GetServerIp();
-            Log.Debug("ServerIpaddress=" + mymessage);
+
+            //string mymessage = GetServerIp();
+            //Log.Debug("ServerIpaddress=" + mymessage);
+
             //TvWishListMessaging.SendTvWishListMessage(TvWishListMessaging.MessageType.Initialization, mymessage);           
         }
 
@@ -857,7 +859,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         public void FocusedItemChanged(ListItem focusedListItem)
         {
-            //Log.Debug("Main_GUI: FocusedItemChanged()");
+            Log.Debug("Main_GUI: FocusedItemChanged()");
 
             if (focusedListItem == null)
                 return;
@@ -930,6 +932,10 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             if (selectedListItem == null)
                 return;
 
+            //delete if focusdeditemchange is working again
+            FocusedItemChanged(selectedListItem);
+
+
             if (myTvWishes.ListAll().Count == 0)
                 return;
 
@@ -992,6 +998,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         public void DeleteItem()
         {
+            Log.Debug("Main_GUI: DeleteItem()");
             //button lock
             if (myTvWishes.ButtonActive)
             {
@@ -1048,6 +1055,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         public void MoveItemDown()
         {
+            Log.Debug("Main_GUI: MoveItemDown()");
             //button lock
             if (myTvWishes.ButtonActive)
             {
@@ -1099,6 +1107,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         public void MoveItemUp()
         {
+            Log.Debug("Main_GUI: MoveItemUp()");
             //button lock
             if (myTvWishes.ButtonActive)
             {
@@ -1213,7 +1222,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         public void LoadSettingsResultGui()
         {
-            Log.Debug("Main_GUI: LoadSettings() called");           
+            Log.Debug("Main_GUI: LoadSettingsResultGui() called");           
 
             try
             {

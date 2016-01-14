@@ -127,7 +127,7 @@ namespace TvWishListInstall
                 if ((Directory.Exists(SV2_PROGRAM_FOLDER) == true) && (Directory.Exists(SV2_USER_FOLDER) == true) && (SV2_PROGRAM_FOLDER != "") && (SV2_USER_FOLDER != ""))
                 {//found Media Portal 
                     //check for tvservice installation in addition
-                    if (Directory.Exists(instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins"))
+                    if ((Directory.Exists(instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins")) || (Directory.Exists(instpaths.DIR_SV2_Plugins + @"\SlimTv.Service3\Plugins")))
                     {
                         textoutputdebug("Media Portal2 Native TV Server installation detected - Media Portal2 Native TV Server Plugin can be installed");
                         checkBoxMP2S.Checked = true;
@@ -551,8 +551,8 @@ namespace TvWishListInstall
                         {
                             
                             // "Yes" processing
-                            textoutputdebug("\nInstalling Native TV Server Plugin TvWishList in ");
-                            textoutputdebug(instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins" + "\n");
+                            textoutputdebug("\nInstalling MP2 TV Server Plugin TvWishList in ");
+                            //textoutputdebug(instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins" + "\n");
 
                             //check for setupTv.exe
                             Process[] sprocs = Process.GetProcessesByName("SetupTv");
@@ -870,63 +870,125 @@ namespace TvWishListInstall
             try  //copy TvWishList.dll
             {
                 pluginPath = instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\Plugins";
+                //textoutputdebug("pluginPath=" + pluginPath);
+
+                if (Directory.Exists(pluginPath))
+                { 
+                    // first delete old dll files
+                    if (File.Exists(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll") == true)
+                    {
+                        try
+                        {
+                            File.Delete(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+
+                        }
+                        catch (Exception exc)
+                        {
+                            textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+                            textoutputdebug("Try to uninstall first and then reinstall");
+                            textoutputdebug("If it does not help reboot your computer\n");
+                            textoutputdebug("Exception " + exc.Message);
+                            return;
+                        }
+                    }
+
                 
-                // first delete old dll files
-                if (File.Exists(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll") == true)
-                {
-                    try
-                    {
-                        File.Delete(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
-
-                    }
-                    catch
-                    {
-                        textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
-                        textoutputdebug("Try to uninstall first and then reinstall");
-                        textoutputdebug("If it does not help reboot your computer\n");
-                        return;
-                    }
-                }
                 
-                textoutputdebug("Installing Native Tvserver Plugin version");
-                File.Copy(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll", pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll", true);
-                textoutputdebug(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll  copied to " + "\n" + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll" + "\n");
+                    textoutputdebug("Installing Native Tvserver Plugin version");
+                    File.Copy(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll", pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll", true);
+                    textoutputdebug(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll  copied to " + "\n" + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll" + "\n");
 
 
 
-                //old version must bedeleted
-                pluginPath = instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\SetupTv\plugins";
+                    //old version must bedeleted
+                    pluginPath = instpaths.DIR_SV2_Plugins + @"\SlimTv.Service\SetupTv\plugins";
 
-                if (File.Exists(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll") == true)
-                {
-                    try
+                    if (File.Exists(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll") == true)
                     {
-                        File.Delete(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+                        try
+                        {
+                            File.Delete(pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
 
+                        }
+                        catch (Exception exc)
+                        {
+                            textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
+                            textoutputdebug("Try to uninstall first and then reinstall");
+                            textoutputdebug("If it does not help reboot your computer\n");
+                            textoutputdebug("Exception "+exc.Message);
+                            return;
+                        }
                     }
-                    catch
-                    {
-                        textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll");
-                        textoutputdebug("Try to uninstall first and then reinstall");
-                        textoutputdebug("If it does not help reboot your computer\n");
-                        return;
-                    }
+
+            
+
+                    /* not available at the beginning will be done by setuptv
+                    File.Copy(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll", pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll", true);
+                    textoutputdebug(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll  copied to " + "\n" + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll" + "\n");
+                    */
+
+                    success = true;
                 }
 
-                /* not available at the beginning will be done by setuptv
-                File.Copy(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll", pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll", true);
-                textoutputdebug(@"TvWishList2.0\Mediaportal.TV.Server.Plugins.TvWishList.dll  copied to " + "\n" + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll" + "\n");
-                */
 
-                success = true;
+
+                pluginPath = instpaths.DIR_SV2_Plugins + @"\SlimTv.Service3\Plugins";
+                //textoutputdebug("pluginPath=" + pluginPath);
+
+                if (Directory.Exists(pluginPath))
+                {
+                    // first delete old dll files
+                    if (File.Exists(pluginPath + @"\TvWishList.dll") == true)
+                    {
+                        try
+                        {
+                            File.Delete(pluginPath + @"\TvWishList.dll");
+
+                        }
+                        catch (Exception exc)
+                        {
+                            textoutputdebug("Error: Could not delete " + pluginPath + @"\TvWishList.dll");
+                            textoutputdebug("Try to uninstall first and then reinstall");
+                            textoutputdebug("If it does not help reboot your computer\n");
+                            textoutputdebug("Exception " + exc.Message);
+                            return;
+                        }
+                    }
+                    if (File.Exists(pluginPath + @"\TvWishListTV30.dll") == true)
+                    {
+                        try
+                        {
+                            File.Delete(pluginPath + @"\TvWishListTV30.dll");
+
+                        }
+                        catch (Exception exc)
+                        {
+                            textoutputdebug("Error: Could not delete " + pluginPath + @"\TvWishListTV30.dll");
+                            textoutputdebug("Try to uninstall first and then reinstall");
+                            textoutputdebug("If it does not help reboot your computer\n");
+                            textoutputdebug("Exception " + exc.Message);
+                            return;
+                        }
+                    }
+
+
+                    textoutputdebug("Installing MP2 Tvserver 3.0 Plugin version");
+                    File.Copy(@"TvWishList3.0\TvWishListTV30.dll", pluginPath + @"\TvWishListTV30.dll", true);
+                    textoutputdebug(@"TvWishList3.0\TvWishListTV30.dll  copied to " + "\n" + pluginPath + @"\TvWishListTV30.dll" + "\n");
+
+
+                    success = true;
+                }
+
 
             }
             catch (Exception exc)
             {
-                textoutputdebug("Error: Could not copy TvWishList2.0\\Mediaportal.TV.Server.Plugins.TvWishList.dll to\n" + pluginPath);
+                textoutputdebug("Error: Could not copy Tvserver plugin to\n" + pluginPath);
                 textoutputdebug("Exception message was:\n" + exc.Message + "\n");
                 textoutputdebug("Try to uninstall first and then reinstall");
                 textoutputdebug("If it does not help reboot your computer");
+                
                 return;
             }
 
@@ -1032,7 +1094,14 @@ namespace TvWishListInstall
             //install correct provider depending on SlimTv plugin - do not install if no slimtv plugin could be found
             //textoutputdebug("DEBUG nat provider=" + instpaths.DIR_MP2_Plugins + @"SlimTv.NativeProvider");
             string TvWishListProviderMP2Name=string.Empty;
-            if (Directory.Exists(instpaths.DIR_MP2_Plugins + @"\SlimTv.NativeProvider"))
+
+            if ( (Directory.Exists(instpaths.DIR_MP2_Plugins + @"\SlimTv.NativeProvider")) &&
+                (Directory.Exists(instpaths.DIR_MP2_Plugins + @"\Tve3RecordingMetadataExtractor")))
+            {//new version with native TVE3
+                TvWishListProviderMP2Folder = instpaths.DIR_MP2_Plugins + @"\TvWishListMP2NativeTvProvider";
+                TvWishListProviderMP2Name = "TvWishListMP2NativeTvProvider";
+            }
+            else if (Directory.Exists(instpaths.DIR_MP2_Plugins + @"\SlimTv.NativeProvider"))
             {
                 TvWishListProviderMP2Folder = instpaths.DIR_MP2_Plugins + @"\TvWishListMP2NativeTvProvider";
                 TvWishListProviderMP2Name = "TvWishListMP2NativeTvProvider";
@@ -2560,11 +2629,26 @@ namespace TvWishListInstall
                         return;
                     }
                 }
+
+                pluginPath = instpaths.DIR_SV2_Plugins + @"\SlimTv.Service3\Plugins";
+                if (File.Exists(pluginPath + @"\TvWishListTV30.dll") == true)
+                {
+                    try
+                    {
+                        File.Delete(pluginPath + @"\TvWishListTV30.dll");
+                        textoutputdebug(pluginPath + @"\TvWishListTV30.dll deleted" + "\n");
+                    }
+                    catch (Exception exc)
+                    {
+                        textoutputdebug("Error: Could not delete " + pluginPath + @"\TvWishListTV30.dll\n");
+                        return;
+                    }
+                }
                 
             }
             catch (Exception exc)
             {
-                textoutputdebug("Error: Could not delete " + pluginPath + @"\Mediaportal.TV.Server.Plugins.TvWishList.dll \n");
+                textoutputdebug("Error: Could not delete Tv server plugin at" + pluginPath +" \n");
                 textoutputdebug("Exception message was:\n" + exc.Message + "\n");
                 return;
             }

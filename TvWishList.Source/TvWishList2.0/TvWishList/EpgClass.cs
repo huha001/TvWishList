@@ -850,6 +850,25 @@ namespace MediaPortal.Plugins.TvWishList
                   languagetext = lng.TranslateString("Searching for {0}", 6,mywish.name);
                   labelmessage(languagetext, PipeCommands.StartEpg);
 
+                  //remove leading and ending spaces of tv wish
+                  Log.Debug("(before removing spaces: mywish.searchfor="+mywish.searchfor);
+                  if (mywish.searchfor.Length > 0)
+                  {
+                    while (mywish.searchfor[0] == ' ')
+                    {
+                        mywish.searchfor = mywish.searchfor.Substring(1, mywish.searchfor.Length - 1);
+                        if (mywish.searchfor.Length == 0)
+                            break;
+                    }
+                    while (mywish.searchfor[mywish.searchfor.Length - 1] == ' ')
+                    {
+                        mywish.searchfor = mywish.searchfor.Substring(0, mywish.searchfor.Length - 1);
+                        if (mywish.searchfor.Length == 0)
+                            break;
+                    }
+
+                  }
+                  Log.Debug("(after removing spaces: mywish.searchfor=" + mywish.searchfor);
                   //search for recordings and add messages only in email mode
                   DateTime start = DateTime.Now; //DEBUG PERFORMANCE
 
@@ -1428,6 +1447,8 @@ namespace MediaPortal.Plugins.TvWishList
           }
 
           //SQL Query
+          
+
           LogDebug("SQL query for: " + Expression, (int)LogSetting.DEBUG);
           try
           {
@@ -1444,6 +1465,10 @@ namespace MediaPortal.Plugins.TvWishList
               SqlStatement stmt = new SqlBuilder(StatementType.Select, typeof(Program)).GetStatement(true);
               SqlStatement ManualJoinSQL = new SqlStatement(StatementType.Select, stmt.Command, SqlSelectCommand.ToString(),typeof(Program));
               myprogramlist = ObjectFactory.GetCollection<Program>(ManualJoinSQL.Execute());
+
+              Log.Debug("myprogramlist.Count=" + myprogramlist.Count);
+
+              Log.Debug("Total programcount="+Program.ListAll().Count);
 #endif
           }
           catch (Exception exc)
@@ -1891,6 +1916,7 @@ namespace MediaPortal.Plugins.TvWishList
               myRecordingList = Recording.GeneralSqlQuery(command);
 
 #else
+              
               StringBuilder SqlSelectCommand = new StringBuilder();
               SqlSelectCommand.Append("select * from Recording ");
               SqlSelectCommand.AppendFormat(string.Format("where {0}", Expression));  
@@ -2106,7 +2132,7 @@ namespace MediaPortal.Plugins.TvWishList
 
       public string GetDateTimeString()
       {
-#if (MPTV2)
+#if (MPTV2)||(TV30)
           string provider = "mysql";
 #else
           string provider = ProviderFactory.GetDefaultProvider().Name.ToLowerInvariant();
@@ -3330,7 +3356,7 @@ namespace MediaPortal.Plugins.TvWishList
           LogDebug("check for conflicts", (int)LogSetting.DEBUG);
           if ((VIEW_ONLY_MODE == false)&& (_scheduleconflicts == false))  //scheduleconflicts = true will trigger priority processing
           {
-              //BUG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+              
 #if(MPTV2)
               IList<Schedule> conflict_schedules = Schedule.GetConflictingSchedules(schedule);
 #else
@@ -4180,6 +4206,7 @@ namespace MediaPortal.Plugins.TvWishList
       [CLSCompliant(false)]
       public IList<Schedule> GetConflictingSchedules(Schedule schedule)
       {
+          
           return Schedule.GetConflictingSchedules(schedule);
       }
 #elif(TV110)

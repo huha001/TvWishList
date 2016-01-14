@@ -331,11 +331,22 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
                 return;
             }
 
-            Log.Debug("EditGUI: SelectedItemChanged: Selected item number=" + selectedListItem.Labels["Name"]);
+            //delete if focused item works again
+            FocusedItemChanged(selectedListItem);
 
+            Log.Debug("EditGUI: SelectedItemChanged: Selected item number=" + selectedListItem.Labels["Name"]);
+            
             //int selected_edit_index = Convert.ToInt32(selectedListItem.Labels["Index"].ToString());
-            selected_edit_index = _focusedEditItem;
-            Log.Debug("Selected item is " + selected_edit_index.ToString());
+            try
+            {
+                selected_edit_index = Convert.ToInt32(selectedListItem.Labels["Index"].ToString());
+            }
+            catch 
+            {
+                Log.Debug("***ERROR: Invalid index for selected item: index=" + selectedListItem.Labels["Index"].ToString());
+                return;
+            }
+            Log.Debug("Selected item (selected_edit_index) is " + selected_edit_index.ToString());
             Log.Debug("_listTranslator[selected_edit_index]=" + _listTranslator[selected_edit_index].ToString());
             CaseSelection = _listTranslator[selected_edit_index];
             Log.Debug("Tvwish caseSelection=" + CaseSelection.ToString());

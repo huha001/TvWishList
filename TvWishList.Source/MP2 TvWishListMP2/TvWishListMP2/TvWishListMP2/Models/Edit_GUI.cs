@@ -352,7 +352,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
             }
         }
 
-
+        
 
         public void OnButtonNew()
         {

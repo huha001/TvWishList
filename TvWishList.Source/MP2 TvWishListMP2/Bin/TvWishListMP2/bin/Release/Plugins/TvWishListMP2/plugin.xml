@@ -4,8 +4,12 @@
     PluginId="f9e783d1-b878-4bad-8838-28c898152093"
     Author="huha"
     Copyright="GPL"
-    Description="TvWishList plugin for MediaPortal2"
-    PluginVersion="1.4.1.0">
+    Description="TvWishList plugin for MediaPortal2">
+	
+  <Version
+    PluginVersion="1.4.4.0"
+    ReleaseDate="2015-07-08 01:00:00 GMT+01:00"
+    CurrentAPI="1"/>
 
   <Runtime>
     <Assembly FileName="TvWishListMP2.dll"/>
@@ -14,14 +18,20 @@
   </Runtime>
 
   <DependsOn>
+    <CoreDependency Name="MediaPortal.Common" CompatibleAPI="1" />
+    <CoreDependency Name="MediaPortal.UI" CompatibleAPI="1" />
+    <CoreDependency Name="MediaPortal.Utilities" CompatibleAPI="1" />
+
     <!-- Configuration Manager Plugin -->
-    <PluginReference PluginId="{1AFF4467-64B0-4ca1-AF28-9AEDF3525BCE}"/>
+    <PluginReference PluginId="{1AFF4467-64B0-4ca1-AF28-9AEDF3525BCE}" CompatibleAPI="1"/>
     <!-- TvWishListTvProvider -->
-    <PluginReference PluginId="{ac9bb4ed-5301-2cf8-835a-2c656e9785ba}"/>  
+    <PluginReference PluginId="{ac9bb4ed-5301-2cf8-835a-2c656e9785ba}" CompatibleAPI="1"/> 
+
+ 
     <!-- SlimTvClient -->
-    <!--<PluginReference PluginId="{63040BB4-4638-49b7-A82F-F4530D4D43B9}"/>  -->  
+    <!--<PluginReference PluginId="{63040BB4-4638-49b7-A82F-F4530D4D43B9}" CompatibleAPI="1"/>  -->  
     <!-- SlimTVMPExtendedProvider -->
-    <!--<PluginReference PluginId="{FD70FD97-CB53-4500-8632-0ADCEF359489}"/> -->
+    <!--<PluginReference PluginId="{FD70FD97-CB53-4500-8632-0ADCEF359489}" CompatibleAPI="1"/> -->
   </DependsOn>
   
   <Register Location="/Models">

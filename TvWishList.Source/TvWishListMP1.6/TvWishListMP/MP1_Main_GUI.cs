@@ -82,6 +82,8 @@ namespace MediaPortal.Plugins.TvWishList
 
     int PREVIOUSWINDOW = -1;
 
+    bool FIRST_INITIALIZE = true;
+
     //public List<TvWish> TvWishes = new List<TvWish>();
     
     #region ISetupForm Members
@@ -196,17 +198,6 @@ namespace MediaPortal.Plugins.TvWishList
         //TvWishes Initialization
         myTvWishes = new TvWishProcessing();
 
-        // get pipename from Tvserver as MPExtended uses TV1 and NativeTvserver TV2
-        // get hostname from tvserver for multiseat installation
-        TvBusinessLayer layer = new TvBusinessLayer();
-        Setting setting;
-        setting = layer.GetSetting("TvWishList_PipeName", "MP2TvWishListPipe");
-        string pipename = setting.Value;
-        setting = layer.GetSetting("TvWishList_MachineName", "localhost");
-        string hostname = setting.Value;
-        myPipeClient = new PipeClient(myTvWishes,hostname,pipename);
-        
-        
         //activating GUI List Window
         if (GUIWindowManager.GetWindow(_guilistwindowid) == null)
         {
@@ -280,25 +271,6 @@ namespace MediaPortal.Plugins.TvWishList
         _TextBoxFormat_4to3_ViewOnlyFormat_Org = _TextBoxFormat_4to3_ViewOnlyFormat_Org.Replace("<br>", "\n");
         _TextBoxFormat_4to3_ViewOnlyFormat_Org = _TextBoxFormat_4to3_ViewOnlyFormat_Org.Replace("<BR>", "\n");
 
-        
-
-        //load MP data
-        LoadSettings(); //must be done after initialization of windows
-
-        //load TvwishlistFolder and filenames from TvServer
-        LoadFromTvServer();
-
-        MpVersion = this.Version();
-        if (TvVersion != MpVersion) //version does not match
-        {
-            Log.Debug("TvVersion " + TvVersion + " does not match MpVersion " + MpVersion+" -Aborting plugin");
-            VersionMismatch = true;
-        }
-        Log.Debug("MpVersion =" + MpVersion);
-        Log.Debug("TvVersion =" + TvVersion);
-
-        //check command from tvserver needed?
-
         return Load(GUIGraphicsContext.Skin + @"\TvWishListMP.xml");        
     }
    
@@ -306,12 +278,48 @@ namespace MediaPortal.Plugins.TvWishList
     public override void OnAdded()
     { //after loading plugin
         Log.Debug("[TVWishListMP]:OnAdded");
-        
+       
+    }
+
+    public void InitializeTvWishList() //initialization must be done outside Init() and outside OnAdded()
+    {
+        if (FIRST_INITIALIZE)
+        {
+            // get pipename from Tvserver as MPExtended uses TV1 and NativeTvserver TV2
+            // get hostname from tvserver for multiseat installation
+            TvBusinessLayer layer = new TvBusinessLayer();
+            Setting setting;
+            setting = layer.GetSetting("TvWishList_PipeName", "MP2TvWishListPipe");
+            string pipename = setting.Value;
+            setting = layer.GetSetting("TvWishList_MachineName", "localhost");
+            string hostname = setting.Value;
+            myPipeClient = new PipeClient(myTvWishes, hostname, pipename);
+
+            //load MP data
+            LoadSettings(); //must be done after initialization of windows
+
+            //load TvwishlistFolder and filenames from TvServer
+            LoadFromTvServer();
+
+            MpVersion = this.Version();
+            if (TvVersion != MpVersion) //version does not match
+            {
+                Log.Debug("TvVersion " + TvVersion + " does not match MpVersion " + MpVersion + " -Aborting plugin");
+                VersionMismatch = true;
+            }
+            Log.Debug("MpVersion =" + MpVersion);
+            Log.Debug("TvVersion =" + TvVersion);
+
+            FIRST_INITIALIZE = false;
+            //check command from tvserver needed?
+        }
     }
 
     //plugin window activated
     protected override void OnPageLoad()
     {
+        InitializeTvWishList();
+
         Log.Debug("[TVWishListMP]:OnPageLoad  VIEWONLY=" + myTvWishes.ViewOnlyMode.ToString());
         PREVIOUSWINDOW = this.PreviousWindowId;        
         Log.Debug("Previous WidowID=" + PREVIOUSWINDOW);

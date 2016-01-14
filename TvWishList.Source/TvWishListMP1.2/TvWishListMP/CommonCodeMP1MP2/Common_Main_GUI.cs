@@ -185,7 +185,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         public string Version()
         {
-            return "1.4.1.0";
+            return "1.4.4.0";
         }
 
         public enum PipeCommands
@@ -701,6 +701,11 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
         public void ParameterEvaluation(string parameter, int previousWindow, bool tvWishListQuickMenu)
         {
+
+//#if (MP11 || MP12 || MP16)
+//            InitializeTvWishList();//needed once for access to tvserver database
+//#endif
+
             Log.Debug("Evaluating Parameter loadparameter=" + parameter);
             Log.Debug("previousWindow=" + previousWindow);
             parameter = parameter.Replace(@"//", "\n");
@@ -731,6 +736,7 @@ namespace MediaPortal.Plugins.TvWishListMP2.Models
 
 
 #if (MP11 || MP12 || MP16)
+
                 GUIDialogMenu dlg = (GUIDialogMenu)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
                 dlg.ShowQuickNumbers = false;
                 dlg.SetHeading(PluginGuiLocalizeStrings.Get(1050)); //TvWishList Quick Menu

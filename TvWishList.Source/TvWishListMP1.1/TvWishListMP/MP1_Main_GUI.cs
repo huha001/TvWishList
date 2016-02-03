@@ -289,18 +289,21 @@ namespace MediaPortal.Plugins.TvWishList
             // get hostname from tvserver for multiseat installation
             TvBusinessLayer layer = new TvBusinessLayer();
             Setting setting;
+#if (MP2)
             setting = layer.GetSetting("TvWishList_PipeName", "MP2TvWishListPipe");
+#else
+            setting = layer.GetSetting("TvWishList_PipeName", "TvWishListPipe");
+#endif
+
             string pipename = setting.Value;
             setting = layer.GetSetting("TvWishList_MachineName", "localhost");
             string hostname = setting.Value;
             myPipeClient = new PipeClient(myTvWishes, hostname, pipename);
-
             //load MP data
             LoadSettings(); //must be done after initialization of windows
 
             //load TvwishlistFolder and filenames from TvServer
             LoadFromTvServer();
-
             MpVersion = this.Version();
             if (TvVersion != MpVersion) //version does not match
             {

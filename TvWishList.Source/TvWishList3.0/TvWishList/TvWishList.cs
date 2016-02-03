@@ -176,7 +176,7 @@ namespace MediaPortal.Plugins.TvWishList
         /// <summary>
         /// returns the version of the plugin
         /// </summary>
-        public string Version { get { return "1.4.4.0"; } }
+        public string Version { get { return "1.4.5.0"; } }
 
         /// <summary>
         /// returns the author of the plugin
@@ -262,7 +262,7 @@ namespace MediaPortal.Plugins.TvWishList
 #if (MPTV2)
                 setting.Value = "MP2TvWishListPipe";
 #else
-                setting.Value = "MP2TvWishListPipe";
+                setting.Value = "TvWishListPipe";
 #endif
                 setting.Persist();
                 
@@ -1563,7 +1563,14 @@ namespace MediaPortal.Plugins.TvWishList
 
                 try
                 {  //create a dummy pipe to fix error condition when stopping server
-                    pipeClient = new NamedPipeClientStream(".", "TvWishListPipe",
+
+#if (MPTV2)
+                    string pipename = "MP2TvWishListPipe";
+#else
+                    string pipename = "TvWishListPipe";
+#endif
+
+                    pipeClient = new NamedPipeClientStream(".", pipename,
                         PipeDirection.InOut, PipeOptions.None,
                         TokenImpersonationLevel.Impersonation);
 

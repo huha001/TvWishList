@@ -2322,20 +2322,23 @@ namespace MediaPortal.Plugins.TvWishList
                   //end debug
 
 #if (TV11 || TV12 || MP11 || MP12 || MP16)
-                  Program myprogram = Program.RetrieveByTitleTimesAndChannel(schedule.ProgramName,schedule.StartTime,schedule.EndTime,schedule.IdChannel);
-                  LogDebug("Description=          " + myprogram.Description, this_setting);
-                  LogDebug("Genre=           " + myprogram.Genre, this_setting);
-                  LogDebug("Classification=           " + myprogram.Classification, this_setting);
-                  LogDebug("EpisodeName=           " + myprogram.EpisodeName, this_setting);
-                  LogDebug("EpisodeNumber=           " + myprogram.EpisodeNumber, this_setting);
-                  LogDebug("EpisodeNum=           " + myprogram.EpisodeNum, this_setting);
-                  LogDebug("EpisodePart=           " + myprogram.EpisodePart, this_setting);
-                  LogDebug("OriginalAirDate=           " + myprogram.OriginalAirDate, this_setting);
-                  LogDebug("ParentalRating=           " + myprogram.ParentalRating, this_setting);
-                  LogDebug("SeriesNum=           " + myprogram.SeriesNum, this_setting);
-                  LogDebug("StarRating=           " + myprogram.StarRating, this_setting);
-                  LogDebug("IdParentSchedule=" + schedule.IdParentSchedule.ToString(), this_setting);
-                
+                  try
+                  { 
+                      Program myprogram = Program.RetrieveByTitleTimesAndChannel(schedule.ProgramName,schedule.StartTime,schedule.EndTime,schedule.IdChannel);
+                      LogDebug("Description=          " + myprogram.Description, this_setting);
+                      LogDebug("Genre=           " + myprogram.Genre, this_setting);
+                      LogDebug("Classification=           " + myprogram.Classification, this_setting);
+                      LogDebug("EpisodeName=           " + myprogram.EpisodeName, this_setting);
+                      LogDebug("EpisodeNumber=           " + myprogram.EpisodeNumber, this_setting);
+                      LogDebug("EpisodeNum=           " + myprogram.EpisodeNum, this_setting);
+                      LogDebug("EpisodePart=           " + myprogram.EpisodePart, this_setting);
+                      LogDebug("OriginalAirDate=           " + myprogram.OriginalAirDate, this_setting);
+                      LogDebug("ParentalRating=           " + myprogram.ParentalRating, this_setting);
+                      LogDebug("SeriesNum=           " + myprogram.SeriesNum, this_setting);
+                      LogDebug("StarRating=           " + myprogram.StarRating, this_setting);
+                      LogDebug("IdParentSchedule=" + schedule.IdParentSchedule.ToString(), this_setting);
+                   }
+                   catch(Exception exc){}
 #endif
             }
             catch (Exception exc)

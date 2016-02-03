@@ -400,8 +400,9 @@ public PipeClient(TvWishProcessing myTvWishesTransfer, string host, string pipe)
                     pipeClient = new NamedPipeClientStream(hostName, pipeName,
                             PipeDirection.InOut, PipeOptions.None,
                             TokenImpersonationLevel.Impersonation);
-
+                    Log.Debug("1");
                     pipeClient.Connect();
+                    Log.Debug("2");
                     StreamString ss = new StreamString(pipeClient);
                     //send clientmessage to server
                     Log.Debug("Writing command " + ClientMessage);
